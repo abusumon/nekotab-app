@@ -1,17 +1,17 @@
-﻿==========================
+==========================
 Authors & Acknowledgements
 ==========================
 
 Authors
 -------
 
-NekoTab was authored by Qi-Shan Lim for Auckland Australs 2010. The current active maintainers are:
+Tabbycat was authored by Qi-Shan Lim for Auckland Australs 2010. The current active maintainers are:
 
 - Philip Belesky
 - Chuan-Zheng Lee
-- Ã‰tienne BeaulÃ©
+- Étienne Beaulé
 
-Please don't hesitate to contact us  (`e-mail <mailto:contact@NekoTab-debate.org>`_) with any suggestions, expressions of interest or generally anything relating to NekoTab.
+Please don't hesitate to contact us  (`e-mail <mailto:contact@tabbycat-debate.org>`_) with any suggestions, expressions of interest or generally anything relating to Tabbycat.
 
 Contributors
 ------------
@@ -24,4 +24,3 @@ Sponsors
 --------
 
 - Thanks to the Western Australian Debating League for sponsoring various features related to organising division-based tournaments and round-robin based draw methods.
-

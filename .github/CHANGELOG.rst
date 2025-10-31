@@ -1,4 +1,4 @@
-﻿==========
+==========
 Change Log
 ==========
 
@@ -86,7 +86,7 @@ Change Log
 - Added a setting to expect no feedback from teams or adjudicators. Thanks Daan Koning!
 - Allowed scores to be given in any increments.
 - Actions taken through the API are now logged.
-- Participants' private URLs now show their barcode for checkin. Thank you to Miha FrangeÅ¾!
+- Participants' private URLs now show their barcode for checkin. Thank you to Miha Frangež!
   - Private URLs include the info-slide for the current round if available and public.
   - The API includes participants' barcode numbers on participant endpoints.
 - Debates can be configured to have an arbitrary number of teams, for public speaking tournaments.
@@ -99,9 +99,9 @@ Change Log
   - Users can be assigned to specific groups and permissions with accesses within tournaments. Thanks to Valerie Pang for cataloging the permissions!
   - Default groups are created for "Tabulation," "Adjudication Core," and "Equity" in each tournament.
   - API: New endpoints for groups and users are added.
-- Custom scoring criteria can be added through "Edit Database" to be shown on ballots. The assigned speaker score becomes the weighted sum of the given scores on the criteria. Thanks to Tráº§n Trang Linh for this new feature!
+- Custom scoring criteria can be added through "Edit Database" to be shown on ballots. The assigned speaker score becomes the weighted sum of the given scores on the criteria. Thanks to Trần Trang Linh for this new feature!
   - Criteria can be added through the Edit Database.
-- Ballot merging is made more stable and revamped, with the help of Tráº§n Trang Linh:
+- Ballot merging is made more stable and revamped, with the help of Trần Trang Linh:
   - The specific fields are now marked as failing, rather than all related ones.
   - Ballots can be automatically merged when all eligible ballots received, on enabling a setting.
 - Debate start times can now include the date, and can be set automatically on motion release. Thanks Trudeau Okech for the automation!
@@ -133,10 +133,10 @@ Change Log
 
 - The term "iron person" is now used throughout the platform for consistency and inclusivity. Thanks to @dcorks for the pull request!
     - The number of times a team has had an iron-speaker is now tracked as a team metric.
-- Added new emoji from Unicode 12 and 13. Thank you to Daan Koning for the pull request! (`#2143 <https://github.com/NekoTabDebate/NekoTab/issues/2143>`_)
-- Info Slides can now use rich-text formatting (e.g. bold, links, etc). Thanks to Tráº§n Trang Linh for adding this feature!
+- Added new emoji from Unicode 12 and 13. Thank you to Daan Koning for the pull request! (`#2143 <https://github.com/TabbycatDebate/tabbycat/issues/2143>`_)
+- Info Slides can now use rich-text formatting (e.g. bold, links, etc). Thanks to Trần Trang Linh for adding this feature!
 - Speaker and break category forms have better validation and fewer fields.
-- Tournaments can be created specifying private URL use directly. Thanks to SÃ©bastien Dunne Fulmer!
+- Tournaments can be created specifying private URL use directly. Thanks to Sébastien Dunne Fulmer!
 - Implemented support for APDA-style tournaments with:
     - Avoidance for a team to repeatedly meet pulled-up teams,
     - A new two-team draw generator to minimize penalties globally within brackets,
@@ -180,8 +180,8 @@ Change Log
 - Prevented API error when creating ballot with incorrect speakers (BACKEND-AVN)
 - Added ability to search results by team name, rather than by reference
 - Fixed ballot resaving through Edit Database (BACKEND-AVR)
-- Removed trailing commas after panels in room allocations. Thank you to Tráº§n Trang Linh for the fix!
-- Corrected missing checkin identifiers showing as "null". Thanks again to Tráº§n Trang Linh!
+- Removed trailing commas after panels in room allocations. Thank you to Trần Trang Linh for the fix!
+- Corrected missing checkin identifiers showing as "null". Thanks again to Trần Trang Linh!
 - Removed Render installation instructions [until that service can be reliably used]
 - Fixed conflicts not showing when dragging panels
 - Fixed adjudicator record pages crashing if shared between tournaments
@@ -239,7 +239,7 @@ Change Log
 - The 'Inactive Tournaments' page has been merged into the main page.
 - The checkins filter buttons are now clearer in what they filter. Thank you to Giza Pavone for the pull request!
 - The British Parliamentary preset uses the new WUDC iron-person rule (both speeches count towards team score). Thank you to Alice Bertoni for the pull request!
-- People can have code names to hide their real name within the tournament. Thank you to the South African Schoolsâ€™ Debating Board for sponsoring the feature!
+- People can have code names to hide their real name within the tournament. Thank you to the South African Schools’ Debating Board for sponsoring the feature!
 - API improvements
     - Allowed access to the Motions API endpoint for publicly-released motions.
     - The ballot API now supports motion vetos.
@@ -271,7 +271,7 @@ Change Log
 *Release date: 27 February 2022*
 
 - Updated Heroku install documentation to foreground the script-based install
-- Fixed reporting of NekoTab's version and host
+- Fixed reporting of Tabbycat's version and host
 
 
 2.6.5
@@ -283,7 +283,7 @@ Change Log
 - Fix broken link for assistants merging faulty ballots (BACKEND-6RD)
 - Changed filter for team draw notifications to be whether they are in a debate that round
 - Made round break category and stage validator work with partial updates
-- Launched our promotion program for sponsors of the NekoTab Debate Organisation
+- Launched our promotion program for sponsors of the Tabbycat Debate Organisation
 
 
 2.6.4
@@ -292,20 +292,20 @@ Change Log
 
 - Fix info-slide modal not showing in single-motion formats
 - Prevent crash when modifying existing motion (BACKEND-69F)
-- Simplified DebateXML XPaths for resiliency if elements missing (`#1903 <https://github.com/NekoTabDebate/NekoTab/issues/1903>`_)
+- Simplified DebateXML XPaths for resiliency if elements missing (`#1903 <https://github.com/TabbycatDebate/tabbycat/issues/1903>`_)
 - Updated DebateXML methods for handling results (BACKEND-6G1)
 - Overwrode Round modification through the serializer to allow updating and patching.
 - Corrected incorrect queryset for venue constraints on participant record pages (BACKEND-6E2)
 - Handled checkins through a private URL without attached action (BACKEND-5YR)
 - Prevented single adjudicator ballots from being confirmed when using separate ballots (BACKEND-6EB)
-- Fixed assistant ballot entry when ballots are automatically confirmed. (`#1906 <https://github.com/NekoTabDebate/NekoTab/issues/1906>`_)
+- Fixed assistant ballot entry when ballots are automatically confirmed. (`#1906 <https://github.com/TabbycatDebate/tabbycat/issues/1906>`_)
 
 
 2.6.3
 -----
 *Release date: 12 November 2021*
 
-- Fixed motion import crashes when more than one motion added (`#1893 <https://github.com/NekoTabDebate/NekoTab/issues/1893>`_)
+- Fixed motion import crashes when more than one motion added (`#1893 <https://github.com/TabbycatDebate/tabbycat/issues/1893>`_)
 - Fixed draw generation and position reports crashing when teams have null standings (BACKEND-65M)
 - Fixed Edit Database team emoji assignment action.
 
@@ -332,22 +332,22 @@ Change Log
 --------------
 *Release date: 30 October 2021*
 
-- NekoTab is now supported by a new non-profit, the NekoTab Debate Association!
-- Motions can now be re-used between rounds, with statistics using the combined data from the rounds. Motion statistics queries are optimised. (`#739 <https://github.com/NekoTabDebate/NekoTab/pull/739>`_)
+- Tabbycat is now supported by a new non-profit, the Tabbycat Debate Association!
+- Motions can now be re-used between rounds, with statistics using the combined data from the rounds. Motion statistics queries are optimised. (`#739 <https://github.com/TabbycatDebate/tabbycat/pull/739>`_)
 - A new feedback paths allows for trainees to submit feedback on chairs, but not on panellists.
-- Personal redactions for speakers and adjudicators are indicated in admin tables, but are not hidden. (`#1480 <https://github.com/NekoTabDebate/NekoTab/issues/1480>`_)
-- Unexpected team feedback is unconfirmed to avoid affecting the scores of unexpected adjudicators. (`#473 <https://github.com/NekoTabDebate/NekoTab/issues/473>`_)
+- Personal redactions for speakers and adjudicators are indicated in admin tables, but are not hidden. (`#1480 <https://github.com/TabbycatDebate/tabbycat/issues/1480>`_)
+- Unexpected team feedback is unconfirmed to avoid affecting the scores of unexpected adjudicators. (`#473 <https://github.com/TabbycatDebate/tabbycat/issues/473>`_)
 - Added some database area actions to assign emojis and code names, previously only available as commands.
 - Added a button to copy each table to the clipboard in a CSV format
 - Removed some obsolete management commands.
-- Implemented tournament import and export capabilities for `DebateXML <https://github.com/NekoTabDebate/DebateXML>`_.
+- Implemented tournament import and export capabilities for `DebateXML <https://github.com/TabbycatDebate/DebateXML>`_.
 - Allow for participant ballot submissions during concurrent rounds.
 - Checkin API endpoints show the timestamp of the current event.
 - Team viewing of ballots can be restricted to their private URLs.
-- Added an optimised production-ready Docker config. Thanks to SÃ©bastien Dunne Fulmer for this contribution! (`#1690 <https://github.com/NekoTabDebate/NekoTab/pull/1690>`_)
-- Added a means to allow site administrators to send a private link to people they wish to add to the site as admins or assistants. Upon receiving that link, users can complete the signup process themselves. Thanks to Tom Kunc for the pull request! (`#685 <https://github.com/NekoTabDebate/NekoTab/pull/685>`_)
-- Uncalculable metrics now show as None rather than 0, and more standings configurations are now solely handled through the database. (`#1647 <https://github.com/NekoTabDebate/NekoTab/pull/1647>`_)
-- Removed automatic SendGrid provision, changed config var name to ``SENDGRID_API_KEY`` and updated documentation on email configuration (`#1752 <https://github.com/NekoTabDebate/NekoTab/pull/1752>`_)
+- Added an optimised production-ready Docker config. Thanks to Sébastien Dunne Fulmer for this contribution! (`#1690 <https://github.com/TabbycatDebate/tabbycat/pull/1690>`_)
+- Added a means to allow site administrators to send a private link to people they wish to add to the site as admins or assistants. Upon receiving that link, users can complete the signup process themselves. Thanks to Tom Kunc for the pull request! (`#685 <https://github.com/TabbycatDebate/tabbycat/pull/685>`_)
+- Uncalculable metrics now show as None rather than 0, and more standings configurations are now solely handled through the database. (`#1647 <https://github.com/TabbycatDebate/tabbycat/pull/1647>`_)
+- Removed automatic SendGrid provision, changed config var name to ``SENDGRID_API_KEY`` and updated documentation on email configuration (`#1752 <https://github.com/TabbycatDebate/tabbycat/pull/1752>`_)
 - Motions are associated to ballots even when motion selection is disabled, to consolidate motion statistics queries. A migration will attempt to associate motions to existing ballots where motion selection is deactivated and the round of the ballot only has one motion.
 - A migration will attempt to associate venues and venue categories to a tournament if currently unlinked.
 - Adjudicators may now submit ballots individually for non-conferral formats or as a redundancy check, with the ballots merged once all received.
@@ -358,8 +358,8 @@ Change Log
 -----
 *Release date: 20 June 2021*
 
-- Replaced the paper ballot mention in the footer by a mention of the NekoTab Debate Association
-- Linked to the Open Collective page for NekoTab in the footer rather than have a donations page
+- Replaced the paper ballot mention in the footer by a mention of the Tabbycat Debate Association
+- Linked to the Open Collective page for Tabbycat in the footer rather than have a donations page
 - Replaced use of Australian Dollars by Canadian Dollars
 
 
@@ -367,9 +367,9 @@ Change Log
 -----
 *Release date: 2 April 2021*
 
-- Fixed room constrainee dropdown for room constraints (`#1723 <https://github.com/NekoTabDebate/NekoTab/pull/1723>`_)
+- Fixed room constrainee dropdown for room constraints (`#1723 <https://github.com/TabbycatDebate/tabbycat/pull/1723>`_)
 - Filtered breaking teams API endpoint to return just teams breaking in the requested category
-- Fixed adjudicator record and private URL pages crashing when assigned to debates of different formats (`#1766 <https://github.com/NekoTabDebate/NekoTab/issues/1766>`_)
+- Fixed adjudicator record and private URL pages crashing when assigned to debates of different formats (`#1766 <https://github.com/TabbycatDebate/tabbycat/issues/1766>`_)
 
 
 2.5.7
@@ -389,7 +389,7 @@ Change Log
 
 - Fixed preliminary BP results showing as elimination in Latest Results
 - Removed break category highlights from elimination round allocators (BACKEND-4DQ, BACKEND-4DR)
-- Reduced checking the order of rounds for debate results (`#1704 <https://github.com/NekoTabDebate/NekoTab/issues/1704>`_)
+- Reduced checking the order of rounds for debate results (`#1704 <https://github.com/TabbycatDebate/tabbycat/issues/1704>`_)
 - Updated Sentry DSNs
 - Made participant submitter nullable in API endpoints
 - Filtered venues and venue categories without assigned tournament from API endpoints
@@ -400,7 +400,7 @@ Change Log
 -----
 *Release date: 27 December 2020*
 
-- Corrected ordinals displaying HTML entities (`#1691 <https://github.com/NekoTabDebate/NekoTab/issues/1691>`_)
+- Corrected ordinals displaying HTML entities (`#1691 <https://github.com/TabbycatDebate/tabbycat/issues/1691>`_)
 - Removed interference between "average individual speaker score" and "team points" with other metrics
 - Fixed failing feedback creation through the API
 - Prevented team creation through API failing if speakers not provided
@@ -419,7 +419,7 @@ Change Log
 -----
 *Release date: 7 December 2020*
 
-- Fixed issue preventing side/matchup and room edits from saving (`#1689 <https://github.com/NekoTabDebate/NekoTab/issues/1689>`_)
+- Fixed issue preventing side/matchup and room edits from saving (`#1689 <https://github.com/TabbycatDebate/tabbycat/issues/1689>`_)
 
 
 2.5.2
@@ -435,7 +435,7 @@ Change Log
 *Release date: 4 December 2020*
 
 - Fixed breaks API endpoints not getting the break category
-- Ensured that the "votes/ballots carried" team metric is always defined (`#1682 <https://github.com/NekoTabDebate/NekoTab/issues/1682>`_)
+- Ensured that the "votes/ballots carried" team metric is always defined (`#1682 <https://github.com/TabbycatDebate/tabbycat/issues/1682>`_)
 - Re-implemented rank filters for speaker standings
 
 
@@ -443,30 +443,30 @@ Change Log
 ----------------
 *Release date: 30 November 2020*
 
-- Added a preference to allow dedicated reply speaker. Thanks to Miha FrangeÅ¾ for the PR! (`#1584 <https://github.com/NekoTabDebate/NekoTab/issues/1584>`_)
-- Private URL submissions now store the participant whose link was used rather than just their IP address (`#1586 <https://github.com/NekoTabDebate/NekoTab/issues/1586>`_)
-- Added selectors for adjudicator positions in draw emails (`#1423 <https://github.com/NekoTabDebate/NekoTab/pull/1423>`_)
-- Implemented debate postponement, allowing debates to be marked as "postponed" in the results page. Postponed debates do not block draw generation, contrary to unconfirmed debates. (`#1563 <https://github.com/NekoTabDebate/NekoTab/pull/1563>`_)
-- Added round weights so that team points can be pondered between rounds, implementing tapered scoring. Weights only affect the sum of team points. (`#1512 <https://github.com/NekoTabDebate/NekoTab/pull/1512>`_)
+- Added a preference to allow dedicated reply speaker. Thanks to Miha Frangež for the PR! (`#1584 <https://github.com/TabbycatDebate/tabbycat/issues/1584>`_)
+- Private URL submissions now store the participant whose link was used rather than just their IP address (`#1586 <https://github.com/TabbycatDebate/tabbycat/issues/1586>`_)
+- Added selectors for adjudicator positions in draw emails (`#1423 <https://github.com/TabbycatDebate/tabbycat/pull/1423>`_)
+- Implemented debate postponement, allowing debates to be marked as "postponed" in the results page. Postponed debates do not block draw generation, contrary to unconfirmed debates. (`#1563 <https://github.com/TabbycatDebate/tabbycat/pull/1563>`_)
+- Added round weights so that team points can be pondered between rounds, implementing tapered scoring. Weights only affect the sum of team points. (`#1512 <https://github.com/TabbycatDebate/tabbycat/pull/1512>`_)
 - Optimisations to the database
-    - Adjudicator Feedback choices and draw flags are stored with PostgreSQL-specific arrays (`#1525 <https://github.com/NekoTabDebate/NekoTab/issues/1525>`_)
-    - Optimised database queries to create all debates in a draw at once (`#1376 <https://github.com/NekoTabDebate/NekoTab/pull/1376>`_)
-    - Optimised deletion of team private URLs (`#1618 <https://github.com/NekoTabDebate/NekoTab/pull/1618>`_)
-    - Reduced number of database queries in sending notifications (`#1592 <https://github.com/NekoTabDebate/NekoTab/pull/1592>`_)
-    - Delegated the calculation of team and speaker rankings to database functions where available, with metrics using the same query. (`#1617 <https://github.com/NekoTabDebate/NekoTab/pull/1617>`_)
+    - Adjudicator Feedback choices and draw flags are stored with PostgreSQL-specific arrays (`#1525 <https://github.com/TabbycatDebate/tabbycat/issues/1525>`_)
+    - Optimised database queries to create all debates in a draw at once (`#1376 <https://github.com/TabbycatDebate/tabbycat/pull/1376>`_)
+    - Optimised deletion of team private URLs (`#1618 <https://github.com/TabbycatDebate/tabbycat/pull/1618>`_)
+    - Reduced number of database queries in sending notifications (`#1592 <https://github.com/TabbycatDebate/tabbycat/pull/1592>`_)
+    - Delegated the calculation of team and speaker rankings to database functions where available, with metrics using the same query. (`#1617 <https://github.com/TabbycatDebate/tabbycat/pull/1617>`_)
 - Improvements to the API, including
     - Added URL field from the Room model to the Venues API endpoints as 'external URL'
     - The Institution API endpoints show institutions' regions as their name, and regions can be created
     - Breaks are now explorable and manipulable through the API.
 - Overhauled the results framework to allow for more types of ballots
-    - BP finals now nominate only one team winning (`#527 <https://github.com/NekoTabDebate/NekoTab/issues/527>`_)
-    - There are now settings to allow tied-point and low-point wins, with declared winners (`#643 <https://github.com/NekoTabDebate/NekoTab/issues/643>`_)
-    - Two-team formats can now have scoreless ballots, and winner ballots are not restricted to elimination rounds (`#1003 <https://github.com/NekoTabDebate/NekoTab/issues/1003>`_)
+    - BP finals now nominate only one team winning (`#527 <https://github.com/TabbycatDebate/tabbycat/issues/527>`_)
+    - There are now settings to allow tied-point and low-point wins, with declared winners (`#643 <https://github.com/TabbycatDebate/tabbycat/issues/643>`_)
+    - Two-team formats can now have scoreless ballots, and winner ballots are not restricted to elimination rounds (`#1003 <https://github.com/TabbycatDebate/tabbycat/issues/1003>`_)
     - Results are now discoverable through the API.
 - Added new translations and features to help translators
     - Thanks to Pascal Alfadian for his work on an Indonesian translation!
-    - Added in-context translation through Crowdin enabling translations to be made directly on NekoTab (`#1664 <https://github.com/NekoTabDebate/NekoTab/pull/1664>`_)
-- Removed the simulated annealing adjudicator allocator. (`#1619 <https://github.com/NekoTabDebate/NekoTab/pull/1619>`_)
+    - Added in-context translation through Crowdin enabling translations to be made directly on Tabbycat (`#1664 <https://github.com/TabbycatDebate/tabbycat/pull/1664>`_)
+- Removed the simulated annealing adjudicator allocator. (`#1619 <https://github.com/TabbycatDebate/tabbycat/pull/1619>`_)
 - Fixed issue with Sentry integration preventing some debugging info from being included in error reports
 - Improved handling of multiple current rounds in record pages, and prevented data leakage
 
@@ -475,7 +475,7 @@ Change Log
 -----
 *Release date: 15 October 2020*
 
-- Fixed draw display links not showing concurrent rounds (`#1239 <https://github.com/NekoTabDebate/NekoTab/issues/1239>`_)
+- Fixed draw display links not showing concurrent rounds (`#1239 <https://github.com/TabbycatDebate/tabbycat/issues/1239>`_)
 - Record pages now show concurrent rounds
 - Non-public speaker categories are now hidden from public API endpoints when unauthenticated
 
@@ -484,7 +484,7 @@ Change Log
 -----
 *Release date: 19 September 2020*
 
-- Fixed issue where team names with an institution were longer than the maximum size (`#1564 <https://github.com/NekoTabDebate/NekoTab/issues/1564>`_)
+- Fixed issue where team names with an institution were longer than the maximum size (`#1564 <https://github.com/TabbycatDebate/tabbycat/issues/1564>`_)
 - Fixed issue that made saving motions impossible through the Round API detail endpoint
 - Fixed issue that made filtering by source team impossible for the Feedback API
 
@@ -506,7 +506,7 @@ Change Log
 
 - Fixed colours associated with adjudicators' scores not showing
 - Showed validation errors when using API with invalid field names
-- Prevented NekoTab from creating default conflicts with the API if already specified in the request
+- Prevented Tabbycat from creating default conflicts with the API if already specified in the request
 - Fixed eligibility API endpoints when a list of participants is not present
 - Fixed speaker category eligibility API endpoint not accepting speakers
 - Allowed updating teams, excluding speakers, through the team detail API endpoint
@@ -517,15 +517,15 @@ Change Log
 -----
 *Release date: 4 July 2020*
 
-- Fixed issue preventing break eligibility from saving (`#1521 <https://github.com/NekoTabDebate/NekoTab/issues/1521>`_)
+- Fixed issue preventing break eligibility from saving (`#1521 <https://github.com/TabbycatDebate/tabbycat/issues/1521>`_)
 
 
 2.4.2
 -----
 *Release date: 22 June 2020*
 
-- Removed duplicate institution name in popovers (`#1515 <https://github.com/NekoTabDebate/NekoTab/issues/1515>`_)
-- Fixed participant record page crashes resulting from `#1511 <https://github.com/NekoTabDebate/NekoTab/pull/1511>`_ (`#1518 <https://github.com/NekoTabDebate/NekoTab/pull/1518>`_)
+- Removed duplicate institution name in popovers (`#1515 <https://github.com/TabbycatDebate/tabbycat/issues/1515>`_)
+- Fixed participant record page crashes resulting from `#1511 <https://github.com/TabbycatDebate/tabbycat/pull/1511>`_ (`#1518 <https://github.com/TabbycatDebate/tabbycat/pull/1518>`_)
 - Fixed hanging in preformed panel creation
 
 
@@ -533,10 +533,10 @@ Change Log
 -----
 *Release date: 21 June 2020*
 
-- Fixed issue where redundant check-ins would crash (`#1513 <https://github.com/NekoTabDebate/NekoTab/pull/1513>`_)
-- Require round sequence numbers to be nonnegative (`#1514 <https://github.com/NekoTabDebate/NekoTab/issues/1514>`_)
-    - This change may cause upgrades of existing sites to fail with an ``IntegrityError`` if they have a negative round sequence number. Please change all round sequence numbers to positive numbers (or 0) before upgrading. Negative round numbers cause most NekoTab pages to fail anyway, so functioning existing sites shouldn't have this problem.
-- Adjust display of team names in registration cards (`#1511 <https://github.com/NekoTabDebate/NekoTab/pull/1511>`_)
+- Fixed issue where redundant check-ins would crash (`#1513 <https://github.com/TabbycatDebate/tabbycat/pull/1513>`_)
+- Require round sequence numbers to be nonnegative (`#1514 <https://github.com/TabbycatDebate/tabbycat/issues/1514>`_)
+    - This change may cause upgrades of existing sites to fail with an ``IntegrityError`` if they have a negative round sequence number. Please change all round sequence numbers to positive numbers (or 0) before upgrading. Negative round numbers cause most Tabbycat pages to fail anyway, so functioning existing sites shouldn't have this problem.
+- Adjust display of team names in registration cards (`#1511 <https://github.com/TabbycatDebate/tabbycat/pull/1511>`_)
 - Fixed bug causing main action item not to appear in languages other than English
 - Allowed null values for emoji and code names in Teams' API
 - Enforced use of null values where field is undetermined yet cannot be blank in API
@@ -550,32 +550,32 @@ Change Log
 ------------
 *Release date: 14 June 2020*
 
-- Created an `application programming interface (API) <https://NekoTab.readthedocs.io/en/stable/features/api.html>`_ for most aspects of NekoTab
+- Created an `application programming interface (API) <https://tabbycat.readthedocs.io/en/stable/features/api.html>`_ for most aspects of Tabbycat
 - Filtered the home page for active tournaments with a new page to list inactive ones
 - Added support for Simplified Chinese, Bengali, Malay, Russian, and shortened the language selector
 - Renamed 'test score' to 'base score', as well as 'venue' to 'room'
 - Deprecated and removed divisions-specific features
 - Added a 'URL' field to Rooms. When a room is publicly displayed it will then present the nominated URL. This is designed so that you can more easily host online tournaments, but may also have use in other scenarios - e.g. linked to a per-room map.
 - The 'Feedback explanation' preference now uses a full text area for easier text formatting
-- Changing the sorting on debates in allocation views now only sorts once, so changing importances will no longer re-order the list immediately (`#1275 <https://github.com/NekoTabDebate/NekoTab/issues/1275>`_)
-- Added room ranks to the Edit Adjudicator UI during elimination round, including sorting by room rank (`#1454 <https://github.com/NekoTabDebate/NekoTab/issues/1454>`_)
+- Changing the sorting on debates in allocation views now only sorts once, so changing importances will no longer re-order the list immediately (`#1275 <https://github.com/TabbycatDebate/tabbycat/issues/1275>`_)
+- Added room ranks to the Edit Adjudicator UI during elimination round, including sorting by room rank (`#1454 <https://github.com/TabbycatDebate/tabbycat/issues/1454>`_)
 - Enabled debates to be sorted by the sum liveness of teams present
 - Moved the 'Edit Database' menu item to the dropdown with the logo in the admin navigation
 - Pull-ups can now be restricted to teams with the lowest draw strength (by speaker or team points) of their bracket
 - Added team standing metrics: number of pull-ups, and draw strength by speaker score
-- Extended draw strength so that it works for BP (`#1071 <https://github.com/NekoTabDebate/NekoTab/issues/1071>`_)
-- Added the new emoji from Unicode 11 â€” thanks to Viran Weerasekera for this addition!
+- Extended draw strength so that it works for BP (`#1071 <https://github.com/TabbycatDebate/tabbycat/issues/1071>`_)
+- Added the new emoji from Unicode 11 — thanks to Viran Weerasekera for this addition!
 - Added toggle to hide adjudicators on the draw release page
 - Separated private URL printing pages into teams and adjudicators
 - Applied 'Show adjudicator institutions' preference to more cases; so if turned off, they should be hidden from public everywhere
 - The Edit Venues screen now shows highlights for priority and venue category
-- Tweaked the display of tables on mobile devices â€” they should now more reliably show a full BP draw without horizontal scrolling
-- Grouped adjudicators by round when submitting feedback â€” reduce the length of the text shown in selector
-- Fixed internal server error when standings precedence is empty (`#1108 <https://github.com/NekoTabDebate/NekoTab/issues/1108>`_)
-- Fixed issue causing crashes when trainees were demoted after results were entered (`#922 <https://github.com/NekoTabDebate/NekoTab/issues/922>`_)
-- Fixed issue where who-beat-whom would include elimination rounds (`#1073 <https://github.com/NekoTabDebate/NekoTab/issues/1073>`_)
-- Fixed issue causing even panels to be missed for user warnings (`#1465 <https://github.com/NekoTabDebate/NekoTab/issues/1465>`_)
-- Stopped actively maintaining `local installation instructions for Windows <https://NekoTab.readthedocs.io/en/latest/install/windows.html>`_
+- Tweaked the display of tables on mobile devices — they should now more reliably show a full BP draw without horizontal scrolling
+- Grouped adjudicators by round when submitting feedback — reduce the length of the text shown in selector
+- Fixed internal server error when standings precedence is empty (`#1108 <https://github.com/TabbycatDebate/tabbycat/issues/1108>`_)
+- Fixed issue causing crashes when trainees were demoted after results were entered (`#922 <https://github.com/TabbycatDebate/tabbycat/issues/922>`_)
+- Fixed issue where who-beat-whom would include elimination rounds (`#1073 <https://github.com/TabbycatDebate/tabbycat/issues/1073>`_)
+- Fixed issue causing even panels to be missed for user warnings (`#1465 <https://github.com/TabbycatDebate/tabbycat/issues/1465>`_)
+- Stopped actively maintaining `local installation instructions for Windows <https://tabbycat.readthedocs.io/en/latest/install/windows.html>`_
 
 
 2.3.3
@@ -612,7 +612,7 @@ Change Log
 
 - Added a preformed panel system which provides a powerful take on a 'shadow draw' workflow
     - Shadow draw systems allow an adjudication core to form panels prior to a round being drawn. For example, the panels for Round 4 could be formed while Round 3 is taking place. Most implementations do so by having the tab system create a copy of the Round 3 draw, form new panels on top of it, and then transpose these panels onto Round 4. In large tournaments this workflow allows an adjudication core much more time to consider panel formation
-    - NekoTab's preformed panels are formed per-round under a section available under the Setup menu. This interface looks like the standard Edit Adjudicators interface, but the 'debates' shown are based on a simulation of that round's results. These fake debates can then be prioritised
+    - Tabbycat's preformed panels are formed per-round under a section available under the Setup menu. This interface looks like the standard Edit Adjudicators interface, but the 'debates' shown are based on a simulation of that round's results. These fake debates can then be prioritised
     - Adjudicators can then be allocated to those fake debates in order to create a pre-formed panel. When the real draw is ready to be created, the priority of each preformed panel will be matched to the priority of the real debates
     - By using the existing per-debate priority system, and by giving pre-formed panels their own priority, this workflow allows for very fine amounts of control over exactly how preformed panels are allocated as compared to a more simple top-down transposition of panels. Adjudication cores can easily target general areas of the draw (e.g. break-threshold brackets); control adjudicator strength within and across panels; and still account for special cases where a debate requires a particularly strong panel. At the same time, our existing options for automatic prioritisation and automatic allocation apply to all steps of this process so that preformed panels can be created and deployed rapidly
 - Rewrote the Edit Adjudication, Venues, and Teams pages to enable a number of enhancements
@@ -621,18 +621,18 @@ Change Log
     - The unused panel is now able to sort adjudicators by name, score, or drag order
     - Average scores for all adjudicators, and a voting majority, are now shown next to the panel
     - Various allocation-relevant settings, such as the minimum feedback score needed for a voting position, are now available inline on the allocation page itself. This should enable much faster tweaks/iterations of these values
-- The ballot entry page will now indicate which teams have currently or recently given 'iron person' speeches so that these can be easily tracked, audited, and confirmed. It does show by showing both a text-highlight/icon in the table and in a dedicated modal window. Thanks to Ã‰tienne BeaulÃ© for contributing this feature!
-- Split up the Django settings files. Note that this means if you are upgrading a local install of NekoTab to this version you will need to:
-    - Copy ``NekoTab/settings/local.example`` to become ``local.py`` (and fill in your original database details)
+- The ballot entry page will now indicate which teams have currently or recently given 'iron person' speeches so that these can be easily tracked, audited, and confirmed. It does show by showing both a text-highlight/icon in the table and in a dedicated modal window. Thanks to Étienne Beaulé for contributing this feature!
+- Split up the Django settings files. Note that this means if you are upgrading a local install of Tabbycat to this version you will need to:
+    - Copy ``tabbycat/settings/local.example`` to become ``local.py`` (and fill in your original database details)
     - Optional: repeat the same copying procedure for ``development.example`` and set the ``LOCAL_DEVELOPMENT`` environmental variable to ``True`` if you would like to use the settings designed to aid local development
-- A range of improvements to the email notifications contributed by Ã‰tienne BeaulÃ©:
+- A range of improvements to the email notifications contributed by Étienne Beaulé:
     - Ballot receipt emails now provide more information about team scores/points
     - Emails are now in a rich-text format
     - Custom emails may be sent out to select participants through the web-interface
     - Participants can be specifically included or excluded from receiving a notification before sending with checks for duplicate messages
     - Teams can be sent emails with their draw details
     - Emails can be tracked to determine if sent or read (SendGrid-specific)
-- Expanded the use of private URLs (Encore Ã‰tienne BeaulÃ©):
+- Expanded the use of private URLs (Encore Étienne Beaulé):
     - QR codes are now included in addition to the URL when printing private URLs
     - Private landing pages will now display check-in status (if check-ins are used) along with further details regarding break categories, regions, etc.
     - Current and former draw assignments will display along with submitted ballots (for adjudicators) on landing pages
@@ -641,12 +641,12 @@ Change Log
     - Like adjudicator-institution conflicts, team-institution conflicts are automatically created if you use the simple importer or the command-line importer; but if you edit the database, it's your responsibility to add/edit them
     - Institutional affiliations no longer matter for determining conflicts for either teams or adjudicators; only institutions listed in the team's or adjudicator's conflicts matter
     - An adjudicator/team now conflicts with an adjudicator if *any* institution appears as an institutional conflict for both parties
-- When printing scoresheets you can now edit the motions display just on that printing page. This allows you to use placeholder motions in NekoTab (in order to prevent leaks) while still producing ballots with the correct motions
-- NekoTab no longer tracks which round is the 'current' round and instead tracks the completion of individual rounds. This change does not alter any existing workflows, but makes it easier to run simultaneous draws in out-rounds
+- When printing scoresheets you can now edit the motions display just on that printing page. This allows you to use placeholder motions in Tabbycat (in order to prevent leaks) while still producing ballots with the correct motions
+- Tabbycat no longer tracks which round is the 'current' round and instead tracks the completion of individual rounds. This change does not alter any existing workflows, but makes it easier to run simultaneous draws in out-rounds
 - Info-slides can now be split into paragraphs
 - Check-in pages now differentiate between teams with 1 and 2 checked-in people in two-team formats
 - Institutional caps in breaks can be based on the number of teams in the break. Thanks to Viran Weerasekera for this feature!
-- Several NekoTab functions, adjudicator/venue allocation and email notifications, have been shifted to worker processes to help make them more reliable. If you are upgrading a NekoTab instance that you will continue to use for new tournaments you will need to install the Heroku toolbelt and run ``heroku ps:scale worker=1``
+- Several Tabbycat functions, adjudicator/venue allocation and email notifications, have been shifted to worker processes to help make them more reliable. If you are upgrading a Tabbycat instance that you will continue to use for new tournaments you will need to install the Heroku toolbelt and run ``heroku ps:scale worker=1``
 - Upgraded to Python 3.6, dropped support for Python 3.5 and below. Note that this will require you to upgrade your python versions if running locally.
 
 
@@ -655,14 +655,14 @@ Change Log
 *Release date: 10 February 2019*
 
 - Fixed the display of feedback quantities on the Feedback Overview Page
-- Fixed issue where 'ignored' feedback would hide the result from the feedback graph but not affect an adjudicator's current score. Thanks to Ã‰tienne for this fix
+- Fixed issue where 'ignored' feedback would hide the result from the feedback graph but not affect an adjudicator's current score. Thanks to Étienne for this fix
 
 
 2.2.9
 -----
 *Release date: 24 January 2019*
 
-- Fixed an issue that could cause errors for tournaments when using an atypical number of rounds and break sizes. Thanks to Ã‰tienne for this fix
+- Fixed an issue that could cause errors for tournaments when using an atypical number of rounds and break sizes. Thanks to Étienne for this fix
 - Fixed an issue where the display of adjudicator's record links would display their name twice
 
 
@@ -671,7 +671,7 @@ Change Log
 *Release date: 14 December 2018*
 
 - Fix issue where the check-in buttons were always disabled on admin and assistant pages
-- Other minor fixes. Thanks to Ã‰tienne for these and for the check-in button fix!
+- Other minor fixes. Thanks to Étienne for these and for the check-in button fix!
 
 
 2.2.7
@@ -687,9 +687,9 @@ Change Log
 *Release date: 14 November 2018*
 
 - Fix issue where check-ins could not be revoked
-- Fix issue where the standings overview 'dashboard' included scores from elimination rounds. Thanks to Ã‰tienne for this fix
-- Fix issue where the Average Individual Speaker Score metric would fail to calculate in some circumstances. Thanks to Ã‰tienne for this fix
-- Fix issue where draw emails would crash if venues were unspecified. Thanks, again, to Ã‰tienne for this fix!
+- Fix issue where the standings overview 'dashboard' included scores from elimination rounds. Thanks to Étienne for this fix
+- Fix issue where the Average Individual Speaker Score metric would fail to calculate in some circumstances. Thanks to Étienne for this fix
+- Fix issue where draw emails would crash if venues were unspecified. Thanks, again, to Étienne for this fix!
 
 
 2.2.5
@@ -698,7 +698,7 @@ Change Log
 
 - Remove the buttons from the public check-ins page (as these do nothing unless the user is logged in)
 - Hopefully fixed error that could cause Team- and Adjudicator- Institutional conflicts to not show properly on Allocation pages
-- Thanks to Ã‰tienne for pull requests fixing rare bugs in the user creation form and break generation when rounds are not present
+- Thanks to Étienne for pull requests fixing rare bugs in the user creation form and break generation when rounds are not present
 
 
 2.2.4
@@ -712,9 +712,9 @@ Change Log
 -----
 *Release date: 28 September 2018*
 
-- *Literally* fix the issue causing public views of released scoresheets to throw errors (thanks for the pull request Ã‰tienne)
-- Fix minor spacing issues in printed ballots (thanks for the pull request Ã‰tienne)
-- Fix issue where institution-less adjudicators would cause some draw views to crash (thanks for the pull request Ã‰tienne)
+- *Literally* fix the issue causing public views of released scoresheets to throw errors (thanks for the pull request Étienne)
+- Fix minor spacing issues in printed ballots (thanks for the pull request Étienne)
+- Fix issue where institution-less adjudicators would cause some draw views to crash (thanks for the pull request Étienne)
 
 
 2.2.2
@@ -738,10 +738,10 @@ Change Log
 - Implemented a new server architecture on Heroku along with other optimisation that should significantly improve the performance of sites receiving lots of traffic. Note that if you are upgrading an existing Heroku instance this requires a few tweaks before you deploy the update:
     - Add the `https://github.com/heroku/heroku-buildpack-nginx.git` build pack under the Settings area of the Heroku Dashboard and positioning it first
     - If your Heroku Stack is not "heroku-16" (noted under that same Settings page) it will need to be set as such using the Heroku CLI and the ``heroku stack:set heroku-16 --app APP_NAME`` command
-- Added a page to the documentation that details how to scale a NekoTab site that is receiving large amounts of traffic; and another page that documents how to upgrade a NekoTab site to a new version
+- Added a page to the documentation that details how to scale a Tabbycat site that is receiving large amounts of traffic; and another page that documents how to upgrade a Tabbycat site to a new version
 - Added support for Japanese and Portuguese. Let us know if you'd like to help contribute translations for either language (or a new one)!
 - The results-entry page now updates its data live, giving you a more up to date look at data entry progress and reducing the cases of old data leading people to enter new ballots when they meant to confirm them
-- A huge thanks to Ã‰tienne BeaulÃ© for contributing a number of major new features and bug fixes. Notably:
+- A huge thanks to Étienne Beaulé for contributing a number of major new features and bug fixes. Notably:
     - Added a means to mark feedback as 'ignored' so that it still is recorded as having been submitted, but does not affect the targeted-adjudicator's feedback score
     - Added email notification to adjudicators on round release
     - Implemented participant self-check-in through the use of their private URLs
@@ -764,8 +764,8 @@ Change Log
 *Release date: 21 August 2018*
 
 - Added an alert for British Parliamentary format grand-final ballots that explains the workaround needed to nominate a sole winner
-- Improved display of images shown when sharing NekoTab links on social media
-- Optimised the performance of several commonly-loaded pages. Thanks to Ã‰tienne BeaulÃ© for the pull request!
+- Improved display of images shown when sharing Tabbycat links on social media
+- Optimised the performance of several commonly-loaded pages. Thanks to Étienne Beaulé for the pull request!
 - Prevented the entry of integer-scale feedback questions without the required min/max attributes
 - Provided a shortcut link to editing a round's feedback weight
 - Prevented standings from crashing when only a single standings metric is set
@@ -800,15 +800,15 @@ Change Log
 - Added an automated method for assigning importances to debates using their bracket or 'liveness'. This should allow smaller tournaments to more easily assign importances and save time for larger tournaments that do so
 - Added the ability to switch between using 'team codes' and standard team names
     - By default team codes are set to match that team's emoji, but team codes are editable and can be imported like standard data
-    - Team codes can be swapped in an out for standard team names at will, with precise control over the contexts in which either is used â€” i.e. in public-facing pages, in admin-facing pages, in tooltips, *etc.*
+    - Team codes can be swapped in an out for standard team names at will, with precise control over the contexts in which either is used — i.e. in public-facing pages, in admin-facing pages, in tooltips, *etc.*
 - Added a range of 'check-in' functionality
     - This includes barcode assignment, printing, and scanning. Scanning methods are optimised both for manual entry, entry with barcodes scanners, and for a 'live' scanning view that uses your phone's camera!
     - This includes new people and venue status pages that show an overview of check-in status and allow for easy manual check-ins; ideal for a roll-calls!. This page can also be made public
     - Ballot check-ins have been converted to this new method, and now all printed ballots will contain the barcodes needed to scan them
     - Venue check-ins have been added alongside the standard 'person' check-ins to allow you to track a room's status at the start of the day or round-by-round
 - Added (partial) translations in French, Spanish and Arabic
-    - Users can now use a link in the footer to switch the site's language into French, Spanish, or Arabic. By default NekoTab should also match your browser's language and so automatically apply those languages if it matches
-    - Our translations are generously provided by volunteers, but (so far) do not cover all of the interface text within NekoTab. If you're interested in helping to translate new or existing languages please get in touch!
+    - Users can now use a link in the footer to switch the site's language into French, Spanish, or Arabic. By default Tabbycat should also match your browser's language and so automatically apply those languages if it matches
+    - Our translations are generously provided by volunteers, but (so far) do not cover all of the interface text within Tabbycat. If you're interested in helping to translate new or existing languages please get in touch!
     - Thanks to the excellent team at QatarDebate for contributing the Arabic translations, and to Alejandro, Hernando, Julian and Zoe for contributing the Spanish translations.
 - Added a new (beta) feature: allocation 'sharding'
     - Sharding allows you to split up the Adjudicator Allocation screen into a defined subset of the draw. This has been designed so that you can have multiple computers doing allocations simultaneously; allowing the adjudication core to split itself and tackle allocations in parallel.
@@ -820,7 +820,7 @@ Change Log
 - Added the ability to have different 'ballots-per-debates' for in/out rounds; accommodating tournaments like Australian Easters that use consensus for preliminary rounds but voting for elimination rounds.
 - Added time zone support to the locations where times are displayed
 - Administrators can now view pages as if they were Assistants; allowing them to (for example) use the data entry forms that enforce double-checking without needed to create a separate account
-- Fixed Ï‡Â² test in motion statistics, and refactored the motion statistics page
+- Fixed χ² test in motion statistics, and refactored the motion statistics page
 - Teams, like adjudicators, no longer need to have an institution
 - Added a page allowing for bulk updates to adjudicator scores
 - Added break categories to team standings, and new team standings pages for break categories
@@ -831,7 +831,7 @@ Change Log
     - Standard deviation is now the population standard deviation (was previously sample), and
       ranks in ascending order if used to rank speakers.
 - Quality of life improvements
-    - Added a "â˜†" indicator to more obviously liveness in the adjudicator allocation screen
+    - Added a "☆" indicator to more obviously liveness in the adjudicator allocation screen
     - Added WYSIWYG editor for tournament welcome message, and moved it to tournament configuration
     - Added "appellant" and "respondent" to the side name options
     - Added a two new columns to the feedback overview page: one that displays the current difference between an adjudicator's test score and their current weighted score; another the displays the standard deviation of an adjudicator's feedback scores
@@ -904,7 +904,7 @@ Change Log
     - Gender splits for average feedback rating now go by target adjudicator; this was previously source adjudicator
     - Persons with unknown gender are now shown in counts (but not score/rating averages); a bug had previously caused them to be incorrectly counted as zero
     - Improved query efficiency of the page
-- Improved the BP motions tab for out-rounds by specifying advancing teams as "top/bottom Â½" rather than as 1st/4th and removed the average-points-per-position graphs that were misleading
+- Improved the BP motions tab for out-rounds by specifying advancing teams as "top/bottom ½" rather than as 1st/4th and removed the average-points-per-position graphs that were misleading
 - Improved handling of long motions in the motion display interface
 - Fixed issue where creating BP tournaments using the wizard would create an extra break round given the size of the break specified
 - Fixed auto-allocation in consensus panels where there are fewer judges than debates in the round
@@ -926,11 +926,11 @@ Change Log
 *Release date: 13 November 2017*
 
 - British Parliamentary support
-    - Full support for British Parliamentary format has been added and we're incredibly excited to see NekoTab's unique features and design (finally) available as an option for those tabbing in the predominant global format
+    - Full support for British Parliamentary format has been added and we're incredibly excited to see Tabbycat's unique features and design (finally) available as an option for those tabbing in the predominant global format
     - As part of the implementation of this format we've made significant improvements over existing tab software on how sides are allocated within BP draws. This means that teams are less likely to have 'imbalanced' proportions of side allocations (for example having many more debates as Opening Government than Closing Opposition)
-    - We've added a new "Comparisons" page added to the documentation to outline some of the key differences between NekoTab and other software in the context of BP tabbing
+    - We've added a new "Comparisons" page added to the documentation to outline some of the key differences between Tabbycat and other software in the context of BP tabbing
 - Refreshed interface design
-    - The basic graphic elements of NekoTab have had a their typography, icons,  colours, forms, and more redesign for a more distinctive and clear look. We also now have an official logo!
+    - The basic graphic elements of Tabbycat have had a their typography, icons,  colours, forms, and more redesign for a more distinctive and clear look. We also now have an official logo!
     - The "Motions" stage of the per-round workflow has now been rolled into the Display area to better accommodate BP formats and consolidate the Draw/Motion 'release' process
     - Sidebar menu items now display all sub-items within a section, such as for Feedback, Standings, and Breaks
     - Better tablet and mobile interfaces; including a fully responsive sidebar for the admin area that maximises the content area
@@ -941,9 +941,9 @@ Change Log
     - Break rounds ballots for formats where scores are not typically entered (i.e. BP) will only specify that you nominate the teams advancing rather than enter in all of the speakers' scores
 - Now, like Break Categories, you can define arbitrary Categories such as 'Novice' or 'ESL' to create custom Speaker tabs for groups of Speakers
 - You can now release an Adjudicators Tab showing test scores, final scores, and/or per-round feedback averages
-- Information Slides can now be added to the system; either for showing to an auditorium within NekoTab or for displaying alongside the public list of motions and/or the motions tab
+- Information Slides can now be added to the system; either for showing to an auditorium within Tabbycat or for displaying alongside the public list of motions and/or the motions tab
 - Teams and adjudicators are no longer required to have institutions; something that should be very useful when setting up small IVs and the like
-- Private URLs can now be incrementally generated. Records of sent mail are now also kept by NekoTab, so that emails can be incrementally sent to participants as registration data changes
+- Private URLs can now be incrementally generated. Records of sent mail are now also kept by Tabbycat, so that emails can be incrementally sent to participants as registration data changes
 - Quality of life improvements
     - After creating a new tournament you will now be prompted to apply a basic rules and public information preset
     - Better handling of errors that arise when a debate team is missing or where two teams have been assigned the same side
@@ -1083,8 +1083,8 @@ Change Log
 
 - Changed the core workflow by splitting display- and motion- related activities into separate pages to simplify each stage of running a round
 - Added support for Docker-based installations to make local/offline installations much more simple
-- Added a "Tabbykitten" version of NekoTab that can be deployed to Heroku without a needing a credit/debit card
-- Added button to load a demo tournament on the 'New Tournament' page so it is easier to test-run NekoTab
+- Added a "Tabbykitten" version of Tabbycat that can be deployed to Heroku without a needing a credit/debit card
+- Added button to load a demo tournament on the 'New Tournament' page so it is easier to test-run Tabbycat
 - Changed venue groups to be separate to venue constraint categories
 - Modified the licence to clarify that donations are required for some tournaments and added a more explicit donations link and explanation page
 - Added information about autosave status to the adjudicator allocations page
@@ -1106,7 +1106,7 @@ Change Log
 *Release date: 19 January 2017*
 
 - A number of minor bug fixes
-- Added basic infrastructure for creating NekoTab translations
+- Added basic infrastructure for creating tabbycat translations
 
 
 1.1.5
@@ -1120,7 +1120,7 @@ Change Log
 -----
 *Release date: 25 November 2016*
 
-- Redesigned the footer area to better describe NekoTab and to promote donations and related projects
+- Redesigned the footer area to better describe Tabbycat and to promote donations and related projects
 - Slight tweaks to the site homepage and main menus to better accommodate the login/log out links
 - A few minor bug fixes and improvements to error reporting
 
@@ -1182,7 +1182,7 @@ Change Log
 Redesigned and redeveloped adjudicator allocation page
   - Redesigned interface, featuring clearer displays of conflict and diversity information
   - Changes to importances and panels are now automatically saved
-  - Added debate "liveness" to help identify critical roomsâ€”many thanks to Thevesh Theva
+  - Added debate "liveness" to help identify critical rooms—many thanks to Thevesh Theva
   - Panel score calculations performed live to show strength of voting majorities
 New features
   - Added record pages for teams and adjudicators
@@ -1256,7 +1256,7 @@ Feedback
 - Upgraded to Python 3.4, dropped support for Python 2
 - Restructured directories and, as a consequence, changed database schema
 - Added Django migrations to the release (they were previously generated by the user)
-- Migrated documentation to `Read The Docs <http://NekoTab.readthedocs.io>`_
+- Migrated documentation to `Read The Docs <http://tabbycat.readthedocs.io>`_
 - New user interface design and workflow
 - Overhauled tournament preferences to use `django-dynamic-preferences <https://github.com/EliotBerriot/django-dynamic-preferences>`_
 - Added new visual data importer
@@ -1280,4 +1280,3 @@ Feedback
 - Computerised break generation (break round draws not supported)
 - Lots of fixes, interface touch-ups and performance enhancements
 - Now requires Django 1.8 (and other package upgrades)
-
