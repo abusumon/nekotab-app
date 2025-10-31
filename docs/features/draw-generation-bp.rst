@@ -1,4 +1,4 @@
-.. _draw-generation-bp:
+﻿.. _draw-generation-bp:
 
 ====================
 Draw Generation (BP)
@@ -26,10 +26,10 @@ Options are set in the **Configuration** page as described in :ref:`starting a t
   * - :ref:`Position cost <draw-bp-position-cost>`
     - Which cost function to use to indicate which position profiles are preferred
     - - Simple
-      - **Rényi entropy**
+      - **RÃ©nyi entropy**
       - Population variance
-  * - :ref:`Rényi order <draw-bp-renyi-order>`
-    - Order of Rényi entropy
+  * - :ref:`RÃ©nyi order <draw-bp-renyi-order>`
+    - Order of RÃ©nyi entropy
     - Any non-negative number (default: **1**, *i.e.* Shannon entropy)
   * - :ref:`Position cost exponent <draw-bp-position-cost-exponent>`
     - Degree to which large position imbalances should be prioritised
@@ -44,12 +44,12 @@ Options are set in the **Configuration** page as described in :ref:`starting a t
 The big picture
 ===============
 
-To try to achieve position balance, Tabbycat treats the allocation of teams to debates as an `assignment problem <https://en.wikipedia.org/wiki/Assignment_problem>`_. That is, it computes the "cost" of assigning each team to each position in each debate, and finds an assignment of all teams to a position in a debate that minimises the total cost (the sum over all teams).
+To try to achieve position balance, NekoTab treats the allocation of teams to debates as an `assignment problem <https://en.wikipedia.org/wiki/Assignment_problem>`_. That is, it computes the "cost" of assigning each team to each position in each debate, and finds an assignment of all teams to a position in a debate that minimises the total cost (the sum over all teams).
 
 A simple example
 ----------------
 
-Here's a small example, to illustrate the idea. Say you have a tournament with 16 teams, and you're about to draw round 4. There are sixteen "places" in the draw: four positions in each of four rooms. Tabbycat calculates the "cost" of putting each team in each place, and puts them in a matrix, like this:
+Here's a small example, to illustrate the idea. Say you have a tournament with 16 teams, and you're about to draw round 4. There are sixteen "places" in the draw: four positions in each of four rooms. NekoTab calculates the "cost" of putting each team in each place, and puts them in a matrix, like this:
 
 .. role:: q
 
@@ -62,46 +62,46 @@ Here's a small example, to illustrate the idea. Say you have a tournament with 1
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
 | Position  | OG     | OO     | CG     | CO     | OG      | OO     | CG     | CO      | OG     | OO      | CG     | CO     | OG     | OO      | CG     | CO     |
 +===========+========+========+========+========+=========+========+========+=========+========+=========+========+========+========+=========+========+========+
-| **A (8)** | 16     | 16     | 16     | :q:`0` | ∞       | ∞      | ∞      | ∞       | ∞      | ∞       | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      |
+| **A (8)** | 16     | 16     | 16     | :q:`0` | âˆž       | âˆž      | âˆž      | âˆž       | âˆž      | âˆž       | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **B (7)** | 16     | :q:`0` | 16     | 16     | ∞       | ∞      | ∞      | ∞       | ∞      | ∞       | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      |
+| **B (7)** | 16     | :q:`0` | 16     | 16     | âˆž       | âˆž      | âˆž      | âˆž       | âˆž      | âˆž       | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **C (7)** | 16     | 16     | :q:`0` | 16     | ∞       | ∞      | ∞      | ∞       | ∞      | ∞       | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      |
+| **C (7)** | 16     | 16     | :q:`0` | 16     | âˆž       | âˆž      | âˆž      | âˆž       | âˆž      | âˆž       | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **D (6)** | 16     | 0      | 16     | 16     | :q:`16` | 0      | 16     | 16      | ∞      | ∞       | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      |
+| **D (6)** | 16     | 0      | 16     | 16     | :q:`16` | 0      | 16     | 16      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **E (6)** | :q:`0` | 16     | 16     | 16     | 0       | 16     | 16     | 16      | ∞      | ∞       | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      |
+| **E (6)** | :q:`0` | 16     | 16     | 16     | 0       | 16     | 16     | 16      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **F (6)** | 16     | 16     | 0      | 16     | 16      | 16     | :q:`0` | 16      | ∞      | ∞       | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      |
+| **F (6)** | 16     | 16     | 0      | 16     | 16      | 16     | :q:`0` | 16      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **G (5)** | ∞      | ∞      | ∞      | ∞      | 16      | :q:`0` | 16     | 16      | ∞      | ∞       | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      |
+| **G (5)** | âˆž      | âˆž      | âˆž      | âˆž      | 16      | :q:`0` | 16     | 16      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **H (5)** | ∞      | ∞      | ∞      | ∞      | 16      | 0      | 16     | :q:`16` | ∞      | ∞       | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      |
+| **H (5)** | âˆž      | âˆž      | âˆž      | âˆž      | 16      | 0      | 16     | :q:`16` | âˆž      | âˆž       | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **I (4)** | ∞      | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      | ∞       | 16     | 16      | :q:`0` | 16     | ∞      | ∞       | ∞      | ∞      |
+| **I (4)** | âˆž      | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž       | 16     | 16      | :q:`0` | 16     | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **J (4)** | ∞      | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      | ∞       | 16     | 16      | 16     | :q:`0` | ∞      | ∞       | ∞      | ∞      |
+| **J (4)** | âˆž      | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž       | 16     | 16      | 16     | :q:`0` | âˆž      | âˆž       | âˆž      | âˆž      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **K (3)** | ∞      | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      | ∞       | :q:`0` | 16      | 16     | 16     | 0      | 16      | 16     | 16     |
+| **K (3)** | âˆž      | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž       | :q:`0` | 16      | 16     | 16     | 0      | 16      | 16     | 16     |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **L (3)** | ∞      | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      | ∞       | 16     | 16      | 0      | 16     | 16     | 16      | :q:`0` | 16     |
+| **L (3)** | âˆž      | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž       | 16     | 16      | 0      | 16     | 16     | 16      | :q:`0` | 16     |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **M (3)** | ∞      | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      | ∞       | 16     | :q:`16` | 16     | 0      | 16     | 16      | 16     | 0      |
+| **M (3)** | âˆž      | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž       | 16     | :q:`16` | 16     | 0      | 16     | 16      | 16     | 0      |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **N (3)** | ∞      | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      | ∞       | 0      | 16      | 16     | 16     | :q:`0` | 16      | 16     | 16     |
+| **N (3)** | âˆž      | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž       | 0      | 16      | 16     | 16     | :q:`0` | 16      | 16     | 16     |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **O (1)** | ∞      | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      | ∞       | ∞      | ∞       | ∞      | ∞      | 16     | 16      | 16     | :q:`0` |
+| **O (1)** | âˆž      | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž       | âˆž      | âˆž       | âˆž      | âˆž      | 16     | 16      | 16     | :q:`0` |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
-| **P (1)** | ∞      | ∞      | ∞      | ∞      | ∞       | ∞      | ∞      | ∞       | ∞      | ∞       | ∞      | ∞      | 0      | :q:`16` | 16     | 16     |
+| **P (1)** | âˆž      | âˆž      | âˆž      | âˆž      | âˆž       | âˆž      | âˆž      | âˆž       | âˆž      | âˆž       | âˆž      | âˆž      | 0      | :q:`16` | 16     | 16     |
 +-----------+--------+--------+--------+--------+---------+--------+--------+---------+--------+---------+--------+--------+--------+---------+--------+--------+
 
-Each "16" is the cost of putting a team in a position it's seen once; each "0" is the cost of putting a team in the position it hasn't. (Details of how this is calculated are :ref:`below <draw-bp-position-cost-section>`.) For example, team A (on 8 points) has been in every position except CO. The ∞'s indicate places where the team isn't allowed to go, because the room isn't in their bracket. For example, the three teams on 6 points (D, E, F) can go in either the top or second room, because any of them can be the pullup team.
+Each "16" is the cost of putting a team in a position it's seen once; each "0" is the cost of putting a team in the position it hasn't. (Details of how this is calculated are :ref:`below <draw-bp-position-cost-section>`.) For example, team A (on 8 points) has been in every position except CO. The âˆž's indicate places where the team isn't allowed to go, because the room isn't in their bracket. For example, the three teams on 6 points (D, E, F) can go in either the top or second room, because any of them can be the pullup team.
 
 The algorithm then chooses entries so that one is selected from each row and one is selected from each column, in a way that minimises the sum of the selected entries. In this case, the selected entries are highlighted in blue. For example, the top room comprises teams E (OG), B (OO), C (CG) and A (CO).
 
 Sometimes, particularly in round 4, it simply isn't possible to "satisfy" everyone. For example, among the top eight teams, five haven't been in OO, but only two can be accommodated within those brackets. In this case, teams B and G got lucky; there are also many other draws that would have incurred the same total cost.
 
-More generally, in most cases, there will be many optimal solutions. To randomise the selection among them, Tabbycat (under default settings) randomly permutes the rows and columns of the matrix before starting the assignment algorithm.
+More generally, in most cases, there will be many optimal solutions. To randomise the selection among them, NekoTab (under default settings) randomly permutes the rows and columns of the matrix before starting the assignment algorithm.
 
 Explanations of options
 =======================
@@ -123,14 +123,14 @@ The available options are as follows:
 
 .. note:: While it can be argued that the `All in the same room` setting is fairer, it is prohibited by the WUDC constitution. If your tournament follows WUDC rules, you cannot use this setting.
 
-  The teams that get pulled up aren't specifically chosen---they're just assigned as part of the algorithm described :ref:`above <draw-bp-big-picture>`, which optimises for position balance. Tabbycat doesn't support taking anything else into account when choosing pullup teams. (WUDC rules wouldn't allow it, either.)
+  The teams that get pulled up aren't specifically chosen---they're just assigned as part of the algorithm described :ref:`above <draw-bp-big-picture>`, which optimises for position balance. NekoTab doesn't support taking anything else into account when choosing pullup teams. (WUDC rules wouldn't allow it, either.)
 
 .. _draw-bp-position-cost-section:
 
 Position cost options
 ---------------------
 
-The `position cost function` is a function that indicates how "bad" it would be if a team were to be allocated a certain position (OG, OO, CG, CO) in a debate. When generating a draw, Tabbycat chooses from among the draws that minimise the sum of the position costs for each team.
+The `position cost function` is a function that indicates how "bad" it would be if a team were to be allocated a certain position (OG, OO, CG, CO) in a debate. When generating a draw, NekoTab chooses from among the draws that minimise the sum of the position costs for each team.
 
 More formally:
 
@@ -139,7 +139,7 @@ More formally:
 - A `position history` or just `history` :math:`\mathbf{h}` is a 4-tuple where each element is the number of times a team has already been in the corresponding position. For example, :math:`\mathbf{h} = (0, 2, 1, 1)` means that a team has been in OO twice, CG and CO once each, and hasn't been in OG.
 - A cost function :math:`C(\mathbf{h},s)` is a function specifying how "bad" it would be if a team with position history :math:`\mathbf{h}` were assigned the position :math:`s` in the next round.
 
-Tabbycat allows you to choose from a number of different **position cost functions**, as well as a **position cost exponent** :math:`\beta`. Then, when allocating teams to debates, Tabbycat allocates teams to positions :math:`(s_t, t \in\mathcal{T})` to minimise
+NekoTab allows you to choose from a number of different **position cost functions**, as well as a **position cost exponent** :math:`\beta`. Then, when allocating teams to debates, NekoTab allocates teams to positions :math:`(s_t, t \in\mathcal{T})` to minimise
 
 .. math::
 
@@ -171,7 +171,7 @@ The "balanced" approach would be :math:`\beta = 1`, which just takes the cost fu
 Position cost functions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Tabbycat allows you to choose between three position cost functions :math:`C(\mathbf{h},s)`: **Simple**, **Rényi entropy** and **Population variance**.
+NekoTab allows you to choose between three position cost functions :math:`C(\mathbf{h},s)`: **Simple**, **RÃ©nyi entropy** and **Population variance**.
 
 In the descriptions that follow, :math:`\mathcal{S} = \{\texttt{OG}, \texttt{OO}, \texttt{CG}, \texttt{CO}\}`, the set of all BP positions.
 
@@ -186,14 +186,14 @@ The simple cost function :math:`C_\textrm{simple}(\mathbf{h},s)` returns the num
 
 where :math:`\mathbf{h}[s]` is the element of :math:`\mathbf{h}` corresponding to position :math:`s`.
 
-Rényi entropy
+RÃ©nyi entropy
 """""""""""""
 
-Informally speaking, the `Rényi entropy <https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy>`_ is a measure of the diversity of the positions in a team's history. A history consisting only of one position has *low* entropy, while a history that is perfectly evenly distributed has *high* entropy. The **Rényi entropy cost function** reverses this intuition, so that an even hypothetical history has low cost, while an uneven hypothetical history has high cost.
+Informally speaking, the `RÃ©nyi entropy <https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy>`_ is a measure of the diversity of the positions in a team's history. A history consisting only of one position has *low* entropy, while a history that is perfectly evenly distributed has *high* entropy. The **RÃ©nyi entropy cost function** reverses this intuition, so that an even hypothetical history has low cost, while an uneven hypothetical history has high cost.
 
-The Rényi entropy takes one parameter, known as its *order*, :math:`\alpha`, which will be further discussed below.
+The RÃ©nyi entropy takes one parameter, known as its *order*, :math:`\alpha`, which will be further discussed below.
 
-More formally, the Rényi entropy cost function :math:`C_\textrm{R\'enyi}(\mathbf{h},s)` is defined as
+More formally, the RÃ©nyi entropy cost function :math:`C_\textrm{R\'enyi}(\mathbf{h},s)` is defined as
 
 .. math::
 
@@ -215,7 +215,7 @@ where
 
   Note that :math:`\hat{p}_{\mathbf{h},s}` is a probability distribution (that is, its elements sum to 1).
 
-- :math:`H_\alpha(\cdot)` is the `Rényi entropy <https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy>`_ of order :math:`\alpha` of a probability distribution, defined as
+- :math:`H_\alpha(\cdot)` is the `RÃ©nyi entropy <https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy>`_ of order :math:`\alpha` of a probability distribution, defined as
 
   .. math::
 
@@ -231,7 +231,7 @@ where
 
 .. _draw-bp-renyi-order:
 
-The **Rényi order** is the parameter :math:`\alpha` above, and it controls *what it means to be "even among positions"* for a team. Note that "evenness" is not easily defined. After round 8, which position history is more even: (0, 2, 3, 3) or (1, 1, 1, 5)? The Rényi order allows us to tune this definition.
+The **RÃ©nyi order** is the parameter :math:`\alpha` above, and it controls *what it means to be "even among positions"* for a team. Note that "evenness" is not easily defined. After round 8, which position history is more even: (0, 2, 3, 3) or (1, 1, 1, 5)? The RÃ©nyi order allows us to tune this definition.
 
 .. rst-class:: spaced-list
 
@@ -243,7 +243,7 @@ The **Rényi order** is the parameter :math:`\alpha` above, and it controls *wha
 
 - At the large extreme, as :math:`\alpha\rightarrow\infty`, it *only* looks at how many times each team has seen its *most frequent* position, and tries to keep this number even among all teams.
 
-The "balanced" approach would be :math:`\alpha=1` (the `Shannon entropy <https://en.wikipedia.org/wiki/Shannon_entropy>`_), though of course it's arguable what "balanced" means. Tabbycat defaults to this value.
+The "balanced" approach would be :math:`\alpha=1` (the `Shannon entropy <https://en.wikipedia.org/wiki/Shannon_entropy>`_), though of course it's arguable what "balanced" means. NekoTab defaults to this value.
 
 To give some intuition for the useful range: In round 9, a strict ordering by number of positions seen at least once occurs for approximately :math:`\alpha < 0.742`. A strict ordering by number of times in the most frequent position occurs for :math:`\alpha>3`. Changing :math:`\alpha` outside the range :math:`[0.742, 3]` will still affect the relative (cardinal) weighting *between teams*, but will not affect the *ordinal* ranking of possible histories.
 
@@ -281,7 +281,7 @@ At the extremes, a team that has seen all positions evenly will have a populatio
 Assignment method
 -----------------
 
-Tabbycat uses the `Hungarian algorithm <https://en.wikipedia.org/wiki/Hungarian_algorithm>`_ to solve the `assignment problem <https://en.wikipedia.org/wiki/Assignment_problem>`_ of assigning teams to positions in debates. This can be run with or without preshuffling:
+NekoTab uses the `Hungarian algorithm <https://en.wikipedia.org/wiki/Hungarian_algorithm>`_ to solve the `assignment problem <https://en.wikipedia.org/wiki/Assignment_problem>`_ of assigning teams to positions in debates. This can be run with or without preshuffling:
 
 .. rst-class:: spaced-list
 
@@ -293,4 +293,5 @@ Tabbycat uses the `Hungarian algorithm <https://en.wikipedia.org/wiki/Hungarian_
 
 .. note:: Running the Hungarian algorithm *without* preshuffling has the side effect of grouping teams with similar speaker scores in to the same room, and is therefore prohibited by WUDC rules. Its inclusion as an option is mainly academic; most tournaments will not want to use it in practice.
 
-No other assignment methods are currently supported. For example, Tabbycat can't run fold (high-low) or adjacent (high-high) pairing *within* brackets.
+No other assignment methods are currently supported. For example, NekoTab can't run fold (high-low) or adjacent (high-high) pairing *within* brackets.
+

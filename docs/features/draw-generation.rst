@@ -1,4 +1,4 @@
-.. _draw-generation:
+﻿.. _draw-generation:
 
 ===============
 Draw Generation
@@ -67,11 +67,11 @@ Options are set in the **Configuration** page as described in :ref:`starting a t
       - Choose from teams with the lowest draw strength by speaks so far
       - Choose from teams with the lowest draw strength by wins so far
 
-.. caution:: The valid options for intermediate brackets change depending on whether sides are pre-allocated, but these are **not** checked for validity. If you choose an invalid combination, Tabbycat will just crash. This won't corrupt the database, but it might be momentarily annoying.
+.. caution:: The valid options for intermediate brackets change depending on whether sides are pre-allocated, but these are **not** checked for validity. If you choose an invalid combination, NekoTab will just crash. This won't corrupt the database, but it might be momentarily annoying.
 
 The big picture
 ===============
-When generating a power-paired draw, Tabbycat looks at the "conflict avoidance" option for how to generate the draw.
+When generating a power-paired draw, NekoTab looks at the "conflict avoidance" option for how to generate the draw.
 
 In the most basic forms (either "off" or "one-up-one-down"), the process is done in five steps:
 
@@ -81,7 +81,7 @@ In the most basic forms (either "off" or "one-up-one-down"), the process is done
 4. Fourth, if enabled, it adjusts pairings to avoid conflicts.
 5. Finally, it assigns sides to teams in each debate.
 
-For each of these steps Tabbycat allows you to choose between a number of different methods.
+For each of these steps NekoTab allows you to choose between a number of different methods.
 
 Explanations of options
 =======================
@@ -152,7 +152,7 @@ There isn't currently any way to edit side allocations from the front end. To do
   #. Click on the name of the team you want to edit side allocations for.
   #. Add or edit the entry or entries in the **Team position allocations** table at the bottom.
 
-* You can also do this by writing a script that creates ``TeamPositionAllocation`` objects and saves them. Have a look at `draw/management/commands/generatesideallocations.py <https://github.com/TabbycatDebate/tabbycat/blob/master/tabbycat/draw/management/commands/generatesideallocations.py>`_ for an example.
+* You can also do this by writing a script that creates ``TeamPositionAllocation`` objects and saves them. Have a look at `draw/management/commands/generatesideallocations.py <https://github.com/NekoTabDebate/NekoTab/blob/master/NekoTab/draw/management/commands/generatesideallocations.py>`_ for an example.
 
 .. _draw-pairing-method:
 
@@ -215,4 +215,5 @@ Pullup restrictions only apply when the :ref:`odd bracket resolution method <dra
 What do I do if the draw looks wrong?
 =====================================
 
-You can edit match-ups directly from the draw page. Functionally, you can do anything you want. Of course, operationally, you should only edit the draw when you *know* that the draw algorithm got something wrong. If you need to do this, even just once, please file a bug report by creating a new issue on `our issues page on GitHub <https://github.com/TabbycatDebate/tabbycat/issues>`_.
+You can edit match-ups directly from the draw page. Functionally, you can do anything you want. Of course, operationally, you should only edit the draw when you *know* that the draw algorithm got something wrong. If you need to do this, even just once, please file a bug report by creating a new issue on `our issues page on GitHub <https://github.com/NekoTabDebate/NekoTab/issues>`_.
+

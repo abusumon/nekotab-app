@@ -1,12 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
+﻿# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2019, Philip Belesky, Chuan-Zheng Lee
-# This file is distributed under the same license as the Tabbycat package.
+# This file is distributed under the same license as the NekoTab package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Tabbycat 2.3\n"
+"Project-Id-Version: NekoTab 2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -22,7 +22,7 @@ msgid "Venue Constraints"
 msgstr ""
 
 #: ../../features/venue-constraints.rst:7
-msgid "Tabbycat supports a basic form of venue constraints. A **venue constraint** is a requirement that a particular **team, adjudicator, institution** or **division** be assigned to a venue in a particular **venue category**.  Typical uses would include:"
+msgid "NekoTab supports a basic form of venue constraints. A **venue constraint** is a requirement that a particular **team, adjudicator, institution** or **division** be assigned to a venue in a particular **venue category**.  Typical uses would include:"
 msgstr ""
 
 #: ../../features/venue-constraints.rst:12
@@ -158,10 +158,11 @@ msgid "It could be that all available rooms in the relevant category were alread
 msgstr ""
 
 #: ../../features/venue-constraints.rst:110
-msgid "It could just be one of those edge cases that's too hard for the naïve algorithm to handle."
+msgid "It could just be one of those edge cases that's too hard for the naÃ¯ve algorithm to handle."
 msgstr ""
 
 #: ../../features/venue-constraints.rst:113
-msgid "Currently, Tabbycat doesn't tell you which of these happened, so if the venue allocation fails to meet all your constraints, it's on you to figure out why. In most scenarios, we imagine you'll have few enough constraints that this will be obvious; for example, if the chief adjudicator is judging a team with accessibility requirements, it might be obvious that the latter's constraint took priority. We might in future add support for more useful guidance on conflicting constraints, but we currently consider this to be of low priority."
+msgid "Currently, NekoTab doesn't tell you which of these happened, so if the venue allocation fails to meet all your constraints, it's on you to figure out why. In most scenarios, we imagine you'll have few enough constraints that this will be obvious; for example, if the chief adjudicator is judging a team with accessibility requirements, it might be obvious that the latter's constraint took priority. We might in future add support for more useful guidance on conflicting constraints, but we currently consider this to be of low priority."
 msgstr ""
+
 

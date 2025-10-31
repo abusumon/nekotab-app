@@ -1,12 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
+﻿# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2019, Philip Belesky, Chuan-Zheng Lee
-# This file is distributed under the same license as the Tabbycat package.
+# This file is distributed under the same license as the NekoTab package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Tabbycat 2.3\n"
+"Project-Id-Version: NekoTab 2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -106,7 +106,7 @@ msgid "Editing the database directly."
 msgstr ""
 
 #: ../../features/user-accounts.rst:39
-msgid "If a user account on the tab system belongs to someone who is also a participant in the tournament (*e.g.*, a chief adjudicator), these two capacities are completely separate. User accounts are only used to regulate access to administrative functions. Tabbycat doesn't know about any relationship between user accounts, and who is participating in the tournament."
+msgid "If a user account on the tab system belongs to someone who is also a participant in the tournament (*e.g.*, a chief adjudicator), these two capacities are completely separate. User accounts are only used to regulate access to administrative functions. NekoTab doesn't know about any relationship between user accounts, and who is participating in the tournament."
 msgstr ""
 
 #: ../../features/user-accounts.rst:42
@@ -182,7 +182,7 @@ msgid "The email address is optional."
 msgstr ""
 
 #: ../../features/user-accounts.rst:73
-msgid "This email address is only used to reset their password if they forget it, and has nothing to do with the email address that Tabbycat uses to send emails to tournament participants (*e.g.* private URL links)."
+msgid "This email address is only used to reset their password if they forget it, and has nothing to do with the email address that NekoTab uses to send emails to tournament participants (*e.g.* private URL links)."
 msgstr ""
 
 #: ../../features/user-accounts.rst:75
@@ -192,4 +192,5 @@ msgstr ""
 #: ../../features/user-accounts.rst:77
 msgid "Click \"Save\" or \"Save and add another\"."
 msgstr ""
+
 

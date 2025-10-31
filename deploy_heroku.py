@@ -1,5 +1,5 @@
-#!/usr/bin/python
-"""Deploys Tabbycat to Heroku.
+﻿#!/usr/bin/python
+"""Deploys NekoTab to Heroku.
 This script is compatible with both Python 2.7 and Python 3.4 (and later)."""
 
 import argparse
@@ -20,7 +20,7 @@ except ImportError:
         return ''.join(SystemRandom().choice(chars) for _ in range(50))
 
 # Arguments
-parser = argparse.ArgumentParser(description="Deploy Tabbycat to a new Heroku app.")
+parser = argparse.ArgumentParser(description="Deploy NekoTab to a new Heroku app.")
 
 parser.add_argument(
     "urlname", type=str,
@@ -230,7 +230,7 @@ run_heroku_command(["ps:scale", "worker=1", "web=%s" % args.web_dynos])
 
 # Import tournament, if provided
 if args.import_tournament:
-    command = ["run", "python", "tabbycat/manage.py", "importtournament", args.import_tournament]
+    command = ["run", "python", "NekoTab/manage.py", "importtournament", args.import_tournament]
     if args.tournament_slug:
         command += ["--slug", args.tournament_slug]
     if args.tournament_name:
@@ -244,6 +244,7 @@ if args.open:
     try:
         run_heroku_command(["open"])
     except subprocess.CalledProcessError:
-        print_yellow("There was a problem automatically opening your browser, but your new Tabbycat")
+        print_yellow("There was a problem automatically opening your browser, but your new NekoTab")
         print_yellow("site itself did deploy successfully. Just visit this URL in your browser:")
         print_yellow("http://%s.herokuapp.com/" % urlname)
+

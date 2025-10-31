@@ -1,4 +1,4 @@
-@ECHO OFF
+﻿@ECHO OFF
 
 REM Command file for Sphinx documentation
 
@@ -127,9 +127,9 @@ if "%1" == "qthelp" (
 	echo.
 	echo.Build finished; now you can run "qcollectiongenerator" with the ^
 .qhcp project file in %BUILDDIR%/qthelp, like this:
-	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\Tabbycat.qhcp
+	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\NekoTab.qhcp
 	echo.To view the help file:
-	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\Tabbycat.ghc
+	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\NekoTab.ghc
 	goto end
 )
 
@@ -261,3 +261,4 @@ if "%1" == "pseudoxml" (
 )
 
 :end
+

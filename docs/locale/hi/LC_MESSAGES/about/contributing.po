@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:19\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: hi\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/about/contributing.po\n"
@@ -23,11 +23,11 @@ msgid "Contributing"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:5
-msgid "Contributions are welcome, and are greatly appreciated! Every little bit helps, and credit will be given. While at its core Tabbycat is a software project, you do not need to know how to code or use Git in order to help. We welcome feedback and ideas based on your tabbing experience and appreciate suggestions or proposals for how to improve the wording, translation, and design of our interface and documentation."
+msgid "Contributions are welcome, and are greatly appreciated! Every little bit helps, and credit will be given. While at its core NekoTab is a software project, you do not need to know how to code or use Git in order to help. We welcome feedback and ideas based on your tabbing experience and appreciate suggestions or proposals for how to improve the wording, translation, and design of our interface and documentation."
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:7
-msgid "Feel free to `join our Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_ if you have any questions about how to get started."
+msgid "Feel free to `join our Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_ if you have any questions about how to get started."
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:10
@@ -35,7 +35,7 @@ msgid "Feedback and ideas"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:12
-msgid "These can be added as issues in the `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_; posts in our `Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_; or as an :ref:`email to the developers <authors>`."
+msgid "These can be added as issues in the `GitHub repository <https://github.com/NekoTabDebate/NekoTab/issues>`_; posts in our `Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_; or as an :ref:`email to the developers <authors>`."
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:15
@@ -43,11 +43,11 @@ msgid "Bug reports"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:17
-msgid "Please report bugs by opening a new issue in our `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_. It is most helpful if you can include:"
+msgid "Please report bugs by opening a new issue in our `GitHub repository <https://github.com/NekoTabDebate/NekoTab/issues>`_. It is most helpful if you can include:"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:19
-msgid "How Tabbycat was installed (on Heroku, locally on macOS, `etc.`)"
+msgid "How NekoTab was installed (on Heroku, locally on macOS, `etc.`)"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:20
@@ -63,7 +63,7 @@ msgid "Getting started with development"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:26
-msgid "To easily test your changes to Tabbycat you probably want a working :ref:`local install <install-local>` (without using Docker)"
+msgid "To easily test your changes to NekoTab you probably want a working :ref:`local install <install-local>` (without using Docker)"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:27
@@ -75,7 +75,7 @@ msgid "We broadly use the `git-flow workflow <http://danielkummer.github.io/git-
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:29
-msgid "We use Django's testing tools — adding unit tests to new features is greatly appreciated"
+msgid "We use Django's testing tools â€” adding unit tests to new features is greatly appreciated"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:31
@@ -215,7 +215,7 @@ msgid "``docs`` contains our document source files and images (although some are
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:115
-msgid "``tabbycat`` is the main directory containing the Django project"
+msgid "``NekoTab`` is the main directory containing the Django project"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:113
@@ -247,7 +247,7 @@ msgid "The `gettext <https://docs.djangoproject.com/en/2.2/topics/i18n/translati
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:124
-msgid "The backend's translation files can be updated from the ``tabbycat`` directory using one or more of the supporting language codes (see settings.py)::"
+msgid "The backend's translation files can be updated from the ``NekoTab`` directory using one or more of the supporting language codes (see settings.py)::"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:128
@@ -259,11 +259,11 @@ msgid "These can then be compiled using::"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:134
-msgid "As it stands Heroku needs the .mo files pre-compiled (see `issue in Heroku Python buildpack <https://github.com/heroku/heroku-buildpack-python/issues/198>`_, so these are committed to Git. Note that the English (``en``) language files should not be compiled; their sole purpose is to provide a source language for `Crowdin <https://crowdin.com/project/tabbycat>`_."
+msgid "As it stands Heroku needs the .mo files pre-compiled (see `issue in Heroku Python buildpack <https://github.com/heroku/heroku-buildpack-python/issues/198>`_, so these are committed to Git. Note that the English (``en``) language files should not be compiled; their sole purpose is to provide a source language for `Crowdin <https://crowdin.com/project/NekoTab>`_."
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:136
-msgid "Strings defined in Vue files must similarily be marked with ``gettext`` but must be added manually to ``tabbycat/locale/LANGUAGE_CODE/djangojs.po``, for each language supported. These can then compiled to javascript bundles using::"
+msgid "Strings defined in Vue files must similarily be marked with ``gettext`` but must be added manually to ``NekoTab/locale/LANGUAGE_CODE/djangojs.po``, for each language supported. These can then compiled to javascript bundles using::"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:141
@@ -287,7 +287,7 @@ msgid "Bump version number in ``docs/conf.py``"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:149
-msgid "Bump version number and (if applicable) codename in ``tabbycat/settings/core.py``"
+msgid "Bump version number and (if applicable) codename in ``NekoTab/settings/core.py``"
 msgstr ""
 
 #: ../../../CONTRIBUTING.rst:150
@@ -349,4 +349,5 @@ msgstr ""
 #: ../../../CONTRIBUTING.rst:164
 msgid "Post change notes on the Facebook page/group"
 msgstr ""
+
 

@@ -1,4 +1,4 @@
-# Artillery installed as part of npm development requirements
+﻿# Artillery installed as part of npm development requirements
 # Usage (note lack of trailing / on the URL):
 #   (setup 88-team BP tournament; enable public info; release R1 draw & motions)
 #   (restart dynos on heroku)
@@ -14,7 +14,7 @@
 # pages will refuse to be served
 
 config:
-  target: 'https://tabbycatdevelop.herokuapp.com'
+  target: 'https://NekoTabdevelop.herokuapp.com'
   http:
     timeout: 35 # Responses returned in 30 seconds or request is aborted
   phases:
@@ -47,3 +47,4 @@ scenarios:
     flow:
     - get:
         url: "/bp88team/"
+

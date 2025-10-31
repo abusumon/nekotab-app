@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:25\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/check-ins.po\n"
@@ -27,7 +27,7 @@ msgid "A 'Check-in' is a record of a speaker, adjudicator, venue, or ballot's st
 msgstr ""
 
 #: ../../features/check-ins.rst:9
-msgid "Check-ins serve a similar purpose to the :ref:`availability <availability>` system. However availabilities are tied to a particular round rather than to a particular time — they are generally used to record instances where you know ahead of time whether a person should or should not be included in a draw. In contrast, check-ins are useful for when you *don't* know ahead of time whether a person will be able to be put into the draw and so want to be able to confirm their presence with a high degree of confidence. That said the two systems interact — the standard availability pages allow you to easily set all adjudicators or teams who have checked-in as available for a given round."
+msgid "Check-ins serve a similar purpose to the :ref:`availability <availability>` system. However availabilities are tied to a particular round rather than to a particular time â€” they are generally used to record instances where you know ahead of time whether a person should or should not be included in a draw. In contrast, check-ins are useful for when you *don't* know ahead of time whether a person will be able to be put into the draw and so want to be able to confirm their presence with a high degree of confidence. That said the two systems interact â€” the standard availability pages allow you to easily set all adjudicators or teams who have checked-in as available for a given round."
 msgstr ""
 
 #: ../../features/check-ins.rst:12
@@ -35,7 +35,7 @@ msgid "Check-In Identifiers"
 msgstr ""
 
 #: ../../features/check-ins.rst:14
-msgid "Check-ins are associated with a 'identifier' — a number that is unique to each speaker and adjudicator. To generate these numbers go to the *Identifiers* section under the Check-Ins menu. From here you generate identifiers for Speakers, Adjudicators, and Venues as needed. Note also that Identifiers can be manually added or edited in the *Edit Database* area if necessary."
+msgid "Check-ins are associated with a 'identifier' â€” a number that is unique to each speaker and adjudicator. To generate these numbers go to the *Identifiers* section under the Check-Ins menu. From here you generate identifiers for Speakers, Adjudicators, and Venues as needed. Note also that Identifiers can be manually added or edited in the *Edit Database* area if necessary."
 msgstr ""
 
 #: ../../features/check-ins.rst:18
@@ -67,11 +67,11 @@ msgid "Barcode scanners are probably cheaper than you think. A perfectly service
 msgstr ""
 
 #: ../../features/check-ins.rst:35
-msgid "If your device has a (web)cam you can use the Scan Using Camera button. Any barcodes put in front of the camera's video stream will be scanned into the form. A sound will play when a barcode has been identified — so be aware that turning sound on or using headphones can help identify when a scan has been made."
+msgid "If your device has a (web)cam you can use the Scan Using Camera button. Any barcodes put in front of the camera's video stream will be scanned into the form. A sound will play when a barcode has been identified â€” so be aware that turning sound on or using headphones can help identify when a scan has been made."
 msgstr ""
 
 #: ../../features/check-ins.rst:39
-msgid "Camera scanning works on most modern browsers although it will only work with Safari 11 or higher (iOS 11+ and macOS 10.13+). Camera scanning may also not work when using a local-installation of Tabbycat in all browsers, *except* Firefox where it seems to. Depending on the quality of your camera barcodes that are less than 4cm wide may not be recognised — ideally barcodes should be at least 5cm if using this method as your main way of checking-in things."
+msgid "Camera scanning works on most modern browsers although it will only work with Safari 11 or higher (iOS 11+ and macOS 10.13+). Camera scanning may also not work when using a local-installation of NekoTab in all browsers, *except* Firefox where it seems to. Depending on the quality of your camera barcodes that are less than 4cm wide may not be recognised â€” ideally barcodes should be at least 5cm if using this method as your main way of checking-in things."
 msgstr ""
 
 #: ../../features/check-ins.rst:41
@@ -115,7 +115,7 @@ msgid "Ballots can be checked-in to quickly validate which ballots are physicall
 msgstr ""
 
 #: ../../features/check-ins.rst:66
-msgid "Barcodes are automatically assigned and included to ballots when they are printed. Barcodes have no check-in window — any relevant check-in event counts regardless of how long ago it was."
+msgid "Barcodes are automatically assigned and included to ballots when they are printed. Barcodes have no check-in window â€” any relevant check-in event counts regardless of how long ago it was."
 msgstr ""
 
 #: ../../features/check-ins.rst:69
@@ -133,4 +133,5 @@ msgstr ""
 #: ../../features/check-ins.rst:75
 msgid "Venues have their own Status page (like people) and can be checked-in there manually. Like speakers and adjudicators their barcodes can also be printed off."
 msgstr ""
+
 

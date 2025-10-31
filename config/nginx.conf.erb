@@ -1,4 +1,4 @@
-# This is customised from https://github.com/heroku/heroku-buildpack-nginx.git
+﻿# This is customised from https://github.com/heroku/heroku-buildpack-nginx.git
 # Done so in order to properly proxy to both and asgi and wsgi server
 # Super useful template:
 # https://github.com/CLClark/fcc-stock-trading-app/blob/9017f001255718c2e0fd24eb8267df02267d6cd8/config/nginx.conf.erb
@@ -92,7 +92,7 @@ http {
 
             # Enabling keep-alive
             # As per https://ma.ttias.be/enable-keepalive-connections-in-nginx-upstream-proxy-configurations/
-            # Set at 100minutes — may mean that passive pages which haven't
+            # Set at 100minutes â€” may mean that passive pages which haven't
             # received any socket data need to be refreshed after that time.
             proxy_read_timeout     6000; # 100m
             proxy_connect_timeout  6000; # 100m
@@ -101,7 +101,7 @@ http {
 
         # Serve static files directly from the directory
         location /static/ {
-            alias /app/tabbycat/staticfiles/;
+            alias /app/NekoTab/staticfiles/;
             autoindex on;
             access_log off;
             add_header Cache-Control "public";
@@ -118,3 +118,4 @@ http {
         }
     }
 }
+

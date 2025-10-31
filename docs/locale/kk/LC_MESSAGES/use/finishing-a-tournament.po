@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-11-08 06:27\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: kk\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/use/finishing-a-tournament.po\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../use/finishing-a-tournament.rst:5
 msgid "Finishing a Tournament"
-msgstr "Турнирді аяқтау"
+msgstr "Ð¢ÑƒÑ€Ð½Ð¸Ñ€Ð´Ñ– Ð°ÑÒ›Ñ‚Ð°Ñƒ"
 
 #: ../../use/finishing-a-tournament.rst:7
 msgid "This page outlines some final steps to take after the conclusion of outrounds."
@@ -31,24 +31,24 @@ msgid "Tab Release"
 msgstr ""
 
 #: ../../use/finishing-a-tournament.rst:12
-msgid "Tabs can be released using the *Tab released* option under **Setup** > **Configuration**. Tabbycat offers the following system tabs:"
+msgid "Tabs can be released using the *Tab released* option under **Setup** > **Configuration**. NekoTab offers the following system tabs:"
 msgstr ""
 
 #: ../../use/finishing-a-tournament.rst:14
 msgid "Team Tab"
-msgstr "Топтардың тізімі"
+msgstr "Ð¢Ð¾Ð¿Ñ‚Ð°Ñ€Ð´Ñ‹Ò£ Ñ‚Ñ–Ð·Ñ–Ð¼Ñ–"
 
 #: ../../use/finishing-a-tournament.rst:15
 msgid "Speakers Tab"
-msgstr "Ойыншылардың тізімі"
+msgstr "ÐžÐ¹Ñ‹Ð½ÑˆÑ‹Ð»Ð°Ñ€Ð´Ñ‹Ò£ Ñ‚Ñ–Ð·Ñ–Ð¼Ñ–"
 
 #: ../../use/finishing-a-tournament.rst:16
 msgid "Replies Tab"
-msgstr "Жауаптардың тізімі"
+msgstr "Ð–Ð°ÑƒÐ°Ð¿Ñ‚Ð°Ñ€Ð´Ñ‹Ò£ Ñ‚Ñ–Ð·Ñ–Ð¼Ñ–"
 
 #: ../../use/finishing-a-tournament.rst:17
 msgid "Motions Tab"
-msgstr "Қарарлар тізімі"
+msgstr "ÒšÐ°Ñ€Ð°Ñ€Ð»Ð°Ñ€ Ñ‚Ñ–Ð·Ñ–Ð¼Ñ–"
 
 #: ../../use/finishing-a-tournament.rst:19
 msgid "You can configure the team, speakers and replies tab to display only a certain number of speakers, *e.g.*, to show only a \"Top 10 Speakers\" tab."
@@ -77,4 +77,5 @@ msgstr ""
 #: ../../use/finishing-a-tournament.rst:32
 msgid "You also want to go into the **Edit Database** area, find the tournament and hit \"release all\" so that the results for the final round can be released."
 msgstr ""
+
 

@@ -1,17 +1,17 @@
-=====================
+﻿=====================
 Sending Notifications
 =====================
 
-Tabbycat offers integrations with email delivery services to send notifications to participants on certain enumerated events. Before you can use them, you will need to configure your app to use an external email provider, such as SendGrid, Mailgun or MailChimp.
+NekoTab offers integrations with email delivery services to send notifications to participants on certain enumerated events. Before you can use them, you will need to configure your app to use an external email provider, such as SendGrid, Mailgun or MailChimp.
 
 .. _configuring-email-provider:
 
 Configuring an email provider
 =============================
 
-  *Changed in version 2.6:* Tabbycat no longer automatically provisions SendGrid via Heroku.
+  *Changed in version 2.6:* NekoTab no longer automatically provisions SendGrid via Heroku.
 
-Tabbycat does not come with an email provider. You will need to configure your app to use a third-party email provider. Your Tabbycat site will not be able to send emails until you have done this. There are a number of options for this. The right one for you will depend on your tournament size and budget.
+NekoTab does not come with an email provider. You will need to configure your app to use a third-party email provider. Your NekoTab site will not be able to send emails until you have done this. There are a number of options for this. The right one for you will depend on your tournament size and budget.
 
 .. _configuring-sendgrid:
 
@@ -33,10 +33,10 @@ Once you have a SendGrid account:
 
 3. You'll probably need to complete sender authentication on SendGrid by following `these instructions in the SendGrid documentation <https://sendgrid.com/docs/for-developers/sending-email/sender-identity/>`_. Specifically, if sending a test email raises an error about "not matching a verified Sender Identity" (this is likely), you need to complete one of the two methods listed there:
 
-  - *Single Sender Verification*, if you're comfortable with all of Tabbycat's emails coming from an email address that belongs to you and exists (*e.g.* your personal email address). This is more likely to be convenient for most users.
+  - *Single Sender Verification*, if you're comfortable with all of NekoTab's emails coming from an email address that belongs to you and exists (*e.g.* your personal email address). This is more likely to be convenient for most users.
   - *Domain Authentication*, if you have access to a domain whose DNS record you control, *e.g.* a tournament or society website hosted on its own domain.
 
-4. Send a test email using the tool on your Tabbycat site's home page.
+4. Send a test email using the tool on your NekoTab site's home page.
 
   *Changed in version 2.6:* The ``SENDGRID_USERNAME`` and ``SENDGRID_PASSWORD`` config vars are deprecated in favour of ``SENDGRID_API_KEY``.
 
@@ -54,7 +54,7 @@ Once you have a SendGrid account:
 Other email providers
 ---------------------
 
-If you configure these config vars, Tabbycat will use them to send emails.
+If you configure these config vars, NekoTab will use them to send emails.
 
 - ``DEFAULT_FROM_EMAIL``: Email to send from
 - ``EMAIL_HOST``: Host server
@@ -66,7 +66,7 @@ If you configure these config vars, Tabbycat will use them to send emails.
 Events
 ======
 
-Tabbycat includes a number of templated notifications that can be sent in various times. Variables which are included between curly brackets which are substituted for personalized information passed by email. Links to email will redirect to a page where the message can be changed and the participants selected.
+NekoTab includes a number of templated notifications that can be sent in various times. Variables which are included between curly brackets which are substituted for personalized information passed by email. Links to email will redirect to a page where the message can be changed and the participants selected.
 
 All emails have the ``{{ USER }}`` and ``{{ TOURN }}`` variables to indicate who the email is sent to, and the tournament it relates to. The "From" in the emails will also be the tournament's name.
 
@@ -150,12 +150,13 @@ All emails have the ``{{ USER }}`` and ``{{ TOURN }}`` variables to indicate who
 Event Webhook
 =============
 
-With SendGrid, the status of sent emails can be sent to Tabbycat to be displayed, giving an indication of failures and whether participants have opened the messages. To activate this feature, setup must be done both in your SendGrid account and in Tabbycat.
+With SendGrid, the status of sent emails can be sent to NekoTab to be displayed, giving an indication of failures and whether participants have opened the messages. To activate this feature, setup must be done both in your SendGrid account and in NekoTab.
 
 1. Set a secret key in the Email section of the tournament's preferences. This key must be alphanumeric without any spaces.
 2. Copy the "web-hook" link presented in a box at the top of the "email participants" page.
 3. Go to https://app.sendgrid.com/settings/mail_settings and select "Event Notifications"
-4. Enable the feature and paste the Tabbycat URL under "HTTP POST URL".
+4. Enable the feature and paste the NekoTab URL under "HTTP POST URL".
 5. Select the notifications to keep track (or all of them).
 
-.. caution:: Each email and change in status sent to Tabbycat will add a row to the database. If the number of rows is limited, as is for free Heroku apps, enabling the webhook may use up a significant number of rows. Be selective in the events to keep track.
+.. caution:: Each email and change in status sent to NekoTab will add a row to the database. If the number of rows is limited, as is for free Heroku apps, enabling the webhook may use up a significant number of rows. Be selective in the events to keep track.
+

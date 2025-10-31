@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:22\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/data-importers.po\n"
@@ -27,7 +27,7 @@ msgid "This page describes how to write your own tournament data importer. It is
 msgstr ""
 
 #: ../../features/data-importers.rst:9
-msgid "The **tournament data importer** is the class that imports data from one or more files (usually CSV files) into the database. A base class ``BaseTournamentDataImporter`` is in `importer/base.py <https://github.com/TabbycatDebate/tabbycat/blob/develop/importer/base.py>`_. An example of a data importer is in `importer/anorak.py <https://github.com/TabbycatDebate/tabbycat/blob/develop/importer/anorak.py>`_."
+msgid "The **tournament data importer** is the class that imports data from one or more files (usually CSV files) into the database. A base class ``BaseTournamentDataImporter`` is in `importer/base.py <https://github.com/NekoTabDebate/NekoTab/blob/develop/importer/base.py>`_. An example of a data importer is in `importer/anorak.py <https://github.com/NekoTabDebate/NekoTab/blob/develop/importer/anorak.py>`_."
 msgstr ""
 
 #: ../../features/data-importers.rst:11
@@ -43,11 +43,11 @@ msgid "Why write your own?"
 msgstr ""
 
 #: ../../features/data-importers.rst:16
-msgid "While Tabbycat has standard import formats, you might find that none of them fit the data that you need to import."
+msgid "While NekoTab has standard import formats, you might find that none of them fit the data that you need to import."
 msgstr ""
 
 #: ../../features/data-importers.rst:18
-msgid "It's not possible to devise a single, universally-convenient import file format. Tabbycat supports way too many permutations of configurations for this to be workable. Instead, we provide the ones that have been useful before and are therefore likely to be useful again—but if your tournament has different needs, you might decide that it's easier to write an importer to conform to you, rather than conform to the importer."
+msgid "It's not possible to devise a single, universally-convenient import file format. NekoTab supports way too many permutations of configurations for this to be workable. Instead, we provide the ones that have been useful before and are therefore likely to be useful againâ€”but if your tournament has different needs, you might decide that it's easier to write an importer to conform to you, rather than conform to the importer."
 msgstr ""
 
 #: ../../features/data-importers.rst:20
@@ -147,7 +147,7 @@ msgid "Leaves all other entries in the dict unchanged."
 msgstr ""
 
 #: ../../features/data-importers.rst:124
-msgid "This looks simple enough, but it's very robust. What if a cell in the CSV file is blank, or what if the file omits a column? (For example, some tournaments might not collect information about participant gender, so Tabbycat doesn't require it.) We could deal with these scenarios on a case-by-case basis, but that's cumbersome."
+msgid "This looks simple enough, but it's very robust. What if a cell in the CSV file is blank, or what if the file omits a column? (For example, some tournaments might not collect information about participant gender, so NekoTab doesn't require it.) We could deal with these scenarios on a case-by-case basis, but that's cumbersome."
 msgstr ""
 
 #: ../../features/data-importers.rst:130
@@ -269,4 +269,5 @@ msgstr ""
 #: ../../features/data-importers.rst:258
 msgid "You can also pass in a logger for it to use (instead of the default one) with the ``logger`` argument."
 msgstr ""
+
 

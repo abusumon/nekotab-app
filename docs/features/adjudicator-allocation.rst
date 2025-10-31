@@ -1,4 +1,4 @@
-.. _adjudicator-allocation:
+﻿.. _adjudicator-allocation:
 
 ======================
 Adjudicator Allocation
@@ -13,7 +13,7 @@ For tournaments with more than a few debates you generally want to begin the all
 
 .. image:: images/allocation-prioritise.png
 
-The prioritise button in the top-left allows you to assign a priority value automatically based on a debate's bracket or its 'liveness'. Remember that in early rounds there are usually not enough results for the liveness of each debate to be distinct and that Tabbycat measures liveness based on the sum of all live break categories — a debate can have more liveness points than it has teams if there are teams that are live in multiple categories.
+The prioritise button in the top-left allows you to assign a priority value automatically based on a debate's bracket or its 'liveness'. Remember that in early rounds there are usually not enough results for the liveness of each debate to be distinct and that NekoTab measures liveness based on the sum of all live break categories â€” a debate can have more liveness points than it has teams if there are teams that are live in multiple categories.
 
 .. note:: The automatic prioritiser never uses the 'highest' priority value so that you can easily use this to highlight the debates that need the strongest panels without needing to redistribute the priority of other debates.
 
@@ -31,9 +31,9 @@ Once you are happy with your priorities you can begin assigning adjudicators. Th
 - Avoid creating 'hard' conflicts (i.e. personal or institutional clashes) between adjudicators and teams while also trying to avoid 'soft' conflicts (i.e. avoiding an adjudicator seeing the same team again).
 - Form panels whose relative average voting score matches the relative priority you assigned to each debate.
 - Allocate trainees (unless disabled or none are under the threshold) to panels (allocated first to the highest-strength panels).
-- Violate the above intents in cases where there are inescapable constraints — e.g. if there are too many soft or hard conflicts to avoid creating panels that do not trigger them.
+- Violate the above intents in cases where there are inescapable constraints â€” e.g. if there are too many soft or hard conflicts to avoid creating panels that do not trigger them.
 
-.. note:: Remember that Tabbycat will only automatically allocate adjudicators that have been marked as available for this round.
+.. note:: Remember that NekoTab will only automatically allocate adjudicators that have been marked as available for this round.
 
 To begin this process, click the *Allocate* button in the top-left. If you have :ref:`formed preformed panels <preformed-panels>`  for this round, the modal will first ask whether you want to assign adjudicators using those panels; otherwise the modal will contain a number of options that can be used to control the allocation. In general, the *minimum feedback score* value is the most important setting to consider as it determines the threshold needed for adjudicators to not be allocated as trainees.
 
@@ -41,7 +41,7 @@ To begin this process, click the *Allocate* button in the top-left. If you have 
 
 Once you click *Auto-Allocate Adjudicators* the modal should disappear and your panels should appear. At large tournaments, and in the later rounds, it is not unheard of for this process to take a minute or longer.
 
-.. note:: You can re-run the automatic allocation process on top of an existing allocation. Thus it is worth tweaking your priorities or allocation settings if the allocation does not seem optimal to you. Also note that the allocation process is not deterministic — if you rerun it the panels will be different.
+.. note:: You can re-run the automatic allocation process on top of an existing allocation. Thus it is worth tweaking your priorities or allocation settings if the allocation does not seem optimal to you. Also note that the allocation process is not deterministic â€” if you rerun it the panels will be different.
 
 Once your adjudicators have been allocated you can drag and drop them on to different panels. You can also drag and drop them to the 'unused area' (the gray bar at the bottom of the page) if you wish to store them temporarily or remove them from the draw. Dropping an adjudicator into the chair position will 'swap' that adjudicator into the previous position of the new chair.
 
@@ -63,13 +63,13 @@ To activate sharding, click the small icon to the right of the "Allocate" button
 In-Place Highlights
 ===================
 
-Adjudicators and teams may have borders of varying colors. These borders indicate that there is a clash — soft or hard — within a debate and highlights the teams/adjudicators that have triggered this. There is a key for these colors available at the top of the page — e.g. orange means *institutional conflict* while blue means *this adjudicator has seen this adjudicator/team before*.
+Adjudicators and teams may have borders of varying colors. These borders indicate that there is a clash â€” soft or hard â€” within a debate and highlights the teams/adjudicators that have triggered this. There is a key for these colors available at the top of the page â€” e.g. orange means *institutional conflict* while blue means *this adjudicator has seen this adjudicator/team before*.
 
 .. image:: images/allocation-inplace.png
 
 In general, you want to be on the lookout for red borders ('hard conflicts') and for teams with orange borders (institutional conflicts). Blue borders on teams/adjudicators and orange borders between adjudicators are usually of lesser concern.
 
-.. note:: There are two 'special' types of highlight — a gray background in the chair position (no chair) or in the panellist position (the panel is not an odd-size). Adjudicators may also have a black background if they have not been marked as available.
+.. note:: There are two 'special' types of highlight â€” a gray background in the chair position (no chair) or in the panellist position (the panel is not an odd-size). Adjudicators may also have a black background if they have not been marked as available.
 
 Hover Highlights
 ================
@@ -83,8 +83,9 @@ When you hover over an adjudicator or team the top-most area of the screen will 
 Toggle Highlights
 =================
 
-In the top-right of the interface are a number of toggles that changes the color of adjudicators and teams to more easily check specific types of information. For example, selecting the gender toggle will color-code teams and adjudicators with the gender that has been recorded in Tabbycat. Note that when a toggle is active, the color key will update to show the meaning of these new colors.
+In the top-right of the interface are a number of toggles that changes the color of adjudicators and teams to more easily check specific types of information. For example, selecting the gender toggle will color-code teams and adjudicators with the gender that has been recorded in NekoTab. Note that when a toggle is active, the color key will update to show the meaning of these new colors.
 
 .. image:: images/allocation-highlights.png
 
-.. note:: When finalising an adjudication you may want to ensure you have turned off any toggle highlights — often they make it more difficult to see the border colors that indicate conflicts.
+.. note:: When finalising an adjudication you may want to ensure you have turned off any toggle highlights â€” often they make it more difficult to see the border colors that indicate conflicts.
+

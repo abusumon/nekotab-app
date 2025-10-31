@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-03-15 13:13\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: kk\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/breaks.po\n"
@@ -23,7 +23,7 @@ msgid "Breaks and Break Rounds"
 msgstr ""
 
 #: ../../features/breaks.rst:7
-msgid "In Tabbycat, elimination rounds (sometimes called *outrounds* or the *final series*) are called \"break rounds\", and the qualification of teams to compete in the elimination phase of a tournament is called the \"break\"."
+msgid "In NekoTab, elimination rounds (sometimes called *outrounds* or the *final series*) are called \"break rounds\", and the qualification of teams to compete in the elimination phase of a tournament is called the \"break\"."
 msgstr ""
 
 #: ../../features/breaks.rst:12
@@ -31,7 +31,7 @@ msgid "About break categories"
 msgstr ""
 
 #: ../../features/breaks.rst:14
-msgid "Tabbycat supports multiple and arbitrarily-named break categories. Most tournaments will have just one category, typically called \"Open\", leading to the grand final. Some tournaments also have restricted-eligibility break categories, for example, for novice teams or teams for whom English is a second language."
+msgid "NekoTab supports multiple and arbitrarily-named break categories. Most tournaments will have just one category, typically called \"Open\", leading to the grand final. Some tournaments also have restricted-eligibility break categories, for example, for novice teams or teams for whom English is a second language."
 msgstr ""
 
 #: ../../features/breaks.rst:19
@@ -43,7 +43,7 @@ msgid "Break qualification rules"
 msgstr ""
 
 #: ../../features/breaks.rst:29
-msgid "Tabbycat supports several break qualification rules, and each break category must be configured to use one of them. Most tournaments will use \"Standard\", which is the default."
+msgid "NekoTab supports several break qualification rules, and each break category must be configured to use one of them. Most tournaments will use \"Standard\", which is the default."
 msgstr ""
 
 #: ../../features/breaks.rst:38
@@ -123,7 +123,7 @@ msgid "Set the eligibility of teams to compete in the category"
 msgstr ""
 
 #: ../../features/breaks.rst:83
-msgid "If you only have one break category (open) and you create your tournament using the \"Create New Tournament\" page, simply enter the number of teams in the break (*e.g.*, 8 if you're breaking to quarterfinals). Tabbycat will create the break category and break rounds for you. For any further break categories, you'll need to go to the **Breaks** item in the left-hand menu for a particular tournament and then click **Break Categories**. Fill out the forms for the number of new break categories and save. Rounds will be created automatically. You'll still need to set the eligibility of teams though, as in (3) below."
+msgid "If you only have one break category (open) and you create your tournament using the \"Create New Tournament\" page, simply enter the number of teams in the break (*e.g.*, 8 if you're breaking to quarterfinals). NekoTab will create the break category and break rounds for you. For any further break categories, you'll need to go to the **Breaks** item in the left-hand menu for a particular tournament and then click **Break Categories**. Fill out the forms for the number of new break categories and save. Rounds will be created automatically. You'll still need to set the eligibility of teams though, as in (3) below."
 msgstr ""
 
 #: ../../features/breaks.rst:92
@@ -143,7 +143,7 @@ msgid "Most of the fields are self-explanatory or described on the Edit Database
 msgstr ""
 
 #: ../../features/breaks.rst:109
-msgid "The \"institution cap\" field was removed in Tabbycat 1.0. All Australs break qualification rules are now hard-coded to a cap of three teams per institution."
+msgid "The \"institution cap\" field was removed in NekoTab 1.0. All Australs break qualification rules are now hard-coded to a cap of three teams per institution."
 msgstr ""
 
 #: ../../features/breaks.rst:114
@@ -209,4 +209,5 @@ msgstr ""
 #: ../../features/breaks.rst:171
 msgid "If the \"break size\" of a break category is not a power of 2, it will treat the first break round as a partial-elimination draw and only create a draw for the teams not skipping the partial-elimination round. Subsequent break rounds will then process as described above."
 msgstr ""
+
 

@@ -1,4 +1,4 @@
-.. _install-heroku:
+﻿.. _install-heroku:
 
 ====================
 Installing on Heroku
@@ -7,19 +7,19 @@ Installing on Heroku
 .. admonition:: IMPORTANT
   :class: error
 
-  Recent changes by Heroku have altered how Tabbycat can be deployed on their service.
+  Recent changes by Heroku have altered how NekoTab can be deployed on their service.
 
 Heroku Deployments Overview
 ===========================
 
-Tabbycat can be deployed to Heroku in two ways:
+NekoTab can be deployed to Heroku in two ways:
 
 1. A fork-based method, that approximates a '1-click' install experience. Requires no technical background.
 2. A script-based method, which requires running a python script on your local machine. Requires some technical background.
 
 Regardless of method, please note that Heroku no longer offers a free tier of hosting services. However, students with an academic email address now have access to $13 USD worth of credits (per month) to use on the service if they enrol in the `GitHub Student Developer Pack <https://education.github.com/pack>`_. These credits will be sufficient to run 2-3 different tab sites simultaneously.
 
-Please also note Heroku will require a debit/credit card to be attached to your account for verification purposes — even if you have free credits available. If using free credits, you should make note of the (annual) expiration of your GitHub student status and plan to either renew your status or cancel any Heroku services you don't want to pay for.
+Please also note Heroku will require a debit/credit card to be attached to your account for verification purposes â€” even if you have free credits available. If using free credits, you should make note of the (annual) expiration of your GitHub student status and plan to either renew your status or cancel any Heroku services you don't want to pay for.
 
 Heroku Deployments using a Fork
 ===============================
@@ -39,20 +39,20 @@ Heroku Account Setup
 GitHub Fork and Deployment
 --------------------------
 
-In order to use a user-friendly '1-click deployment button', you will need to make a 'fork' (personal copy) of Tabbycat on Github. To do so:
+In order to use a user-friendly '1-click deployment button', you will need to make a 'fork' (personal copy) of NekoTab on Github. To do so:
 
-1. Login to GitHub and go to `the main Tabbycat project page <https://github.com/TabbycatDebate/tabbycat>`_
+1. Login to GitHub and go to `the main NekoTab project page <https://github.com/NekoTabDebate/NekoTab>`_
 2. Click the **Fork** button in the top-right
 3. On the next page, **Uncheck** the button that says *Copy the develop branch only* then click **Create Fork**
-4. The next page will show your copy of Tabbycat. Take note of your Github username and your fork's name in the top-left, e.g. **JaneSmith/tabbycat**
+4. The next page will show your copy of NekoTab. Take note of your Github username and your fork's name in the top-left, e.g. **JaneSmith/NekoTab**
 5. Open a new tab in your web browser and copy-paste in this URL *without hitting enter (yet)*:
 
   ::
 
    https://dashboard.heroku.com/new-app?template=https://github.com/YOUR_GITHUB_NAME/YOUR_FORK_NAME/tree/master
 
-6. In the URL address, replace ``YOUR_GITHUB_NAME`` with your GitHub username (e.g. **JaneSmith**) and replace ``YOUR_FORK_NAME`` with the name of your fork (e.g. **tabbycat**)
-7. Hit enter and fill out the details required. After the deployment process completes, you should have a new Tabbycat deployment
+6. In the URL address, replace ``YOUR_GITHUB_NAME`` with your GitHub username (e.g. **JaneSmith**) and replace ``YOUR_FORK_NAME`` with the name of your fork (e.g. **NekoTab**)
+7. Hit enter and fill out the details required. After the deployment process completes, you should have a new NekoTab deployment
 
 Heroku Deployments using the Deploy Script
 ==========================================
@@ -72,9 +72,9 @@ If you're experienced with the command-line and Git, :ref:`skip ahead to our TLD
 Account Setup
 -------------
 
-`Heroku <http://www.heroku.com/>`_ is a platform as a service on which Tabbycat can be installed to be available on the internet. Naturally, this requires you to have a Heroku account. Head to the site and sign-up for one.
+`Heroku <http://www.heroku.com/>`_ is a platform as a service on which NekoTab can be installed to be available on the internet. Naturally, this requires you to have a Heroku account. Head to the site and sign-up for one.
 
-.. note:: During the setup process, Heroku will ask you to verify your account by adding a credit card. A standard Tabbycat site *may charge* your card. If you have a paid Heroku Eco plan Tabbycat will use your Eco hours and you will not be charged, otherwise Tabbycat will use 2 Basic dynos which cost roughly $0.25/day or $7/month each.
+.. note:: During the setup process, Heroku will ask you to verify your account by adding a credit card. A standard NekoTab site *may charge* your card. If you have a paid Heroku Eco plan NekoTab will use your Eco hours and you will not be charged, otherwise NekoTab will use 2 Basic dynos which cost roughly $0.25/day or $7/month each.
 
 1. Install dependencies
 -----------------------
@@ -85,21 +85,21 @@ Install the `Heroku Command Line Interface (CLI) <https://devcenter.heroku.com/a
 
 If you don't already have **Git**, follow the `instructions on the GitHub website <https://help.github.com/articles/set-up-git>`_ to set up Git.
 
-2. Download Tabbycat with Git
+2. Download NekoTab with Git
 -----------------------------
 
-Once git is installed, you can use it to download a copy of Tabbycat with these commands in your command-line::
+Once git is installed, you can use it to download a copy of NekoTab with these commands in your command-line::
 
-    git clone -b master https://github.com/TabbycatDebate/tabbycat.git
+    git clone -b master https://github.com/NekoTabDebate/NekoTab.git
 
 3. Run the Deploy Script
 ------------------------
 
 .. rst-class:: spaced-list
 
-a. Navigate on the command-line your Tabbycat directory. If you have not changed directories in the command-line since you cloned Tabbycat, this should just be::
+a. Navigate on the command-line your NekoTab directory. If you have not changed directories in the command-line since you cloned NekoTab, this should just be::
 
-    cd tabbycat
+    cd NekoTab
 
 b. Run the script to deploy the app to Heroku. Replace ``yourappname`` with your preferred URL. Your website will be at ``yourappname-suffix.herokuapp.com``.
 
@@ -115,7 +115,7 @@ b. Run the script to deploy the app to Heroku. Replace ``yourappname`` with your
 
   The script may work away on its own for 10-30 minutes before it asks you some questions to answer. When finished, it will open the app in your browser. It should look something like this:
 
-  .. image:: images/tabbycat-bare.png
+  .. image:: images/NekoTab-bare.png
 
 That's everything! You can then login with the account that you made by answering the script's questions.
 
@@ -130,8 +130,8 @@ The script uses the default dyno type for your Heroku account. If you have a pai
 
 .. parsed-literal::
 
-  git clone https://github.com/TabbycatDebate/tabbycat.git
-  cd tabbycat
+  git clone https://github.com/NekoTabDebate/NekoTab.git
+  cd NekoTab
   git checkout master
   python deploy_heroku.py yourappname
 
@@ -145,7 +145,7 @@ If you have a large tournament, you may want to customize your Heroku app. This 
 Upgrading your database size
 ----------------------------
 
-The Mini plan of `Heroku Postgres <https://elements.heroku.com/addons/heroku-postgresql>`_, should work for most small tournaments. For large tournaments, however, you may find that you exceed the 10,000-row limit of this plan. It's difficult to give general guidance on how many rows you're likely to use, because it depends on which features of Tabbycat you use (*e.g.*, if you use adjudicator feedback). But to give some idea:
+The Mini plan of `Heroku Postgres <https://elements.heroku.com/addons/heroku-postgresql>`_, should work for most small tournaments. For large tournaments, however, you may find that you exceed the 10,000-row limit of this plan. It's difficult to give general guidance on how many rows you're likely to use, because it depends on which features of NekoTab you use (*e.g.*, if you use adjudicator feedback). But to give some idea:
 
 - Australs 2016, which had 74 teams, 8 preliminary rounds and heavily used adjudicator feedback, ended up at around 30,000 rows.
 - The Asia BP championships 2017 had 100 teams, 6 preliminary rounds, and mandatory feedback (i.e. 100% return rates) used 15,000 rows.
@@ -153,7 +153,7 @@ The Mini plan of `Heroku Postgres <https://elements.heroku.com/addons/heroku-pos
 
 If you need more than 10,000 rows, you'll need to upgrade to a larger Heroku Postgres Plan. The 10,000,000 rows allowed in the lowest paid plan, "Basic", should certainly be more than sufficient.
 
-If you're not sure, you can always start at Mini—just be prepared to `upgrade <https://devcenter.heroku.com/articles/upgrade-heroku-postgres-with-pgbackups>`_ during the tournament if you run close to capacity.
+If you're not sure, you can always start at Miniâ€”just be prepared to `upgrade <https://devcenter.heroku.com/articles/upgrade-heroku-postgres-with-pgbackups>`_ during the tournament if you run close to capacity.
 
 Custom domain names
 -------------------
@@ -165,7 +165,7 @@ Your Heroku app will be available at ``yourappname-suffix.herokuapp.com``. You m
 
 The custom domain name basically requires two things: a DNS ``CNAME`` entry on your website targeting ``yourappname.herokuapp.com``, and the custom domain configured on Heroku using ``heroku domains:add tab.yourwebsite.com``.  You'll also need to provide an SSL certificate for your custom domain and add it using the ``heroku certs:add`` command.
 
-If you're using Tabbycat's email notifications, you might also configure your email provider to use domain authentication---see :ref:`configuring-email-provider`.
+If you're using NekoTab's email notifications, you might also configure your email provider to use domain authentication---see :ref:`configuring-email-provider`.
 
 Time zone
 ---------
@@ -175,9 +175,9 @@ If you want to change the time zone you nominated during deployment, you can do 
 Email provider
 --------------
 
-  *Changed in version 2.6:* Tabbycat no longer automatically provisions SendGrid via Heroku.
+  *Changed in version 2.6:* NekoTab no longer automatically provisions SendGrid via Heroku.
 
-Tabbycat does not come with an email provider. Before Tabbycat will send emails, you will need to install a third-party email provider yourself. To do so, you may add/change the following config vars:
+NekoTab does not come with an email provider. Before NekoTab will send emails, you will need to install a third-party email provider yourself. To do so, you may add/change the following config vars:
 
 - ``DEFAULT_FROM_EMAIL``: Email to send from
 - ``EMAIL_HOST``: Host server
@@ -193,13 +193,13 @@ See :ref:`configuring-email-provider` for more information, including a few opti
 Upgrading an existing Heroku app
 ================================
 
-.. note:: For most users, we recommend starting a new site for every tournament, when you set up the tab for that tournament. There's generally not a pressing need to upgrade Tabbycat after a tournament is concluded, and every time you deploy a new site, you'll be using the latest version at the time of deployment.
+.. note:: For most users, we recommend starting a new site for every tournament, when you set up the tab for that tournament. There's generally not a pressing need to upgrade NekoTab after a tournament is concluded, and every time you deploy a new site, you'll be using the latest version at the time of deployment.
 
-To upgrade an existing Heroku-based Tabbycat app to the latest version, you need to *deploy* the current version of Tabbycat to your Heroku app. There are several ways to do this. We list one below, primarily targeted at users with some background in Git.
+To upgrade an existing Heroku-based NekoTab app to the latest version, you need to *deploy* the current version of NekoTab to your Heroku app. There are several ways to do this. We list one below, primarily targeted at users with some background in Git.
 
 The essence of it is that you need to `create a Git remote <https://devcenter.heroku.com/articles/git#creating-a-heroku-remote>`_ for your Heroku app (if you don't already have one), then `push to it <https://devcenter.heroku.com/articles/git#deploying-code>`_.
 
-.. attention:: You should **always** :ref:`back up your database <backups>` before upgrading Tabbycat.
+.. attention:: You should **always** :ref:`back up your database <backups>` before upgrading NekoTab.
 
 You'll need both Git and the Heroku CLI, and you'll need to be logged in to the Heroku CLI already.
 
@@ -209,8 +209,8 @@ You'll need both Git and the Heroku CLI, and you'll need to be logged in to the 
 
 2. If you haven't already, clone our Git repository and check out the master branch::
 
-    $ git clone https://github.com/TabbycatDebate/tabbycat.git
-    $ cd tabbycat
+    $ git clone https://github.com/NekoTabDebate/NekoTab.git
+    $ cd NekoTab
     $ git checkout master
 
   If you've already cloned our Git repository, don't forget to pull so you're up to date::
@@ -224,9 +224,9 @@ You'll need both Git and the Heroku CLI, and you'll need to be logged in to the 
     heroku  https://git.heroku.com/yourappname.git (fetch)
     heroku  https://git.heroku.com/yourappname.git (push)
 
-  If you do, the name of the remote will be on the left (``heroku`` in the above example), and the URL of your Git repository will be on the right. In the example above, our Tabbycat site URL would be ``yourappname-suffix.herokuapp.com``; the Git remote URL is then ``https://git.heroku.com/yourappname.git``.
+  If you do, the name of the remote will be on the left (``heroku`` in the above example), and the URL of your Git repository will be on the right. In the example above, our NekoTab site URL would be ``yourappname-suffix.herokuapp.com``; the Git remote URL is then ``https://git.heroku.com/yourappname.git``.
 
-  If a Git remote URL for your Tabbycat site *doesn't* appear, then create one::
+  If a Git remote URL for your NekoTab site *doesn't* appear, then create one::
 
     $ heroku git:remote --app yourappname --remote heroku
     set git remote heroku to https://git.heroku.com/yourappname.git
@@ -238,3 +238,4 @@ You'll need both Git and the Heroku CLI, and you'll need to be logged in to the 
     $ git push heroku master
 
   This will take a while to complete.
+

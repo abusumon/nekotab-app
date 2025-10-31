@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:17\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: pt-PT\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/install/docker.po\n"
@@ -32,19 +32,19 @@ msgstr ""
 
 #: ../../install/docker.rst:12
 #, python-format
-msgid "If you need an offline copy of Tabbycat, installing using Docker should be simpler and quicker than using the \"Install Locally on…\" instructions for your operating system. However if a Docker installation doesn't work as outlined below, it's harder to address what isn't working. If you encounter any problems with Docker, we recommend using the \"Install Locally on…\" option as a fallback, but if you need to do so, `please also report the issue you're having on GitHub <https://github.com/TabbycatDebate/tabbycat/issues/new?labels=installation-docker&title=Docker%20installation%20problem&body=Please%20be%20sure%20to%20include%20your%20operating%20system%20and%20version,%20and%20please%20be%20as%20specific%20as%20you%20can%20about%20the%20problem%20you%20encountered%3A%0D%0D>`_ or :ref:`contact the developers <authors>`."
+msgid "If you need an offline copy of NekoTab, installing using Docker should be simpler and quicker than using the \"Install Locally onâ€¦\" instructions for your operating system. However if a Docker installation doesn't work as outlined below, it's harder to address what isn't working. If you encounter any problems with Docker, we recommend using the \"Install Locally onâ€¦\" option as a fallback, but if you need to do so, `please also report the issue you're having on GitHub <https://github.com/NekoTabDebate/NekoTab/issues/new?labels=installation-docker&title=Docker%20installation%20problem&body=Please%20be%20sure%20to%20include%20your%20operating%20system%20and%20version,%20and%20please%20be%20as%20specific%20as%20you%20can%20about%20the%20problem%20you%20encountered%3A%0D%0D>`_ or :ref:`contact the developers <authors>`."
 msgstr ""
 
 #: ../../install/docker.rst:14
-msgid "Docker is an application that makes it very easy to load and run a specific collection of software. It allows us to bundle everything necessary to run Tabbycat into a single package rather than have users install everything needed step-by-step. Once set up, Docker will allow you to start and stop a webserver (that in turn runs Tabbycat) on your computer whenever you want and without the need for internet access."
+msgid "Docker is an application that makes it very easy to load and run a specific collection of software. It allows us to bundle everything necessary to run NekoTab into a single package rather than have users install everything needed step-by-step. Once set up, Docker will allow you to start and stop a webserver (that in turn runs NekoTab) on your computer whenever you want and without the need for internet access."
 msgstr ""
 
 #: ../../install/docker.rst:18
-msgid "1. Download Tabbycat"
+msgid "1. Download NekoTab"
 msgstr ""
 
 #: ../../install/docker.rst:20
-msgid "`Go to the page for our latest release <https://github.com/TabbycatDebate/tabbycat/releases/latest>`_."
+msgid "`Go to the page for our latest release <https://github.com/NekoTabDebate/NekoTab/releases/latest>`_."
 msgstr ""
 
 #: ../../install/docker.rst:22
@@ -100,7 +100,7 @@ msgid "Not sure which edition of Windows you have? Click Start, search for \"Sys
 msgstr ""
 
 #: ../../install/docker.rst:57
-msgid "3. Run Tabbycat in Docker"
+msgid "3. Run NekoTab in Docker"
 msgstr ""
 
 #: ../../install/docker.rst:60
@@ -116,7 +116,7 @@ msgid "Ensure that Docker application is open (there should be a whale icon in y
 msgstr ""
 
 #: ../../install/docker.rst:68
-msgid "Browse to the location where you extracted Tabbycat to. Open up the **bin** folder there. Within that folder:"
+msgid "Browse to the location where you extracted NekoTab to. Open up the **bin** folder there. Within that folder:"
 msgstr ""
 
 #: ../../install/docker.rst:70
@@ -128,11 +128,11 @@ msgid "If you're on Windows, open **windows_docker_start.bat**."
 msgstr ""
 
 #: ../../install/docker.rst:72
-msgid "If you're on Linux, open up a terminal in the Tabbycat folder (*i.e.* the folder containing ``README.md``) and run ``docker-compose up``."
+msgid "If you're on Linux, open up a terminal in the NekoTab folder (*i.e.* the folder containing ``README.md``) and run ``docker-compose up``."
 msgstr ""
 
 #: ../../install/docker.rst:74
-msgid "A terminal window should popup and bunch of text scroll by. If this is your first time running Docker it may take a while (30 minutes or more) to download the virtual machine. When the text has stopped scrolling by you should see a `Finished building Tabbycat!` message."
+msgid "A terminal window should popup and bunch of text scroll by. If this is your first time running Docker it may take a while (30 minutes or more) to download the virtual machine. When the text has stopped scrolling by you should see a `Finished building NekoTab!` message."
 msgstr ""
 
 #: ../../install/docker.rst:76
@@ -140,7 +140,7 @@ msgid "Open up http://localhost:8000/ (Windows) or http://0.0.0.0:8000 (OSX/Linu
 msgstr ""
 
 #: ../../install/docker.rst:78 ../../install/docker.rst:100
-msgid "If you want to reopen Tabbycat at a later time (say after restarting) repeat steps 1 through 4 here."
+msgid "If you want to reopen NekoTab at a later time (say after restarting) repeat steps 1 through 4 here."
 msgstr ""
 
 #: ../../install/docker.rst:81
@@ -160,7 +160,7 @@ msgid "Run the command ``docker-machine ip``. Take note of the IP address it sho
 msgstr ""
 
 #: ../../install/docker.rst:94
-msgid "Navigate to the Tabbycat folder (*i.e.* the folder containing ``README.md``) and run ``docker-compose up``."
+msgid "Navigate to the NekoTab folder (*i.e.* the folder containing ``README.md``) and run ``docker-compose up``."
 msgstr ""
 
 #: ../../install/docker.rst:96
@@ -168,6 +168,7 @@ msgid "Open a browser and go to http://192.168.99.100:8000/, replacing \"192.168
 msgstr ""
 
 #: ../../install/docker.rst:98
-msgid "Once you're done and want to stop the Tabbycat server, press Ctrl+C, wait until the next prompt appears, and then run ``docker-machine stop``."
+msgid "Once you're done and want to stop the NekoTab server, press Ctrl+C, wait until the next prompt appears, and then run ``docker-machine stop``."
 msgstr ""
+
 

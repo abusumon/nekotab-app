@@ -1,4 +1,4 @@
-.. _user-accounts:
+﻿.. _user-accounts:
 
 =============
 User Accounts
@@ -35,7 +35,7 @@ For obvious reasons, user logins are required to data entry and administrative f
     - The Edit Database area
     - Editing the database directly
 
-If a user account on the tab system belongs to someone who is also a participant in the tournament (*e.g.*, a chief adjudicator), these two accesses are completely separate. User accounts are only used to regulate access to administrative functions. Tabbycat doesn't know about any relationship between user accounts, and who is participating in the tournament.
+If a user account on the tab system belongs to someone who is also a participant in the tournament (*e.g.*, a chief adjudicator), these two accesses are completely separate. User accounts are only used to regulate access to administrative functions. NekoTab doesn't know about any relationship between user accounts, and who is participating in the tournament.
 
 Account roles
 =============
@@ -53,7 +53,7 @@ The **Edit Database** interface should not be used except where it is actually n
 User permissions
 ================
 
-In addition to account roles, Tabbycat has a concept of per-tournament permissions, where users can be assigned to only have access to specific parts of the administrator side of specific tournaments. These permissions can also be combined into "groups" to give standardized accesses to many users at once, such as CAs. When creating a tournament, a few default groups are created. Note that the assistant areas will still be accessible, to the extent of the "Assistant user access" tournament setting.
+In addition to account roles, NekoTab has a concept of per-tournament permissions, where users can be assigned to only have access to specific parts of the administrator side of specific tournaments. These permissions can also be combined into "groups" to give standardized accesses to many users at once, such as CAs. When creating a tournament, a few default groups are created. Note that the assistant areas will still be accessible, to the extent of the "Assistant user access" tournament setting.
 
 Groups can only be created or modified through Edit Database, as well as assigning specific permissions to users. Users may be added to a group through the invitation feature described below.
 
@@ -84,8 +84,9 @@ To add an account:
    - If you're hosting on the internet, all passwords should be at least moderately strong!
    - Passwords are not stored as raw passwords, so you can't figure out what their password is.
    - The email address is optional.
-   - This email address is only used to reset their password if they forget it, and has nothing to do with the email address that Tabbycat uses to send emails to tournament participants (*e.g.* private URL links).
+   - This email address is only used to reset their password if they forget it, and has nothing to do with the email address that NekoTab uses to send emails to tournament participants (*e.g.* private URL links).
 
 4. If they are being assigned superuser and/or staff status, check the relevant boxes.
 
 5. Click "Save" or "Save and add another".
+

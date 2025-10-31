@@ -1,6 +1,6 @@
-module.exports = {
+﻿module.exports = {
   // Output to standard directory; this is then compiled by django collectstatic
-  outputDir: './tabbycat/static/vue/',
+  outputDir: './NekoTab/static/vue/',
   // Need to set baseUrl for hot module reloading (proxies to the local server)
   // But want to disable this when building for production
   publicPath: process.env.NODE_ENV === 'production' ?
@@ -29,7 +29,7 @@ module.exports = {
   },
   pages: {
     app: {
-      entry: 'tabbycat/templates/js-bundles/main.js'
+      entry: 'NekoTab/templates/js-bundles/main.js'
     }
   },
   pluginOptions: {
@@ -40,3 +40,4 @@ module.exports = {
     }
   }
 }
+

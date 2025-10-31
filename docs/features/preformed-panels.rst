@@ -1,4 +1,4 @@
-.. _preformed-panels:
+﻿.. _preformed-panels:
 
 ================
 Preformed Panels
@@ -6,13 +6,13 @@ Preformed Panels
 
 Preformed panels, also known as a 'shadow draw', allow adjudicator panels to be created *before* a round has been drawn and then applied once its draw is ready. This means that panel formation can be done during periods outside the normal time pressure of finalising a draw for release. This can save a lot of time at large tournaments, or at tournaments where the adjudication core wants to carefully control the specific combination of adjudicators within panels.
 
-Tabbycat's provides two distinct workflows for employing preformed panels.
+NekoTab's provides two distinct workflows for employing preformed panels.
 
-The first method, **Direct Allocation** is simple. A set of preformed panels as made ahead of time, and that collection of panels is transposed atop the draw. This allocation always applied panels linearly from top to bottom — it does not account for any information about each debate (e.g. conflicts) other than their position.
+The first method, **Direct Allocation** is simple. A set of preformed panels as made ahead of time, and that collection of panels is transposed atop the draw. This allocation always applied panels linearly from top to bottom â€” it does not account for any information about each debate (e.g. conflicts) other than their position.
 
-The second method, **Smart Allocate** is more powerful, but less simple. It employs Tabbycat's existing allocation tools, primarily the notion of a debate's *priority*, to allow for a non-linear matching of preformed panels that avoids adjudicator conflicts and better adapts to a given draw — particularly when the most important debates do not strictly follow the highest debate brackets.
+The second method, **Smart Allocate** is more powerful, but less simple. It employs NekoTab's existing allocation tools, primarily the notion of a debate's *priority*, to allow for a non-linear matching of preformed panels that avoids adjudicator conflicts and better adapts to a given draw â€” particularly when the most important debates do not strictly follow the highest debate brackets.
 
-This method relies on each preformed panel being assigned a priority value. When applying preformed panels to a draw, the allocator then ties to best match the priority value of each preformed panel to the priority of each actual debate. This is similar to how Tabbycat's normal auto-allocator matches the strength of each panel (as measured by adjudicators' ratings) to the priority of each debate.
+This method relies on each preformed panel being assigned a priority value. When applying preformed panels to a draw, the allocator then ties to best match the priority value of each preformed panel to the priority of each actual debate. This is similar to how NekoTab's normal auto-allocator matches the strength of each panel (as measured by adjudicators' ratings) to the priority of each debate.
 
 Step 1: Create preformed panels
 ===============================
@@ -33,9 +33,9 @@ Initially, the preformed panels page will have no panels. Click the **Create Pan
 Step 2: Assign priorities to preformed panels
 =============================================
 
-By default the priority slider for all preformed panels is in the neutral position. You can use the "Prioritise" button in the top left to assign priority values automatically, based upon their brackets or liveness. Before or after this step you can alter the priorities as usual — even after you have allocated adjudicators.
+By default the priority slider for all preformed panels is in the neutral position. You can use the "Prioritise" button in the top left to assign priority values automatically, based upon their brackets or liveness. Before or after this step you can alter the priorities as usual â€” even after you have allocated adjudicators.
 
-It's important to remember to assign a range of priorities to the panels. Without distinct priority values, the application of your preformed panels to the actual draw will be essentially random. If allocating priorities manually, it is a good idea to keep a relatively even distribution of priorities — use the range!
+It's important to remember to assign a range of priorities to the panels. Without distinct priority values, the application of your preformed panels to the actual draw will be essentially random. If allocating priorities manually, it is a good idea to keep a relatively even distribution of priorities â€” use the range!
 
 .. note:: In Round 1, each debate has a liveness and bracket of 0. If you are using preformed panels in this instance you may need to manually-differentiate their priorities.
 
@@ -97,3 +97,4 @@ where
 - :math:`\mathrm{history}(p,d)` is the number of adjudicators and teams who have seen each other between panel :math:`p` and debate :math:`d`.
 
 It then uses the `Hungarian algorithm <https://en.wikipedia.org/wiki/Hungarian_algorithm>`_ to find the assignment of panels to debates that minimizes the total cost of the pairings.
+

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # exit on error
 set -o errexit
 
@@ -7,7 +7,7 @@ python -m pip install pipenv
 pipenv install --system
 
 echo "-----> I'm post-compile hook"
-cd ./tabbycat/
+cd ./NekoTab/
 
 echo "-----> Running database migration"
 python manage.py migrate --noinput
@@ -24,3 +24,4 @@ echo "-----> Running static files compilation"
 python manage.py collectstatic --noinput
 
 echo "-----> Post-compile done"
+

@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-11-18 21:01\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: tzl\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/about/changelog.po\n"
@@ -55,7 +55,7 @@ msgid "The number of pull-ups and draw strength by speaker score are now availab
 msgstr "crwdns45987:0crwdne45987:0"
 
 #: ../../../CHANGELOG.rst:15
-msgid "Added the new emoji that come along with Unicode 11 — thanks to Viran Weerasekera for this addition!"
+msgid "Added the new emoji that come along with Unicode 11 â€” thanks to Viran Weerasekera for this addition!"
 msgstr "crwdns45989:0crwdne45989:0"
 
 #: ../../../CHANGELOG.rst:16
@@ -120,7 +120,7 @@ msgid "Shadow draw systems allow an adjudication core to form panels prior to a 
 msgstr "crwdns46019:0crwdne46019:0"
 
 #: ../../../CHANGELOG.rst:43
-msgid "Tabbycat's preformed panels are formed per-round under a section available under the Setup menu. This interface looks like the standard Edit Adjudicators interface, but the 'debates' shown are based on a simulation of that round's results. These fake debates can then be prioritised"
+msgid "NekoTab's preformed panels are formed per-round under a section available under the Setup menu. This interface looks like the standard Edit Adjudicators interface, but the 'debates' shown are based on a simulation of that round's results. These fake debates can then be prioritised"
 msgstr "crwdns46021:0crwdne46021:0"
 
 #: ../../../CHANGELOG.rst:44
@@ -156,15 +156,15 @@ msgid "Various allocation-relevant settings, such as the minimum feedback score 
 msgstr "crwdns46037:0crwdne46037:0"
 
 #: ../../../CHANGELOG.rst:52
-msgid "The ballot entry page will now indicate which teams have currently or recently given 'iron person' speeches so that these can be easily tracked, audited, and confirmed. It does show by showing both a text-highlight/icon in the table and in a dedicated modal window. Thanks to Étienne Beaulé for contributing this feature!"
+msgid "The ballot entry page will now indicate which teams have currently or recently given 'iron person' speeches so that these can be easily tracked, audited, and confirmed. It does show by showing both a text-highlight/icon in the table and in a dedicated modal window. Thanks to Ã‰tienne BeaulÃ© for contributing this feature!"
 msgstr "crwdns46039:0crwdne46039:0"
 
 #: ../../../CHANGELOG.rst:54
-msgid "Split up the Django settings files. Note that this means if you are upgrading a local install of Tabbycat to this version you will need to:"
+msgid "Split up the Django settings files. Note that this means if you are upgrading a local install of NekoTab to this version you will need to:"
 msgstr "crwdns46041:0crwdne46041:0"
 
 #: ../../../CHANGELOG.rst:54
-msgid "Copy ``tabbycat/settings/local.example`` to become ``local.py`` (and fill in your original database details)"
+msgid "Copy ``NekoTab/settings/local.example`` to become ``local.py`` (and fill in your original database details)"
 msgstr "crwdns46043:0crwdne46043:0"
 
 #: ../../../CHANGELOG.rst:55
@@ -172,7 +172,7 @@ msgid "Optional: repeat the same copying procedure for ``development.example`` a
 msgstr "crwdns46045:0crwdne46045:0"
 
 #: ../../../CHANGELOG.rst:61
-msgid "A range of improvements to the email notifications contributed by Étienne Beaulé:"
+msgid "A range of improvements to the email notifications contributed by Ã‰tienne BeaulÃ©:"
 msgstr "crwdns46047:0crwdne46047:0"
 
 #: ../../../CHANGELOG.rst:57
@@ -200,7 +200,7 @@ msgid "Emails can be tracked to determine if sent or read (SendGrid-specific)"
 msgstr "crwdns46059:0crwdne46059:0"
 
 #: ../../../CHANGELOG.rst:65
-msgid "Expanded the use of private URLs (Encore Étienne Beaulé):"
+msgid "Expanded the use of private URLs (Encore Ã‰tienne BeaulÃ©):"
 msgstr "crwdns46061:0crwdne46061:0"
 
 #: ../../../CHANGELOG.rst:64
@@ -236,11 +236,11 @@ msgid "An adjudicator/team now conflicts with an adjudicator if *any* institutio
 msgstr "crwdns46077:0crwdne46077:0"
 
 #: ../../../CHANGELOG.rst:72
-msgid "When printing scoresheets you can now edit the motions display just on that printing page. This allows you to use placeholder motions in Tabbycat (in order to prevent leaks) while still producing ballots with the correct motions"
+msgid "When printing scoresheets you can now edit the motions display just on that printing page. This allows you to use placeholder motions in NekoTab (in order to prevent leaks) while still producing ballots with the correct motions"
 msgstr "crwdns46079:0crwdne46079:0"
 
 #: ../../../CHANGELOG.rst:73
-msgid "Tabbycat no longer tracks which round is the 'current' round and instead tracks the completion of individual rounds. This change does not alter any existing workflows, but makes it easier to run simultaneous draws in out-rounds"
+msgid "NekoTab no longer tracks which round is the 'current' round and instead tracks the completion of individual rounds. This change does not alter any existing workflows, but makes it easier to run simultaneous draws in out-rounds"
 msgstr "crwdns46081:0crwdne46081:0"
 
 #: ../../../CHANGELOG.rst:74
@@ -256,7 +256,7 @@ msgid "Institutional caps in breaks can be based on the number of teams in the b
 msgstr "crwdns46087:0crwdne46087:0"
 
 #: ../../../CHANGELOG.rst:77
-msgid "Several Tabbycat functions, adjudicator/venue allocation and email notifications, have been shifted to worker processes to help make them more reliable. If you are upgrading a Tabbycat instance that you will continue to use for new tournaments you will need to install the Heroku toolbelt and run ``heroku ps:scale worker=1``"
+msgid "Several NekoTab functions, adjudicator/venue allocation and email notifications, have been shifted to worker processes to help make them more reliable. If you are upgrading a NekoTab instance that you will continue to use for new tournaments you will need to install the Heroku toolbelt and run ``heroku ps:scale worker=1``"
 msgstr "crwdns46089:0crwdne46089:0"
 
 #: ../../../CHANGELOG.rst:78
@@ -276,7 +276,7 @@ msgid "Fixed the display of feedback quantities on the Feedback Overview Page"
 msgstr "crwdns46097:0crwdne46097:0"
 
 #: ../../../CHANGELOG.rst:86
-msgid "Fixed issue where 'ignored' feedback would hide the result from the feedback graph but not affect an adjudicator's current score. Thanks to Étienne for this fix"
+msgid "Fixed issue where 'ignored' feedback would hide the result from the feedback graph but not affect an adjudicator's current score. Thanks to Ã‰tienne for this fix"
 msgstr "crwdns46099:0crwdne46099:0"
 
 #: ../../../CHANGELOG.rst:90
@@ -288,7 +288,7 @@ msgid "*Release date: 24 January 2019*"
 msgstr "crwdns46103:0crwdne46103:0"
 
 #: ../../../CHANGELOG.rst:93
-msgid "Fixed an issue that could cause errors for tournaments when using an atypical number of rounds and break sizes. Thanks to Étienne for this fix"
+msgid "Fixed an issue that could cause errors for tournaments when using an atypical number of rounds and break sizes. Thanks to Ã‰tienne for this fix"
 msgstr "crwdns46105:0crwdne46105:0"
 
 #: ../../../CHANGELOG.rst:94
@@ -308,7 +308,7 @@ msgid "Fix issue where the check-in buttons were always disabled on admin and as
 msgstr "crwdns46113:0crwdne46113:0"
 
 #: ../../../CHANGELOG.rst:102
-msgid "Other minor fixes. Thanks to Étienne for these and for the check-in button fix!"
+msgid "Other minor fixes. Thanks to Ã‰tienne for these and for the check-in button fix!"
 msgstr "crwdns46115:0crwdne46115:0"
 
 #: ../../../CHANGELOG.rst:106
@@ -340,15 +340,15 @@ msgid "Fix issue where check-ins could not be revoked"
 msgstr "crwdns46129:0crwdne46129:0"
 
 #: ../../../CHANGELOG.rst:118
-msgid "Fix issue where the standings overview 'dashboard' included scores from elimination rounds. Thanks to Étienne for this fix"
+msgid "Fix issue where the standings overview 'dashboard' included scores from elimination rounds. Thanks to Ã‰tienne for this fix"
 msgstr "crwdns46131:0crwdne46131:0"
 
 #: ../../../CHANGELOG.rst:119
-msgid "Fix issue where the Average Individual Speaker Score metric would fail to calculate in some circumstances. Thanks to Étienne for this fix"
+msgid "Fix issue where the Average Individual Speaker Score metric would fail to calculate in some circumstances. Thanks to Ã‰tienne for this fix"
 msgstr "crwdns46133:0crwdne46133:0"
 
 #: ../../../CHANGELOG.rst:120
-msgid "Fix issue where draw emails would crash if venues were unspecified. Thanks, again, to Étienne for this fix!"
+msgid "Fix issue where draw emails would crash if venues were unspecified. Thanks, again, to Ã‰tienne for this fix!"
 msgstr "crwdns46135:0crwdne46135:0"
 
 #: ../../../CHANGELOG.rst:124
@@ -368,7 +368,7 @@ msgid "Hopefully fixed error that could cause Team- and Adjudicator- Institution
 msgstr "crwdns46143:0crwdne46143:0"
 
 #: ../../../CHANGELOG.rst:129
-msgid "Thanks to Étienne for pull requests fixing rare bugs in the user creation form and break generation when rounds are not present"
+msgid "Thanks to Ã‰tienne for pull requests fixing rare bugs in the user creation form and break generation when rounds are not present"
 msgstr "crwdns46145:0crwdne46145:0"
 
 #: ../../../CHANGELOG.rst:133
@@ -392,15 +392,15 @@ msgid "*Release date: 28 September 2018*"
 msgstr "crwdns46155:0crwdne46155:0"
 
 #: ../../../CHANGELOG.rst:143
-msgid "*Literally* fix the issue causing public views of released scoresheets to throw errors (thanks for the pull request Étienne)"
+msgid "*Literally* fix the issue causing public views of released scoresheets to throw errors (thanks for the pull request Ã‰tienne)"
 msgstr "crwdns46157:0crwdne46157:0"
 
 #: ../../../CHANGELOG.rst:144
-msgid "Fix minor spacing issues in printed ballots (thanks for the pull request Étienne)"
+msgid "Fix minor spacing issues in printed ballots (thanks for the pull request Ã‰tienne)"
 msgstr "crwdns46159:0crwdne46159:0"
 
 #: ../../../CHANGELOG.rst:145
-msgid "Fix issue where institution-less adjudicators would cause some draw views to crash (thanks for the pull request Étienne)"
+msgid "Fix issue where institution-less adjudicators would cause some draw views to crash (thanks for the pull request Ã‰tienne)"
 msgstr "crwdns46161:0crwdne46161:0"
 
 #: ../../../CHANGELOG.rst:149
@@ -448,7 +448,7 @@ msgid "If your Heroku Stack is not \"heroku-16\" (noted under that same Settings
 msgstr "crwdns46183:0crwdne46183:0"
 
 #: ../../../CHANGELOG.rst:169
-msgid "Added a page to the documentation that details how to scale a Tabbycat site that is receiving large amounts of traffic; and another page that documents how to upgrade a Tabbycat site to a new version"
+msgid "Added a page to the documentation that details how to scale a NekoTab site that is receiving large amounts of traffic; and another page that documents how to upgrade a NekoTab site to a new version"
 msgstr "crwdns46185:0crwdne46185:0"
 
 #: ../../../CHANGELOG.rst:170
@@ -460,7 +460,7 @@ msgid "The results-entry page now updates its data live, giving you a more up to
 msgstr "crwdns46189:0crwdne46189:0"
 
 #: ../../../CHANGELOG.rst:178
-msgid "A huge thanks to Étienne Beaulé for contributing a number of major new features and bug fixes. Notably:"
+msgid "A huge thanks to Ã‰tienne BeaulÃ© for contributing a number of major new features and bug fixes. Notably:"
 msgstr "crwdns46191:0crwdne46191:0"
 
 #: ../../../CHANGELOG.rst:173
@@ -532,11 +532,11 @@ msgid "Added an alert for British Parliamentary format grand-final ballots that 
 msgstr "crwdns46225:0crwdne46225:0"
 
 #: ../../../CHANGELOG.rst:195
-msgid "Improved display of images shown when sharing Tabbycat links on social media"
+msgid "Improved display of images shown when sharing NekoTab links on social media"
 msgstr "crwdns46227:0crwdne46227:0"
 
 #: ../../../CHANGELOG.rst:196
-msgid "Optimised the performance of several commonly-loaded pages. Thanks to Étienne Beaulé for the pull request!"
+msgid "Optimised the performance of several commonly-loaded pages. Thanks to Ã‰tienne BeaulÃ© for the pull request!"
 msgstr "crwdns46229:0crwdne46229:0"
 
 #: ../../../CHANGELOG.rst:197
@@ -628,7 +628,7 @@ msgid "By default team codes are set to match that team's emoji, but team codes 
 msgstr "crwdns46273:0crwdne46273:0"
 
 #: ../../../CHANGELOG.rst:231
-msgid "Team codes can be swapped in an out for standard team names at will, with precise control over the contexts in which either is used — i.e. in public-facing pages, in admin-facing pages, in tooltips, *etc.*"
+msgid "Team codes can be swapped in an out for standard team names at will, with precise control over the contexts in which either is used â€” i.e. in public-facing pages, in admin-facing pages, in tooltips, *etc.*"
 msgstr "crwdns46275:0crwdne46275:0"
 
 #: ../../../CHANGELOG.rst:235
@@ -656,11 +656,11 @@ msgid "Added (partial) translations in French, Spanish and Arabic"
 msgstr "crwdns46287:0crwdne46287:0"
 
 #: ../../../CHANGELOG.rst:238
-msgid "Users can now use a link in the footer to switch the site's language into French, Spanish, or Arabic. By default Tabbycat should also match your browser's language and so automatically apply those languages if it matches"
+msgid "Users can now use a link in the footer to switch the site's language into French, Spanish, or Arabic. By default NekoTab should also match your browser's language and so automatically apply those languages if it matches"
 msgstr "crwdns46289:0crwdne46289:0"
 
 #: ../../../CHANGELOG.rst:239
-msgid "Our translations are generously provided by volunteers, but (so far) do not cover all of the interface text within Tabbycat. If you're interested in helping to translate new or existing languages please get in touch!"
+msgid "Our translations are generously provided by volunteers, but (so far) do not cover all of the interface text within NekoTab. If you're interested in helping to translate new or existing languages please get in touch!"
 msgstr "crwdns46291:0crwdne46291:0"
 
 #: ../../../CHANGELOG.rst:240
@@ -708,7 +708,7 @@ msgid "Administrators can now view pages as if they were Assistants; allowing th
 msgstr "crwdns46313:0crwdne46313:0"
 
 #: ../../../CHANGELOG.rst:251
-msgid "Fixed χ² test in motion statistics, and refactored the motion statistics page"
+msgid "Fixed Ï‡Â² test in motion statistics, and refactored the motion statistics page"
 msgstr "crwdns46315:0crwdne46315:0"
 
 #: ../../../CHANGELOG.rst:252
@@ -748,7 +748,7 @@ msgid "Quality of life improvements"
 msgstr "crwdns46333:0crwdne46333:0"
 
 #: ../../../CHANGELOG.rst:262
-msgid "Added a \"☆\" indicator to more obviously liveness in the adjudicator allocation screen"
+msgid "Added a \"â˜†\" indicator to more obviously liveness in the adjudicator allocation screen"
 msgstr "crwdns46335:0crwdne46335:0"
 
 #: ../../../CHANGELOG.rst:263
@@ -932,7 +932,7 @@ msgid "Improved query efficiency of the page"
 msgstr "crwdns46425:0crwdne46425:0"
 
 #: ../../../CHANGELOG.rst:335
-msgid "Improved the BP motions tab for out-rounds by specifying advancing teams as \"top/bottom ½\" rather than as 1st/4th and removed the average-points-per-position graphs that were misleading"
+msgid "Improved the BP motions tab for out-rounds by specifying advancing teams as \"top/bottom Â½\" rather than as 1st/4th and removed the average-points-per-position graphs that were misleading"
 msgstr "crwdns46427:0crwdne46427:0"
 
 #: ../../../CHANGELOG.rst:336
@@ -988,7 +988,7 @@ msgid "British Parliamentary support"
 msgstr "crwdns46453:0crwdne46453:0"
 
 #: ../../../CHANGELOG.rst:357
-msgid "Full support for British Parliamentary format has been added and we're incredibly excited to see Tabbycat's unique features and design (finally) available as an option for those tabbing in the predominant global format"
+msgid "Full support for British Parliamentary format has been added and we're incredibly excited to see NekoTab's unique features and design (finally) available as an option for those tabbing in the predominant global format"
 msgstr "crwdns46455:0crwdne46455:0"
 
 #: ../../../CHANGELOG.rst:358
@@ -996,7 +996,7 @@ msgid "As part of the implementation of this format we've made significant impro
 msgstr "crwdns46457:0crwdne46457:0"
 
 #: ../../../CHANGELOG.rst:359
-msgid "We've added a new \"Comparisons\" page added to the documentation to outline some of the key differences between Tabbycat and other software in the context of BP tabbing"
+msgid "We've added a new \"Comparisons\" page added to the documentation to outline some of the key differences between NekoTab and other software in the context of BP tabbing"
 msgstr "crwdns46459:0crwdne46459:0"
 
 #: ../../../CHANGELOG.rst:365
@@ -1004,7 +1004,7 @@ msgid "Refreshed interface design"
 msgstr "crwdns46461:0crwdne46461:0"
 
 #: ../../../CHANGELOG.rst:361
-msgid "The basic graphic elements of Tabbycat have had a their typography, icons,  colours, forms, and more redesign for a more distinctive and clear look. We also now have an official logo!"
+msgid "The basic graphic elements of NekoTab have had a their typography, icons,  colours, forms, and more redesign for a more distinctive and clear look. We also now have an official logo!"
 msgstr "crwdns46463:0crwdne46463:0"
 
 #: ../../../CHANGELOG.rst:362
@@ -1048,7 +1048,7 @@ msgid "You can now release an Adjudicators Tab showing test scores, final scores
 msgstr "crwdns46483:0crwdne46483:0"
 
 #: ../../../CHANGELOG.rst:372
-msgid "Information Slides can now be added to the system; either for showing to an auditorium within Tabbycat or for displaying alongside the public list of motions and/or the motions tab"
+msgid "Information Slides can now be added to the system; either for showing to an auditorium within NekoTab or for displaying alongside the public list of motions and/or the motions tab"
 msgstr "crwdns46485:0crwdne46485:0"
 
 #: ../../../CHANGELOG.rst:373
@@ -1056,7 +1056,7 @@ msgid "Teams and adjudicators are no longer required to have institutions; somet
 msgstr "crwdns46487:0crwdne46487:0"
 
 #: ../../../CHANGELOG.rst:374
-msgid "Private URLs can now be incrementally generated. Records of sent mail are now also kept by Tabbycat, so that emails can be incrementally sent to participants as registration data changes"
+msgid "Private URLs can now be incrementally generated. Records of sent mail are now also kept by NekoTab, so that emails can be incrementally sent to participants as registration data changes"
 msgstr "crwdns46489:0crwdne46489:0"
 
 #: ../../../CHANGELOG.rst:376
@@ -1397,11 +1397,11 @@ msgid "Added support for Docker-based installations to make local/offline instal
 msgstr "crwdns46657:0crwdne46657:0"
 
 #: ../../../CHANGELOG.rst:514
-msgid "Added a \"Tabbykitten\" version of Tabbycat that can be deployed to Heroku without a needing a credit/debit card"
+msgid "Added a \"Tabbykitten\" version of NekoTab that can be deployed to Heroku without a needing a credit/debit card"
 msgstr "crwdns46659:0crwdne46659:0"
 
 #: ../../../CHANGELOG.rst:515
-msgid "Added button to load a demo tournament on the 'New Tournament' page so it is easier to test-run Tabbycat"
+msgid "Added button to load a demo tournament on the 'New Tournament' page so it is easier to test-run NekoTab"
 msgstr "crwdns46661:0crwdne46661:0"
 
 #: ../../../CHANGELOG.rst:516
@@ -1457,7 +1457,7 @@ msgid "A number of minor bug fixes"
 msgstr "crwdns46687:0crwdne46687:0"
 
 #: ../../../CHANGELOG.rst:537
-msgid "Added basic infrastructure for creating tabbycat translations"
+msgid "Added basic infrastructure for creating NekoTab translations"
 msgstr "crwdns46689:0crwdne46689:0"
 
 #: ../../../CHANGELOG.rst:541
@@ -1481,7 +1481,7 @@ msgid "*Release date: 25 November 2016*"
 msgstr "crwdns46699:0crwdne46699:0"
 
 #: ../../../CHANGELOG.rst:551
-msgid "Redesigned the footer area to better describe Tabbycat and to promote donations and related projects"
+msgid "Redesigned the footer area to better describe NekoTab and to promote donations and related projects"
 msgstr "crwdns46701:0crwdne46701:0"
 
 #: ../../../CHANGELOG.rst:552
@@ -1633,7 +1633,7 @@ msgid "Changes to importances and panels are now automatically saved"
 msgstr "crwdns46775:0crwdne46775:0"
 
 #: ../../../CHANGELOG.rst:613
-msgid "Added debate \"liveness\" to help identify critical rooms—many thanks to Thevesh Theva"
+msgid "Added debate \"liveness\" to help identify critical roomsâ€”many thanks to Thevesh Theva"
 msgstr "crwdns46777:0crwdne46777:0"
 
 #: ../../../CHANGELOG.rst:614
@@ -1841,7 +1841,7 @@ msgid "Added Django migrations to the release (they were previously generated by
 msgstr "crwdns46879:0crwdne46879:0"
 
 #: ../../../CHANGELOG.rst:687
-msgid "Migrated documentation to `Read The Docs <http://tabbycat.readthedocs.io>`_"
+msgid "Migrated documentation to `Read The Docs <http://NekoTab.readthedocs.io>`_"
 msgstr "crwdns46881:0crwdne46881:0"
 
 #: ../../../CHANGELOG.rst:688
@@ -1919,4 +1919,5 @@ msgstr "crwdns46917:0crwdne46917:0"
 #: ../../../CHANGELOG.rst:710
 msgid "Now requires Django 1.8 (and other package upgrades)"
 msgstr "crwdns46919:0crwdne46919:0"
+
 

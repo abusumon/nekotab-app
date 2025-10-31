@@ -1,4 +1,4 @@
-.. _team-code-names:
+﻿.. _team-code-names:
 
 ===============
 Team Code Names
@@ -10,7 +10,7 @@ presented in the draw as "Butterfly". A natural way to do this would be just
 to change the name of every team, but then the team's "real name" would be
 hidden from tournament staff, too.
 
-Instead, Tabbycat allows you to assign code names to teams, alongside their real
+Instead, NekoTab allows you to assign code names to teams, alongside their real
 names. This way, you can have code names show to participants, while real team
 names show in administrative views (*e.g.* allocating adjudicators). It also
 allows you to "decode" team names for elimination rounds or final tab release
@@ -28,7 +28,7 @@ Assigning code names
 Most methods of importing teams, including the simple importer and the
 ``importtournament`` command, automatically assign code names to teams.
 The code name is the name of the emoji that is automatically assigned at the
-same time. For example, the team assigned 🦋 will be code-named "Butterfly".
+same time. For example, the team assigned ðŸ¦‹ will be code-named "Butterfly".
 
 If you wish to use your own code names, you need to set the "code name" field
 of each team. Here are two ways to do this:
@@ -67,3 +67,4 @@ One typical use is as follows:
 
 .. tip:: If you're enabling team codes, you probably want to disable the
     **Show team institutions** option too.
+

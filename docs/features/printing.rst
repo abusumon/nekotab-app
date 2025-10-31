@@ -1,8 +1,8 @@
-=============================
+﻿=============================
 Printing Ballots and Feedback
 =============================
 
-Tabbycat offers the ability to print scoresheets and feedback sheets on a per-round basis. This means that each scoresheet is customised to match the draw, and so will display:
+NekoTab offers the ability to print scoresheets and feedback sheets on a per-round basis. This means that each scoresheet is customised to match the draw, and so will display:
 
 - The motion or possible motions that could have been chosen from
 - The teams, and a list of speakers for each team
@@ -19,3 +19,4 @@ To print the ballots for each round, you would go to the **Display** page for th
 Typically you'd save these to PDF for printing, although you should be able to print straight from this dialogue box.
 
 .. caution:: Printing works best in Safari and Firefox; use those if possible.
+

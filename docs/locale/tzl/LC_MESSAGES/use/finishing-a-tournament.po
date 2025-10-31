@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-11-18 21:02\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: tzl\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/use/finishing-a-tournament.po\n"
@@ -31,7 +31,7 @@ msgid "Tab Release"
 msgstr "crwdns50613:0crwdne50613:0"
 
 #: ../../use/finishing-a-tournament.rst:12
-msgid "Tabs can be released using the *Tab released* option under **Setup** > **Configuration**. Tabbycat offers the following system tabs:"
+msgid "Tabs can be released using the *Tab released* option under **Setup** > **Configuration**. NekoTab offers the following system tabs:"
 msgstr "crwdns50615:0crwdne50615:0"
 
 #: ../../use/finishing-a-tournament.rst:14
@@ -77,4 +77,5 @@ msgstr "crwdns50635:0crwdne50635:0"
 #: ../../use/finishing-a-tournament.rst:32
 msgid "You also want to go into the **Edit Database** area, find the tournament and hit \"release all\" so that the results for the final round can be released."
 msgstr "crwdns50637:0crwdne50637:0"
+
 

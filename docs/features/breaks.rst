@@ -1,17 +1,17 @@
-.. _breaks:
+﻿.. _breaks:
 
 =========================
 Breaks and Break Rounds
 =========================
 
-In Tabbycat, elimination rounds (sometimes called *outrounds* or the *final
+In NekoTab, elimination rounds (sometimes called *outrounds* or the *final
 series*) are called "break rounds", and the qualification of teams to compete in
 the elimination phase of a tournament is called the "break".
 
 About break categories
 ======================
 
-Tabbycat supports multiple and arbitrarily-named break categories. Most
+NekoTab supports multiple and arbitrarily-named break categories. Most
 tournaments will have just one category, typically called "Open", leading to the
 grand final. Some tournaments also have restricted-eligibility break categories,
 for example, for novice teams or teams for whom English is a second language.
@@ -26,7 +26,7 @@ should create distinct tournaments.
 Break qualification rules
 -------------------------
 
-Tabbycat supports several break qualification rules, and each break category
+NekoTab supports several break qualification rules, and each break category
 must be configured to use one of them. Most tournaments will use "Standard",
 which is the default.
 
@@ -81,7 +81,7 @@ For each break category in your tournament, you need to do two things:
 
 If you only have one break category (open) and you create your tournament using
 the "Create New Tournament" page, simply enter the number of teams in the break
-(*e.g.*, 8 if you're breaking to quarterfinals). Tabbycat will create the break
+(*e.g.*, 8 if you're breaking to quarterfinals). NekoTab will create the break
 category and break rounds for you. For any further break categories, you'll need
 to go to the **Breaks** item in the left-hand menu for a particular tournament
 and then click **Break Categories**. Fill out the forms for the number of new
@@ -105,7 +105,7 @@ values are described in :ref:`breakqual-rules` above. If using
 `importtournament`, be sure to use the correct string (in brackets in the
 table). The rule defaults to "Standard" (``standard``).
 
-.. note:: The "institution cap" field was removed in Tabbycat 1.0. All Australs
+.. note:: The "institution cap" field was removed in NekoTab 1.0. All Australs
   break qualification rules are now hard-coded to a cap of three teams per
   institution.
 
@@ -171,3 +171,4 @@ If the "break size" of a break category is not a power of 2, it will treat the
 first break round as a partial-elimination draw and only create a draw for the
 teams not skipping the partial-elimination round. Subsequent break rounds will
 then process as described above.
+

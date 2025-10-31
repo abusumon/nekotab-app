@@ -1,4 +1,4 @@
-# Makefile for Sphinx documentation
+﻿# Makefile for Sphinx documentation
 #
 
 # You can set these variables from the command line.
@@ -94,9 +94,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/Tabbycat.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/NekoTab.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/Tabbycat.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/NekoTab.qhc"
 
 .PHONY: applehelp
 applehelp:
@@ -113,8 +113,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/Tabbycat"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/Tabbycat"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/NekoTab"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/NekoTab"
 	@echo "# devhelp"
 
 .PHONY: epub
@@ -214,3 +214,4 @@ pseudoxml:
 	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
+

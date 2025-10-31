@@ -1,4 +1,4 @@
-.. _install-linux:
+﻿.. _install-linux:
 
 ===========================
 Installing Locally on Linux
@@ -9,19 +9,19 @@ Installing Locally on Linux
 
   In most cases, we recommend doing an :ref:`internet-based installation on Heroku <install-heroku>` instead. If you decide to do a local installation, be sure to read our page on :ref:`local installations <install-local>` to help you understand what's going on, particularly this section: :ref:`install-decision`
 
-  If you just want to quickly set up a copy of Tabbycat to run locally on Linux, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below.
+  If you just want to quickly set up a copy of NekoTab to run locally on Linux, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below.
 
 The instructions apply to both Linux, and :ref:`Linux on Windows <install-wsl>`.
 
 Requisite technical background
 ==============================
 
-You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools Tabbycat uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest.
+You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools NekoTab uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest.
 
 .. admonition:: Advanced users
   :class: tip
 
-  If you wish to use an SQL engine other that PostgreSQL, most of Tabbycat should work, but a few features rely on SQL functions that aren't supported by all engines. To configure Tabbycat to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly.
+  If you wish to use an SQL engine other that PostgreSQL, most of NekoTab should work, but a few features rely on SQL functions that aren't supported by all engines. To configure NekoTab to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly.
 
 Short version
 =============
@@ -29,8 +29,8 @@ Short version
 
   curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -    # add Node.js source repository
   sudo apt install python3.11 python3-distutils pipenv postgresql libpq-dev nodejs gcc g++ make
-  git clone https://github.com/TabbycatDebate/tabbycat.git
-  cd tabbycat
+  git clone https://github.com/NekoTabDebate/NekoTab.git
+  cd NekoTab
   git checkout master
   sudo -u postgres createuser myusername --createdb --pwprompt       # skip if not first time
   sudo -u postgres createdb -O myusername mydatabasename             # -O designates the owner of the database
@@ -43,7 +43,7 @@ Then create **settings/local.py** as described :ref:`below <local-settings-linux
 
 That should open your Pipenv shell, then inside it run::
 
-  cd tabbycat
+  cd NekoTab
   dj migrate
   npm run build
   dj collectstatic
@@ -52,7 +52,7 @@ That should open your Pipenv shell, then inside it run::
 
 1. Install dependencies
 =======================
-First, you need to install all of the software on which Tabbycat depends, if you don't already have it installed.
+First, you need to install all of the software on which NekoTab depends, if you don't already have it installed.
 
 .. admonition:: Advanced users
   :class: tip
@@ -63,7 +63,7 @@ First, you need to install all of the software on which Tabbycat depends, if you
 
 1(a). Python
 ------------
-Tabbycat uses Python 3.11.  You probably already have Python 3, but you'll also need the development package in order to install Psycopg2 later.  You'll also want `Pipenv <https://pipenv.pypa.io/en/latest/>`_, if you don't already have it. Install::
+NekoTab uses Python 3.11.  You probably already have Python 3, but you'll also need the development package in order to install Psycopg2 later.  You'll also want `Pipenv <https://pipenv.pypa.io/en/latest/>`_, if you don't already have it. Install::
 
     $ sudo apt install python3.11 python3-distutils pipenv
 
@@ -72,7 +72,7 @@ Check the version::
     $ python3 --version
     Python 3.11.10
 
-.. warning:: Tabbycat does not support Python 2. You must use Python 3.11.
+.. warning:: NekoTab does not support Python 2. You must use Python 3.11.
 
 .. admonition:: Advanced users
    :class: tip
@@ -85,7 +85,7 @@ Check the version::
 
 Install PostgreSQL using the  `PostgreSQL installation instructions here <http://www.postgresql.org/download/linux/ubuntu/>`_.
 
-Normally, installing the latest stable version should be best, but if you're having issues, install the same version as the current `default version on Heroku <https://devcenter.heroku.com/articles/heroku-postgresql#version-support>`_, as that will be what is currently most commonly used with Tabbycat. If you're planning on pushing data between your local installation and a Heroku site, it's best to match the Heroku's current default version.
+Normally, installing the latest stable version should be best, but if you're having issues, install the same version as the current `default version on Heroku <https://devcenter.heroku.com/articles/heroku-postgresql#version-support>`_, as that will be what is currently most commonly used with NekoTab. If you're planning on pushing data between your local installation and a Heroku site, it's best to match the Heroku's current default version.
 
 You'll also need the ``libpq-dev`` package in order to install Psycopg2 later::
 
@@ -97,7 +97,7 @@ You'll also need the ``libpq-dev`` package in order to install Psycopg2 later::
 -----------------
   *Node.js is a JavaScript runtime.*
 
-Tabbycat requires Node and its package manager to compile front-end dependencies. Install using:
+NekoTab requires Node and its package manager to compile front-end dependencies. Install using:
 
 .. parsed-literal::
 
@@ -126,8 +126,8 @@ If you have Git, life will be easier if you clone `our GitHub repository`_:
 
 .. parsed-literal::
 
-    $ git clone https://github.com/TabbycatDebate/tabbycat.git
-    $ cd tabbycat
+    $ git clone https://github.com/NekoTabDebate/NekoTab.git
+    $ cd NekoTab
     $ git checkout master
 
 (You can find out if you have Git using ``git --version``. If you don't, you can install it using ``sudo apt install git``.)
@@ -146,37 +146,37 @@ If you don't want to use Git, simply download and extract:
 
 .. parsed-literal::
 
-    $ wget https\:\/\/github.com/TabbycatDebate/tabbycat/archive/|vrelease|.tar.gz
+    $ wget https\:\/\/github.com/NekoTabDebate/NekoTab/archive/|vrelease|.tar.gz
     $ tar xf |vrelease|.tar.gz
-    $ cd tabbycat-|release|
+    $ cd NekoTab-|release|
 
 3. Set up a new database
 ========================
 
-.. hint:: You can skip step 1 if this is not your first installation. Every Tabbycat installation requires its own database, but they can use the same login role if you like.
+.. hint:: You can skip step 1 if this is not your first installation. Every NekoTab installation requires its own database, but they can use the same login role if you like.
 
-a. Create a new user account with a password, replacing ``myusername`` with whatever name you prefer. If you don't know what username to pick, use ``tabbycat``. Grant this user the ability to create databases, since this'll make it easier to spin up new instances of Tabbycat in the future.
+a. Create a new user account with a password, replacing ``myusername`` with whatever name you prefer. If you don't know what username to pick, use ``NekoTab``. Grant this user the ability to create databases, since this'll make it easier to spin up new instances of NekoTab in the future.
 
   ::
 
     $ sudo -u postgres createuser myusername --createdb --pwprompt
 
-  .. tip:: If you'll be running multiple instances of Tabbycat, developing, or diving into the database yourself, you might find it convenient to set up client authentication so that you don't need to do all manual operations from ``sudo -u postgres``. See the `PostgreSQL documentation on client authentication <http://www.postgresql.org/docs/9.6/static/client-authentication.html>`_ for more information. For example, you could add a ``local all myusername md5`` line to the *pg_hba.conf* file, or you could define a mapping in *pg_ident.conf* and append the ``map=`` option to the ``local all all peer`` line in *pg_hba.conf*.
+  .. tip:: If you'll be running multiple instances of NekoTab, developing, or diving into the database yourself, you might find it convenient to set up client authentication so that you don't need to do all manual operations from ``sudo -u postgres``. See the `PostgreSQL documentation on client authentication <http://www.postgresql.org/docs/9.6/static/client-authentication.html>`_ for more information. For example, you could add a ``local all myusername md5`` line to the *pg_hba.conf* file, or you could define a mapping in *pg_ident.conf* and append the ``map=`` option to the ``local all all peer`` line in *pg_hba.conf*.
 
 b. Create a new database, replacing ``mydatabasename`` with whatever name you prefer, probably the name of the tournament you're running, and replace ``myusername`` with the username you used in the previous command::
 
     $ sudo -u postgres createdb -O myusername mydatabasename
 
 
-.. _install-linux-tabbycat:
+.. _install-linux-NekoTab:
 
-4. Install Tabbycat
+4. Install NekoTab
 ===================
 Almost there!
 
-a. Navigate to your Tabbycat directory::
+a. Navigate to your NekoTab directory::
 
-    $ cd path/to/my/tabbycat/directory
+    $ cd path/to/my/NekoTab/directory
 
 .. _local-settings-linux:
 
@@ -185,7 +185,7 @@ b. Install the Python packages specified in the Pipfile using `Pipenv <https://p
     $ pipenv install --deploy
     $ npm ci
 
-c. Navigate to the **tabbycat/settings** sub folder and copy **local.example** to **local.py**. Find this part in your new **local.py**, and fill in the blanks as indicated:
+c. Navigate to the **NekoTab/settings** sub folder and copy **local.example** to **local.py**. Find this part in your new **local.py**, and fill in the blanks as indicated:
 
   .. code:: python
 
@@ -208,36 +208,37 @@ d. Start a Pipenv shell::
 
     $ pipenv shell
 
-  You'll notice a prefix that looks like ``(tabbycat-9BkbSRuB)`` (except the random characters for you will be different). That means you're inside the Pipenv shell. Everything from this point onwards will be inside the Pipenv shell.
+  You'll notice a prefix that looks like ``(NekoTab-9BkbSRuB)`` (except the random characters for you will be different). That means you're inside the Pipenv shell. Everything from this point onwards will be inside the Pipenv shell.
 
-e. Navigate to the **tabbycat** sub-directory, initialize the database, compile the assets, and create a user account for yourself::
+e. Navigate to the **NekoTab** sub-directory, initialize the database, compile the assets, and create a user account for yourself::
 
-    (tabbycat-9BkbSRuB) $ cd tabbycat
-    (tabbycat-9BkbSRuB) $ dj migrate
-    (tabbycat-9BkbSRuB) $ npm run build
-    (tabbycat-9BkbSRuB) $ dj collectstatic
-    (tabbycat-9BkbSRuB) $ dj createsuperuser
+    (NekoTab-9BkbSRuB) $ cd NekoTab
+    (NekoTab-9BkbSRuB) $ dj migrate
+    (NekoTab-9BkbSRuB) $ npm run build
+    (NekoTab-9BkbSRuB) $ dj collectstatic
+    (NekoTab-9BkbSRuB) $ dj createsuperuser
 
-f. Start Tabbycat!
+f. Start NekoTab!
 
   ::
 
-    (tabbycat-9BkbSRuB) $ npm run serve
+    (NekoTab-9BkbSRuB) $ npm run serve
 
-  Lots of text will flow by---this command starts up all of the processes necessary to run Tabbycat. But the app will be at http://127.0.0.1:8000/ or http://localhost:8000/ (not at any of the other addresses that will show).
+  Lots of text will flow by---this command starts up all of the processes necessary to run NekoTab. But the app will be at http://127.0.0.1:8000/ or http://localhost:8000/ (not at any of the other addresses that will show).
 
-g. Open your browser and go to http://127.0.0.1:8000/ or http://localhost:8000/. It should look something like the screenshot below. If it does, great! You've successfully installed Tabbycat.
+g. Open your browser and go to http://127.0.0.1:8000/ or http://localhost:8000/. It should look something like the screenshot below. If it does, great! You've successfully installed NekoTab.
 
-  .. image:: images/tabbycat-bare.png
-      :alt: Bare Tabbycat installation
+  .. image:: images/NekoTab-bare.png
+      :alt: Bare NekoTab installation
 
 Naturally, your database is currently empty, so proceed to :ref:`importing initial data <importing-initial-data>`.
 
-Starting up an existing Tabbycat instance
+Starting up an existing NekoTab instance
 =========================================
-To start your Tabbycat instance up again next time you use your computer::
+To start your NekoTab instance up again next time you use your computer::
 
-    $ cd path/to/my/tabbycat/directory
+    $ cd path/to/my/NekoTab/directory
     $ pipenv run npm run serve
 
 Or you can start a ``pipenv shell``, then run ``npm run serve`` from inside the Pipenv shell.
+

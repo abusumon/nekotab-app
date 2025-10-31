@@ -1,4 +1,4 @@
-.. _starting-a-tournament:
+﻿.. _starting-a-tournament:
 
 =====================
 Starting a Tournament
@@ -6,7 +6,7 @@ Starting a Tournament
 
 This page outlines a few things you should do at the start of a tournament, after you've :ref:`imported the initial data <importing-initial-data>`. Once you've done these, proceed to :ref:`running a tournament <running-a-tournament>`.
 
-.. caution:: Tabbycat is developed for — and tested on — modern web browsers. If you are using **Internet Explorer versions 8, 7, or 6** the interface may look odd or not function properly. Switch to a newer browser if possible.
+.. caution:: NekoTab is developed for â€” and tested on â€” modern web browsers. If you are using **Internet Explorer versions 8, 7, or 6** the interface may look odd or not function properly. Switch to a newer browser if possible.
 
 
 Tournament configuration
@@ -30,7 +30,7 @@ Authentication and Authorisation > Users
   .. note:: The people you're adding accounts for should be physically present when you do this, so that they can enter their password.
 
 Participants > Regions
-  - Optionally, each institution may belong to a *Region*. An institution's region is used within the adjudicator allocation process to visually identify teams and adjudicators for the purposes of highlighting diversity issues.  These have traditionally been used for geographic regions (such as Oceania), although could be repurposed as arbitrary markers of information — for example they could be used to denote teams from a particular State, institutional size, or circuit.
+  - Optionally, each institution may belong to a *Region*. An institution's region is used within the adjudicator allocation process to visually identify teams and adjudicators for the purposes of highlighting diversity issues.  These have traditionally been used for geographic regions (such as Oceania), although could be repurposed as arbitrary markers of information â€” for example they could be used to denote teams from a particular State, institutional size, or circuit.
 
 Participants > Adjudicators
   - An adjudicators *Base Score* represents their relative ability to judge important rooms, where adjudicators with higher numbers will, relative to the other adjudicators, be placed in better roles (ie as Chairs) and in the rooms you deem most important in each round. If you are running a small tournament, and plan to do your allocations manually, you can set everyone's number to the same amount.
@@ -38,7 +38,7 @@ Participants > Adjudicators
   - Regardless of how you score the adjs, if you have changed the minimum chairing score in settings, you'll want to make sure there are enough adjudicators that meet this minimum threshold or the automated allocator may not function effectively.
   - All types of conflicts are assigned to the relevant adjudicator. Adjudicators can be conflicted against particular teams, particular institutions, and other adjudicators. Each of these is a located in a tab at the top of the page.
   - Each adjudicator's gender is optional and is not displayed publicly; it is only shown in the adjudicator allocation interface
-  - Each adjudicator's pronoun is optional, and is only displayed if you use Tabbycat to print the ballots and feedback sheets for each round.
+  - Each adjudicator's pronoun is optional, and is only displayed if you use NekoTab to print the ballots and feedback sheets for each round.
 
 Participants > Teams
   - Note the distinction here between full name and short name. The latter is used on pages where space is tight, such as the draw displays or the adjudicator allocation interface.
@@ -49,19 +49,20 @@ Participants > Teams
 
 Participants > Speakers
   - Each speaker's gender is optional and is not displayed publicly; it is only shown in the adjudicator allocation interface.
-  - Each speaker's pronoun is optional, and is only displayed if you use Tabbycat to print the ballots and feedback sheets for each round.
+  - Each speaker's pronoun is optional, and is only displayed if you use NekoTab to print the ballots and feedback sheets for each round.
 
 Venues > Venues
   - A venue's priority determines its priority in being allocated. If there are 20 debates, and 30 rooms, the 20 rooms with the highest priorities will be chosen. Furthermore, if particular debates are marked as important during the draw process, those debates will receive the rooms with the highest priorities. In this way you can give close rooms to members of the adj core, or give larger rooms to debates that will draw a large audience.
 
 Venues > Venue Categories
-  - Venue categories are not needed for most kinds of tournaments. Their purpose is to classify particular venues, such as venues all within one building or venues that are accessible. Once assigned these categories can display in the venue's name — ie "Red 01.01" or be used to assign Venue Constraints that match particular teams, institutions, or adjudicators to particular types of venues.
+  - Venue categories are not needed for most kinds of tournaments. Their purpose is to classify particular venues, such as venues all within one building or venues that are accessible. Once assigned these categories can display in the venue's name â€” ie "Red 01.01" or be used to assign Venue Constraints that match particular teams, institutions, or adjudicators to particular types of venues.
 
 Information for the briefing
 ============================
 
 If you're using the online submissions feature, some things you should probably mention in the briefing:
 
-- Adjudicators must fill out ballots completely, including motions and venues—they are entered into the system.
+- Adjudicators must fill out ballots completely, including motions and venuesâ€”they are entered into the system.
 - There is a static URL for each person's ballots and feedback forms. It can be bookmarked, or the page can refreshed after each round.
 - If people submit a result or feedback online, they should indicate that they have done so on the paper copy of their ballot.
+

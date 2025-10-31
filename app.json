@@ -1,10 +1,10 @@
-{
-  "name": "Tabbycat",
+﻿{
+  "name": "NekoTab",
   "description": "Debating tournament tabulation software for British Parliamentary and a variety of two-team parliamentary formats",
-  "repository": "https://github.com/TabbycatDebate/tabbycat",
+  "repository": "https://github.com/NekoTabDebate/NekoTab",
   "keywords": ["debate", "debating"],
-  "website": "https://tabbycat.readthedocs.io/",
-  "logo": "https://raw.githubusercontent.com/TabbycatDebate/tabbycat/develop/tabbycat/static/logo-48x48.png",
+  "website": "https://NekoTab.readthedocs.io/",
+  "logo": "https://raw.githubusercontent.com/NekoTabDebate/NekoTab/develop/NekoTab/static/logo-48x48.png",
   "addons": [
     "papertrail",
     "rediscloud:30",
@@ -17,7 +17,7 @@
       "generator": "secret"
     },
     "TAB_DIRECTOR_EMAIL": {
-      "description": "Your email address. Tabbycat's developers may need to contact you to help diagnose any unexpected errors.",
+      "description": "Your email address. NekoTab's developers may need to contact you to help diagnose any unexpected errors.",
       "value": ""
     },
     "TIME_ZONE": {
@@ -55,3 +55,4 @@
   "stack": "heroku-22",
   "success_url": "/start/"
 }
+

@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2021-04-05 04:15\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: id\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/about/support.po\n"
@@ -31,16 +31,16 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: ../../about/support.rst:10
-msgid "`Our Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_ is a good place to ask for help. It's also a good place to keep up with new releases and participate in more general discussions of features and ideas."
-msgstr "`Grup Facebook kami <https://www.facebook.com/groups/tabbycat.debate/>`_ merupakan tempat yang baik untuk meminta bantuan. Grup ini juga baik untuk mengikuti pemberitahuan dengan rilis yang baru, dan berpartisipasi pada diskusi fitur dan ide yang lebih luas."
+msgid "`Our Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_ is a good place to ask for help. It's also a good place to keep up with new releases and participate in more general discussions of features and ideas."
+msgstr "`Grup Facebook kami <https://www.facebook.com/groups/NekoTab.debate/>`_ merupakan tempat yang baik untuk meminta bantuan. Grup ini juga baik untuk mengikuti pemberitahuan dengan rilis yang baru, dan berpartisipasi pada diskusi fitur dan ide yang lebih luas."
 
 #: ../../about/support.rst:13
 msgid "GitHub"
 msgstr "GitHub"
 
 #: ../../about/support.rst:15
-msgid "Adding an issue to our `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_ is a great way to let us know about bugs or writeup suggestions for how to improve Tabbycat. Pull requests are also encouraged!"
-msgstr "Menambahkan sebuah isu pada `Repositori Github <https://github.com/TabbycatDebate/tabbycat/issues>`_ adalah cara yang baik untuk memberitahu kami mengenai bug atau memberikan saran yang lebih baik untuk membuat Tabbycat menjadi lebih baik. Anda juga didorong untuk melakukan Pull Request!"
+msgid "Adding an issue to our `GitHub repository <https://github.com/NekoTabDebate/NekoTab/issues>`_ is a great way to let us know about bugs or writeup suggestions for how to improve NekoTab. Pull requests are also encouraged!"
+msgstr "Menambahkan sebuah isu pada `Repositori Github <https://github.com/NekoTabDebate/NekoTab/issues>`_ adalah cara yang baik untuk memberitahu kami mengenai bug atau memberikan saran yang lebih baik untuk membuat NekoTab menjadi lebih baik. Anda juga didorong untuk melakukan Pull Request!"
 
 #: ../../about/support.rst:17
 msgid "When submitting bugs or reporting errors please let us know your site address (if installed online) or operating system (if local) along with a complete description of the problem along with any error messages."
@@ -53,4 +53,5 @@ msgstr ""
 #: ../../about/support.rst:22
 msgid "Feel free to :ref:`contact the maintainers directly <authors>` if you are not able to access Facebook or GitHub."
 msgstr "Silakan hubungi :ref:` pengembang <authors>' jika anda tidak dapat mengakses Facebook atau Github."
+
 

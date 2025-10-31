@@ -1,12 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
+﻿# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2019, Philip Belesky, Chuan-Zheng Lee
-# This file is distributed under the same license as the Tabbycat package.
+# This file is distributed under the same license as the NekoTab package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Tabbycat 2.3\n"
+"Project-Id-Version: NekoTab 2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -26,7 +26,7 @@ msgid "Team standings rules"
 msgstr ""
 
 #: ../../features/standings-rules.rst:10
-msgid "In Tabbycat, you can choose how teams are ranked in the team standings. For example, at Australs, teams are ranked first on the number of wins, and second on their total speaker score. The setting that specifies how teams are ranked is called the **team standings precedence**. The team standings precedence is used:"
+msgid "In NekoTab, you can choose how teams are ranked in the team standings. For example, at Australs, teams are ranked first on the number of wins, and second on their total speaker score. The setting that specifies how teams are ranked is called the **team standings precedence**. The team standings precedence is used:"
 msgstr ""
 
 #: ../../features/standings-rules.rst:15
@@ -262,10 +262,11 @@ msgid "Our chi-squared test will then be centred around disproving this hypothes
 msgstr ""
 
 #: ../../features/standings-rules.rst:174
-msgid "The test proceeds by `calculating the chi-squared stat, then running a series of tests <https://github.com/TabbycatDebate/tabbycat/blob/develop/tabbycat/motions/statistics.py#L98>`_. The tests are where we go a little off-book with respect to statistical methodology. Normally we would test at a single \"level of significance\" (ie. with a certain degree of certainty), but that's insufficient in telling us how bad a motion ended up being. So, instead, we conduct a range of tests with a range of levels of significance, and calculate the minimum level of significance that causes our null hypothesis to be rejected. Using the minimum level of significance that rejects our null hypothesis, we can then grade the fairness of the motion on a scale. Motions whose tests fall below a certain threshold will be considered fair, while others will be graded based on the minimum."
+msgid "The test proceeds by `calculating the chi-squared stat, then running a series of tests <https://github.com/NekoTabDebate/NekoTab/blob/develop/NekoTab/motions/statistics.py#L98>`_. The tests are where we go a little off-book with respect to statistical methodology. Normally we would test at a single \"level of significance\" (ie. with a certain degree of certainty), but that's insufficient in telling us how bad a motion ended up being. So, instead, we conduct a range of tests with a range of levels of significance, and calculate the minimum level of significance that causes our null hypothesis to be rejected. Using the minimum level of significance that rejects our null hypothesis, we can then grade the fairness of the motion on a scale. Motions whose tests fall below a certain threshold will be considered fair, while others will be graded based on the minimum."
 msgstr ""
 
 #: ../../features/standings-rules.rst:176
 msgid "For formats with topic selection, the same test is applied using the number of affirmative and negative vetoes in place of wins. The assumption here is that, during the time allotted for motion selection, teams estimate how appealing a motion is from their position, and then veto the topic that they feel is least favourable. Thus, the null hypothesis is that a motion that is perceived of as fair would be vetoed by affirmative and negative teams to an equal degree."
 msgstr ""
+
 

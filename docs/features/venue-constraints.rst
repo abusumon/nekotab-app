@@ -1,10 +1,10 @@
-.. _venue-constraints:
+﻿.. _venue-constraints:
 
 =================
 Venue Constraints
 =================
 
-Tabbycat supports a basic form of venue constraints. A **venue constraint** is a
+NekoTab supports a basic form of venue constraints. A **venue constraint** is a
 requirement that a particular **team, adjudicator, institution** or **division**
 be assigned to a venue in a particular **venue category**.  Typical
 uses would include:
@@ -107,13 +107,14 @@ number of reasons:
   adjudicator) conflicted, so only one could be fulfilled.
 - It could be that all available rooms in the relevant category were already
   taken by other, higher-priority constraints.
-- It could just be one of those edge cases that's too hard for the naïve
+- It could just be one of those edge cases that's too hard for the naÃ¯ve
   algorithm to handle.
 
-Currently, Tabbycat doesn't tell you which of these happened, so if the venue
+Currently, NekoTab doesn't tell you which of these happened, so if the venue
 allocation fails to meet all your constraints, it's on you to figure out why. In
 most scenarios, we imagine you'll have few enough constraints that this will be
 obvious; for example, if the chief adjudicator is judging a team with
 accessibility requirements, it might be obvious that the latter's constraint
 took priority. We might in future add support for more useful guidance on
 conflicting constraints, but we currently consider this to be of low priority.
+

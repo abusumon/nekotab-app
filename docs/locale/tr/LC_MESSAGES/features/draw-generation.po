@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-05-25 23:54\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: tr\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/draw-generation.po\n"
@@ -56,19 +56,19 @@ msgstr ""
 
 #: ../../features/draw-generation.rst:24
 msgid "Pull up from top"
-msgstr "Yukarıdan yukarı çek"
+msgstr "YukarÄ±dan yukarÄ± Ã§ek"
 
 #: ../../features/draw-generation.rst:25
 msgid "Pull up from bottom"
-msgstr "Alttan yukarı çek"
+msgstr "Alttan yukarÄ± Ã§ek"
 
 #: ../../features/draw-generation.rst:26
 msgid "Pull up from middle"
-msgstr "Ortadan yukarı çek"
+msgstr "Ortadan yukarÄ± Ã§ek"
 
 #: ../../features/draw-generation.rst:27
 msgid "Pull up at random"
-msgstr "Rastgele yukarı çek"
+msgstr "Rastgele yukarÄ± Ã§ek"
 
 #: ../../features/draw-generation.rst:29
 msgid "If sides are `Random` or `Balance`:"
@@ -112,7 +112,7 @@ msgstr "Denge"
 
 #: ../../features/draw-generation.rst:43
 msgid "Pre-allocated"
-msgstr "Önceden tahsis edilmiş"
+msgstr "Ã–nceden tahsis edilmiÅŸ"
 
 #: ../../features/draw-generation.rst:44
 msgid "Manual ballot"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: ../../features/draw-generation.rst:48
 msgid "Slide"
-msgstr "Kaydırma"
+msgstr "KaydÄ±rma"
 
 #: ../../features/draw-generation.rst:49
 msgid "Fold"
@@ -136,7 +136,7 @@ msgstr "Katla"
 
 #: ../../features/draw-generation.rst:50
 msgid "Adjacent"
-msgstr "Komşu"
+msgstr "KomÅŸu"
 
 #: ../../features/draw-generation.rst:53
 msgid ":ref:`Conflict avoidance method <draw-conflict-avoidance>`"
@@ -148,11 +148,11 @@ msgstr ""
 
 #: ../../features/draw-generation.rst:55
 msgid "Off"
-msgstr "Kapalı"
+msgstr "KapalÄ±"
 
 #: ../../features/draw-generation.rst:56
 msgid "One-up-one-down"
-msgstr "Bir-yukarı-bir-aşağı"
+msgstr "Bir-yukarÄ±-bir-aÅŸaÄŸÄ±"
 
 #: ../../features/draw-generation.rst:58
 msgid ":ref:`Pullup restriction <draw-pullup-restriction>`"
@@ -164,18 +164,18 @@ msgstr ""
 
 #: ../../features/draw-generation.rst:60
 msgid "No restriction"
-msgstr "Kısıtlama yok"
+msgstr "KÄ±sÄ±tlama yok"
 
 #: ../../features/draw-generation.rst:61
 msgid "Choose from teams who have been pulled up the fewest times so far"
-msgstr "Şimdiye kadar en az kez yukarı çekilen takımlar arasından seçim yap"
+msgstr "Åžimdiye kadar en az kez yukarÄ± Ã§ekilen takÄ±mlar arasÄ±ndan seÃ§im yap"
 
 #: ../../features/draw-generation.rst:62
 msgid "Choose from teams with the lowest draw strength by speaks so far"
-msgstr "Şimdiye kadarki en düşük kura gücüne sahip takımlar arasından seçim yap"
+msgstr "Åžimdiye kadarki en dÃ¼ÅŸÃ¼k kura gÃ¼cÃ¼ne sahip takÄ±mlar arasÄ±ndan seÃ§im yap"
 
 #: ../../features/draw-generation.rst:64
-msgid "The valid options for intermediate brackets change depending on whether sides are pre-allocated, but these are **not** checked for validity. If you choose an invalid combination, Tabbycat will just crash. This won't corrupt the database, but it might be momentarily annoying."
+msgid "The valid options for intermediate brackets change depending on whether sides are pre-allocated, but these are **not** checked for validity. If you choose an invalid combination, NekoTab will just crash. This won't corrupt the database, but it might be momentarily annoying."
 msgstr ""
 
 #: ../../features/draw-generation.rst:67
@@ -183,7 +183,7 @@ msgid "The big picture"
 msgstr ""
 
 #: ../../features/draw-generation.rst:68
-msgid "When generating a power-paired draw, Tabbycat goes through five steps:"
+msgid "When generating a power-paired draw, NekoTab goes through five steps:"
 msgstr ""
 
 #: ../../features/draw-generation.rst:70
@@ -207,7 +207,7 @@ msgid "Finally, it assigns sides to teams in each debate."
 msgstr ""
 
 #: ../../features/draw-generation.rst:76
-msgid "For each of these steps except the first, Tabbycat allows you to choose between a number of different methods."
+msgid "For each of these steps except the first, NekoTab allows you to choose between a number of different methods."
 msgstr ""
 
 #: ../../features/draw-generation.rst:80
@@ -331,12 +331,12 @@ msgid "Add or edit the entry or entries in the **Team position allocations** tab
 msgstr ""
 
 #: ../../features/draw-generation.rst:148
-msgid "You can also do this by writing a script that creates ``TeamPositionAllocation`` objects and saves them. Have a look at `draw/management/commands/generatesideallocations.py <https://github.com/TabbycatDebate/tabbycat/blob/master/tabbycat/draw/management/commands/generatesideallocations.py>`_ for an example."
+msgid "You can also do this by writing a script that creates ``TeamPositionAllocation`` objects and saves them. Have a look at `draw/management/commands/generatesideallocations.py <https://github.com/NekoTabDebate/NekoTab/blob/master/NekoTab/draw/management/commands/generatesideallocations.py>`_ for an example."
 msgstr ""
 
 #: ../../features/draw-generation.rst:153
 msgid "Pairing method"
-msgstr "Eşleştirme yöntemi"
+msgstr "EÅŸleÅŸtirme yÃ¶ntemi"
 
 #: ../../features/draw-generation.rst:154
 msgid "It's easiest to describe these by example, using a ten-team bracket:"
@@ -364,7 +364,7 @@ msgstr ""
 
 #: ../../features/draw-generation.rst:166
 msgid "Conflict avoidance method"
-msgstr "Conflict kaçınma yöntemi"
+msgstr "Conflict kaÃ§Ä±nma yÃ¶ntemi"
 
 #: ../../features/draw-generation.rst:167
 msgid "A **conflict** is when two teams would face each other that have seen each other before, or are from the same institutions. Some tournaments have a preference against allowing this if it's avoidable within certain limits. The **draw avoid conflicts** option allows you to specify how."
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../../features/draw-generation.rst:187
 msgid "Pullup restriction"
-msgstr "Yukarı çekme kısıtlaması"
+msgstr "YukarÄ± Ã§ekme kÄ±sÄ±tlamasÄ±"
 
 #: ../../features/draw-generation.rst:188
 msgid "You can restrict which teams can be pulled up by configuring the draw generator to choose a pullup team from among only those teams who are the \"best off\" according to a given metric. If several teams are equally \"best off\" within the lower bracket, the draw generator chooses among them using the same **pull-up method** already specified (*e.g.*, \"pull up from top\")"
@@ -431,6 +431,7 @@ msgid "What do I do if the draw looks wrong?"
 msgstr ""
 
 #: ../../features/draw-generation.rst:203
-msgid "You can edit match-ups directly from the draw page. Functionally, you can do anything you want. Of course, operationally, you should only edit the draw when you *know* that the draw algorithm got something wrong. If you need to do this, even just once, please file a bug report by creating a new issue on `our issues page on GitHub <https://github.com/TabbycatDebate/tabbycat/issues>`_."
+msgid "You can edit match-ups directly from the draw page. Functionally, you can do anything you want. Of course, operationally, you should only edit the draw when you *know* that the draw algorithm got something wrong. If you need to do this, even just once, please file a bug report by creating a new issue on `our issues page on GitHub <https://github.com/NekoTabDebate/NekoTab/issues>`_."
 msgstr ""
+
 

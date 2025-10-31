@@ -1,4 +1,4 @@
-.. _running-a-tournament:
+﻿.. _running-a-tournament:
 
 ====================
 Running a Tournament
@@ -31,7 +31,7 @@ To do this, click the round in the menu, then click **Availability**. Here you c
 
 .. _generating-the-draw:
 
-.. note:: You can set availabilities in advance of the current round — ie if you know the venue/adjudicator schedules their availabilities can be set ahead of time.
+.. note:: You can set availabilities in advance of the current round â€” ie if you know the venue/adjudicator schedules their availabilities can be set ahead of time.
 
 Generating the draw
 ===================
@@ -65,25 +65,25 @@ Once you're happy with your adjudicator allocation, you're ready to start the ro
 
   .. image:: images/draw-by-venue.png
 
-2. **Release to public.** If you're using the public draw function (where the draw is posted publicly to your Tabbycat website) use the **Release to Public** button to allow the page to display.
+2. **Release to public.** If you're using the public draw function (where the draw is posted publicly to your NekoTab website) use the **Release to Public** button to allow the page to display.
 
   .. tip::
 
     - To avoid the site from being overloaded by anxious refreshers, we recommend that large tournaments not release the draw to the public until after it's been seen by general assembly. That said, note that due to caching there can be a delay of up to 1 minute between when a draw is released and when it first shows up on the public site.
-    - Tabbycat can be set to send emails once the draw is released to adjudicators informing them of their assignments for convenience.
+    - NekoTab can be set to send emails once the draw is released to adjudicators informing them of their assignments for convenience.
 
 .. _releasing-the-motions:
 
 Entering and Releasing Motions
 ==============================
 
-Tabbycat is agnostic as to whether you enter motions into Tabbycat before or after they are shown publicly. However, they must be entered *at some point* before ballots are entered.
+NekoTab is agnostic as to whether you enter motions into NekoTab before or after they are shown publicly. However, they must be entered *at some point* before ballots are entered.
 
 1. **Enter the motion text.** Either before or after their public release motions can be entered in the **Motions** section for that round.
 
 2. **Release to general assembly.** If you are entering motions *before* they are publicly revealed note that there is a *Display Motions* button in the **Display** area that allows you to do a Power Point style motion release.
 
-3. **Release to public.** As with draws, if you have the *enable public view of motions* setting configured your Tabbycat website will display a running list of motions from the tournament. When this is on, using the **Release Motions to Public** button on the **Motions** page will mark the current set of motions as able to be displayed on this page.
+3. **Release to public.** As with draws, if you have the *enable public view of motions* setting configured your NekoTab website will display a running list of motions from the tournament. When this is on, using the **Release Motions to Public** button on the **Motions** page will mark the current set of motions as able to be displayed on this page.
 
 .. _entering-results:
 
@@ -114,3 +114,4 @@ Once you've got all the results entered and confirmed, you're ready to progress 
 .. note:: There is a design assumption that you will always want to release results for non-silent rounds before you start working on the draw for the next round. If this isn't true for you, please get in touch with us so that we know. The workaround is to make all rounds silent, then unsilent them when you're ready to release results.
 
 .. tip:: Emails can be sent to speakers informing them of their team's win/loss/points record before advancing rounds. This is independent from whether the whole round's results are released to the public.
+

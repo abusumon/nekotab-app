@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2021-04-15 07:36\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: id\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/about/contributing.po\n"
@@ -23,32 +23,32 @@ msgid "Contributing"
 msgstr "Berkontribusi"
 
 #: ../../../CONTRIBUTING.rst:5
-msgid "Contributions are welcome, and are greatly appreciated! Every little bit helps, and credit will be given. While at its core Tabbycat is a software project, you do not need to know how to code or use Git in order to help. We welcome feedback and ideas based on your tabbing experience and appreciate suggestions or proposals for how to improve the wording, translation, and design of our interface and documentation."
-msgstr "Kontribusi dipersilahkan, dan sangat dihargai! Sedikit apapun bantuan yang diberikan akan membantu, dan pujian akan diberikan. Meskipun inti Tabbycat adalah proyek perangkat lunak, Anda tidak perlu mengetahui cara membuat kode atau menggunakan Git untuk membantu. Kami menerima umpan balik dan ide berdasarkan pengalaman tabbing Anda dan menghargai saran atau proposal tentang cara meningkatkan susunan kata, terjemahan, dan desain antarmuka dan dokumentasi kami."
+msgid "Contributions are welcome, and are greatly appreciated! Every little bit helps, and credit will be given. While at its core NekoTab is a software project, you do not need to know how to code or use Git in order to help. We welcome feedback and ideas based on your tabbing experience and appreciate suggestions or proposals for how to improve the wording, translation, and design of our interface and documentation."
+msgstr "Kontribusi dipersilahkan, dan sangat dihargai! Sedikit apapun bantuan yang diberikan akan membantu, dan pujian akan diberikan. Meskipun inti NekoTab adalah proyek perangkat lunak, Anda tidak perlu mengetahui cara membuat kode atau menggunakan Git untuk membantu. Kami menerima umpan balik dan ide berdasarkan pengalaman tabbing Anda dan menghargai saran atau proposal tentang cara meningkatkan susunan kata, terjemahan, dan desain antarmuka dan dokumentasi kami."
 
 #: ../../../CONTRIBUTING.rst:7
-msgid "Feel free to `join our Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_ if you have any questions about how to get started."
-msgstr "Jangan ragu untuk bergabung dengan grup Facebook kami <https://www.facebook.com/groups/tabbycat.debate/>`_ jika anda memiliki pertanyaan mengenai bagaimana memulainya."
+msgid "Feel free to `join our Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_ if you have any questions about how to get started."
+msgstr "Jangan ragu untuk bergabung dengan grup Facebook kami <https://www.facebook.com/groups/NekoTab.debate/>`_ jika anda memiliki pertanyaan mengenai bagaimana memulainya."
 
 #: ../../../CONTRIBUTING.rst:10
 msgid "Feedback and ideas"
 msgstr "Umpan balik dan ide"
 
 #: ../../../CONTRIBUTING.rst:12
-msgid "These can be added as issues in the `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_; posts in our `Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_; or as an :ref:`email to the developers <authors>`."
-msgstr "Hal ini dapat ditambahkan sebagai sebuah masalah pada pos mengenai `repositori GitHub <https://github.com/TabbycatDebate/tabbycat/issues>`_; di `grup Facebook kami <https://www.facebook.com/groups/tabbycat.debate/>`_; atau sebagai `email referensi :ref: untuk pengembang <authors>`."
+msgid "These can be added as issues in the `GitHub repository <https://github.com/NekoTabDebate/NekoTab/issues>`_; posts in our `Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_; or as an :ref:`email to the developers <authors>`."
+msgstr "Hal ini dapat ditambahkan sebagai sebuah masalah pada pos mengenai `repositori GitHub <https://github.com/NekoTabDebate/NekoTab/issues>`_; di `grup Facebook kami <https://www.facebook.com/groups/NekoTab.debate/>`_; atau sebagai `email referensi :ref: untuk pengembang <authors>`."
 
 #: ../../../CONTRIBUTING.rst:15
 msgid "Bug reports"
 msgstr "Laporan bug"
 
 #: ../../../CONTRIBUTING.rst:17
-msgid "Please report bugs by opening a new issue in our `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_. It is most helpful if you can include:"
-msgstr "Harap laporkan masalah yang ada dengan membuka sebuah issue baru di `repositori GitHub kami <https://github.com/TabbycatDebate/tabbycat/issues>`_. Akan sangat menolong jika anda menyertakan:"
+msgid "Please report bugs by opening a new issue in our `GitHub repository <https://github.com/NekoTabDebate/NekoTab/issues>`_. It is most helpful if you can include:"
+msgstr "Harap laporkan masalah yang ada dengan membuka sebuah issue baru di `repositori GitHub kami <https://github.com/NekoTabDebate/NekoTab/issues>`_. Akan sangat menolong jika anda menyertakan:"
 
 #: ../../../CONTRIBUTING.rst:19
-msgid "How Tabbycat was installed (on Heroku, locally on macOS, `etc.`)"
-msgstr "Bagaimana Tabbycat dapat terinstal (pada Heroku, secara lokal pada MacOS, dan sebagainya)"
+msgid "How NekoTab was installed (on Heroku, locally on macOS, `etc.`)"
+msgstr "Bagaimana NekoTab dapat terinstal (pada Heroku, secara lokal pada MacOS, dan sebagainya)"
 
 #: ../../../CONTRIBUTING.rst:20
 msgid "Any details about your tournament and setup that might be helpful in troubleshooting"
@@ -63,8 +63,8 @@ msgid "Getting started with development"
 msgstr "Memulai pengembangan"
 
 #: ../../../CONTRIBUTING.rst:26
-msgid "To easily test your changes to Tabbycat you probably want a working :ref:`local install <install-local>` (without using Docker)"
-msgstr "Agar lebih mudah dalam menguji perubahan pada Tabbycat, anda sebaiknya menggunakan instalasi `lokal :ref: <install-local>` (tanpa menggunakan Docker)"
+msgid "To easily test your changes to NekoTab you probably want a working :ref:`local install <install-local>` (without using Docker)"
+msgstr "Agar lebih mudah dalam menguji perubahan pada NekoTab, anda sebaiknya menggunakan instalasi `lokal :ref: <install-local>` (tanpa menggunakan Docker)"
 
 #: ../../../CONTRIBUTING.rst:27
 msgid "Please submit pull requests for features and bug fixes against `develop` (but not `master`)."
@@ -75,7 +75,7 @@ msgid "We broadly use the `git-flow workflow <http://danielkummer.github.io/git-
 msgstr "Secara luas, kami menggunakan `git-flow workflow <http://danielkummer.github.io/git-flow-cheatsheet/>`_."
 
 #: ../../../CONTRIBUTING.rst:29
-msgid "We use Django's testing tools — adding unit tests to new features is greatly appreciated"
+msgid "We use Django's testing tools â€” adding unit tests to new features is greatly appreciated"
 msgstr "Kami menggunakan peralatan tes dari Django - menambahkan unit tes ke fitur baru akan sangat dihargai"
 
 #: ../../../CONTRIBUTING.rst:31
@@ -215,8 +215,8 @@ msgid "``docs`` contains our document source files and images (although some are
 msgstr "``docs`` memuat file dan gambar sumber dokumen kami (meskipun beberapa sudah ditautkan dari direktori root)"
 
 #: ../../../CONTRIBUTING.rst:115
-msgid "``tabbycat`` is the main directory containing the Django project"
-msgstr "``tabbycat`` adalah direktori utama yang memuat proyek Django"
+msgid "``NekoTab`` is the main directory containing the Django project"
+msgstr "``NekoTab`` adalah direktori utama yang memuat proyek Django"
 
 #: ../../../CONTRIBUTING.rst:113
 msgid "``locale`` contains translation strings for shared templates (others are in respective app directories)"
@@ -247,8 +247,8 @@ msgid "The `gettext <https://docs.djangoproject.com/en/2.2/topics/i18n/translati
 msgstr "Framework `gettext <https://docs.djangoproject.com/en/2.2/topics/i18n/translation/>`_ digunakan untuk mengaktifkan terjemahan string di file Python dan template Django. Backend dalam konteks ini menandakan tipe file ini."
 
 #: ../../../CONTRIBUTING.rst:124
-msgid "The backend's translation files can be updated from the ``tabbycat`` directory using one or more of the supporting language codes (see settings.py)::"
-msgstr "File terjemahan dari backend, dapat diperbarui dari direktori ``tabbycat`` menggunakan dukungan 1 atau lebih bahasa pemrograman (lihat settings.py)::"
+msgid "The backend's translation files can be updated from the ``NekoTab`` directory using one or more of the supporting language codes (see settings.py)::"
+msgstr "File terjemahan dari backend, dapat diperbarui dari direktori ``NekoTab`` menggunakan dukungan 1 atau lebih bahasa pemrograman (lihat settings.py)::"
 
 #: ../../../CONTRIBUTING.rst:128
 msgid "To do more than one language, just specify ``-l`` multiple times, _e.g._ ``-les -lar``."
@@ -259,12 +259,12 @@ msgid "These can then be compiled using::"
 msgstr "Hal itu dapat dikompilasi dengan menggunakan::"
 
 #: ../../../CONTRIBUTING.rst:134
-msgid "As it stands Heroku needs the .mo files pre-compiled (see `issue in Heroku Python buildpack <https://github.com/heroku/heroku-buildpack-python/issues/198>`_, so these are committed to Git. Note that the English (``en``) language files should not be compiled; their sole purpose is to provide a source language for `Crowdin <https://crowdin.com/project/tabbycat>`_."
-msgstr "Heroku membutuhkan file .mo yang sudah dikompilasi sebelumnya (lihat `issue in Heroku Python buildpack <https://github.com/heroku/heroku-buildpack-python/issues/198>`_, sehingga ini sudah di commit ke Git. Harap dicatat bahwa file bahasa Inggris(``en``) sebaiknya tidak ikut dikompilasi, satu-satunya tujuan mereka adalah menyediakan bahasa sumber untuk `Crowdin <https://crowdin.com/project/tabbycat>`_."
+msgid "As it stands Heroku needs the .mo files pre-compiled (see `issue in Heroku Python buildpack <https://github.com/heroku/heroku-buildpack-python/issues/198>`_, so these are committed to Git. Note that the English (``en``) language files should not be compiled; their sole purpose is to provide a source language for `Crowdin <https://crowdin.com/project/NekoTab>`_."
+msgstr "Heroku membutuhkan file .mo yang sudah dikompilasi sebelumnya (lihat `issue in Heroku Python buildpack <https://github.com/heroku/heroku-buildpack-python/issues/198>`_, sehingga ini sudah di commit ke Git. Harap dicatat bahwa file bahasa Inggris(``en``) sebaiknya tidak ikut dikompilasi, satu-satunya tujuan mereka adalah menyediakan bahasa sumber untuk `Crowdin <https://crowdin.com/project/NekoTab>`_."
 
 #: ../../../CONTRIBUTING.rst:136
-msgid "Strings defined in Vue files must similarily be marked with ``gettext`` but must be added manually to ``tabbycat/locale/LANGUAGE_CODE/djangojs.po``, for each language supported. These can then compiled to javascript bundles using::"
-msgstr "String yang ditentukan dari file Vue harus sama dengan ``gettext`` namun harus ditambahkan secara manual ke ``tabbycat/locale/LANGUAGE_CODE/djangojs.po``, untuk setiap bahasa yang didukung. Kemudian hal ini dapat dikompilasi ke bundle javascript menggunakan::"
+msgid "Strings defined in Vue files must similarily be marked with ``gettext`` but must be added manually to ``NekoTab/locale/LANGUAGE_CODE/djangojs.po``, for each language supported. These can then compiled to javascript bundles using::"
+msgstr "String yang ditentukan dari file Vue harus sama dengan ``gettext`` namun harus ditambahkan secara manual ke ``NekoTab/locale/LANGUAGE_CODE/djangojs.po``, untuk setiap bahasa yang didukung. Kemudian hal ini dapat dikompilasi ke bundle javascript menggunakan::"
 
 #: ../../../CONTRIBUTING.rst:141
 msgid "These are then also committed to git to save users needing to run `compilejsi18n` during setup. The resulting files are then bundled as part of the npm build task. Updating these translations in development (live-reload) requires the use of the ``cp-i18n`` npm task."
@@ -287,8 +287,8 @@ msgid "Bump version number in ``docs/conf.py``"
 msgstr "Nomor versi dari Bump ada di ``docs/conf.py``"
 
 #: ../../../CONTRIBUTING.rst:149
-msgid "Bump version number and (if applicable) codename in ``tabbycat/settings/core.py``"
-msgstr "Nomor versi Bump, dan (jika ada) kode nama, terdapat di ``tabbycat/settings/core.py``"
+msgid "Bump version number and (if applicable) codename in ``NekoTab/settings/core.py``"
+msgstr "Nomor versi Bump, dan (jika ada) kode nama, terdapat di ``NekoTab/settings/core.py``"
 
 #: ../../../CONTRIBUTING.rst:150
 msgid "Update the main ``CHANGELOG.rst`` file (including release date)"
@@ -349,4 +349,5 @@ msgstr "Terbitkan rilis resmi dengan catatan perubahan di GitHub"
 #: ../../../CONTRIBUTING.rst:164
 msgid "Post change notes on the Facebook page/group"
 msgstr "Posting catatan perubahan di halaman/grup Facebook"
+
 

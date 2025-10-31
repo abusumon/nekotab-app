@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-08-24 10:33\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/index.po\n"
@@ -20,15 +20,15 @@ msgstr ""
 
 #: ../../index.rst:18
 msgid "Installation"
-msgstr "Instalación"
+msgstr "InstalaciÃ³n"
 
 #: ../../index.rst:32
-msgid "Using Tabbycat"
-msgstr "Usando Tabbycat"
+msgid "Using NekoTab"
+msgstr "Usando NekoTab"
 
 #: ../../index.rst:41
 msgid "Tabbing Guide"
-msgstr "Cómo tabular"
+msgstr "CÃ³mo tabular"
 
 #: ../../index.rst:52
 msgid "Feature notes"
@@ -39,10 +39,11 @@ msgid "About"
 msgstr "Acerca de"
 
 #: ../../index.rst:8
-msgid "Tabbycat User Guide"
-msgstr "Guía de usuario de Tabbycat"
+msgid "NekoTab User Guide"
+msgstr "GuÃ­a de usuario de NekoTab"
 
 #: ../../index.rst:10
-msgid "Tabbycat is a draw tabulation system for parliamentary debate tournaments. It supports two-team formats such as Australs, World Schools, Asians, Australian Easters and all New Zealand formats, as well as British Parliamentary (WUDC). It is also highly configurable, supporting many custom variations of the above formats too. If you're looking for a general overview of the software, check out our `README on Github <https://github.com/TabbycatDebate/tabbycat>`_."
-msgstr "Tabbycat es un sistema de tabulación para debates en formato Parlamentario Británico (BP). Permite diversos formatos de dos equipos como Australs, World Schools, Asians, Australian Easters y todos los formatos neozolandeses, así como WUDC. Es sumamente personalizable, permitiendo variar enormemente cualquiera de los formatos mencionados anteriormente. Si buscas una idea general del software, lee el fichero README en el repositorio de Github <https://github.com/TabbycatDebate/tabbycat>."
+msgid "NekoTab is a draw tabulation system for parliamentary debate tournaments. It supports two-team formats such as Australs, World Schools, Asians, Australian Easters and all New Zealand formats, as well as British Parliamentary (WUDC). It is also highly configurable, supporting many custom variations of the above formats too. If you're looking for a general overview of the software, check out our `README on Github <https://github.com/NekoTabDebate/NekoTab>`_."
+msgstr "NekoTab es un sistema de tabulaciÃ³n para debates en formato Parlamentario BritÃ¡nico (BP). Permite diversos formatos de dos equipos como Australs, World Schools, Asians, Australian Easters y todos los formatos neozolandeses, asÃ­ como WUDC. Es sumamente personalizable, permitiendo variar enormemente cualquiera de los formatos mencionados anteriormente. Si buscas una idea general del software, lee el fichero README en el repositorio de Github <https://github.com/NekoTabDebate/NekoTab>."
+
 

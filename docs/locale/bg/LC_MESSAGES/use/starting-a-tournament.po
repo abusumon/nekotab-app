@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2021-01-31 10:15\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: bg\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/use/starting-a-tournament.po\n"
@@ -27,7 +27,7 @@ msgid "This page outlines a few things you should do at the start of a tournamen
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:9
-msgid "Tabbycat is developed for — and tested on — modern web browsers. If you are using **Internet Explorer versions 8, 7, or 6** the interface may look odd or not function properly. Switch to a newer browser if possible."
+msgid "NekoTab is developed for â€” and tested on â€” modern web browsers. If you are using **Internet Explorer versions 8, 7, or 6** the interface may look odd or not function properly. Switch to a newer browser if possible."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:13
@@ -75,7 +75,7 @@ msgid "Participants > Regions"
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:33
-msgid "Optionally, each institution may belong to a *Region*. An institution's region is used within the adjudicator allocation process to visually identify teams and adjudicators for the purposes of highlighting diversity issues.  These have traditionally been used for geographic regions (such as Oceania), although could be repurposed as arbitrary markers of information — for example they could be used to denote teams from a particular State, institutional size, or circuit."
+msgid "Optionally, each institution may belong to a *Region*. An institution's region is used within the adjudicator allocation process to visually identify teams and adjudicators for the purposes of highlighting diversity issues.  These have traditionally been used for geographic regions (such as Oceania), although could be repurposed as arbitrary markers of information â€” for example they could be used to denote teams from a particular State, institutional size, or circuit."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:41
@@ -103,7 +103,7 @@ msgid "Each adjudicator's gender is optional and is not displayed publicly; it i
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:41
-msgid "Each adjudicator's pronoun is optional, and is only displayed if you use tabbycat to print the ballots and feedback sheets for each round."
+msgid "Each adjudicator's pronoun is optional, and is only displayed if you use NekoTab to print the ballots and feedback sheets for each round."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:48
@@ -139,7 +139,7 @@ msgid "Each speaker's gender is optional and is not displayed publicly; it is on
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:52
-msgid "Each speaker's pronoun is optional, and is only displayed if you use tabbycat to print the ballots and feedback sheets for each round."
+msgid "Each speaker's pronoun is optional, and is only displayed if you use NekoTab to print the ballots and feedback sheets for each round."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:55
@@ -171,7 +171,7 @@ msgid "Venues > Venue Categories"
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:64
-msgid "Venue categories are not needed for most kinds of tournaments. Their purpose is to classify particular venues, such as venues all within one building or venues that are accessible. Once assigned these categories can display in the venue's name — ie \"Red 01.01\" or be used to assign Venue Constraints that match particular teams, institutions, or adjudicators to particular types of venues."
+msgid "Venue categories are not needed for most kinds of tournaments. Their purpose is to classify particular venues, such as venues all within one building or venues that are accessible. Once assigned these categories can display in the venue's name â€” ie \"Red 01.01\" or be used to assign Venue Constraints that match particular teams, institutions, or adjudicators to particular types of venues."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:67
@@ -183,7 +183,7 @@ msgid "If you're using the online submissions feature, some things you should pr
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:71
-msgid "Adjudicators must fill out ballots completely, including motions and venues—they are entered into the system."
+msgid "Adjudicators must fill out ballots completely, including motions and venuesâ€”they are entered into the system."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:72
@@ -193,4 +193,5 @@ msgstr ""
 #: ../../use/starting-a-tournament.rst:73
 msgid "If people submit a result or feedback online, they should indicate that they have done so on the paper copy of their ballot."
 msgstr ""
+
 
