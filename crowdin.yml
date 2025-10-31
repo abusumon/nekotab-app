@@ -1,7 +1,7 @@
-files: [
+﻿files: [
  {
-  "source" : "/tabbycat/**/locale/en/LC_MESSAGES/*.po",
-  "translation" : "/tabbycat/**/locale/%two_letters_code%/LC_MESSAGES/%original_file_name%",
+  "source" : "/NekoTab/**/locale/en/LC_MESSAGES/*.po",
+  "translation" : "/NekoTab/**/locale/%two_letters_code%/LC_MESSAGES/%original_file_name%",
   "update_option" : "update_as_unapproved",
  },
  {
@@ -10,3 +10,4 @@ files: [
   "update_option" : "update_as_unapproved",
  }
 ]
+

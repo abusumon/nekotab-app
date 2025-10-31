@@ -1,10 +1,10 @@
-.. _api:
+﻿.. _api:
 
 =================================
 Application Programming Interface
 =================================
 
-In conjunction with the public-facing interface of Tabbycat, there is also an Application Programming Interface (or *API*), which provides access to Tabbycat for external applications. For that, the API sends and receives data in a structured format for easy handling.
+In conjunction with the public-facing interface of NekoTab, there is also an Application Programming Interface (or *API*), which provides access to NekoTab for external applications. For that, the API sends and receives data in a structured format for easy handling.
 
 Accessing the API
 ======================
@@ -27,4 +27,5 @@ Unauthenticated (public) endpoints are restricted in that they cannot perform mo
 Schema
 ======
 
-The API schema documentation can be accessed on Tabbycat instances version 2.8+ through the ``/api/schema/redoc/`` path. The schemas for previous versions can be found in the ``docs`` directory of the Tabbycat repository at version-tagged points.
+The API schema documentation can be accessed on NekoTab instances version 2.8+ through the ``/api/schema/redoc/`` path. The schemas for previous versions can be found in the ``docs`` directory of the NekoTab repository at version-tagged points.
+

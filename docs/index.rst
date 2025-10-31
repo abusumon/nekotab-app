@@ -1,17 +1,17 @@
-
+﻿
 .. raw:: html
 
-    <img id="logo" src="https://raw.githubusercontent.com/TabbycatDebate/tabbycat/develop/tabbycat/static/logo.svg?sanitize=true">
+    <img id="logo" src="https://raw.githubusercontent.com/NekoTabDebate/NekoTab/develop/NekoTab/static/logo.svg?sanitize=true">
 
 ======================
-Tabbycat User Guide
+NekoTab User Guide
 ======================
 
-Tabbycat is a draw tabulation system for parliamentary debate tournaments. It
+NekoTab is a draw tabulation system for parliamentary debate tournaments. It
 supports two-team formats such as Australs, World Schools, Asians, Australian
 Easters and all New Zealand formats, as well as British Parliamentary (WUDC). It
 is also highly configurable, supporting many custom variations of the above
-formats too. If you're looking for a general overview of the software, check out our `README on Github <https://github.com/TabbycatDebate/tabbycat>`_.
+formats too. If you're looking for a general overview of the software, check out our `README on Github <https://github.com/NekoTabDebate/NekoTab>`_.
 
 .. _installation-docs:
 
@@ -31,7 +31,7 @@ formats too. If you're looking for a general overview of the software, check out
 
 .. toctree::
    :maxdepth: 1
-   :caption: Using Tabbycat
+   :caption: Using NekoTab
 
    use/importing-data
    use/starting-a-tournament
@@ -84,3 +84,4 @@ formats too. If you're looking for a general overview of the software, check out
    about/contributing
    about/licence
    about/integrations
+

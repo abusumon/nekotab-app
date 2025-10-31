@@ -1,12 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
+﻿# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2019, Philip Belesky, Chuan-Zheng Lee
-# This file is distributed under the same license as the Tabbycat package.
+# This file is distributed under the same license as the NekoTab package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Tabbycat 2.3\n"
+"Project-Id-Version: NekoTab 2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -30,7 +30,7 @@ msgid "Facebook"
 msgstr ""
 
 #: ../../about/support.rst:10
-msgid "`Our Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_ is a good place to ask for help. It's also a good place to keep up with new releases and participate in more general discussions of features and ideas."
+msgid "`Our Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_ is a good place to ask for help. It's also a good place to keep up with new releases and participate in more general discussions of features and ideas."
 msgstr ""
 
 #: ../../about/support.rst:13
@@ -38,7 +38,7 @@ msgid "GitHub"
 msgstr ""
 
 #: ../../about/support.rst:15
-msgid "Adding an issue to our `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_ is a great way to let us know about bugs or writeup suggestions for how to improve Tabbycat. Pull requests are also encouraged!"
+msgid "Adding an issue to our `GitHub repository <https://github.com/NekoTabDebate/NekoTab/issues>`_ is a great way to let us know about bugs or writeup suggestions for how to improve NekoTab. Pull requests are also encouraged!"
 msgstr ""
 
 #: ../../about/support.rst:17
@@ -52,4 +52,5 @@ msgstr ""
 #: ../../about/support.rst:22
 msgid "Feel free to :ref:`contact the maintainers directly <authors>` if you are not able to access Facebook or GitHub."
 msgstr ""
+
 

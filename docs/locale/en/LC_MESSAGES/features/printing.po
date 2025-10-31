@@ -1,12 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
+﻿# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2019, Philip Belesky, Chuan-Zheng Lee
-# This file is distributed under the same license as the Tabbycat package.
+# This file is distributed under the same license as the NekoTab package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Tabbycat 2.3\n"
+"Project-Id-Version: NekoTab 2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -22,7 +22,7 @@ msgid "Printing Ballots and Feedback"
 msgstr ""
 
 #: ../../features/printing.rst:5
-msgid "Tabbycat offers the ability to print scoresheets and feedback sheets on a per-round basis. This means that each scoresheet is customised to match the draw, and so will display:"
+msgid "NekoTab offers the ability to print scoresheets and feedback sheets on a per-round basis. This means that each scoresheet is customised to match the draw, and so will display:"
 msgstr ""
 
 #: ../../features/printing.rst:7
@@ -64,4 +64,5 @@ msgstr ""
 #: ../../features/printing.rst:21
 msgid "Printing works best in Safari and Firefox; use those if possible."
 msgstr ""
+
 

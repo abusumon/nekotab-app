@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:20\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: ro\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/about/tournament-history.po\n"
@@ -23,7 +23,7 @@ msgid "Tournament History"
 msgstr ""
 
 #: ../../about/tournament-history.rst:5
-msgid "A partial list of major national and international tournaments (that we know of) which have used Tabbycat."
+msgid "A partial list of major national and international tournaments (that we know of) which have used NekoTab."
 msgstr ""
 
 #: ../../about/tournament-history.rst:8
@@ -245,4 +245,5 @@ msgstr ""
 #: ../../about/tournament-history.rst:79
 msgid "Auckland Australs"
 msgstr ""
+
 

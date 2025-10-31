@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-11-02 17:45\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: ast\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/about/support.po\n"
@@ -31,7 +31,7 @@ msgid "Facebook"
 msgstr ""
 
 #: ../../about/support.rst:10
-msgid "`Our Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_ is a good place to ask for help. It's also a good place to keep up with new releases and participate in more general discussions of features and ideas."
+msgid "`Our Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_ is a good place to ask for help. It's also a good place to keep up with new releases and participate in more general discussions of features and ideas."
 msgstr ""
 
 #: ../../about/support.rst:13
@@ -39,7 +39,7 @@ msgid "GitHub"
 msgstr ""
 
 #: ../../about/support.rst:15
-msgid "Adding an issue to our `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_ is a great way to let us know about bugs or writeup suggestions for how to improve Tabbycat. Pull requests are also encouraged!"
+msgid "Adding an issue to our `GitHub repository <https://github.com/NekoTabDebate/NekoTab/issues>`_ is a great way to let us know about bugs or writeup suggestions for how to improve NekoTab. Pull requests are also encouraged!"
 msgstr ""
 
 #: ../../about/support.rst:17
@@ -53,4 +53,5 @@ msgstr ""
 #: ../../about/support.rst:22
 msgid "Feel free to :ref:`contact the maintainers directly <authors>` if you are not able to access Facebook or GitHub."
 msgstr ""
+
 

@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:11\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: he\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/user-accounts.po\n"
@@ -107,7 +107,7 @@ msgid "Editing the database directly."
 msgstr ""
 
 #: ../../features/user-accounts.rst:39
-msgid "If a user account on the tab system belongs to someone who is also a participant in the tournament (*e.g.*, a chief adjudicator), these two capacities are completely separate. User accounts are only used to regulate access to administrative functions. Tabbycat doesn't know about any relationship between user accounts, and who is participating in the tournament."
+msgid "If a user account on the tab system belongs to someone who is also a participant in the tournament (*e.g.*, a chief adjudicator), these two capacities are completely separate. User accounts are only used to regulate access to administrative functions. NekoTab doesn't know about any relationship between user accounts, and who is participating in the tournament."
 msgstr ""
 
 #: ../../features/user-accounts.rst:42
@@ -183,7 +183,7 @@ msgid "The email address is optional."
 msgstr ""
 
 #: ../../features/user-accounts.rst:73
-msgid "This email address is only used to reset their password if they forget it, and has nothing to do with the email address that Tabbycat uses to send emails to tournament participants (*e.g.* private URL links)."
+msgid "This email address is only used to reset their password if they forget it, and has nothing to do with the email address that NekoTab uses to send emails to tournament participants (*e.g.* private URL links)."
 msgstr ""
 
 #: ../../features/user-accounts.rst:75
@@ -193,4 +193,5 @@ msgstr ""
 #: ../../features/user-accounts.rst:77
 msgid "Click \"Save\" or \"Save and add another\"."
 msgstr ""
+
 

@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-03-15 13:13\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: kk\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/draw-generation.po\n"
@@ -175,7 +175,7 @@ msgid "Choose from teams with the lowest draw strength by speaks so far"
 msgstr ""
 
 #: ../../features/draw-generation.rst:64
-msgid "The valid options for intermediate brackets change depending on whether sides are pre-allocated, but these are **not** checked for validity. If you choose an invalid combination, Tabbycat will just crash. This won't corrupt the database, but it might be momentarily annoying."
+msgid "The valid options for intermediate brackets change depending on whether sides are pre-allocated, but these are **not** checked for validity. If you choose an invalid combination, NekoTab will just crash. This won't corrupt the database, but it might be momentarily annoying."
 msgstr ""
 
 #: ../../features/draw-generation.rst:67
@@ -183,7 +183,7 @@ msgid "The big picture"
 msgstr ""
 
 #: ../../features/draw-generation.rst:68
-msgid "When generating a power-paired draw, Tabbycat goes through five steps:"
+msgid "When generating a power-paired draw, NekoTab goes through five steps:"
 msgstr ""
 
 #: ../../features/draw-generation.rst:70
@@ -207,7 +207,7 @@ msgid "Finally, it assigns sides to teams in each debate."
 msgstr ""
 
 #: ../../features/draw-generation.rst:76
-msgid "For each of these steps except the first, Tabbycat allows you to choose between a number of different methods."
+msgid "For each of these steps except the first, NekoTab allows you to choose between a number of different methods."
 msgstr ""
 
 #: ../../features/draw-generation.rst:80
@@ -331,7 +331,7 @@ msgid "Add or edit the entry or entries in the **Team position allocations** tab
 msgstr ""
 
 #: ../../features/draw-generation.rst:148
-msgid "You can also do this by writing a script that creates ``TeamPositionAllocation`` objects and saves them. Have a look at `draw/management/commands/generatesideallocations.py <https://github.com/TabbycatDebate/tabbycat/blob/master/tabbycat/draw/management/commands/generatesideallocations.py>`_ for an example."
+msgid "You can also do this by writing a script that creates ``TeamPositionAllocation`` objects and saves them. Have a look at `draw/management/commands/generatesideallocations.py <https://github.com/NekoTabDebate/NekoTab/blob/master/NekoTab/draw/management/commands/generatesideallocations.py>`_ for an example."
 msgstr ""
 
 #: ../../features/draw-generation.rst:153
@@ -431,6 +431,7 @@ msgid "What do I do if the draw looks wrong?"
 msgstr ""
 
 #: ../../features/draw-generation.rst:203
-msgid "You can edit match-ups directly from the draw page. Functionally, you can do anything you want. Of course, operationally, you should only edit the draw when you *know* that the draw algorithm got something wrong. If you need to do this, even just once, please file a bug report by creating a new issue on `our issues page on GitHub <https://github.com/TabbycatDebate/tabbycat/issues>`_."
+msgid "You can edit match-ups directly from the draw page. Functionally, you can do anything you want. Of course, operationally, you should only edit the draw when you *know* that the draw algorithm got something wrong. If you need to do this, even just once, please file a bug report by creating a new issue on `our issues page on GitHub <https://github.com/NekoTabDebate/NekoTab/issues>`_."
 msgstr ""
+
 

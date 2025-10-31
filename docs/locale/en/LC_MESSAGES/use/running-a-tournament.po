@@ -1,12 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
+﻿# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2019, Philip Belesky, Chuan-Zheng Lee
-# This file is distributed under the same license as the Tabbycat package.
+# This file is distributed under the same license as the NekoTab package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Tabbycat 2.3\n"
+"Project-Id-Version: NekoTab 2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -74,7 +74,7 @@ msgid "To do this, click the round in the menu, then click **Check-Ins**. Here y
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:34
-msgid "You can set availabilities in advance of the current round — ie if you know the venue/adjudicator schedules their availabilities can be set ahead of time."
+msgid "You can set availabilities in advance of the current round â€” ie if you know the venue/adjudicator schedules their availabilities can be set ahead of time."
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:37
@@ -118,7 +118,7 @@ msgid "**Release to general assembly.** From the *Display* page for that round, 
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:68
-msgid "**Release to public.** If you're using the public draw function (where the draw is posted publicly to your Tabbycat website) use the **Release to Public** button to allow the page to display."
+msgid "**Release to public.** If you're using the public draw function (where the draw is posted publicly to your NekoTab website) use the **Release to Public** button to allow the page to display."
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:72
@@ -126,7 +126,7 @@ msgid "To avoid the site from being overloaded by anxious refreshers, we recomme
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:73
-msgid "Tabbycat can be set to send emails once the draw is released to adjudicators informing them of their assignments for convenience."
+msgid "NekoTab can be set to send emails once the draw is released to adjudicators informing them of their assignments for convenience."
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:78
@@ -134,7 +134,7 @@ msgid "Entering and Releasing Motions"
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:80
-msgid "Tabbycat is agnostic as to whether you enter motions into Tabbycat before or after they are shown publicly. However, they must be entered *at some point* before ballots are entered."
+msgid "NekoTab is agnostic as to whether you enter motions into NekoTab before or after they are shown publicly. However, they must be entered *at some point* before ballots are entered."
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:82
@@ -146,7 +146,7 @@ msgid "**Release to general assembly.** If you are entering motions *before* the
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:86
-msgid "**Release to public.** As with draws, if you have the *enable public view of motions* setting configured your Tabbycat website will display a running list of motions from the tournament. When this is on, using the **Release Motions to Public** button on the **Motions** page will mark the current set of motions as able to be displayed on this page."
+msgid "**Release to public.** As with draws, if you have the *enable public view of motions* setting configured your NekoTab website will display a running list of motions from the tournament. When this is on, using the **Release Motions to Public** button on the **Motions** page will mark the current set of motions as able to be displayed on this page."
 msgstr ""
 
 #: ../../use/running-a-tournament.rst:91
@@ -192,4 +192,5 @@ msgstr ""
 #: ../../use/running-a-tournament.rst:116
 msgid "Emails can be sent to speakers informing them of their team's win/loss/points record before advancing rounds. This is independent from whether the whole round's results are released to the public."
 msgstr ""
+
 

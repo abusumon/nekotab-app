@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:23\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: ro\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/draw-generation-bp.po\n"
@@ -76,7 +76,7 @@ msgid "Simple"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:29
-msgid "**Rényi entropy**"
+msgid "**RÃ©nyi entropy**"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:30
@@ -85,11 +85,11 @@ msgid "Population variance"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:31
-msgid ":ref:`Rényi order <draw-bp-renyi-order>`"
+msgid ":ref:`RÃ©nyi order <draw-bp-renyi-order>`"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:32
-msgid "Order of Rényi entropy"
+msgid "Order of RÃ©nyi entropy"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:33
@@ -129,7 +129,7 @@ msgid "The big picture"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:47
-msgid "To try to achieve position balance, Tabbycat treats the allocation of teams to debates as an `assignment problem <https://en.wikipedia.org/wiki/Assignment_problem>`_. That is, it computes the \"cost\" of assigning each team to each position in each debate, and finds an assignment of all teams to a position in a debate that minimises the total cost (the sum over all teams)."
+msgid "To try to achieve position balance, NekoTab treats the allocation of teams to debates as an `assignment problem <https://en.wikipedia.org/wiki/Assignment_problem>`_. That is, it computes the \"cost\" of assigning each team to each position in each debate, and finds an assignment of all teams to a position in a debate that minimises the total cost (the sum over all teams)."
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:50
@@ -137,7 +137,7 @@ msgid "A simple example"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:52
-msgid "Here's a small example, to illustrate the idea. Say you have a tournament with 16 teams, and you're about to draw round 4. There are sixteen \"places\" in the draw: four positions in each of four rooms. Tabbycat calculates the \"cost\" of putting each team in each place, and puts them in a matrix, like this:"
+msgid "Here's a small example, to illustrate the idea. Say you have a tournament with 16 teams, and you're about to draw round 4. There are sixteen \"places\" in the draw: four positions in each of four rooms. NekoTab calculates the \"cost\" of putting each team in each place, and puts them in a matrix, like this:"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:61
@@ -234,7 +234,7 @@ msgstr ""
 #: ../../features/draw-generation-bp.rst:91
 #: ../../features/draw-generation-bp.rst:93
 #: ../../features/draw-generation-bp.rst:95
-msgid "∞"
+msgid "âˆž"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:67
@@ -317,7 +317,7 @@ msgid "**P (1)**"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:98
-msgid "Each \"16\" is the cost of putting a team in a position it's seen once; each \"0\" is the cost of putting a team in the position it hasn't. (Details of how this is calculated are :ref:`below <draw-bp-position-cost-section>`.) For example, team A (on 8 points) has been in every position except CO. The ∞'s indicate places where the team isn't allowed to go, because the room isn't in their bracket. For example, the three teams on 6 points (D, E, F) can go in either the top or second room, because any of them can be the pullup team."
+msgid "Each \"16\" is the cost of putting a team in a position it's seen once; each \"0\" is the cost of putting a team in the position it hasn't. (Details of how this is calculated are :ref:`below <draw-bp-position-cost-section>`.) For example, team A (on 8 points) has been in every position except CO. The âˆž's indicate places where the team isn't allowed to go, because the room isn't in their bracket. For example, the three teams on 6 points (D, E, F) can go in either the top or second room, because any of them can be the pullup team."
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:100
@@ -329,7 +329,7 @@ msgid "Sometimes, particularly in round 4, it simply isn't possible to \"satisfy
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:104
-msgid "More generally, in most cases, there will be many optimal solutions. To randomise the selection among them, Tabbycat (under default settings) randomly permutes the rows and columns of the matrix before starting the assignment algorithm."
+msgid "More generally, in most cases, there will be many optimal solutions. To randomise the selection among them, NekoTab (under default settings) randomly permutes the rows and columns of the matrix before starting the assignment algorithm."
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:107
@@ -361,7 +361,7 @@ msgid "While it can be argued that the `All in the same room` setting is fairer,
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:126
-msgid "The teams that get pulled up aren't specifically chosen---they're just assigned as part of the algorithm described :ref:`above <draw-bp-big-picture>`, which optimises for position balance. Tabbycat doesn't support taking anything else into account when choosing pullup teams. (WUDC rules wouldn't allow it, either.)"
+msgid "The teams that get pulled up aren't specifically chosen---they're just assigned as part of the algorithm described :ref:`above <draw-bp-big-picture>`, which optimises for position balance. NekoTab doesn't support taking anything else into account when choosing pullup teams. (WUDC rules wouldn't allow it, either.)"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:131
@@ -369,7 +369,7 @@ msgid "Position cost options"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:133
-msgid "The `position cost function` is a function that indicates how \"bad\" it would be if a team were to be allocated a certain position (OG, OO, CG, CO) in a debate. When generating a draw, Tabbycat chooses from among the draws that minimise the sum of the position costs for each team."
+msgid "The `position cost function` is a function that indicates how \"bad\" it would be if a team were to be allocated a certain position (OG, OO, CG, CO) in a debate. When generating a draw, NekoTab chooses from among the draws that minimise the sum of the position costs for each team."
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:135
@@ -385,7 +385,7 @@ msgid "A cost function :math:`C(\\mathbf{h},s)` is a function specifying how \"b
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:142
-msgid "Tabbycat allows you to choose from a number of different **position cost functions**, as well as a **position cost exponent** :math:`\\beta`. Then, when allocating teams to debates, Tabbycat allocates teams to positions :math:`(s_t, t \\in\\mathcal{T})` to minimise"
+msgid "NekoTab allows you to choose from a number of different **position cost functions**, as well as a **position cost exponent** :math:`\\beta`. Then, when allocating teams to debates, NekoTab allocates teams to positions :math:`(s_t, t \\in\\mathcal{T})` to minimise"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:144
@@ -429,7 +429,7 @@ msgid "Position cost functions"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:174
-msgid "Tabbycat allows you to choose between three position cost functions :math:`C(\\mathbf{h},s)`: **Simple**, **Rényi entropy** and **Population variance**."
+msgid "NekoTab allows you to choose between three position cost functions :math:`C(\\mathbf{h},s)`: **Simple**, **RÃ©nyi entropy** and **Population variance**."
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:176
@@ -449,19 +449,19 @@ msgid "where :math:`\\mathbf{h}[s]` is the element of :math:`\\mathbf{h}` corres
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:190
-msgid "Rényi entropy"
+msgid "RÃ©nyi entropy"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:192
-msgid "Informally speaking, the `Rényi entropy <https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy>`_ is a measure of the diversity of the positions in a team's history. A history consisting only of one position has *low* entropy, while a history that is perfectly evenly distributed has *high* entropy. The **Rényi entropy cost function** reverses this intuition, so that an even hypothetical history has low cost, while an uneven hypothetical history has high cost."
+msgid "Informally speaking, the `RÃ©nyi entropy <https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy>`_ is a measure of the diversity of the positions in a team's history. A history consisting only of one position has *low* entropy, while a history that is perfectly evenly distributed has *high* entropy. The **RÃ©nyi entropy cost function** reverses this intuition, so that an even hypothetical history has low cost, while an uneven hypothetical history has high cost."
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:194
-msgid "The Rényi entropy takes one parameter, known as its *order*, :math:`\\alpha`, which will be further discussed below."
+msgid "The RÃ©nyi entropy takes one parameter, known as its *order*, :math:`\\alpha`, which will be further discussed below."
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:196
-msgid "More formally, the Rényi entropy cost function :math:`C_\\textrm{R\\'enyi}(\\mathbf{h},s)` is defined as"
+msgid "More formally, the RÃ©nyi entropy cost function :math:`C_\\textrm{R\\'enyi}(\\mathbf{h},s)` is defined as"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:198
@@ -489,7 +489,7 @@ msgid "Note that :math:`\\hat{p}_{\\mathbf{h},s}` is a probability distribution 
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:218
-msgid ":math:`H_\\alpha(\\cdot)` is the `Rényi entropy <https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy>`_ of order :math:`\\alpha` of a probability distribution, defined as"
+msgid ":math:`H_\\alpha(\\cdot)` is the `RÃ©nyi entropy <https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy>`_ of order :math:`\\alpha` of a probability distribution, defined as"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:220
@@ -509,7 +509,7 @@ msgid "Note that for all :math:`\\alpha`, :math:`0 \\le H_\\alpha(p) \\le \\log_
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:234
-msgid "The **Rényi order** is the parameter :math:`\\alpha` above, and it controls *what it means to be \"even among positions\"* for a team. Note that \"evenness\" is not easily defined. After round 8, which position history is more even: (0, 2, 3, 3) or (1, 1, 1, 5)? The Rényi order allows us to tune this definition."
+msgid "The **RÃ©nyi order** is the parameter :math:`\\alpha` above, and it controls *what it means to be \"even among positions\"* for a team. Note that \"evenness\" is not easily defined. After round 8, which position history is more even: (0, 2, 3, 3) or (1, 1, 1, 5)? The RÃ©nyi order allows us to tune this definition."
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:238
@@ -529,7 +529,7 @@ msgid "At the large extreme, as :math:`\\alpha\\rightarrow\\infty`, it *only* lo
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:246
-msgid "The \"balanced\" approach would be :math:`\\alpha=1` (the `Shannon entropy <https://en.wikipedia.org/wiki/Shannon_entropy>`_), though of course it's arguable what \"balanced\" means. Tabbycat defaults to this value."
+msgid "The \"balanced\" approach would be :math:`\\alpha=1` (the `Shannon entropy <https://en.wikipedia.org/wiki/Shannon_entropy>`_), though of course it's arguable what \"balanced\" means. NekoTab defaults to this value."
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:248
@@ -573,7 +573,7 @@ msgid "Assignment method"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:284
-msgid "Tabbycat uses the `Hungarian algorithm <https://en.wikipedia.org/wiki/Hungarian_algorithm>`_ to solve the `assignment problem <https://en.wikipedia.org/wiki/Assignment_problem>`_ of assigning teams to positions in debates. This can be run with or without preshuffling:"
+msgid "NekoTab uses the `Hungarian algorithm <https://en.wikipedia.org/wiki/Hungarian_algorithm>`_ to solve the `assignment problem <https://en.wikipedia.org/wiki/Assignment_problem>`_ of assigning teams to positions in debates. This can be run with or without preshuffling:"
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:288
@@ -593,6 +593,7 @@ msgid "Running the Hungarian algorithm *without* preshuffling has the side effec
 msgstr ""
 
 #: ../../features/draw-generation-bp.rst:296
-msgid "No other assignment methods are currently supported. For example, Tabbycat can't run fold (high-low) or adjacent (high-high) pairing *within* brackets."
+msgid "No other assignment methods are currently supported. For example, NekoTab can't run fold (high-low) or adjacent (high-high) pairing *within* brackets."
 msgstr ""
+
 

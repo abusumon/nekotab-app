@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2021-01-17 20:57\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 3;\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: cs\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/adjudicator-allocation.po\n"
@@ -35,7 +35,7 @@ msgid "For tournaments with more than a few debates you generally want to begin 
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:16
-msgid "The prioritise button in the top-left allows you to assign a priority value automatically based on a debate's bracket or its 'liveness'. Remember that in early rounds there are usually not enough results for the liveness of each debate to be distinct and that Tabbycat measures liveness based on the sum of all live break categories — a debate can have more liveness points than it has teams if there are teams that are live in multiple categories."
+msgid "The prioritise button in the top-left allows you to assign a priority value automatically based on a debate's bracket or its 'liveness'. Remember that in early rounds there are usually not enough results for the liveness of each debate to be distinct and that NekoTab measures liveness based on the sum of all live break categories â€” a debate can have more liveness points than it has teams if there are teams that are live in multiple categories."
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:18
@@ -71,11 +71,11 @@ msgid "Allocate trainees (unless disabled or none are under the threshold) to pa
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:34
-msgid "Violate the above intents in cases where there are inescapable constraints — e.g. if there are too many soft or hard conflicts to avoid creating panels that do not trigger them."
+msgid "Violate the above intents in cases where there are inescapable constraints â€” e.g. if there are too many soft or hard conflicts to avoid creating panels that do not trigger them."
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:36
-msgid "Remember that Tabbycat will only automatically allocate adjudicators that have been marked as available for this round."
+msgid "Remember that NekoTab will only automatically allocate adjudicators that have been marked as available for this round."
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:38
@@ -87,7 +87,7 @@ msgid "Once you click *Auto-Allocate* the modal should disappear and your panels
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:44
-msgid "You can re-run the automatic allocation process on top of an existing allocation. Thus it is worth tweaking your priorities or allocation settings if the allocation does not seem optimal to you. Also note that the allocation process is not deterministic — if you rerun it the panels will be different."
+msgid "You can re-run the automatic allocation process on top of an existing allocation. Thus it is worth tweaking your priorities or allocation settings if the allocation does not seem optimal to you. Also note that the allocation process is not deterministic â€” if you rerun it the panels will be different."
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:46
@@ -123,7 +123,7 @@ msgid "In-Place Highlights"
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:66
-msgid "Adjudicators and teams may have borders of varying colors. These borders indicate that there is a clash — soft or hard — within a debate and highlights the teams/adjudicators that have triggered this. There is a key for these colors available at the top of the page — e.g. orange means *institutional conflict* while blue means *this adjudicator has seen this adjudicator/team before*."
+msgid "Adjudicators and teams may have borders of varying colors. These borders indicate that there is a clash â€” soft or hard â€” within a debate and highlights the teams/adjudicators that have triggered this. There is a key for these colors available at the top of the page â€” e.g. orange means *institutional conflict* while blue means *this adjudicator has seen this adjudicator/team before*."
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:70
@@ -131,7 +131,7 @@ msgid "In general, you want to be on the lookout for red borders ('hard conflict
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:72
-msgid "There are two 'special' types of highlight — a gray background in the chair position (no chair) or in the panellist position (the panel is not an odd-size). Adjudicators may also have a black background if they have not been marked as available."
+msgid "There are two 'special' types of highlight â€” a gray background in the chair position (no chair) or in the panellist position (the panel is not an odd-size). Adjudicators may also have a black background if they have not been marked as available."
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:75
@@ -151,10 +151,11 @@ msgid "Toggle Highlights"
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:86
-msgid "In the top-right of the interface are a number of toggles that changes the color of adjudicators and teams to more easily check specific types of information. For example, selecting the gender toggle will color-code teams and adjudicators with the gender that has been recorded in Tabbycat. Note that when a toggle is active, the color key will update to show the meaning of these new colors."
+msgid "In the top-right of the interface are a number of toggles that changes the color of adjudicators and teams to more easily check specific types of information. For example, selecting the gender toggle will color-code teams and adjudicators with the gender that has been recorded in NekoTab. Note that when a toggle is active, the color key will update to show the meaning of these new colors."
 msgstr ""
 
 #: ../../features/adjudicator-allocation.rst:90
-msgid "When finalising an adjudication you may want to ensure you have turned off any toggle highlights — often they make it more difficult to see the border colors that indicate conflicts."
+msgid "When finalising an adjudication you may want to ensure you have turned off any toggle highlights â€” often they make it more difficult to see the border colors that indicate conflicts."
 msgstr ""
+
 

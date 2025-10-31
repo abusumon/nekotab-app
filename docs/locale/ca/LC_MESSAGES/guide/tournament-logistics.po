@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-07-01 22:45\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: ca\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/guide/tournament-logistics.po\n"
@@ -23,11 +23,11 @@ msgid "Tournament Logistics"
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:7
-msgid "Unlike the rest of our documentation, this section does not deal with particular features or technical concerns with Tabbycat itself. Instead it is an attempt to outline the logistics of tab direction and aims to be of general relevance for people running major tournaments. At present, it is organised by the various ‘stages' of tabbing a tournament, and most of the content takes the form of check-lists or comments designed to highlight and provide guidance on common issues."
+msgid "Unlike the rest of our documentation, this section does not deal with particular features or technical concerns with NekoTab itself. Instead it is an attempt to outline the logistics of tab direction and aims to be of general relevance for people running major tournaments. At present, it is organised by the various â€˜stages' of tabbing a tournament, and most of the content takes the form of check-lists or comments designed to highlight and provide guidance on common issues."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:9
-msgid "Whilst it aims for general relevance, we should note that this guide is relatively opinionated and mostly written from the perspective of people whose primary experience is tabbing at Australasian tournaments using Tabbycat. That said, we welcome feedback and additions that can account for different format and regional considerations. In the future, if the guide becomes more general and more extensive, it could be spun off into a separate project."
+msgid "Whilst it aims for general relevance, we should note that this guide is relatively opinionated and mostly written from the perspective of people whose primary experience is tabbing at Australasian tournaments using NekoTab. That said, we welcome feedback and additions that can account for different format and regional considerations. In the future, if the guide becomes more general and more extensive, it could be spun off into a separate project."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:11
@@ -87,7 +87,7 @@ msgid "What kind of volunteers will be available? How many, and what is their ex
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:38
-msgid "Will the tournament make a donation to whoever maintains the tabbing software you are using? Depending on the license of your tabbing software and the nature of your tournament (for profit vs not for profit) this may be required. Also, if your tab is self-hosted or independently hosted (such as how Tabbycat is generally deployed on Heroku) accounting officers should also be aware that there will be some costs associated with hosting the tab."
+msgid "Will the tournament make a donation to whoever maintains the tabbing software you are using? Depending on the license of your tabbing software and the nature of your tournament (for profit vs not for profit) this may be required. Also, if your tab is self-hosted or independently hosted (such as how NekoTab is generally deployed on Heroku) accounting officers should also be aware that there will be some costs associated with hosting the tab."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:39
@@ -95,7 +95,7 @@ msgid "You should also ensure that people helping with the tab are fairly compen
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:40
-msgid "Will Swing teams be available? You should plan to have at least one more than you need. For example, with 39 teams, you should have both an 40th swing team to fill in the draw, and the option to easily assemble an 41st swing team in case a team goes missing. At very large tournaments (say over 150 teams) you should plan for even more swing team capacity — it's not unheard of for say three teams to vanish all in a single round. In these cases, you should try and ensure that the swing teams are always ready to go — i.e. that that they are pre-formed, you have a clear communication channel with them, and that they distributed/waiting near the debating rooms so they can fill in at a moment's notice (often you will only find out that teams are missing right as debates are scheduled to start)."
+msgid "Will Swing teams be available? You should plan to have at least one more than you need. For example, with 39 teams, you should have both an 40th swing team to fill in the draw, and the option to easily assemble an 41st swing team in case a team goes missing. At very large tournaments (say over 150 teams) you should plan for even more swing team capacity â€” it's not unheard of for say three teams to vanish all in a single round. In these cases, you should try and ensure that the swing teams are always ready to go â€” i.e. that that they are pre-formed, you have a clear communication channel with them, and that they distributed/waiting near the debating rooms so they can fill in at a moment's notice (often you will only find out that teams are missing right as debates are scheduled to start)."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:41
@@ -103,11 +103,11 @@ msgid "How will critical information be communicated to participants? Consider t
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:42
-msgid "How will critical information be shared between the tab team, adjudication core, and logistics/convening teams? For smaller/medium sized tournaments a group chat augmented by phone calls (assuming everyone knows everyone else's number) can be sufficient, but even then, you need to ensure that any critical information conveyed privately (i.e. in a call or in person) is conveyed back to the group channel. At very large tournaments (or if you have the resources) walkie-talkies are an excellent way to manage communication — just make sure you have (ahead of time) reserve the different channels to a distinct and known purpose (i.e. general discussion; just the tab team & adjudication core; just convenors)."
+msgid "How will critical information be shared between the tab team, adjudication core, and logistics/convening teams? For smaller/medium sized tournaments a group chat augmented by phone calls (assuming everyone knows everyone else's number) can be sufficient, but even then, you need to ensure that any critical information conveyed privately (i.e. in a call or in person) is conveyed back to the group channel. At very large tournaments (or if you have the resources) walkie-talkies are an excellent way to manage communication â€” just make sure you have (ahead of time) reserve the different channels to a distinct and known purpose (i.e. general discussion; just the tab team & adjudication core; just convenors)."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:43
-msgid "As part of this it is ideal if the organising committees can procure local SIM cards for members of the tab team and adjudication core who are not local. These should be relatively generous in their plans — you don't want to worry about running out of minutes or data if on a critical call or using a hotspot to make critical allocation adjustments."
+msgid "As part of this it is ideal if the organising committees can procure local SIM cards for members of the tab team and adjudication core who are not local. These should be relatively generous in their plans â€” you don't want to worry about running out of minutes or data if on a critical call or using a hotspot to make critical allocation adjustments."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:44
@@ -179,7 +179,7 @@ msgid "Independent adjudicators and the adjudication core should follow normal r
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:72
-msgid "You should confirm how the registration team plans to manage how people check-in to the accommodation in particular. Check-in is when issues with registration data come to light and it is vital that these changes are noted and recorded. Some form of validation of registration data *must* occur at check-in — in particular all adjudicators should be (individually) verified as present and all members of a team should confirm their presence along with their team's name/number and speakers."
+msgid "You should confirm how the registration team plans to manage how people check-in to the accommodation in particular. Check-in is when issues with registration data come to light and it is vital that these changes are noted and recorded. Some form of validation of registration data *must* occur at check-in â€” in particular all adjudicators should be (individually) verified as present and all members of a team should confirm their presence along with their team's name/number and speakers."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:73
@@ -187,7 +187,7 @@ msgid "After check-in you need to have a definitive list of who is physically pr
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:75
-msgid "If you are using Tabbycat's secret links for feedback or ballots these are best distributed at check-in. The registration team should know about this, prepare for it, and be provided with the pdfs to print and distribute."
+msgid "If you are using NekoTab's secret links for feedback or ballots these are best distributed at check-in. The registration team should know about this, prepare for it, and be provided with the pdfs to print and distribute."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:78
@@ -195,7 +195,7 @@ msgid "Adjudication cores"
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:80
-msgid "If there is a group chat for the adjudication core you probably want to be part of it; even if you don't contribute much. There are lots of small things that end up being discussed without consideration of how they will affect tab issues and it is also a chance to get to know — ahead of time — the people you will be working with closely over the tournament."
+msgid "If there is a group chat for the adjudication core you probably want to be part of it; even if you don't contribute much. There are lots of small things that end up being discussed without consideration of how they will affect tab issues and it is also a chance to get to know â€” ahead of time â€” the people you will be working with closely over the tournament."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:82
@@ -231,7 +231,7 @@ msgid "What kind of questions will feedback forms ask? If using :ref:`customisab
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:96
-msgid "How will feedback be monitored, and how will this information feed back into the scores and allocations? At large tournaments it is not unusual for an adjudication core member to sit off each round to review and process feedback — there isn't really a good stretch of available time to do so otherwise. However even if doing this note that there are communication issues to manage here, as each adjudication core member will each end up with a relatively incomplete overview of the total volume of feedback."
+msgid "How will feedback be monitored, and how will this information feed back into the scores and allocations? At large tournaments it is not unusual for an adjudication core member to sit off each round to review and process feedback â€” there isn't really a good stretch of available time to do so otherwise. However even if doing this note that there are communication issues to manage here, as each adjudication core member will each end up with a relatively incomplete overview of the total volume of feedback."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:98
@@ -247,11 +247,11 @@ msgid "How to handle the submission of scoresheets and feedback, primarily in te
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:104
-msgid "Paper-based feedback is much more taxing to enter than paper-based scoresheets —  typically there is much more of it; it asks for a greater variety of data; and it is submitted at inconsistent times. The one advantage is that it is easier to make feedback mandatory with paper, as you can ensure all teams and adjudicators have done so prior to leaving the room. Thus, in most cases, a good online feedback system is much more preferable than paper. If using paper be aware that you will need a lot of volunteers to ensure the feedback is collected promptly. If internet or smartphone access is limited at your tournament it is probably best to accommodate both paper-based and online methods."
+msgid "Paper-based feedback is much more taxing to enter than paper-based scoresheets â€”  typically there is much more of it; it asks for a greater variety of data; and it is submitted at inconsistent times. The one advantage is that it is easier to make feedback mandatory with paper, as you can ensure all teams and adjudicators have done so prior to leaving the room. Thus, in most cases, a good online feedback system is much more preferable than paper. If using paper be aware that you will need a lot of volunteers to ensure the feedback is collected promptly. If internet or smartphone access is limited at your tournament it is probably best to accommodate both paper-based and online methods."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:105
-msgid "The consequences of having incorrect or missing ballots are much more severe than for feedback. As such major tournaments use paper ballots in some form as the final stage in a checking process to ensure that the results of a debate are definitely correct — adjudicators will always make mistakes and while digital ballots can catch/prevent some types of error (i.e. a low point win) they can't catch others (assigning the wrong scores to the wrong speaker, nominating the wrong winning team, etc.). Assuming your software supports both options, the choice is thus whether to use a hybrid approach (online submission followed by paper verification) or to rely entirely on paper. A fully-paper based approach will be simpler for both yourself and adjudicators, and can be almost as efficient if you have a sufficient number of volunteers. In contrast, a hybrid approach will be potentially much faster if you are short of volunteers and if you expect that almost all adjudicators will have access to the internet, a smartphone, and are capable of following instructions."
+msgid "The consequences of having incorrect or missing ballots are much more severe than for feedback. As such major tournaments use paper ballots in some form as the final stage in a checking process to ensure that the results of a debate are definitely correct â€” adjudicators will always make mistakes and while digital ballots can catch/prevent some types of error (i.e. a low point win) they can't catch others (assigning the wrong scores to the wrong speaker, nominating the wrong winning team, etc.). Assuming your software supports both options, the choice is thus whether to use a hybrid approach (online submission followed by paper verification) or to rely entirely on paper. A fully-paper based approach will be simpler for both yourself and adjudicators, and can be almost as efficient if you have a sufficient number of volunteers. In contrast, a hybrid approach will be potentially much faster if you are short of volunteers and if you expect that almost all adjudicators will have access to the internet, a smartphone, and are capable of following instructions."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:107
@@ -279,7 +279,7 @@ msgid "Not allow teams to nominate conflicts during registration; but allow them
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:121
-msgid "Allow teams to nominate conflicts during registration; but have the adjudication core review the data for 'tactical' conflicts. These are usually relatively easily identified, although can be overlooked if the adjudication core does not know the participants or their region/circuit well. The adjudication core can then override the conflict, discuss it with the teams, or raise it with equity. However, if going down this route, the tab team should discuss with the adjudication core how to manage this process well-ahead of the tournament, and ensure they actually do review the conflicts prior to the first round — otherwise it will likely surface during an allocation and become a major distraction during a critical time period."
+msgid "Allow teams to nominate conflicts during registration; but have the adjudication core review the data for 'tactical' conflicts. These are usually relatively easily identified, although can be overlooked if the adjudication core does not know the participants or their region/circuit well. The adjudication core can then override the conflict, discuss it with the teams, or raise it with equity. However, if going down this route, the tab team should discuss with the adjudication core how to manage this process well-ahead of the tournament, and ensure they actually do review the conflicts prior to the first round â€” otherwise it will likely surface during an allocation and become a major distraction during a critical time period."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:123
@@ -355,7 +355,7 @@ msgid "Scheduling (convenors / venue organisers)"
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:148
-msgid "One of the easiest ways to have things run late is to set an unrealistic schedule. As much as possible the timing allocated to rounds (inclusive of events such as lunch or committee forums) should conform to an even distribution of how long it takes to process results and create a draw/allocation — you don't want to be in a position where particular rounds have too much time and others too little time to spend on allocations and other crucial tasks. This is something that should definitely be working on in conjunction with convenors and other critical parties before they lock down timing details with food suppliers or the operators of the debating venues."
+msgid "One of the easiest ways to have things run late is to set an unrealistic schedule. As much as possible the timing allocated to rounds (inclusive of events such as lunch or committee forums) should conform to an even distribution of how long it takes to process results and create a draw/allocation â€” you don't want to be in a position where particular rounds have too much time and others too little time to spend on allocations and other crucial tasks. This is something that should definitely be working on in conjunction with convenors and other critical parties before they lock down timing details with food suppliers or the operators of the debating venues."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:150
@@ -637,7 +637,7 @@ msgid "Familiarise yourself with the different methods for importing data into y
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:188
-msgid "If you are using Tabbycat our spreadsheet importer is definitely easiest to use on a local copy; however using the visual importer is perfectly viable for larger tournaments if you are not comfortable with the command line. When using the spreadsheet importer note that it will likely take several iterations to get the data to import cleanly as there will typically be small mismatches in speaker/institution names and the like."
+msgid "If you are using NekoTab our spreadsheet importer is definitely easiest to use on a local copy; however using the visual importer is perfectly viable for larger tournaments if you are not comfortable with the command line. When using the spreadsheet importer note that it will likely take several iterations to get the data to import cleanly as there will typically be small mismatches in speaker/institution names and the like."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:190
@@ -645,7 +645,7 @@ msgid "If the tournament (or the host society) has their own domain name and you
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:192
-msgid "If you are using Tabbycat, and deploying to Heroku, be sure to read our documentation about the size of Postgres database your tournament will require. Setting up the correct size of database from the start is the best way to go, as transferring information at a later stage is a hassle and could delay the tab at inopportune times."
+msgid "If you are using NekoTab, and deploying to Heroku, be sure to read our documentation about the size of Postgres database your tournament will require. Setting up the correct size of database from the start is the best way to go, as transferring information at a later stage is a hassle and could delay the tab at inopportune times."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:195
@@ -685,7 +685,7 @@ msgid "Data import: rooms"
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:217
-msgid "Ideally you want not just a list of rooms, but also of their types and categories — i.e. what building a room is in and/or it will be coded so that participants can find it."
+msgid "Ideally you want not just a list of rooms, but also of their types and categories â€” i.e. what building a room is in and/or it will be coded so that participants can find it."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:218
@@ -721,7 +721,7 @@ msgid "Set up user accounts for runners/assistants with dummy passwords (they ca
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:233
-msgid "If using Tabbycat and using online ballots or feedback with the private URLs method, participants should be emailed out their private URLs before they start travelling to arrive at the tournament (i.e. when they have a reasonable chance of checking their email). This can be done using the inbuilt pages on Tabbycat, or by importing participants data into a service such as Mailchimp."
+msgid "If using NekoTab and using online ballots or feedback with the private URLs method, participants should be emailed out their private URLs before they start travelling to arrive at the tournament (i.e. when they have a reasonable chance of checking their email). This can be done using the inbuilt pages on NekoTab, or by importing participants data into a service such as Mailchimp."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:236
@@ -873,7 +873,7 @@ msgid "Training volunteers"
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:303
-msgid "If at all feasible you want to train that volunteers acting as runners and/or data enterers the day *before* the tournament starts otherwise the first round will be rough. It's generally a good idea for this training session to generally mirror the process of running a round. It's also generally a good idea that — even if you have enough people for dedicated runner and data-enterer roles — to train all volunteers so that they are familiar with each role and can fill in if needed. This has a couple of stages:"
+msgid "If at all feasible you want to train that volunteers acting as runners and/or data enterers the day *before* the tournament starts otherwise the first round will be rough. It's generally a good idea for this training session to generally mirror the process of running a round. It's also generally a good idea that â€” even if you have enough people for dedicated runner and data-enterer roles â€” to train all volunteers so that they are familiar with each role and can fill in if needed. This has a couple of stages:"
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:307
@@ -969,7 +969,7 @@ msgid "Secondly, and most importantly, is outlining how the automated process of
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:350
-msgid "Most tab software will have at least some options for you to configure those automated processes — either by changing the automatic allocation's parameters directly or by controlling the ranking and feedback systems that feed into it. The first round is the prime opportunity to configure these options so that they align as close as possible with what the priorities of the adjudication core. If your feedback ranking system is mismatched with how you expect the automatic allocation to place adjudicators, or if the distribution of adjudicators across the draw is not what you expect, the adjudication core will end up wasting significant amounts of time adjusting allocations. Even if things work well using the default settings, ensure you experiment and demonstrate the consequences of changing the settings just to show that it can be done, what the general effects are, and to see if there are even-better configurations."
+msgid "Most tab software will have at least some options for you to configure those automated processes â€” either by changing the automatic allocation's parameters directly or by controlling the ranking and feedback systems that feed into it. The first round is the prime opportunity to configure these options so that they align as close as possible with what the priorities of the adjudication core. If your feedback ranking system is mismatched with how you expect the automatic allocation to place adjudicators, or if the distribution of adjudicators across the draw is not what you expect, the adjudication core will end up wasting significant amounts of time adjusting allocations. Even if things work well using the default settings, ensure you experiment and demonstrate the consequences of changing the settings just to show that it can be done, what the general effects are, and to see if there are even-better configurations."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:352
@@ -985,7 +985,7 @@ msgid "Outline that there will usually be a trade-off between the quality of eac
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:358
-msgid "Finally, outline how you will all communicate. Again, there should be a single medium for this so that everyone knows what is going on; and this is ideally something that has been planned out beforehand with them and the organising committee. But at this point the tab team may have expanded, or there may be better options than what was being used previously. It's also worth outlining which parts of the tab team will generally be doing what roles and where — i.e. who will be rolling the draw, who will be chasing up people, etc."
+msgid "Finally, outline how you will all communicate. Again, there should be a single medium for this so that everyone knows what is going on; and this is ideally something that has been planned out beforehand with them and the organising committee. But at this point the tab team may have expanded, or there may be better options than what was being used previously. It's also worth outlining which parts of the tab team will generally be doing what roles and where â€” i.e. who will be rolling the draw, who will be chasing up people, etc."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:361
@@ -1045,7 +1045,7 @@ msgid "Disaster scenarios"
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:389
-msgid "There are two broad classes of disaster scenario here. The first, and more rare case is when either internet access at the venue goes out or if a web service that your tab software depends on has an outage (for example, both Tabbie 2 and Heroku-deployed Tabbycat instances depend on Amazon Web Services). The first can at least be solved temporarily if tethering is available, but if that is not possible (or the latter case occurs) you may need to switch to using an offline copy of that tab by restoring from a backup if the outage is non-transient."
+msgid "There are two broad classes of disaster scenario here. The first, and more rare case is when either internet access at the venue goes out or if a web service that your tab software depends on has an outage (for example, both Tabbie 2 and Heroku-deployed NekoTab instances depend on Amazon Web Services). The first can at least be solved temporarily if tethering is available, but if that is not possible (or the latter case occurs) you may need to switch to using an offline copy of that tab by restoring from a backup if the outage is non-transient."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:391
@@ -1057,7 +1057,7 @@ msgid "Having an outage of internet access or a key web service go down to the p
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:395
-msgid "Backups are also useful as guards against a much more common source of error: data loss caused by user error. It is not unheard of for even experienced tab directors (or inexperienced adjudication core members) to accidentally delete an entire allocation, delete a round, or some other form of destructive action that would require a lot of work to redo. Taking backups at key points, and knowing how to restore them (to the online copy of the tab) is a useful — and occasionally essential — skill."
+msgid "Backups are also useful as guards against a much more common source of error: data loss caused by user error. It is not unheard of for even experienced tab directors (or inexperienced adjudication core members) to accidentally delete an entire allocation, delete a round, or some other form of destructive action that would require a lot of work to redo. Taking backups at key points, and knowing how to restore them (to the online copy of the tab) is a useful â€” and occasionally essential â€” skill."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:397
@@ -1149,7 +1149,7 @@ msgid "Reviewing how efficiently things are running and whether there are any bo
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:437
-msgid "If hosting Tabbycat on Heroku keep an eye on the metrics section of the dashboard area, noting if there are 'timeout errors' and what the average response times are. Adding more dynos should help with both."
+msgid "If hosting NekoTab on Heroku keep an eye on the metrics section of the dashboard area, noting if there are 'timeout errors' and what the average response times are. Adding more dynos should help with both."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:440
@@ -1161,7 +1161,7 @@ msgid "Generating the adjudicator's break"
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:445
-msgid "Determining the adjudicator break generally involves a complex set of considerations rather than strictly ranking based on feedback. As such most adjudication cores will use whiteboards or Google docs to draft and discuss the possible options. One thing to note here is that breaking adjudicators will need to be marked as such in the tab at some point (both so they can be on future draws, and for publication) so you want to be careful that the tab is the final source of authority here — it is easy for information to get out of sync between what the adjudication core is using to draft the break and the system."
+msgid "Determining the adjudicator break generally involves a complex set of considerations rather than strictly ranking based on feedback. As such most adjudication cores will use whiteboards or Google docs to draft and discuss the possible options. One thing to note here is that breaking adjudicators will need to be marked as such in the tab at some point (both so they can be on future draws, and for publication) so you want to be careful that the tab is the final source of authority here â€” it is easy for information to get out of sync between what the adjudication core is using to draft the break and the system."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:447
@@ -1177,7 +1177,7 @@ msgid "Before doing so in an automated fashion, first check in your tab software
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:454
-msgid "Hopefully the automated system will generate a correct break, but this should always be checked against what you'd expect the results to be from standings. Note also that there are cases, such as when a team has to leave, or when teams are or are not double-breaking, that mean the automated break results need to be overridden (typically in Tabbycat you would add a marker or note to include their ranking, but exclude them from having a break rank)."
+msgid "Hopefully the automated system will generate a correct break, but this should always be checked against what you'd expect the results to be from standings. Note also that there are cases, such as when a team has to leave, or when teams are or are not double-breaking, that mean the automated break results need to be overridden (typically in NekoTab you would add a marker or note to include their ranking, but exclude them from having a break rank)."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:457
@@ -1189,7 +1189,7 @@ msgid "Mistakes are made surprisingly often during results announcements. Again,
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:463
-msgid "Have a single source for what is being read out — i.e. a printed list (recommended) or the tab site itself — but don't mix and match. If making slides (often a good idea for large/crowded venues) copy the data from the canonical source being announced."
+msgid "Have a single source for what is being read out â€” i.e. a printed list (recommended) or the tab site itself â€” but don't mix and match. If making slides (often a good idea for large/crowded venues) copy the data from the canonical source being announced."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:464
@@ -1233,7 +1233,7 @@ msgid "You should know, in addition to when the break rounds are, when the resul
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:481
-msgid "If using Tabbycat to manage out-rounds with multiple break categories, note that the round progression is no longer strictly linear. So be careful with when/if results are released online and note that often you can't rely on online interface to release draws publicly."
+msgid "If using NekoTab to manage out-rounds with multiple break categories, note that the round progression is no longer strictly linear. So be careful with when/if results are released online and note that often you can't rely on online interface to release draws publicly."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:484
@@ -1253,7 +1253,7 @@ msgid "Almost there!"
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:493
-msgid "If hosting Tabbycat on Heroku it's worth increasing the resources available to the server for the ~12 hour period following tab release; it's by far the most concentrated burst of traffic the site will receive. Because Heroku bills by the hour, even going to a relatively expensive option, such as performance dynos with auto-scaling, will be very cheap if run just for this period. That said the site should be relatively resilient even in the face of large amounts of traffic; even running with the most basic resources allocated, at worst pages will be temporarily slow or not load."
+msgid "If hosting NekoTab on Heroku it's worth increasing the resources available to the server for the ~12 hour period following tab release; it's by far the most concentrated burst of traffic the site will receive. Because Heroku bills by the hour, even going to a relatively expensive option, such as performance dynos with auto-scaling, will be very cheap if run just for this period. That said the site should be relatively resilient even in the face of large amounts of traffic; even running with the most basic resources allocated, at worst pages will be temporarily slow or not load."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:495
@@ -1337,7 +1337,7 @@ msgid "That people should **not draw arrows to swap the order of speakers** as t
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:532
-msgid "That people should try and write numbers in a manner that makes them crystal clear. Put cross-bars in 7s; bases on 1's. Make 8's actually look like two circles. If people know they have poor handwriting maybe consider writing the literal words — *seventy-one* below the numbers."
+msgid "That people should try and write numbers in a manner that makes them crystal clear. Put cross-bars in 7s; bases on 1's. Make 8's actually look like two circles. If people know they have poor handwriting maybe consider writing the literal words â€” *seventy-one* below the numbers."
 msgstr ""
 
 #: ../../guide/tournament-logistics.rst:533
@@ -1391,4 +1391,5 @@ msgstr ""
 #: ../../guide/tournament-logistics.rst:553
 msgid "If you appreciated this guide we'd appreciate a slide promoting `Timekept <http://timekept.com>`_ and `Debatekeeper <https://play.google.com/store/apps/details?id=net.czlee.debatekeeper&hl=en>`_. This would also be a good point to remind people that their timekeeping apps shouldn't be making noise *unless* they have been explicitly assigned to keep time by the chair."
 msgstr ""
+
 

@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:14\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: pt-PT\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/install/linux.po\n"
@@ -31,7 +31,7 @@ msgid "In most cases, we recommend doing an :ref:`internet-based installation on
 msgstr ""
 
 #: ../../install/linux.rst:12
-msgid "If you just want to quickly set up a copy of Tabbycat to run locally on Linux, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below."
+msgid "If you just want to quickly set up a copy of NekoTab to run locally on Linux, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below."
 msgstr ""
 
 #: ../../install/linux.rst:14
@@ -43,7 +43,7 @@ msgid "Requisite technical background"
 msgstr ""
 
 #: ../../install/linux.rst:19
-msgid "You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools Tabbycat uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest."
+msgid "You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools NekoTab uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest."
 msgstr ""
 
 #: ../../install/linux.rst:21 ../../install/linux.rst:56
@@ -52,7 +52,7 @@ msgid "Advanced users"
 msgstr ""
 
 #: ../../install/linux.rst:24
-msgid "If you wish to use an SQL engine other that PostgreSQL, most of Tabbycat should work, but a few features rely on SQL functions that aren't supported by all engines. To configure Tabbycat to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly."
+msgid "If you wish to use an SQL engine other that PostgreSQL, most of NekoTab should work, but a few features rely on SQL functions that aren't supported by all engines. To configure NekoTab to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly."
 msgstr ""
 
 #: ../../install/linux.rst:27
@@ -68,7 +68,7 @@ msgid "1. Install dependencies"
 msgstr ""
 
 #: ../../install/linux.rst:54
-msgid "First, you need to install all of the software on which Tabbycat depends, if you don't already have it installed."
+msgid "First, you need to install all of the software on which NekoTab depends, if you don't already have it installed."
 msgstr ""
 
 #: ../../install/linux.rst:59
@@ -80,7 +80,7 @@ msgid "1(a). Python"
 msgstr ""
 
 #: ../../install/linux.rst:65
-msgid "Tabbycat requires Python 3.6 or later.  You probably already have Python 3.6, but you'll also need the development package in order to install Psycopg2 later.  The ``venv`` module will come in handy too.  Install::"
+msgid "NekoTab requires Python 3.6 or later.  You probably already have Python 3.6, but you'll also need the development package in order to install Psycopg2 later.  The ``venv`` module will come in handy too.  Install::"
 msgstr ""
 
 #: ../../install/linux.rst:69
@@ -88,7 +88,7 @@ msgid "Check the version::"
 msgstr ""
 
 #: ../../install/linux.rst:74
-msgid "Tabbycat does not support Python 2. You must use Python 3.6 or later."
+msgid "NekoTab does not support Python 2. You must use Python 3.6 or later."
 msgstr ""
 
 #: ../../install/linux.rst:77
@@ -104,7 +104,7 @@ msgid "Install PostgreSQL using the  `PostgreSQL installation instructions here 
 msgstr ""
 
 #: ../../install/linux.rst:82
-msgid "Normally, installing the latest stable version should be best, but if you're having issues, install the same version as the current `default version on Heroku <https://devcenter.heroku.com/articles/heroku-postgresql#version-support>`_, as that will be what is currently most commonly used with Tabbycat. If you're planning on pushing data between your local installation and a Heroku site, it's best to match the Heroku's current default version."
+msgid "Normally, installing the latest stable version should be best, but if you're having issues, install the same version as the current `default version on Heroku <https://devcenter.heroku.com/articles/heroku-postgresql#version-support>`_, as that will be what is currently most commonly used with NekoTab. If you're planning on pushing data between your local installation and a Heroku site, it's best to match the Heroku's current default version."
 msgstr ""
 
 #: ../../install/linux.rst:84
@@ -120,7 +120,7 @@ msgid "*Node.js is a JavaScript runtime.*"
 msgstr ""
 
 #: ../../install/linux.rst:94
-msgid "Tabbycat requires Node and its package manager to compile front-end dependencies. Install using:"
+msgid "NekoTab requires Node and its package manager to compile front-end dependencies. Install using:"
 msgstr ""
 
 #: ../../install/linux.rst:104
@@ -172,15 +172,15 @@ msgid "3. Set up a new database"
 msgstr ""
 
 #: ../../install/linux.rst:149
-msgid "You can skip step 1 if this is not your first installation. Every Tabbycat installation requires its own database, but they can use the same login role if you like."
+msgid "You can skip step 1 if this is not your first installation. Every NekoTab installation requires its own database, but they can use the same login role if you like."
 msgstr ""
 
 #: ../../install/linux.rst:151
-msgid "Create a new user account with a password, replacing ``myusername`` with whatever name you prefer. If you don't know what username to pick, use ``tabbycat``. Grant this user the ability to create databases, since this'll make it easier to spin up new instances of Tabbycat in the future."
+msgid "Create a new user account with a password, replacing ``myusername`` with whatever name you prefer. If you don't know what username to pick, use ``NekoTab``. Grant this user the ability to create databases, since this'll make it easier to spin up new instances of NekoTab in the future."
 msgstr ""
 
 #: ../../install/linux.rst:157
-msgid "If you'll be running multiple instances of Tabbycat, developing, or diving into the database yourself, you might find it convenient to set up client authentication so that you don't need to do all manual operations from ``sudo -u postgres``. See the `PostgreSQL documentation on client authentication <http://www.postgresql.org/docs/9.6/static/client-authentication.html>`_ for more information. For example, you could add a ``local all myusername md5`` line to the *pg_hba.conf* file, or you could define a mapping in *pg_ident.conf* and append the ``map=`` option to the ``local all all peer`` line in *pg_hba.conf*."
+msgid "If you'll be running multiple instances of NekoTab, developing, or diving into the database yourself, you might find it convenient to set up client authentication so that you don't need to do all manual operations from ``sudo -u postgres``. See the `PostgreSQL documentation on client authentication <http://www.postgresql.org/docs/9.6/static/client-authentication.html>`_ for more information. For example, you could add a ``local all myusername md5`` line to the *pg_hba.conf* file, or you could define a mapping in *pg_ident.conf* and append the ``map=`` option to the ``local all all peer`` line in *pg_hba.conf*."
 msgstr ""
 
 #: ../../install/linux.rst:159
@@ -188,7 +188,7 @@ msgid "Create a new database, replacing ``mydatabasename`` with whatever name yo
 msgstr ""
 
 #: ../../install/linux.rst:167
-msgid "4. Install Tabbycat"
+msgid "4. Install NekoTab"
 msgstr ""
 
 #: ../../install/linux.rst:168
@@ -196,7 +196,7 @@ msgid "Almost there!"
 msgstr ""
 
 #: ../../install/linux.rst:170
-msgid "Navigate to your Tabbycat directory::"
+msgid "Navigate to your NekoTab directory::"
 msgstr ""
 
 #: ../../install/linux.rst:176
@@ -208,11 +208,11 @@ msgid "Run the ``activate`` script. This puts you \"into\" the virtual environme
 msgstr ""
 
 #: ../../install/linux.rst:186
-msgid "Install Tabbycat's requirements into your virtual environment::"
+msgid "Install NekoTab's requirements into your virtual environment::"
 msgstr ""
 
 #: ../../install/linux.rst:192
-msgid "Navigate to the **tabbycat/settings** sub folder and copy **local.example** to **local.py**. Find this part in your new **local.py**, and fill in the blanks as indicated:"
+msgid "Navigate to the **NekoTab/settings** sub folder and copy **local.example** to **local.py**. Find this part in your new **local.py**, and fill in the blanks as indicated:"
 msgstr ""
 
 #: ../../install/linux.rst:207
@@ -220,11 +220,11 @@ msgid "Optionally, replace the value in this line in the same file with your own
 msgstr ""
 
 #: ../../install/linux.rst:211
-msgid "Navigate to the **tabbycat** sub-directory, initialize the database, compile the assets, and create a user account for yourself::"
+msgid "Navigate to the **NekoTab** sub-directory, initialize the database, compile the assets, and create a user account for yourself::"
 msgstr ""
 
 #: ../../install/linux.rst:219
-msgid "Start Tabbycat!"
+msgid "Start NekoTab!"
 msgstr ""
 
 #: ../../install/linux.rst:225
@@ -232,7 +232,7 @@ msgid "It should show something like this::"
 msgstr ""
 
 #: ../../install/linux.rst:229
-msgid "Open your browser and go to the URL printed above. (In the above example, it's http://127.0.0.1:8000.) It should look something like the screenshot below. If it does, great! You've successfully installed Tabbycat."
+msgid "Open your browser and go to the URL printed above. (In the above example, it's http://127.0.0.1:8000.) It should look something like the screenshot below. If it does, great! You've successfully installed NekoTab."
 msgstr ""
 
 #: ../../install/linux.rst:234
@@ -240,10 +240,11 @@ msgid "Naturally, your database is currently empty, so proceed to :ref:`importin
 msgstr ""
 
 #: ../../install/linux.rst:237
-msgid "Starting up an existing Tabbycat instance"
+msgid "Starting up an existing NekoTab instance"
 msgstr ""
 
 #: ../../install/linux.rst:238
-msgid "To start your Tabbycat instance up again next time you use your computer::"
+msgid "To start your NekoTab instance up again next time you use your computer::"
 msgstr ""
+
 

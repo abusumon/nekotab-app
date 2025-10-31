@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-11-27 12:08\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: kk\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/standings-rules.po\n"
@@ -27,7 +27,7 @@ msgid "Team standings rules"
 msgstr ""
 
 #: ../../features/standings-rules.rst:10
-msgid "In Tabbycat, you can choose how teams are ranked in the team standings. For example, at Australs, teams are ranked first on the number of wins, and second on their total speaker score. The setting that specifies how teams are ranked is called the **team standings precedence**. The team standings precedence is used:"
+msgid "In NekoTab, you can choose how teams are ranked in the team standings. For example, at Australs, teams are ranked first on the number of wins, and second on their total speaker score. The setting that specifies how teams are ranked is called the **team standings precedence**. The team standings precedence is used:"
 msgstr ""
 
 #: ../../features/standings-rules.rst:15
@@ -68,7 +68,7 @@ msgstr ""
 
 #: ../../features/standings-rules.rst:39
 msgid "Points"
-msgstr "Ұпайлар"
+msgstr "Ò°Ð¿Ð°Ð¹Ð»Ð°Ñ€"
 
 #: ../../features/standings-rules.rst:40
 msgid "How many points the team has. For two-team formats, this is just a synonym for wins, and differs only in column labelling. For BP, this is 3 points for a first, 2 for a second, 1 for a third and 0 for a fourth."
@@ -212,7 +212,7 @@ msgstr ""
 
 #: ../../features/standings-rules.rst:140
 msgid "Average"
-msgstr "Орташа"
+msgstr "ÐžÑ€Ñ‚Ð°ÑˆÐ°"
 
 #: ../../features/standings-rules.rst:141
 msgid "The average of all speaker scores attained by the speaker."
@@ -240,7 +240,7 @@ msgstr ""
 
 #: ../../features/standings-rules.rst:156
 msgid "Average speaker score"
-msgstr "Орташа спикерлік ұпай"
+msgstr "ÐžÑ€Ñ‚Ð°ÑˆÐ° ÑÐ¿Ð¸ÐºÐµÑ€Ð»Ñ–Ðº Ò±Ð¿Ð°Ð¹"
 
 #: ../../features/standings-rules.rst:160
 msgid "Number of speeches given"
@@ -252,7 +252,7 @@ msgstr ""
 
 #: ../../features/standings-rules.rst:168
 msgid "Motion balance"
-msgstr "Қарарлардың теңгерімі"
+msgstr "ÒšÐ°Ñ€Ð°Ñ€Ð»Ð°Ñ€Ð´Ñ‹Ò£ Ñ‚ÐµÒ£Ð³ÐµÑ€Ñ–Ð¼Ñ–"
 
 #: ../../features/standings-rules.rst:170
 msgid "The motion balance page applies a statistical test to estimate the degree to which a motion is imbalanced. This is calculated by first making an underlying assumption that a motion is generally fair. This will be our null hypothesis: that, for a given motion, affirmative teams won the same number of times as negative teams."
@@ -263,10 +263,11 @@ msgid "Our chi-squared test will then be centred around disproving this hypothes
 msgstr ""
 
 #: ../../features/standings-rules.rst:174
-msgid "The test proceeds by `calculating the chi-squared stat, then running a series of tests <https://github.com/TabbycatDebate/tabbycat/blob/develop/tabbycat/motions/statistics.py#L98>`_. The tests are where we go a little off-book with respect to statistical methodology. Normally we would test at a single \"level of significance\" (ie. with a certain degree of certainty), but that's insufficient in telling us how bad a motion ended up being. So, instead, we conduct a range of tests with a range of levels of significance, and calculate the minimum level of significance that causes our null hypothesis to be rejected. Using the minimum level of significance that rejects our null hypothesis, we can then grade the fairness of the motion on a scale. Motions whose tests fall below a certain threshold will be considered fair, while others will be graded based on the minimum."
+msgid "The test proceeds by `calculating the chi-squared stat, then running a series of tests <https://github.com/NekoTabDebate/NekoTab/blob/develop/NekoTab/motions/statistics.py#L98>`_. The tests are where we go a little off-book with respect to statistical methodology. Normally we would test at a single \"level of significance\" (ie. with a certain degree of certainty), but that's insufficient in telling us how bad a motion ended up being. So, instead, we conduct a range of tests with a range of levels of significance, and calculate the minimum level of significance that causes our null hypothesis to be rejected. Using the minimum level of significance that rejects our null hypothesis, we can then grade the fairness of the motion on a scale. Motions whose tests fall below a certain threshold will be considered fair, while others will be graded based on the minimum."
 msgstr ""
 
 #: ../../features/standings-rules.rst:176
 msgid "For formats with topic selection, the same test is applied using the number of affirmative and negative vetoes in place of wins. The assumption here is that, during the time allotted for motion selection, teams estimate how appealing a motion is from their position, and then veto the topic that they feel is least favourable. Thus, the null hypothesis is that a motion that is perceived of as fair would be vetoed by affirmative and negative teams to an equal degree."
 msgstr ""
+
 

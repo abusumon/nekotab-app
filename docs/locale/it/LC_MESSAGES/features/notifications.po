@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2021-06-25 17:28\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: it\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/notifications.po\n"
@@ -23,7 +23,7 @@ msgid "Sending Notifications"
 msgstr ""
 
 #: ../../features/notifications.rst:5
-msgid "Tabbycat offers integrations with email delivery services to send notifications to participants on certain enumerated events. For sending these emails, `SendGrid <https://sendgrid.com/>`_ is readily available as an add-on in Heroku. It may be necessary to install the `SendGrid add-on <https://elements.heroku.com/addons/sendgrid>`_ manually. Other integrations may also be used in its place by changing the relevant environment variables."
+msgid "NekoTab offers integrations with email delivery services to send notifications to participants on certain enumerated events. For sending these emails, `SendGrid <https://sendgrid.com/>`_ is readily available as an add-on in Heroku. It may be necessary to install the `SendGrid add-on <https://elements.heroku.com/addons/sendgrid>`_ manually. Other integrations may also be used in its place by changing the relevant environment variables."
 msgstr ""
 
 #: ../../features/notifications.rst:8
@@ -31,7 +31,7 @@ msgid "Events"
 msgstr ""
 
 #: ../../features/notifications.rst:10
-msgid "Tabbycat includes a number of templated notifications that can be sent in various times. Variables which are included between curly brackets which are substituted for personalized information passed by email. Links to email will redirect to a page where the message can be changed and the participants selected."
+msgid "NekoTab includes a number of templated notifications that can be sent in various times. Variables which are included between curly brackets which are substituted for personalized information passed by email. Links to email will redirect to a page where the message can be changed and the participants selected."
 msgstr ""
 
 #: ../../features/notifications.rst:12
@@ -228,7 +228,7 @@ msgid "Event Webhook"
 msgstr ""
 
 #: ../../features/notifications.rst:95
-msgid "With SendGrid, the status of sent emails can be sent to Tabbycat to be displayed, giving an indication of failures and whether participants have opened the messages. To activate this feature, setup must be done both in your SendGrid account and in Tabbycat."
+msgid "With SendGrid, the status of sent emails can be sent to NekoTab to be displayed, giving an indication of failures and whether participants have opened the messages. To activate this feature, setup must be done both in your SendGrid account and in NekoTab."
 msgstr ""
 
 #: ../../features/notifications.rst:97
@@ -244,7 +244,7 @@ msgid "Go to https://app.sendgrid.com/settings/mail_settings and select \"Event 
 msgstr ""
 
 #: ../../features/notifications.rst:100
-msgid "Enable the feature and paste the Tabbycat URL under \"HTTP POST URL\"."
+msgid "Enable the feature and paste the NekoTab URL under \"HTTP POST URL\"."
 msgstr ""
 
 #: ../../features/notifications.rst:101
@@ -252,6 +252,7 @@ msgid "Select the notifications to keep track (or all of them)."
 msgstr ""
 
 #: ../../features/notifications.rst:103
-msgid "Each email and change in status sent to Tabbycat will add a row to the database. If the number of rows is limited, as is for free Heroku apps, enabling the webhook may use up a significant number of rows. Be selective in the events to keep track."
+msgid "Each email and change in status sent to NekoTab will add a row to the database. If the number of rows is limited, as is for free Heroku apps, enabling the webhook may use up a significant number of rows. Be selective in the events to keep track."
 msgstr ""
+
 

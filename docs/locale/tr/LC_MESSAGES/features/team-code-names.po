@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-05-25 23:54\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: tr\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/team-code-names.po\n"
@@ -27,7 +27,7 @@ msgid "Some tournaments use \"code names\" to obscure the institutional affiliat
 msgstr ""
 
 #: ../../features/team-code-names.rst:13
-msgid "Instead, Tabbycat allows you to assign code names to teams, alongside their real names. This way, you can have code names show to participants, while real team names show in administrative views (*e.g.* allocating adjudicators). It also allows you to \"decode\" team names for elimination rounds or final tab release easily, without having to actually change every team's name."
+msgid "Instead, NekoTab allows you to assign code names to teams, alongside their real names. This way, you can have code names show to participants, while real team names show in administrative views (*e.g.* allocating adjudicators). It also allows you to \"decode\" team names for elimination rounds or final tab release easily, without having to actually change every team's name."
 msgstr ""
 
 #: ../../features/team-code-names.rst:19
@@ -39,7 +39,7 @@ msgid "Assigning code names"
 msgstr ""
 
 #: ../../features/team-code-names.rst:28
-msgid "Most methods of importing teams, including the simple importer and the ``importtournament`` command, automatically assign code names to teams. The code name is the name of the emoji that is automatically assigned at the same time. For example, the team assigned 🦋 will be code-named \"Butterfly\"."
+msgid "Most methods of importing teams, including the simple importer and the ``importtournament`` command, automatically assign code names to teams. The code name is the name of the emoji that is automatically assigned at the same time. For example, the team assigned ðŸ¦‹ will be code-named \"Butterfly\"."
 msgstr ""
 
 #: ../../features/team-code-names.rst:33
@@ -64,23 +64,23 @@ msgstr ""
 
 #: ../../features/team-code-names.rst:49
 msgid "Do not use code names"
-msgstr "Kod adlarını kullanma"
+msgstr "Kod adlarÄ±nÄ± kullanma"
 
 #: ../../features/team-code-names.rst:50
 msgid "Use real names everywhere, and show code names in tooltips"
-msgstr "Her yerde gerçek adları kullan ve araç ipuçlarında kod adlarını göster"
+msgstr "Her yerde gerÃ§ek adlarÄ± kullan ve araÃ§ ipuÃ§larÄ±nda kod adlarÄ±nÄ± gÃ¶ster"
 
 #: ../../features/team-code-names.rst:51
 msgid "Use code names for public; real names with code names in tooltips for admins"
-msgstr "Herkese açık olarak kod adları kullan; yöneticiler için araç ipuçlarında kod adları ve gerçek adları kullan"
+msgstr "Herkese aÃ§Ä±k olarak kod adlarÄ± kullan; yÃ¶neticiler iÃ§in araÃ§ ipuÃ§larÄ±nda kod adlarÄ± ve gerÃ§ek adlarÄ± kullan"
 
 #: ../../features/team-code-names.rst:52
 msgid "Use code names for public; code names with real names in tooltips for admins"
-msgstr "Herkese açık olarak kod adları kullan; Yöneticiler için araç ipuçlarında gerçek adları ve kod adlarını kullan"
+msgstr "Herkese aÃ§Ä±k olarak kod adlarÄ± kullan; YÃ¶neticiler iÃ§in araÃ§ ipuÃ§larÄ±nda gerÃ§ek adlarÄ± ve kod adlarÄ±nÄ± kullan"
 
 #: ../../features/team-code-names.rst:53
 msgid "Use code names everywhere; do not use tooltips (real names show in some admin views)"
-msgstr "Kod adlarını her yerde kullan; araç ipuçları kullanma (gerçek adlar bazı yönetici görünümlerinde gösterilir)"
+msgstr "Kod adlarÄ±nÄ± her yerde kullan; araÃ§ ipuÃ§larÄ± kullanma (gerÃ§ek adlar bazÄ± yÃ¶netici gÃ¶rÃ¼nÃ¼mlerinde gÃ¶sterilir)"
 
 #: ../../features/team-code-names.rst:55
 msgid "\"Code names in tooltips\" means that the code name will display in the details box that appears when you roll over a team's name, and similarly for real names."
@@ -101,4 +101,5 @@ msgstr ""
 #: ../../features/team-code-names.rst:68
 msgid "If you're enabling team codes, you probably want to disable the **Show team institutions** option too."
 msgstr ""
+
 

@@ -1,4 +1,4 @@
-.. _finishing-a-tournament:
+﻿.. _finishing-a-tournament:
 
 ======================
 Finishing a Tournament
@@ -9,7 +9,7 @@ This page outlines some final steps to take after the conclusion of outrounds.
 Tab Release
 ===========
 
-Tabs can be released under **Setup** > **Configuration** > **Tab Release**. Tabbycat offers the following system tabs:
+Tabs can be released under **Setup** > **Configuration** > **Tab Release**. NekoTab offers the following system tabs:
 
 - Team Tab
 - Speakers Tab
@@ -30,3 +30,4 @@ Wrapping Up
 ===========
 
 You probably want to turn off the *Public ballots*, *Public feedback*, *Feedback progress*, and *Public draw* features under **Configuration** at this stage as they no longer have any use.
+

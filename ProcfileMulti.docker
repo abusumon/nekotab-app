@@ -1,4 +1,4 @@
-# This is the 'actual' Procfile run by heroku (via Honcho)
+﻿# This is the 'actual' Procfile run by heroku (via Honcho)
 
 # Nginx is the reverse proxy
 # This allows static files to be served directly and to split traffic between
@@ -9,4 +9,5 @@ nginx: nginx -p . -c ./config/nginx.conf
 wsgi: gunicorn wsgi:application --config './config/gunicorn.conf'
 
 # ASGI server handles the asychronous routes (websockets)
-asgi: python ./tabbycat/run-asgi.py
+asgi: python ./NekoTab/run-asgi.py
+

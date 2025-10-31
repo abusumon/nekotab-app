@@ -1,4 +1,4 @@
-.. _install-windows:
+﻿.. _install-windows:
 
 =============================
 Installing Locally on Windows
@@ -7,41 +7,41 @@ Installing Locally on Windows
 .. admonition:: Notice on status of these instructions
   :class: note
 
-  The developers of Tabbycat have **stopped actively maintaining** these instructions. For Windows 10 users, we now recommend :ref:`Linux on Windows (WSL) <install-wsl>` for local installations. We're keeping these instructions up in case they're useful for anyone who might need them, but please be aware that they might not work smoothly.
+  The developers of NekoTab have **stopped actively maintaining** these instructions. For Windows 10 users, we now recommend :ref:`Linux on Windows (WSL) <install-wsl>` for local installations. We're keeping these instructions up in case they're useful for anyone who might need them, but please be aware that they might not work smoothly.
 
-  If you encounter any problems, please seek help in our `Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_. We're lucky to have a fantastic community of Tabbycat users who are often kind enough to share their experiences with fellow users, and someone there might be able to help.
+  If you encounter any problems, please seek help in our `Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_. We're lucky to have a fantastic community of NekoTab users who are often kind enough to share their experiences with fellow users, and someone there might be able to help.
 
 .. admonition:: Is this the best installation method for you?
   :class: attention
 
   In most cases, we recommend doing an :ref:`internet-based installation on Heroku <install-heroku>` instead. If you decide to do a local installation, be sure to read our page on :ref:`local installations <install-local>` to help you understand what's going on, particularly this section: :ref:`install-decision`
 
-  If you just want to quickly set up a copy of Tabbycat to run locally on Windows, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below.
+  If you just want to quickly set up a copy of NekoTab to run locally on Windows, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below.
 
   If you have Windows 10 and any experience with Linux, we recommend installing it on :ref:`Linux on Windows (WSL) <install-wsl>` instead, which is much easier than the process below.
 
 Requisite technical background
 ==============================
 
-You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools Tabbycat uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest. You just need to be prepared to bear with us. It'll take a while the first time, but it gets easier after that.
+You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools NekoTab uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest. You just need to be prepared to bear with us. It'll take a while the first time, but it gets easier after that.
 
 In these instructions, we'll use **Windows PowerShell**, a command-line interface that comes with every installation of Windows (since XP). The easiest way to find it (on Windows 7 and later) is to search for it in your Start Menu. Every line in the instructions that begins with ``>`` is a command that you need to run in PowerShell, but without the ``>``: that sign is a convention used in instructions to make it clear that it is a command you need to run.
 
 .. admonition:: Advanced users
   :class: tip
 
-  If you wish to use an SQL engine other that PostgreSQL, most of Tabbycat should work, but a few features rely on SQL functions that aren't supported by all engines. To configure Tabbycat to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly.
+  If you wish to use an SQL engine other that PostgreSQL, most of NekoTab should work, but a few features rely on SQL functions that aren't supported by all engines. To configure NekoTab to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly.
 
 1. Install dependencies
 =======================
 
-First, you need to install all of the software on which Tabbycat depends, if you don't already have it installed.
+First, you need to install all of the software on which NekoTab depends, if you don't already have it installed.
 
 .. _install-python-windows:
 
 1(a). Python
 ------------
-  *Python is a popular programming language, and the language in which the core of Tabbycat is coded.*
+  *Python is a popular programming language, and the language in which the core of NekoTab is coded.*
 
 Download and install the latest version of Python from the `Python website <https://www.python.org/downloads/>`_.
 In the installer, check the box to add Python to your PATH (see box below).
@@ -75,7 +75,7 @@ To check that Python is installed correctly, open Windows PowerShell, type ``pyt
 
 Go to the `PostgreSQL downloads page <http://www.postgresql.org/download/windows/>`_, then follow the link through to EnterpriseDB to download and install the latest version of PostgreSQL.
 
-.. tip:: Once PostgreSQL is installed, the PostgreSQL service will run on your computer whenever you are using it. You might prefer to configure it so that it only runs when you want to run Tabbycat. To do this, open "Services" in your Control Panel on Windows, find the PostgreSQL service, and change its startup type to "Manual". This will tell it not to start whenever you log in. Then, if you want to run the server (so you can use Tabbycat), you can do so from "Services" by selecting the PostgreSQL service and clicking "Start the service".
+.. tip:: Once PostgreSQL is installed, the PostgreSQL service will run on your computer whenever you are using it. You might prefer to configure it so that it only runs when you want to run NekoTab. To do this, open "Services" in your Control Panel on Windows, find the PostgreSQL service, and change its startup type to "Manual". This will tell it not to start whenever you log in. Then, if you want to run the server (so you can use NekoTab), you can do so from "Services" by selecting the PostgreSQL service and clicking "Start the service".
 
 1(c). Git
 ---------
@@ -104,7 +104,7 @@ Download and run the node.js 8 Installer (.msi) for either `x64 versions  <https
 2. Get the source code
 ======================
 
-a. `Go to the page for our latest release <https://github.com/TabbycatDebate/tabbycat/releases/latest>`_.
+a. `Go to the page for our latest release <https://github.com/NekoTabDebate/NekoTab/releases/latest>`_.
 b. Download the zip file.
 c. Extract all files in it to a folder of your choice.
 
@@ -120,22 +120,22 @@ c. Extract all files in it to a folder of your choice.
 3. Set up a new database
 ========================
 
-.. hint:: You can skip steps 2 and 3 if this is not your first installation. Every Tabbycat installation requires its own database, but they can use the same login role if you like.
+.. hint:: You can skip steps 2 and 3 if this is not your first installation. Every NekoTab installation requires its own database, but they can use the same login role if you like.
 
 a. Open the **pgAdmin** tool, which you installed as part of installing PostgreSQL. In the object browser on the left, double-click the server marked "(localhost:5432)". Log in using the password you set during installation.
 
-b. Right-click Login Roles, and click "New Login Role…"
+b. Right-click Login Roles, and click "New Login Roleâ€¦"
 
   .. image:: images/pgadmin-new-login-role-menu.png
 
 c. Fill in the New Login Role box as follows (everything not listed below can be left as-is):
 
-   - In the **Properties** tab, in **Role Name**, choose a user account name. (If you don't know what to pick, we suggest "tabbycat".)
+   - In the **Properties** tab, in **Role Name**, choose a user account name. (If you don't know what to pick, we suggest "NekoTab".)
    - In the **Definition** tab, choose a **Password** and type it in **Password (again)**.
 
    Then click OK. (Remember this user name and password, you'll need it later.)
 
-d. Right-click Databases, and click "New Database…"
+d. Right-click Databases, and click "New Databaseâ€¦"
 
   .. image:: images/pgadmin-new-database-menu.png
 
@@ -146,14 +146,14 @@ e. Fill in the New Database box as follows (everything not listed below can be l
 
    Then click OK. (Remember the database name, you'll need it later.)
 
-4. Install Tabbycat
+4. Install NekoTab
 ===================
 
 Almost there!
 
-a. Open a Windows PowerShell. Navigate to the folder where you cloned/extracted Tabbycat. For example, if you installed it in ``C:\Users\myusername\Documents\GitHub\tabbycat``, then run::
+a. Open a Windows PowerShell. Navigate to the folder where you cloned/extracted NekoTab. For example, if you installed it in ``C:\Users\myusername\Documents\GitHub\NekoTab``, then run::
 
-    > Set-Location C:\Users\myusername\Documents\GitHub\tabbycat
+    > Set-Location C:\Users\myusername\Documents\GitHub\NekoTab
 
 b. Make a copy of **settings\\local.example** and rename it to **settings\\local.py**. Open your new **local.py** file. Find this part, and fill in the blanks (the empty quotation marks) as indicated:
 
@@ -186,42 +186,43 @@ c. Install Pipenv. Then install the Python packages specified in the Pipfile usi
 
     Read the warning message, then type ``y`` to confirm. By default, the execution policy on Windows is ``Restricted``, which does not permit scripts like ``activate`` to be run. Changing it to ``RemoteSigned`` relaxes it to allow local scripts to be run without checking the signature.
 
-  .. hint:: You might be wondering: I thought I already installed the requirements. Why am I installing more? And the answer is: Before, you were installing the requirements to create a Python virtual environment for Tabbycat to live in. Now, you're *in* the virtual environment, and you're installing everything required for *Tabbycat* to operate.
+  .. hint:: You might be wondering: I thought I already installed the requirements. Why am I installing more? And the answer is: Before, you were installing the requirements to create a Python virtual environment for NekoTab to live in. Now, you're *in* the virtual environment, and you're installing everything required for *NekoTab* to operate.
 
 d. Start a Pipenv shell::
 
     > pipenv shell
 
-  You'll notice a prefix that looks like ``(tabbycat-9BkbSRuB)`` (except the random characters for you will be different). That means you're inside the Pipenv shell. Everything from this point onwards will be inside the Pipenv shell.
+  You'll notice a prefix that looks like ``(NekoTab-9BkbSRuB)`` (except the random characters for you will be different). That means you're inside the Pipenv shell. Everything from this point onwards will be inside the Pipenv shell.
 
 f. Initialize the database and create a user account for yourself::
 
-    > cd tabbycat
+    > cd NekoTab
     > dj migrate
     > npm run windows-build
     > dj collectstatic
     > dj createsuperuser
 
-g. Start Tabbycat!
+g. Start NekoTab!
 
   ::
 
     > npm run serve
 
-  Lots of text will flow by---this command starts up all of the processes necessary to run Tabbycat. But the app will be at http://127.0.0.1:8000/ or http://localhost:8000/ (not at any of the other addresses that will show).
+  Lots of text will flow by---this command starts up all of the processes necessary to run NekoTab. But the app will be at http://127.0.0.1:8000/ or http://localhost:8000/ (not at any of the other addresses that will show).
 
-g. Open your browser and go to http://127.0.0.1:8000/ or http://localhost:8000/. It should look something like the screenshot below. If it does, great! You've successfully installed Tabbycat.
+g. Open your browser and go to http://127.0.0.1:8000/ or http://localhost:8000/. It should look something like the screenshot below. If it does, great! You've successfully installed NekoTab.
 
-  .. image:: images/tabbycat-bare.png
+  .. image:: images/NekoTab-bare.png
 
 Naturally, your database is currently empty, so proceed to :ref:`importing initial data <importing-initial-data>`.
 
-Starting up an existing Tabbycat instance
+Starting up an existing NekoTab instance
 =========================================
 
-To start your Tabbycat instance up again next time you use your computer, open a PowerShell and::
+To start your NekoTab instance up again next time you use your computer, open a PowerShell and::
 
-    > Set-Location C:\Users\myusername\Documents\GitHub\tabbycat # or wherever your installation is
+    > Set-Location C:\Users\myusername\Documents\GitHub\NekoTab # or wherever your installation is
     > .\venv\Scripts\activate
-    > cd tabbycat
+    > cd NekoTab
     > dj runserver
+

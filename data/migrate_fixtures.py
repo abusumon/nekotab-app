@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+﻿#!/usr/bin/python3
 """Migrates"""
 
 import argparse
@@ -10,7 +10,7 @@ import sys
 from os.path import abspath, dirname, join, relpath
 
 DEFAULT_DIR = relpath(join(dirname(__file__), "fixtures/"))
-MANAGE_PY = relpath(join(dirname(dirname((abspath(join(__file__))))), join("tabbycat", "manage.py")))
+MANAGE_PY = relpath(join(dirname(dirname((abspath(join(__file__))))), join("NekoTab", "manage.py")))
 
 # Arguments
 parser = argparse.ArgumentParser(description="Migrates all fixtures in a directory. "
@@ -118,3 +118,4 @@ for fixture in fixtures:
             "--indent=4", "--format=json", "--output=" + path])
 
 print_yellow("Migrated %d fixtures." % len(fixtures))
+

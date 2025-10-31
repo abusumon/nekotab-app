@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2023-11-08 06:27\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: kk\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/install/windows.po\n"
@@ -31,7 +31,7 @@ msgid "In most cases, we recommend doing an :ref:`internet-based installation on
 msgstr ""
 
 #: ../../install/windows.rst:12
-msgid "If you just want to quickly set up a copy of Tabbycat to run locally on Windows, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below."
+msgid "If you just want to quickly set up a copy of NekoTab to run locally on Windows, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below."
 msgstr ""
 
 #: ../../install/windows.rst:14
@@ -43,7 +43,7 @@ msgid "Requisite technical background"
 msgstr ""
 
 #: ../../install/windows.rst:19
-msgid "You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools Tabbycat uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest. You just need to be prepared to bear with us. It'll take a while the first time, but it gets easier after that."
+msgid "You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools NekoTab uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest. You just need to be prepared to bear with us. It'll take a while the first time, but it gets easier after that."
 msgstr ""
 
 #: ../../install/windows.rst:21
@@ -56,7 +56,7 @@ msgid "Advanced users"
 msgstr ""
 
 #: ../../install/windows.rst:26
-msgid "If you wish to use an SQL engine other that PostgreSQL, most of Tabbycat should work, but a few features rely on SQL functions that aren't supported by all engines. To configure Tabbycat to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly."
+msgid "If you wish to use an SQL engine other that PostgreSQL, most of NekoTab should work, but a few features rely on SQL functions that aren't supported by all engines. To configure NekoTab to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly."
 msgstr ""
 
 #: ../../install/windows.rst:29
@@ -64,7 +64,7 @@ msgid "1. Install dependencies"
 msgstr ""
 
 #: ../../install/windows.rst:31
-msgid "First, you need to install all of the software on which Tabbycat depends, if you don't already have it installed."
+msgid "First, you need to install all of the software on which NekoTab depends, if you don't already have it installed."
 msgstr ""
 
 #: ../../install/windows.rst:36
@@ -72,7 +72,7 @@ msgid "1(a). Python"
 msgstr ""
 
 #: ../../install/windows.rst:37
-msgid "*Python is a popular programming language, and the language in which the core of Tabbycat is coded.*"
+msgid "*Python is a popular programming language, and the language in which the core of NekoTab is coded.*"
 msgstr ""
 
 #: ../../install/windows.rst:39
@@ -128,7 +128,7 @@ msgid "Go to the `PostgreSQL downloads page <http://www.postgresql.org/download/
 msgstr ""
 
 #: ../../install/windows.rst:71
-msgid "Once PostgreSQL is installed, the PostgreSQL service will run on your computer whenever you are using it. You might prefer to configure it so that it only runs when you want to run Tabbycat. To do this, open \"Services\" in your Control Panel on Windows, find the PostgreSQL service, and change its startup type to \"Manual\". This will tell it not to start whenever you log in. Then, if you want to run the server (so you can use Tabbycat), you can do so from \"Services\" by selecting the PostgreSQL service and clicking \"Start the service\"."
+msgid "Once PostgreSQL is installed, the PostgreSQL service will run on your computer whenever you are using it. You might prefer to configure it so that it only runs when you want to run NekoTab. To do this, open \"Services\" in your Control Panel on Windows, find the PostgreSQL service, and change its startup type to \"Manual\". This will tell it not to start whenever you log in. Then, if you want to run the server (so you can use NekoTab), you can do so from \"Services\" by selecting the PostgreSQL service and clicking \"Start the service\"."
 msgstr ""
 
 #: ../../install/windows.rst:74
@@ -164,7 +164,7 @@ msgid "2. Get the source code"
 msgstr ""
 
 #: ../../install/windows.rst:100
-msgid "`Go to the page for our latest release <https://github.com/TabbycatDebate/tabbycat/releases/latest>`_."
+msgid "`Go to the page for our latest release <https://github.com/NekoTabDebate/NekoTab/releases/latest>`_."
 msgstr ""
 
 #: ../../install/windows.rst:101
@@ -188,7 +188,7 @@ msgid "3. Set up a new database"
 msgstr ""
 
 #: ../../install/windows.rst:116
-msgid "You can skip steps 2 and 3 if this is not your first installation. Every Tabbycat installation requires its own database, but they can use the same login role if you like."
+msgid "You can skip steps 2 and 3 if this is not your first installation. Every NekoTab installation requires its own database, but they can use the same login role if you like."
 msgstr ""
 
 #: ../../install/windows.rst:118
@@ -196,7 +196,7 @@ msgid "Open the **pgAdmin** tool, which you installed as part of installing Post
 msgstr ""
 
 #: ../../install/windows.rst:120
-msgid "Right-click Login Roles, and click \"New Login Role…\""
+msgid "Right-click Login Roles, and click \"New Login Roleâ€¦\""
 msgstr ""
 
 #: ../../install/windows.rst:124
@@ -204,7 +204,7 @@ msgid "Fill in the New Login Role box as follows (everything not listed below ca
 msgstr ""
 
 #: ../../install/windows.rst:126
-msgid "In the **Properties** tab, in **Role Name**, choose a user account name. (If you don't know what to pick, we suggest \"tabbycat\".)"
+msgid "In the **Properties** tab, in **Role Name**, choose a user account name. (If you don't know what to pick, we suggest \"NekoTab\".)"
 msgstr ""
 
 #: ../../install/windows.rst:127
@@ -216,7 +216,7 @@ msgid "Then click OK. (Remember this user name and password, you'll need it late
 msgstr ""
 
 #: ../../install/windows.rst:131
-msgid "Right-click Databases, and click \"New Database…\""
+msgid "Right-click Databases, and click \"New Databaseâ€¦\""
 msgstr ""
 
 #: ../../install/windows.rst:135
@@ -236,7 +236,7 @@ msgid "Then click OK. (Remember the database name, you'll need it later.)"
 msgstr ""
 
 #: ../../install/windows.rst:143
-msgid "4. Install Tabbycat"
+msgid "4. Install NekoTab"
 msgstr ""
 
 #: ../../install/windows.rst:145
@@ -244,7 +244,7 @@ msgid "Almost there!"
 msgstr ""
 
 #: ../../install/windows.rst:147
-msgid "Open a Windows PowerShell. Navigate to the folder where you cloned/extracted Tabbycat. For example, if you installed it in ``C:\\Users\\myusername\\Documents\\GitHub\\tabbycat``, then run::"
+msgid "Open a Windows PowerShell. Navigate to the folder where you cloned/extracted NekoTab. For example, if you installed it in ``C:\\Users\\myusername\\Documents\\GitHub\\NekoTab``, then run::"
 msgstr ""
 
 #: ../../install/windows.rst:151
@@ -272,7 +272,7 @@ msgid "Read the warning message, then type ``y`` to confirm. By default, the exe
 msgstr ""
 
 #: ../../install/windows.rst:184
-msgid "Install Tabbycat's requirements."
+msgid "Install NekoTab's requirements."
 msgstr ""
 
 #: ../../install/windows.rst:186
@@ -280,7 +280,7 @@ msgid "If you installed **32-bit Python**::"
 msgstr ""
 
 #: ../../install/windows.rst:192
-msgid "You might be wondering: I thought I already installed the requirements. Why am I installing more? And the answer is: Before, you were installing the requirements to create a Python virtual environment for Tabbycat to live in. Now, you're *in* the virtual environment, and you're installing everything required for *Tabbycat* to operate."
+msgid "You might be wondering: I thought I already installed the requirements. Why am I installing more? And the answer is: Before, you were installing the requirements to create a Python virtual environment for NekoTab to live in. Now, you're *in* the virtual environment, and you're installing everything required for *NekoTab* to operate."
 msgstr ""
 
 #: ../../install/windows.rst:194
@@ -288,8 +288,8 @@ msgid "Initialize the database and create a user account for yourself::"
 msgstr ""
 
 #: ../../install/windows.rst:202
-msgid "Start Tabbycat!"
-msgstr "Тэббикэт жұмысын бастау!"
+msgid "Start NekoTab!"
+msgstr "Ð¢ÑÐ±Ð±Ð¸ÐºÑÑ‚ Ð¶Ò±Ð¼Ñ‹ÑÑ‹Ð½ Ð±Ð°ÑÑ‚Ð°Ñƒ!"
 
 #: ../../install/windows.rst:208
 msgid "It should show something like this::"
@@ -300,7 +300,7 @@ msgid "Open your browser and go to the URL printed above. (In the above example,
 msgstr ""
 
 #: ../../install/windows.rst:216
-msgid "If it does, great! You've successfully installed Tabbycat."
+msgid "If it does, great! You've successfully installed NekoTab."
 msgstr ""
 
 #: ../../install/windows.rst:218
@@ -308,10 +308,11 @@ msgid "Naturally, your database is currently empty, so proceed to :ref:`importin
 msgstr ""
 
 #: ../../install/windows.rst:221
-msgid "Starting up an existing Tabbycat instance"
+msgid "Starting up an existing NekoTab instance"
 msgstr ""
 
 #: ../../install/windows.rst:223
-msgid "To start your Tabbycat instance up again next time you use your computer, open a PowerShell and::"
+msgid "To start your NekoTab instance up again next time you use your computer, open a PowerShell and::"
 msgstr ""
+
 

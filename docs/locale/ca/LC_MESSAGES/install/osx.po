@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2022-11-23 15:09\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: ca\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/install/osx.po\n"
@@ -31,7 +31,7 @@ msgid "In most cases, we recommend doing an :ref:`internet-based installation on
 msgstr ""
 
 #: ../../install/osx.rst:12
-msgid "If you just want to quickly set up a copy of Tabbycat to run locally on macOS, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below."
+msgid "If you just want to quickly set up a copy of NekoTab to run locally on macOS, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below."
 msgstr ""
 
 #: ../../install/osx.rst:15
@@ -39,7 +39,7 @@ msgid "Requisite technical knowledge"
 msgstr ""
 
 #: ../../install/osx.rst:17
-msgid "You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools Tabbycat uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest. You just need to be prepared to bear with us. It'll take a while the first time, but it gets easier after that."
+msgid "You need to be familiar with command-line interfaces to get through this comfortably. While a background in the specific tools NekoTab uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest. You just need to be prepared to bear with us. It'll take a while the first time, but it gets easier after that."
 msgstr ""
 
 #: ../../install/osx.rst:19
@@ -51,7 +51,7 @@ msgid "Advanced users"
 msgstr ""
 
 #: ../../install/osx.rst:24
-msgid "If you wish to use an SQL engine other that PostgreSQL, most of Tabbycat should work, but a few features rely on SQL functions that aren't supported by all engines. To configure Tabbycat to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly."
+msgid "If you wish to use an SQL engine other that PostgreSQL, most of NekoTab should work, but a few features rely on SQL functions that aren't supported by all engines. To configure NekoTab to use a different engine, set the ``DATABASES`` `Django setting <https://docs.djangoproject.com/en/2.2/ref/settings/#databases>`_ accordingly."
 msgstr ""
 
 #: ../../install/osx.rst:27
@@ -59,7 +59,7 @@ msgid "1. Install dependencies"
 msgstr ""
 
 #: ../../install/osx.rst:29
-msgid "First, you need to install all of the software on which Tabbycat depends, if you don't already have it installed."
+msgid "First, you need to install all of the software on which NekoTab depends, if you don't already have it installed."
 msgstr ""
 
 #: ../../install/osx.rst:32
@@ -67,7 +67,7 @@ msgid "1(a). Python"
 msgstr ""
 
 #: ../../install/osx.rst:33
-msgid "Tabbycat requires Python 3.6 or later. macOS only comes with Python 2.7, so you'll need to install this. You can download the latest version from the `Python website <https://www.python.org/downloads/>`_."
+msgid "NekoTab requires Python 3.6 or later. macOS only comes with Python 2.7, so you'll need to install this. You can download the latest version from the `Python website <https://www.python.org/downloads/>`_."
 msgstr ""
 
 #: ../../install/osx.rst:35
@@ -75,7 +75,7 @@ msgid "The executable will probably be called ``python3``, rather than ``python`
 msgstr ""
 
 #: ../../install/osx.rst:40
-msgid "Tabbycat does not support Python 2. You must use Python 3.6 or later."
+msgid "NekoTab does not support Python 2. You must use Python 3.6 or later."
 msgstr ""
 
 #: ../../install/osx.rst:45
@@ -87,7 +87,7 @@ msgid "1(b). Postgres.app"
 msgstr ""
 
 #: ../../install/osx.rst:50
-msgid "Download `Postgres.app <http://postgresapp.com/>`_, move it to your Applications folder, and open it. This should place an icon in your menu bar, showing that the postgres database is running. Whenever you are running Tabbycat you'll need to have this app running."
+msgid "Download `Postgres.app <http://postgresapp.com/>`_, move it to your Applications folder, and open it. This should place an icon in your menu bar, showing that the postgres database is running. Whenever you are running NekoTab you'll need to have this app running."
 msgstr ""
 
 #: ../../install/osx.rst:52
@@ -107,7 +107,7 @@ msgid "2. Get the source code"
 msgstr ""
 
 #: ../../install/osx.rst:64
-msgid "`Go to the page for our latest release <https://github.com/TabbycatDebate/tabbycat/releases/latest>`_."
+msgid "`Go to the page for our latest release <https://github.com/NekoTabDebate/NekoTab/releases/latest>`_."
 msgstr ""
 
 #: ../../install/osx.rst:65
@@ -131,7 +131,7 @@ msgid "3. Set up a new database"
 msgstr ""
 
 #: ../../install/osx.rst:78
-msgid "You can skip steps 1--3 if this is not your first installation. Every Tabbycat installation requires its own database, but they can use the same login role if you like."
+msgid "You can skip steps 1--3 if this is not your first installation. Every NekoTab installation requires its own database, but they can use the same login role if you like."
 msgstr ""
 
 #: ../../install/osx.rst:80
@@ -143,7 +143,7 @@ msgid "Hit enter then quit and reopen the Terminal app."
 msgstr ""
 
 #: ../../install/osx.rst:86
-msgid "Create a new user account with a password, replacing ``myusername`` with whatever name you prefer. If you don't know what username to pick, use ``tabbycat``."
+msgid "Create a new user account with a password, replacing ``myusername`` with whatever name you prefer. If you don't know what username to pick, use ``NekoTab``."
 msgstr ""
 
 #: ../../install/osx.rst:92
@@ -155,7 +155,7 @@ msgid "In terminal type in::"
 msgstr ""
 
 #: ../../install/osx.rst:101
-msgid "4. Install Tabbycat"
+msgid "4. Install NekoTab"
 msgstr ""
 
 #: ../../install/osx.rst:102
@@ -163,7 +163,7 @@ msgid "Almost there!"
 msgstr ""
 
 #: ../../install/osx.rst:104
-msgid "Navigate to your Tabbycat directory::"
+msgid "Navigate to your NekoTab directory::"
 msgstr ""
 
 #: ../../install/osx.rst:108
@@ -175,7 +175,7 @@ msgid "Optionally, replace the value in this line in the same file with your own
 msgstr ""
 
 #: ../../install/osx.rst:127
-msgid "Ensure you are in the main Tabbycat directory (not the config folder where **settings_local.py** is and start a new virtual environment. We suggest the name ``venv``, though it can be any name you like::"
+msgid "Ensure you are in the main NekoTab directory (not the config folder where **settings_local.py** is and start a new virtual environment. We suggest the name ``venv``, though it can be any name you like::"
 msgstr ""
 
 #: ../../install/osx.rst:131
@@ -183,15 +183,15 @@ msgid "Run the ``activate`` script. This puts you \"into\" the virtual environme
 msgstr ""
 
 #: ../../install/osx.rst:135
-msgid "Install Tabbycat's requirements into your virtual environment::"
+msgid "Install NekoTab's requirements into your virtual environment::"
 msgstr ""
 
 #: ../../install/osx.rst:141
-msgid "Navigate to the **tabbycat** sub folder, initialize the database, compile the assets, and create a user account for yourself::"
+msgid "Navigate to the **NekoTab** sub folder, initialize the database, compile the assets, and create a user account for yourself::"
 msgstr ""
 
 #: ../../install/osx.rst:149
-msgid "Start Tabbycat!"
+msgid "Start NekoTab!"
 msgstr ""
 
 #: ../../install/osx.rst:155
@@ -199,7 +199,7 @@ msgid "It should show something like this::"
 msgstr ""
 
 #: ../../install/osx.rst:159
-msgid "Open your browser and go to the URL printed above. (In the above example, it's http://127.0.0.1:8000.) It should look something like the screenshot below. If it does, great! You've successfully installed Tabbycat."
+msgid "Open your browser and go to the URL printed above. (In the above example, it's http://127.0.0.1:8000.) It should look something like the screenshot below. If it does, great! You've successfully installed NekoTab."
 msgstr ""
 
 #: ../../install/osx.rst:164
@@ -207,10 +207,11 @@ msgid "Naturally, your database is currently empty, so proceed to :ref:`importin
 msgstr ""
 
 #: ../../install/osx.rst:167
-msgid "Starting up an existing Tabbycat instance"
+msgid "Starting up an existing NekoTab instance"
 msgstr ""
 
 #: ../../install/osx.rst:168
-msgid "To start your Tabbycat instance up again next time you use your computer::"
+msgid "To start your NekoTab instance up again next time you use your computer::"
 msgstr ""
+
 

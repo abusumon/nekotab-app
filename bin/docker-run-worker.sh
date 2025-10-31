@@ -1,7 +1,8 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 #   Shorthand to run django worker in docker
 
-cd tabbycat
+cd NekoTab
 
 # Run worker
 python ./manage.py runworker notifications adjallocation venues
+

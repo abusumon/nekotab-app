@@ -1,4 +1,4 @@
-.. _data-entry:
+﻿.. _data-entry:
 
 =============================
 Entering Ballots and Feedback
@@ -24,9 +24,9 @@ Ballot entry
 
 .. image:: images/ballot-entry.png
 
-Most tab rooms run some sort of check system to ensure data is entered accurately. In Tabbycat, this is built into the system, which also helps speed it up.
+Most tab rooms run some sort of check system to ensure data is entered accurately. In NekoTab, this is built into the system, which also helps speed it up.
 
-As a general principle, Tabbycat requires all ballots to be looked at by two people. The first person enters the data from the ballot, and the second person checks it. The second person isn't allowed to modify the data—they either confirm it or reject it, and if they reject it, then the whole process starts again. This is by design: to be confirmed, the *same* data must have been seen by at least two people.
+As a general principle, NekoTab requires all ballots to be looked at by two people. The first person enters the data from the ballot, and the second person checks it. The second person isn't allowed to modify the dataâ€”they either confirm it or reject it, and if they reject it, then the whole process starts again. This is by design: to be confirmed, the *same* data must have been seen by at least two people.
 
 Debates can be postponed either before or after a ballot is submitted. In this state, the ballot is ignored for the purposes of draw generation, so a draw can be created without having confirmed all ballots. This can also be useful to mark ballots for further inspection. This feature must be enabled in the Data Entry preferences.
 
@@ -34,10 +34,10 @@ Debates can be postponed either before or after a ballot is submitted. In this s
 
 .. tip::
 
-  - Don't forget to check the totals against the ballot—they're a useful integrity check too.
+  - Don't forget to check the totals against the ballotâ€”they're a useful integrity check too.
   - Don't forget to check the winner against the ballot! If the adjudicator gets it wrong, it's worth asking to clarify.
   - It can be helpful to think about the room layout to maximize efficiency.
-  - Some tab rooms like to assign some to data entry and some to verification. This isn't really necessary, since Tabbycat doesn't let the same person enter and verify the same ballot. (This is one of many reasons why every person should have their own account.)
+  - Some tab rooms like to assign some to data entry and some to verification. This isn't really necessary, since NekoTab doesn't let the same person enter and verify the same ballot. (This is one of many reasons why every person should have their own account.)
   - Emails can be configured to be sent to adjudicators as a receipt of their ballot once confirmed.
 
 Duplicate/Swing Speeches
@@ -69,15 +69,15 @@ There are two methods of allowing ballots and feedback to be submitted online. B
 Private URLs
 ------------
 
-The first method of data entry is using 'private URLs'. When this setting is enabled you can create a special URL that is unique to a participant. This link contains a number of random characters and is not displayed publicly; it is in effect a secret that only that a specific participant should know. Presuming people do not share these links to others, this provides a means to (relatively) securely identify who is submitting what information. Because Tabbycat knows which participant has which URL it will only allow them to submit feedback/ballots for debates that they were speakers/adjudicators in.
+The first method of data entry is using 'private URLs'. When this setting is enabled you can create a special URL that is unique to a participant. This link contains a number of random characters and is not displayed publicly; it is in effect a secret that only that a specific participant should know. Presuming people do not share these links to others, this provides a means to (relatively) securely identify who is submitting what information. Because NekoTab knows which participant has which URL it will only allow them to submit feedback/ballots for debates that they were speakers/adjudicators in.
 
 .. warning:: Private URLs should provide more than adequate security for almost all tournaments' purposes, but they aren't foolproof. Anyone with access to the URL for a participant can submit feedback or ballots on their behalf, so it's important that participants not share their URLs. This also means participants need to be careful when submitting from devices they do not own, because the URL will be logged in that device's browser history.
 
-These links must be generated within Tabbycat after the preference is enabled. To do so go to the **Feedback** section and then the **Private URLs** area. Once there you will be prompted to generate those URLs for all participants, which — once generated — will be presented in separate tables (one for teams; one for adjudicators).
+These links must be generated within NekoTab after the preference is enabled. To do so go to the **Feedback** section and then the **Private URLs** area. Once there you will be prompted to generate those URLs for all participants, which â€” once generated â€” will be presented in separate tables (one for teams; one for adjudicators).
 
 .. image:: images/randomised-urls.png
 
-These URLs can then be distributed to each person in a number of ways. There are pages within Tabbycat for printing them out (one URL per page labelled by recipient) or emailing them out (providing participants have been assigned email addresses). In the past tournaments have also used data from this table to send out SMSs by bulk, or distributed them to institutional representatives to disburse.
+These URLs can then be distributed to each person in a number of ways. There are pages within NekoTab for printing them out (one URL per page labelled by recipient) or emailing them out (providing participants have been assigned email addresses). In the past tournaments have also used data from this table to send out SMSs by bulk, or distributed them to institutional representatives to disburse.
 
 .. tip::
 
@@ -92,6 +92,7 @@ Public URLs
 
 The second method of data entry is using 'normal URLs'. This essentially means that any users visiting the public version of the site is able to submit a ballot or feedback (as specified by their respective settings). They do so by self-selecting which Team or Adjudicator they are then entering in a form as normal.
 
-This is, rather obviously, not a particularly secure method of data entry — nothing is stopping anyone on the site from entering data as someone else. The data can be checked, verified, and edited as normal by admins however. As such, this method is only recommended for small tournaments where you can trust those present to enter accurate information (or where accuracy is not crucial).
+This is, rather obviously, not a particularly secure method of data entry â€” nothing is stopping anyone on the site from entering data as someone else. The data can be checked, verified, and edited as normal by admins however. As such, this method is only recommended for small tournaments where you can trust those present to enter accurate information (or where accuracy is not crucial).
 
 .. tip:: There is an additional setting to set a 'tournament password' that needs to be submitted to enable the form.  It is imagined, that if enabled, this password would only be distributed to tournament participants. However this only helps (at best) prevent non-participants from entering information; the fundamental problem of not verifying who is submitting what information is still present.
+

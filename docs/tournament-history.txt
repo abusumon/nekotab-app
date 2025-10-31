@@ -1,8 +1,8 @@
-==================
+﻿==================
 Tournament History
 ==================
 
-A partial list of major national and international tournaments (that we know of) which have used Tabbycat.
+A partial list of major national and international tournaments (that we know of) which have used NekoTab.
 
 2017
 ----
@@ -77,3 +77,4 @@ A partial list of major national and international tournaments (that we know of)
 ----
 
 - Auckland Australs
+

@@ -1,4 +1,4 @@
-.. _adjudicator-feedback:
+﻿.. _adjudicator-feedback:
 
 ====================
 Adjudicator Feedback
@@ -47,7 +47,7 @@ Options:
 - **choices** is used with "select one" and "select multiple" types, and is a comma-delimited list of possible answers, *e.g.* ``biased,clear,concise,rambly,attentive,inattentive``
 - **required** specifies whether users must fill out the field before clicking "submit". This requirement is only enforced on public submission forms. It is not enforced on forms entered by tab room assistants.
 
-  The exception to this is the "checkbox" type. For checkboxes, "required" means that the user cannot submit the form unless the box is checked. Think of it like an "I agree to the terms" checkbox. This isn't a deliberate design decision—it's just a quirk of how checkboxes work on web forms.
+  The exception to this is the "checkbox" type. For checkboxes, "required" means that the user cannot submit the form unless the box is checked. Think of it like an "I agree to the terms" checkbox. This isn't a deliberate design decisionâ€”it's just a quirk of how checkboxes work on web forms.
 
 Want another answer type?
 =========================
@@ -68,7 +68,7 @@ please contact us using the contact details in the :ref:`authors` section.
 Different questionnaires
 ========================
 
-Tabbycat allows you to specify two questionnaires: one for feedback submitted by
+NekoTab allows you to specify two questionnaires: one for feedback submitted by
 teams, and one for feedback submitted by adjudicators. You must specify in each
 question whether to include the question in each questionnaire.
 
@@ -79,7 +79,7 @@ question whether to include the question in each questionnaire.
 
 Who gives feedback on whom?
 ===========================
-Tabbycat allows for three choices for which adjudicators give feedback on which
+NekoTab allows for three choices for which adjudicators give feedback on which
 other adjudicators:
 
 - Chairs give feedback on panellists and trainees
@@ -107,7 +107,7 @@ adjudicator on their panel.
 
   If you need a different setting, you need to edit the source code.
   Specifically, you should edit the function ``expected_feedback_targets`` in
-  tabbycat/adjfeedback/utils.py.
+  NekoTab/adjfeedback/utils.py.
 
   Unless we can be convinced that they are very common, we don't intend to add
   any further choices to the feedback paths option. If your needs are specific
@@ -150,3 +150,4 @@ Ignoring/Discarding feedback
 There are some cases where feedback should be discarded or ignored, but there are some differences between the two. Discarded feedback is mostly due to having another piece of feedback that supersedes the discarded ones. Ignored feedback is different as it still counts the affected feedback as submitted, just inconsequential, ignored in the adjudicator's score calculation.
 
 Feedback can be marked as discarded in the database view, under the ``confirmed`` field. It can also be marked as ignored in the same view. Controls to reverse these designations are also available there. To mark feedback as ignored, an option is available in the administrator's and assistant's feedback adding form, as well in the form of a toggle link at the bottom of each card.
+

@@ -1,12 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
+﻿# SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2019, Philip Belesky, Chuan-Zheng Lee
-# This file is distributed under the same license as the Tabbycat package.
+# This file is distributed under the same license as the NekoTab package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Tabbycat 2.3\n"
+"Project-Id-Version: NekoTab 2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -30,11 +30,11 @@ msgid "In most cases, we recommend doing an :ref:`internet-based installation on
 msgstr ""
 
 #: ../../install/wsl.rst:12
-msgid "If you just want to quickly set up a copy of Tabbycat to run locally on Windows, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below."
+msgid "If you just want to quickly set up a copy of NekoTab to run locally on Windows, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below."
 msgstr ""
 
 #: ../../install/wsl.rst:14
-msgid "Windows Subsystem for Linux is only available on Windows 10. If you have an older version of Windows, :ref:`install Tabbycat locally on Windows <install-windows>` instead."
+msgid "Windows Subsystem for Linux is only available on Windows 10. If you have an older version of Windows, :ref:`install NekoTab locally on Windows <install-windows>` instead."
 msgstr ""
 
 #: ../../install/wsl.rst:18
@@ -46,7 +46,7 @@ msgid "Requisite technical background"
 msgstr ""
 
 #: ../../install/wsl.rst:23
-msgid "It will help a lot if you have some experience with Linux, but mainly you need to be familiar with command-line interfaces, and you should be willing to install and work with the `Windows Subsystem for Linux <https://docs.microsoft.com/windows/wsl/about>`_. You might need to be prepared to familiarise yourself with aspects of WSL not covered in these instructions. While a background in the specific tools Tabbycat uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest."
+msgid "It will help a lot if you have some experience with Linux, but mainly you need to be familiar with command-line interfaces, and you should be willing to install and work with the `Windows Subsystem for Linux <https://docs.microsoft.com/windows/wsl/about>`_. You might need to be prepared to familiarise yourself with aspects of WSL not covered in these instructions. While a background in the specific tools NekoTab uses (Python, PostgreSQL, *etc.*) will make things easier, it's not necessary: we'll talk you through the rest."
 msgstr ""
 
 #: ../../install/wsl.rst:27
@@ -54,7 +54,7 @@ msgid "A. Install Ubuntu on Windows"
 msgstr ""
 
 #: ../../install/wsl.rst:29
-msgid "*If you already have a Linux distribution installed on your PC, skip to* :ref:`part B <install-wsl-tabbycat>`."
+msgid "*If you already have a Linux distribution installed on your PC, skip to* :ref:`part B <install-wsl-NekoTab>`."
 msgstr ""
 
 #: ../../install/wsl.rst:31
@@ -90,10 +90,11 @@ msgid "You can, of course, use any Linux distribution that Windows supports. We 
 msgstr ""
 
 #: ../../install/wsl.rst:53
-msgid "B. Install Tabbycat"
+msgid "B. Install NekoTab"
 msgstr ""
 
 #: ../../install/wsl.rst:55
-msgid "You now have a Linux subsystem running on your computer, so head over to the :ref:`instructions to install Tabbycat locally on Linux <install-linux>` and follow those (in full)."
+msgid "You now have a Linux subsystem running on your computer, so head over to the :ref:`instructions to install NekoTab locally on Linux <install-linux>` and follow those (in full)."
 msgstr ""
+
 

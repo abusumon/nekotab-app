@@ -1,4 +1,4 @@
-.. _tournament-data-importers:
+﻿.. _tournament-data-importers:
 
 =========================
 Tournament Data Importers
@@ -6,16 +6,16 @@ Tournament Data Importers
 
 This page describes how to write your own tournament data importer. It is aimed at an audience that is familiar with programming in Python, and may be willing to get their head around the Django model if necessary.
 
-The **tournament data importer** is the class that imports data from one or more files (usually CSV files) into the database. A base class ``BaseTournamentDataImporter`` is in `importer/base.py <https://github.com/TabbycatDebate/tabbycat/blob/develop/tabbycat/importer/importers/base.py>`_. An example of a data importer is in `importer/anorak.py <https://github.com/TabbycatDebate/tabbycat/blob/develop/tabbycat/importer/importers/anorak.py>`_.
+The **tournament data importer** is the class that imports data from one or more files (usually CSV files) into the database. A base class ``BaseTournamentDataImporter`` is in `importer/base.py <https://github.com/NekoTabDebate/NekoTab/blob/develop/NekoTab/importer/importers/base.py>`_. An example of a data importer is in `importer/anorak.py <https://github.com/NekoTabDebate/NekoTab/blob/develop/NekoTab/importer/importers/anorak.py>`_.
 
 .. todo:: This page is incomplete. If you're finding this information insufficient, please contact Chuan-Zheng using the contact details in the :ref:`authors` section.
 
 Why write your own?
 ===================
 
-While Tabbycat has standard import formats, you might find that none of them fit the data that you need to import.
+While NekoTab has standard import formats, you might find that none of them fit the data that you need to import.
 
-It's not possible to devise a single, universally-convenient import file format. Tabbycat supports way too many permutations of configurations for this to be workable. Instead, we provide the ones that have been useful before and are therefore likely to be useful again—but if your tournament has different needs, you might decide that it's easier to write an importer to conform to you, rather than conform to the importer.
+It's not possible to devise a single, universally-convenient import file format. NekoTab supports way too many permutations of configurations for this to be workable. Instead, we provide the ones that have been useful before and are therefore likely to be useful againâ€”but if your tournament has different needs, you might decide that it's easier to write an importer to conform to you, rather than conform to the importer.
 
 A base importer class abstracts away most of the nitty-gritty of parsing files, allowing new importers to focus on their interpretation with as little code as possible.
 
@@ -123,7 +123,7 @@ This interpreter does the following:
 
 This looks simple enough, but it's very robust. What if a cell in the CSV file
 is blank, or what if the file omits a column? (For example, some tournaments
-might not collect information about participant gender, so Tabbycat doesn't
+might not collect information about participant gender, so NekoTab doesn't
 require it.) We could deal with these scenarios on a case-by-case basis, but
 that's cumbersome.
 
@@ -257,3 +257,4 @@ about every instance it creates.
 
 You can also pass in a logger for it to use (instead of the default one) with
 the ``logger`` argument.
+

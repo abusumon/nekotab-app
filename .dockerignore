@@ -1,4 +1,4 @@
-# Copying this over will mess up database settings
+﻿# Copying this over will mess up database settings
 */*/settings_local.py
 
 # Dependencies
@@ -6,9 +6,10 @@ node_modules/
 venv/
 
 # Compilations
-tabbycat/staticfiles/
+NekoTab/staticfiles/
 docs/
 
 # Symlinks (they don't work on Windows)
 manage.py
 data/test/standard
+

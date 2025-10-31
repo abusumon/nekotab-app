@@ -1,10 +1,10 @@
-.. _importing-initial-data:
+﻿.. _importing-initial-data:
 
 ======================
 Importing Initial Data
 ======================
 
-Once you've got Tabbycat installed, the next step is to import data for the tournament: that is, import details of teams, speakers, adjudicators and rounds. There are a few ways to do this, each with their advantages and disadvantages.
+Once you've got NekoTab installed, the next step is to import data for the tournament: that is, import details of teams, speakers, adjudicators and rounds. There are a few ways to do this, each with their advantages and disadvantages.
 
 To help you decide which to choose, here's a summary:
 
@@ -12,7 +12,7 @@ To help you decide which to choose, here's a summary:
 |        Method        |      Best for     |      Drawcard      |       Drawback       |
 +======================+===================+====================+======================+
 | **Demonstration      | Trying out        | Loads sample data  | Not for use with     |
-| data**               | Tabbycat          | in one click       | real tournaments     |
+| data**               | NekoTab          | in one click       | real tournaments     |
 |                      |                   |                    |                      |
 +----------------------+-------------------+--------------------+----------------------+
 | **Simple             | Small and         | Easy to use        | Only deals with      |
@@ -48,7 +48,7 @@ To help you decide which to choose, here's a summary:
 
 Demonstration data
 ==================
-If you're just learning or experimenting with Tabbycat, there are two demonstration datasets available, each with a sample set of teams, adjudicators, *etc.*, so that you can immediately start running rounds. Just be aware that these probably won't relate to anyone at your real-life tournament.
+If you're just learning or experimenting with NekoTab, there are two demonstration datasets available, each with a sample set of teams, adjudicators, *etc.*, so that you can immediately start running rounds. Just be aware that these probably won't relate to anyone at your real-life tournament.
 
 To load a demonstration dataset, click **New Tournament** link on the home page (once logged in as admin). You'll see a page titled "Create New Tournament". Scroll to the bottom of this page and click on one of the links at the bottom.
 
@@ -147,12 +147,12 @@ If our suggested file formats cause you headaches, it might be easier to write y
 Application Programming Interface (API)
 =======================================
 
-Participants can be imported in Tabbycat through the :ref:`API <api>`, using authenticated endpoints making ``POST`` requests to the relevant endpoints. There may be tournament registration software which interfaces with Tabbycat, or you may have to program one yourself, in any language.
+Participants can be imported in NekoTab through the :ref:`API <api>`, using authenticated endpoints making ``POST`` requests to the relevant endpoints. There may be tournament registration software which interfaces with NekoTab, or you may have to program one yourself, in any language.
 
 Participant self-registration
 =============================
 
-Tabbycat has an inbuilt system for participants to self-register which is customisable to the tournament's workflow.
+NekoTab has an inbuilt system for participants to self-register which is customisable to the tournament's workflow.
 
 The basic functionality is activated by activating the open team and adjudicator registration in the "Registration" section of the settings. You can also choose which fields they will be asked and how their team name will be constructed. Then, people will find a link on the tournament's main page allowing themselves to register.
 
@@ -161,3 +161,4 @@ Registration statuses can be checked under the Registration tab in the admin sid
 For intervarsity or slot-controlled tournaments, institutional registration with a coach can be required and optionally require them to request a certain number of teams and adjudicators. In the admin institutional registration list, users can set the number of approved participants. The coach will then be able to register their members.
 
 To ease registration by participants, coaches have "invitation links" generated for them to give out, allowing their members to register as a team or adjudicator. When a team does not have a complete set of speakers, an invitation link is also generated to allow the registered speaker to "invite" their teammates.
+

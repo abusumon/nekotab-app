@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2021-01-31 10:14\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: bg\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/printing.po\n"
@@ -23,7 +23,7 @@ msgid "Printing Ballots and Feedback"
 msgstr ""
 
 #: ../../features/printing.rst:5
-msgid "Tabbycat offers the ability to print scoresheets and feedback sheets on a per-round basis. This means that each scoresheet is customised to match the draw, and so will display:"
+msgid "NekoTab offers the ability to print scoresheets and feedback sheets on a per-round basis. This means that each scoresheet is customised to match the draw, and so will display:"
 msgstr ""
 
 #: ../../features/printing.rst:7
@@ -65,4 +65,5 @@ msgstr ""
 #: ../../features/printing.rst:21
 msgid "Printing works best in Safari and Firefox; use those if possible."
 msgstr ""
+
 

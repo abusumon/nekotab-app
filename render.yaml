@@ -1,12 +1,12 @@
-databases:
-  - name: tabbycat_database
-    databaseName: tabbycat
-    user: tabbycat
+﻿databases:
+  - name: NekoTab_database
+    databaseName: NekoTab
+    user: NekoTab
     plan: free
 
 services:
   - type: web
-    name: tabbycat_website
+    name: NekoTab_website
     env: python
     plan: free
     region: oregon
@@ -15,17 +15,17 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: tabbycat_database
+          name: NekoTab_database
           property: connectionString
       - key: REDIS_HOST
         fromService:
           type: redis
-          name: tabbycat_redis
+          name: NekoTab_redis
           property: host
       - key: REDIS_PORT
         fromService:
           type: redis
-          name: tabbycat_redis
+          name: NekoTab_redis
           property: port
       - key: DJANGO_SECRET_KEY
         generateValue: true
@@ -42,9 +42,10 @@ services:
       - key: USING_NGINX
         value: 0 # Not 'false'; is cast
   - type: redis
-    name: tabbycat_redis
+    name: NekoTab_redis
     ipAllowList: # required
       - source: 0.0.0.0
         description: everywhere
     plan: free
     maxmemoryPolicy: allkeys-lru # (default)
+

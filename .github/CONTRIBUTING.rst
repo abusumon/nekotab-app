@@ -1,37 +1,37 @@
-============
+﻿============
 Contributing
 ============
 
-Contributions are welcome, and are greatly appreciated! Every little bit helps, and credit will be given. While at its core Tabbycat is a software project, there is much more you can do than code. We encourage you to help translate the project and to help others on our Facebook group. Of course, we also welcome and appreciate all feedback, suggestions, and ideas for how to improve the wording, translation, and design of our interface and documentation.
+Contributions are welcome, and are greatly appreciated! Every little bit helps, and credit will be given. While at its core NekoTab is a software project, there is much more you can do than code. We encourage you to help translate the project and to help others on our Facebook group. Of course, we also welcome and appreciate all feedback, suggestions, and ideas for how to improve the wording, translation, and design of our interface and documentation.
 
-Feel free to `join our Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_ if you have any questions about how to get started.
+Feel free to `join our Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_ if you have any questions about how to get started.
 
 Feedback and ideas
 ==================
 
-These can be added as issues in the `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_; posts in our `Facebook group <https://www.facebook.com/groups/tabbycat.debate/>`_; or as an :ref:`email to the developers <authors>`.
+These can be added as issues in the `GitHub repository <https://github.com/NekoTabDebate/NekoTab/issues>`_; posts in our `Facebook group <https://www.facebook.com/groups/NekoTab.debate/>`_; or as an :ref:`email to the developers <authors>`.
 
 Bug reports
 ===========
 
-Please report bugs by opening a new issue in our `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_. It is most helpful if you can include:
+Please report bugs by opening a new issue in our `GitHub repository <https://github.com/NekoTabDebate/NekoTab/issues>`_. It is most helpful if you can include:
 
-- How Tabbycat was installed (on Heroku, locally on macOS, `etc.`)
+- How NekoTab was installed (on Heroku, locally on macOS, `etc.`)
 - Any details about your tournament and setup that might be helpful in troubleshooting
 - Detailed steps for how to reproduce the bug
 
 Translation
 ===========
 
-We use `Crowdin <https://crowdin.com/project/tabbycat>`_ to manage the translations of the application as well as the documentation. We welcome contributions to existing languages and also to start new language translations. The application messages should be prioritized before the documentation. Contact :ref:`the developers <authors>` for access to the platform.
+We use `Crowdin <https://crowdin.com/project/NekoTab>`_ to manage the translations of the application as well as the documentation. We welcome contributions to existing languages and also to start new language translations. The application messages should be prioritized before the documentation. Contact :ref:`the developers <authors>` for access to the platform.
 
 Development
 ===========
 
-- To easily test your changes to Tabbycat you probably want a working :ref:`local install <install-local>` (without using Docker)
+- To easily test your changes to NekoTab you probably want a working :ref:`local install <install-local>` (without using Docker)
 - Please submit pull requests for features and bug fixes against `develop` (but not `master`).
 - We broadly use the `git-flow workflow <http://danielkummer.github.io/git-flow-cheatsheet/>`_.
-- We use Django's testing tools — adding unit tests to new features is greatly appreciated
+- We use Django's testing tools â€” adding unit tests to new features is greatly appreciated
 
   - A number of our tests use `Selenium <http://selenium-python.readthedocs.io>`_ and `ChromeDriver <https://sites.google.com/a/chromium.org/chromedriver/>`_ to simulate in-browser functionality. They will fail if you do not have the Chrome browser and ChromeDriver installed.
 
@@ -121,7 +121,7 @@ Project structure
 - ``bin`` contains a number of convenience scripts for starting/stopping Docker, and the webserver/asset pipeline.
 - ``data`` contains the sample data sets and fixtures used to setup demo tournaments and in automated tests respectively
 - ``docs`` contains our document source files and images (although some are linked from the root directory)
-- ``tabbycat`` is the main directory containing the Django project
+- ``NekoTab`` is the main directory containing the Django project
     - ``locale`` contains translation strings for shared templates (others are in respective app directories)
     - ``templates`` contains shared html templates, stylesheets, javascript source files, and Vue.js components/mixins.
     - ``utils`` contains shared utilities
@@ -133,19 +133,19 @@ Internationalization/Localization
 
 The `gettext <https://docs.djangoproject.com/en/2.2/topics/i18n/translation/>`_ framework is used to enable the translation of strings in Python files and Django templates. Backend in this context signifies these types of files.
 
-The backend's translation files can be updated from the ``tabbycat`` directory using one or more of the supporting language codes (see settings.py)::
+The backend's translation files can be updated from the ``NekoTab`` directory using one or more of the supporting language codes (see settings.py)::
 
     $ dj makemessages -len --no-wrap --no-obsolete --add-location file
 
-Then our `Crowdin <https://crowdin.com/project/tabbycat>`_ project will find the updated strings and mark them for translation.
+Then our `Crowdin <https://crowdin.com/project/NekoTab>`_ project will find the updated strings and mark them for translation.
 
 These can then be compiled using::
 
     $ dj compilemessages -l es
 
-As it stands Heroku needs the .mo files pre-compiled (see `issue in Heroku Python buildpack <https://github.com/heroku/heroku-buildpack-python/issues/198>`_, so these are committed to Git. Note that the English (``en``) language files need not be compiled; their sole purpose is to provide a source language for `Crowdin <https://crowdin.com/project/tabbycat>`_.
+As it stands Heroku needs the .mo files pre-compiled (see `issue in Heroku Python buildpack <https://github.com/heroku/heroku-buildpack-python/issues/198>`_, so these are committed to Git. Note that the English (``en``) language files need not be compiled; their sole purpose is to provide a source language for `Crowdin <https://crowdin.com/project/NekoTab>`_.
 
-Strings defined in Vue files must similarily be marked with ``gettext`` but must be added manually to ``tabbycat/locale/LANGUAGE_CODE/djangojs.po``, for each language supported. These can then compiled to javascript bundles using::
+Strings defined in Vue files must similarily be marked with ``gettext`` but must be added manually to ``NekoTab/locale/LANGUAGE_CODE/djangojs.po``, for each language supported. These can then compiled to javascript bundles using::
 
     $ dj compilemessages -l es        # or whichever language(s) you want to update
     $ dj compilejsi18n -l es
@@ -158,7 +158,7 @@ Release checklist
 1. Check that all migrations have been generated and committed into Git
 2. Merge translations from the Crowdin pull request and compile messages
 3. Bump version number in ``docs/conf.py``
-4. Bump version number, API version number and (if applicable) codename in ``tabbycat/settings/core.py``
+4. Bump version number, API version number and (if applicable) codename in ``NekoTab/settings/core.py``
 5. Update the main ``CHANGELOG.rst`` file (including release date)
 6. Check the major current deployment options, including:
     1. The ``deploy_heroku.py`` script
@@ -173,3 +173,4 @@ Release checklist
 11. Back-merge ``develop`` to the in-progress feature branches
 12. Issue a formal release with change notes on GitHub
 13. Post change notes on the Facebook page/group
+

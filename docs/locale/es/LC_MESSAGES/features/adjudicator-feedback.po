@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:25\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: es-ES\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/adjudicator-feedback.po\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../features/adjudicator-feedback.rst:5
 msgid "Adjudicator Feedback"
-msgstr "Retroalimentación del Juez"
+msgstr "RetroalimentaciÃ³n del Juez"
 
 #: ../../features/adjudicator-feedback.rst:7
 msgid "You can set the questions that are used on adjudicator feedback forms. The only field that is permanently there is the ``score`` field, which is an overall score assessing the adjudicator. All other questions (including a generic comments section) must be defined if you want them to be on the form."
@@ -129,7 +129,7 @@ msgid "**required** specifies whether users must fill out the field before click
 msgstr ""
 
 #: ../../features/adjudicator-feedback.rst:50
-msgid "The exception to this is the \"checkbox\" type. For checkboxes, \"required\" means that the user cannot submit the form unless the box is checked. Think of it like an \"I agree to the terms\" checkbox. This isn't a deliberate design decision—it's just a quirk of how checkboxes work on web forms."
+msgid "The exception to this is the \"checkbox\" type. For checkboxes, \"required\" means that the user cannot submit the form unless the box is checked. Think of it like an \"I agree to the terms\" checkbox. This isn't a deliberate design decisionâ€”it's just a quirk of how checkboxes work on web forms."
 msgstr ""
 
 #: ../../features/adjudicator-feedback.rst:53
@@ -149,7 +149,7 @@ msgid "Different questionnaires"
 msgstr ""
 
 #: ../../features/adjudicator-feedback.rst:71
-msgid "Tabbycat allows you to specify two questionnaires: one for feedback submitted by teams, and one for feedback submitted by adjudicators. You must specify in each question whether to include the question in each questionnaire."
+msgid "NekoTab allows you to specify two questionnaires: one for feedback submitted by teams, and one for feedback submitted by adjudicators. You must specify in each question whether to include the question in each questionnaire."
 msgstr ""
 
 #: ../../features/adjudicator-feedback.rst:75
@@ -165,7 +165,7 @@ msgid "Who gives feedback on whom?"
 msgstr ""
 
 #: ../../features/adjudicator-feedback.rst:82
-msgid "Tabbycat allows for three choices for which adjudicators give feedback on which other adjudicators:"
+msgid "NekoTab allows for three choices for which adjudicators give feedback on which other adjudicators:"
 msgstr ""
 
 #: ../../features/adjudicator-feedback.rst:85
@@ -205,7 +205,7 @@ msgid "Advanced users"
 msgstr ""
 
 #: ../../features/adjudicator-feedback.rst:108
-msgid "If you need a different setting, you need to edit the source code. Specifically, you should edit the function ``expected_feedback_targets`` in tabbycat/adjfeedback/utils.py."
+msgid "If you need a different setting, you need to edit the source code. Specifically, you should edit the function ``expected_feedback_targets`` in NekoTab/adjfeedback/utils.py."
 msgstr ""
 
 #: ../../features/adjudicator-feedback.rst:112
@@ -255,4 +255,5 @@ msgstr ""
 #: ../../features/adjudicator-feedback.rst:152
 msgid "Feedback can be marked as discarded in the database view, under the ``confirmed`` field. It can also be marked as ignored in the same view. Controls to reverse these designations are also available there. To mark feedback as ignored, an option is available in the administrator's and assistant's feedback adding form, as well in the form of a toggle link at the bottom of each card."
 msgstr ""
+
 

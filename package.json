@@ -1,25 +1,25 @@
-{
-  "name": "tabbycat",
+﻿{
+  "name": "NekoTab",
   "description": "Debating tabulation software for two-team parliamentary formats",
   "scripts": {
     "serve": "npm-run-all -p serve-*",
     "serve-django": "dj r 0.0.0.0:8000",
-    "serve-live": "livereload 'tabbycat/' --exts 'css' --exclusions 'tabbycat/static/vue/'",
+    "serve-live": "livereload 'NekoTab/' --exts 'css' --exclusions 'NekoTab/static/vue/'",
     "serve-sass": "npm run build-sass -- --watch --style=expanded & npm run build-sass-print -- --watch --style=expanded --source-map",
     "serve-vue": "npx vue-cli-service serve",
     "serve-worker": "dj runworker notifications adjallocation venues",
     "build": "NODE_ENV='production' npm-run-all -p build-* cp-*",
-    "build-sass": "npx sass --style=compressed --load-path=node_modules/ tabbycat/templates/scss/style.scss tabbycat/static/css/style.css",
-    "build-sass-print": "npx sass --style=compressed tabbycat/templates/scss/printables.scss tabbycat/static/css/printables.css",
+    "build-sass": "npx sass --style=compressed --load-path=node_modules/ NekoTab/templates/scss/style.scss NekoTab/static/css/style.css",
+    "build-sass-print": "npx sass --style=compressed NekoTab/templates/scss/printables.scss NekoTab/static/css/printables.css",
     "build-vue": "npx vue-cli-service build",
-    "windows-build": "SET NODE_ENV='production' & npm-run-all -p build-* cp-* && cpx \"tabbycat/static/vue/app.js\" \"tabbycat/static/vue/js/\"",
-    "cp-barcode": "cpx node_modules/jsbarcode/dist/JsBarcode.all.min.js tabbycat/static/js/vendor",
-    "cp-fonts": "cpx \"node_modules/inter-ui/Inter (web)/*\" tabbycat/static/fonts",
-    "cp-i18n": "cpx \"tabbycat/locale/jsi18n/**/*.js\" tabbycat/static/jsi18n",
-    "cp-jquery": "cpx node_modules/jquery/dist/jquery.js tabbycat/static/js/vendor",
-    "cp-validate": "cpx node_modules/jquery-validation/dist/jquery.validate.js tabbycat/static/js/vendor",
+    "windows-build": "SET NODE_ENV='production' & npm-run-all -p build-* cp-* && cpx \"NekoTab/static/vue/app.js\" \"NekoTab/static/vue/js/\"",
+    "cp-barcode": "cpx node_modules/jsbarcode/dist/JsBarcode.all.min.js NekoTab/static/js/vendor",
+    "cp-fonts": "cpx \"node_modules/inter-ui/Inter (web)/*\" NekoTab/static/fonts",
+    "cp-i18n": "cpx \"NekoTab/locale/jsi18n/**/*.js\" NekoTab/static/jsi18n",
+    "cp-jquery": "cpx node_modules/jquery/dist/jquery.js NekoTab/static/js/vendor",
+    "cp-validate": "cpx node_modules/jquery-validation/dist/jquery.validate.js NekoTab/static/js/vendor",
     "render-serve": "npm-run-all -p render-*",
-    "render-server": "python tabbycat/run-asgi.py",
+    "render-server": "python NekoTab/run-asgi.py",
     "render-worker": "python manage.py runworker notifications adjallocation venues",
     "docs": "sphinx-autobuild docs docs/_build/html --port 7999",
     "lint": "pre-commit run --all-files"
@@ -65,9 +65,10 @@
     "not dead"
   ],
   "license": "AGPL-3.0-only",
-  "repository": "https://github.com/TabbycatDebate/tabbycat",
+  "repository": "https://github.com/NekoTabDebate/NekoTab",
   "version": "3.18.1",
   "devDependencies": {
     "eslint-plugin-html": "^6.2.0"
   }
 }
+

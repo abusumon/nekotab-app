@@ -1,4 +1,4 @@
-# Docker file lists all the commands needed to setup a fresh linux instance to
+﻿# Docker file lists all the commands needed to setup a fresh linux instance to
 # run the application specified. docker-compose does not use this.
 
 # Grab a python image
@@ -31,4 +31,5 @@ RUN npm ci --only=production
 
 # Compile all the static files
 RUN npm run build
-RUN python ./tabbycat/manage.py collectstatic --noinput -v 0
+RUN python ./NekoTab/manage.py collectstatic --noinput -v 0
+

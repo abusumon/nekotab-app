@@ -1,25 +1,25 @@
-.. _backups:
+﻿.. _backups:
 
 ================
 Database Backups
 ================
 
-Tabbycat doesn't provide an in-built database backup system; instead you should create
+NekoTab doesn't provide an in-built database backup system; instead you should create
 copies of your database directly. Heroku provides a very good backup utility for
-all sites hosted on Heroku which makes this easy, and for Heroku-based Tabbycat
+all sites hosted on Heroku which makes this easy, and for Heroku-based NekoTab
 sites, we strongly recommend it.
 
 You should **always** back up the database before deleting *any* data while in
 the Edit Database area, because deleting data cannot be undone. It is also a
 good idea to back up the database before doing anything in the Edit Database
-area, unless you're very familiar and confident with editing the Tabbycat
+area, unless you're very familiar and confident with editing the NekoTab
 database directly.
 
 You may, as a matter of standard practice at large tournaments, wish to back up
 the database twice per round: Once just after you've generated the draw and
 allocated adjudicators, and once just after you've finished entering results.
 
-If you're using an online version of Tabbycat, it's a good idea to download the
+If you're using an online version of NekoTab, it's a good idea to download the
 backups. While it's extremely rare to lose internet access or have an outage in
 a critical web service (*i.e.*, Heroku), having a local copy of your backups
 allows you to :ref:`restore your tab to a local installation <backup-restore-to-local>`
@@ -65,7 +65,7 @@ To restore a backup::
 
     $ heroku pg:backups:restore
 
-If you have multiple Tabbycat sites, you'll need to specify which one by adding
+If you have multiple NekoTab sites, you'll need to specify which one by adding
 ``--app mytournamentname`` to the end of the command.
 
 Local installations
@@ -90,7 +90,8 @@ of a tournament and you need to run offline. Of course, for this to work, you
 need to have downloaded your backup before your internet connection broke---a
 good reason to download a copy of your backups as soon as you make them.
 
-Assuming your download is called ``latest.dump`` (this is the default name), your PostgreSQL username is ``tabbycat``, and you wish to call your local database ``fromheroku`` (if not, replace arguments as appropriate)::
+Assuming your download is called ``latest.dump`` (this is the default name), your PostgreSQL username is ``NekoTab``, and you wish to call your local database ``fromheroku`` (if not, replace arguments as appropriate)::
 
-    $ createdb fromheroku -h localhost -U tabbycat
-    $ pg_restore --no-acl --no-owner -h localhost -U tabbycat -d fromheroku latest.dump
+    $ createdb fromheroku -h localhost -U NekoTab
+    $ pg_restore --no-acl --no-owner -h localhost -U NekoTab -d fromheroku latest.dump
+

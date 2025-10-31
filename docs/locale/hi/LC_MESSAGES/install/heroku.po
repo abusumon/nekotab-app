@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-07-05 17:14\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: hi\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/install/heroku.po\n"
@@ -23,7 +23,7 @@ msgid "Installing on Heroku"
 msgstr ""
 
 #: ../../install/heroku.rst:7
-msgid "When running Tabbycat on the internet, we set it up on `Heroku <http://www.heroku.com/>`_. The project is set up to be good to go on Heroku, and it works well for us, so if you'd like to run it online, we recommend that you do the same. Naturally, this requires you to have a Heroku account."
+msgid "When running NekoTab on the internet, we set it up on `Heroku <http://www.heroku.com/>`_. The project is set up to be good to go on Heroku, and it works well for us, so if you'd like to run it online, we recommend that you do the same. Naturally, this requires you to have a Heroku account."
 msgstr ""
 
 #: ../../install/heroku.rst:9
@@ -39,19 +39,19 @@ msgid "Click this button:"
 msgstr ""
 
 #: ../../install/heroku.rst:18
-msgid "This is the easiest way to deploy an instance of Tabbycat online. It requires no technical background."
+msgid "This is the easiest way to deploy an instance of NekoTab online. It requires no technical background."
 msgstr ""
 
 #: ../../install/heroku.rst:20
-msgid "If you don't already have a Heroku account, it'll prompt you to create one. Once you're logged in to Heroku, choose a name for your installation, then scroll down and click **Deploy**. Once it's finished, click **View** and follow the prompts. Once finished, open the site and from there you can easily set up a demo data set (if you just want to learn Tabbycat) or use the data importer to set up a real tournament."
+msgid "If you don't already have a Heroku account, it'll prompt you to create one. Once you're logged in to Heroku, choose a name for your installation, then scroll down and click **Deploy**. Once it's finished, click **View** and follow the prompts. Once finished, open the site and from there you can easily set up a demo data set (if you just want to learn NekoTab) or use the data importer to set up a real tournament."
 msgstr ""
 
 #: ../../install/heroku.rst:22
-msgid "During the setup process, Heroku will ask you to verify your account by adding a credit card. A standard Tabbycat site *will not charge* your card — charges only accrue if you deliberately add a paid service in the Heroku dashboard."
+msgid "During the setup process, Heroku will ask you to verify your account by adding a credit card. A standard NekoTab site *will not charge* your card â€” charges only accrue if you deliberately add a paid service in the Heroku dashboard."
 msgstr ""
 
 #: ../../install/heroku.rst:24
-msgid "If you can't access a credit card, you can instead install a limited version, which we call \"Tabbykitten\". However, Tabbykitten cannot send any e-mails or handle as much public traffic. We therefore strongly recommend it only as a last resort, and even then only for small tournaments.  `Use this link to set up a Tabbykitten site <https://heroku.com/deploy?template=https://github.com/TabbycatDebate/tabbycat/tree/kitten>`_."
+msgid "If you can't access a credit card, you can instead install a limited version, which we call \"Tabbykitten\". However, Tabbykitten cannot send any e-mails or handle as much public traffic. We therefore strongly recommend it only as a last resort, and even then only for small tournaments.  `Use this link to set up a Tabbykitten site <https://heroku.com/deploy?template=https://github.com/NekoTabDebate/NekoTab/tree/kitten>`_."
 msgstr ""
 
 #: ../../install/heroku.rst:27
@@ -83,7 +83,7 @@ msgid "Advanced users"
 msgstr ""
 
 #: ../../install/heroku.rst:42
-msgid "Tabbycat is a `Django <https://www.djangoproject.com/>`_ project. As such, it can be installed on any web platform that supports Django, using any SQL system that Django supports. Just be aware that we haven't tried any other platform."
+msgid "NekoTab is a `Django <https://www.djangoproject.com/>`_ project. As such, it can be installed on any web platform that supports Django, using any SQL system that Django supports. Just be aware that we haven't tried any other platform."
 msgstr ""
 
 #: ../../install/heroku.rst:45
@@ -95,7 +95,7 @@ msgid "We provide a \"short version\" for experienced users. Don't just copy and
 msgstr ""
 
 #: ../../install/heroku.rst:56
-msgid "If you want to :ref:`import tournament data <importing-initial-data>` from CSV files, :ref:`install Tabbycat locally <install-local>`, put your CSV files in ``data/yourtournamentname``, then::"
+msgid "If you want to :ref:`import tournament data <importing-initial-data>` from CSV files, :ref:`install NekoTab locally <install-local>`, put your CSV files in ``data/yourtournamentname``, then::"
 msgstr ""
 
 #: ../../install/heroku.rst:68
@@ -155,7 +155,7 @@ msgid "3. Deploy to Heroku"
 msgstr ""
 
 #: ../../install/heroku.rst:110
-msgid "Navigate to your Tabbycat directory::"
+msgid "Navigate to your NekoTab directory::"
 msgstr ""
 
 #: ../../install/heroku.rst:114
@@ -267,7 +267,7 @@ msgid "Upgrading your database size"
 msgstr ""
 
 #: ../../install/heroku.rst:204
-msgid "The free plan of `Heroku Postgres <https://elements.heroku.com/addons/heroku-postgresql>`_, \"Hobby Dev\", should work for most small tournaments. For large tournaments, however, you may find that you exceed the 10,000-row limit of this plan. It's difficult to give general guidance on how many rows you're likely to use, because it depends on which features of Tabbycat you use (*e.g.*, if you use adjudicator feedback). But to give some idea:"
+msgid "The free plan of `Heroku Postgres <https://elements.heroku.com/addons/heroku-postgresql>`_, \"Hobby Dev\", should work for most small tournaments. For large tournaments, however, you may find that you exceed the 10,000-row limit of this plan. It's difficult to give general guidance on how many rows you're likely to use, because it depends on which features of NekoTab you use (*e.g.*, if you use adjudicator feedback). But to give some idea:"
 msgstr ""
 
 #: ../../install/heroku.rst:206
@@ -288,7 +288,7 @@ msgid "If you need more than 10,000 rows, you'll need to upgrade to a paid Herok
 msgstr ""
 
 #: ../../install/heroku.rst:212
-msgid "If you're not sure, you can always start at Hobby Dev—just be prepared to `upgrade <https://devcenter.heroku.com/articles/upgrade-heroku-postgres-with-pgbackups>`_ during the tournament if you run close to capacity."
+msgid "If you're not sure, you can always start at Hobby Devâ€”just be prepared to `upgrade <https://devcenter.heroku.com/articles/upgrade-heroku-postgres-with-pgbackups>`_ during the tournament if you run close to capacity."
 msgstr ""
 
 #: ../../install/heroku.rst:215
@@ -316,7 +316,7 @@ msgid "HTTPS"
 msgstr ""
 
 #: ../../install/heroku.rst:227
-msgid "All Tabbycat sites deployed to Heroku redirect all traffic to HTTPS by default."
+msgid "All NekoTab sites deployed to Heroku redirect all traffic to HTTPS by default."
 msgstr ""
 
 #: ../../install/heroku.rst:229
@@ -324,7 +324,7 @@ msgid "For a myriad of reasons, we strongly advise against disabling this. But i
 msgstr ""
 
 #: ../../install/heroku.rst:231
-msgid "Most modern browsers, after having been redirected by a site to HTTPS once, remember that that site requires HTTPS and go there for all subsequent visits even if the user typed in a plain http\\:// address. It may do this because it cached the HTTP 301 permanent redirect, stored an HSTS entry and/or tagged its session cookie to require HTTPS. If, after disabling HTTPS on your Tabbycat site, you find that you're still being redirected to HTTPS, first try a browser or computer that *hasn't* visited the site before. If that works, then remove the relevant entry from your (original) browser's cache, HSTS set and cookies, and try again."
+msgid "Most modern browsers, after having been redirected by a site to HTTPS once, remember that that site requires HTTPS and go there for all subsequent visits even if the user typed in a plain http\\:// address. It may do this because it cached the HTTP 301 permanent redirect, stored an HSTS entry and/or tagged its session cookie to require HTTPS. If, after disabling HTTPS on your NekoTab site, you find that you're still being redirected to HTTPS, first try a browser or computer that *hasn't* visited the site before. If that works, then remove the relevant entry from your (original) browser's cache, HSTS set and cookies, and try again."
 msgstr ""
 
 #: ../../install/heroku.rst:234
@@ -388,11 +388,11 @@ msgid "Upgrading an existing Heroku app"
 msgstr ""
 
 #: ../../install/heroku.rst:270
-msgid "For most users, we recommend starting a new site for every tournament, when you set up the tab for that tournament. There's generally not a pressing need to upgrade Tabbycat after a tournament is concluded, and every time you deploy a new site, you'll be using the latest version at the time of deployment."
+msgid "For most users, we recommend starting a new site for every tournament, when you set up the tab for that tournament. There's generally not a pressing need to upgrade NekoTab after a tournament is concluded, and every time you deploy a new site, you'll be using the latest version at the time of deployment."
 msgstr ""
 
 #: ../../install/heroku.rst:272
-msgid "To upgrade an existing Heroku-based Tabbycat app to the latest version, you need to *deploy* the current version of Tabbycat to your Heroku app. There are several ways to do this. We list one below, primarily targeted at users with some background in Git."
+msgid "To upgrade an existing Heroku-based NekoTab app to the latest version, you need to *deploy* the current version of NekoTab to your Heroku app. There are several ways to do this. We list one below, primarily targeted at users with some background in Git."
 msgstr ""
 
 #: ../../install/heroku.rst:274
@@ -400,7 +400,7 @@ msgid "The essence of it is that you need to `create a Git remote <https://devce
 msgstr ""
 
 #: ../../install/heroku.rst:276
-msgid "You should **always** :ref:`back up your database <backups>` before upgrading Tabbycat."
+msgid "You should **always** :ref:`back up your database <backups>` before upgrading NekoTab."
 msgstr ""
 
 #: ../../install/heroku.rst:278
@@ -424,11 +424,11 @@ msgid "Check to see if you have a Git remote already in place::"
 msgstr ""
 
 #: ../../install/heroku.rst:300
-msgid "If you do, the name of the remote will be on the left (``heroku`` in the above example), and the URL of your Git repository will be on the right. In the example above, our Tabbycat site URL would be ``mytournament2018.herokuapp.com``; the Git remote URL is then ``https://git.heroku.com/mytournament2018.git``."
+msgid "If you do, the name of the remote will be on the left (``heroku`` in the above example), and the URL of your Git repository will be on the right. In the example above, our NekoTab site URL would be ``mytournament2018.herokuapp.com``; the Git remote URL is then ``https://git.heroku.com/mytournament2018.git``."
 msgstr ""
 
 #: ../../install/heroku.rst:302
-msgid "If a Git remote URL for your Tabbycat site *doesn't* appear, then create one::"
+msgid "If a Git remote URL for your NekoTab site *doesn't* appear, then create one::"
 msgstr ""
 
 #: ../../install/heroku.rst:307
@@ -442,4 +442,5 @@ msgstr ""
 #: ../../install/heroku.rst:313
 msgid "This will take a while to complete."
 msgstr ""
+
 

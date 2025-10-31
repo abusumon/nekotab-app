@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2025-02-15 10:33\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: ja\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/use/starting-a-tournament.po\n"
@@ -20,71 +20,71 @@ msgstr ""
 
 #: ../../use/starting-a-tournament.rst:5
 msgid "Starting a Tournament"
-msgstr "大会を開始する"
+msgstr "å¤§ä¼šã‚’é–‹å§‹ã™ã‚‹"
 
 #: ../../use/starting-a-tournament.rst:7
 msgid "This page outlines a few things you should do at the start of a tournament, after you've :ref:`imported the initial data <importing-initial-data>`. Once you've done these, proceed to :ref:`running a tournament <running-a-tournament>`."
-msgstr "このページには、:ref:`初期データを入力<importing-initial-data>`した後に大会の最初にやるべきことが書いてあります。すべて実施後、:ref:`大会を運営する<running-a-tournament>`を読んでください。"
+msgstr "ã“ã®ãƒšãƒ¼ã‚¸ã«ã¯ã€:ref:`åˆæœŸãƒ‡ãƒ¼ã‚¿ã‚’å…¥åŠ›<importing-initial-data>`ã—ãŸå¾Œã«å¤§ä¼šã®æœ€åˆã«ã‚„ã‚‹ã¹ãã“ã¨ãŒæ›¸ã„ã¦ã‚ã‚Šã¾ã™ã€‚ã™ã¹ã¦å®Ÿæ–½å¾Œã€:ref:`å¤§ä¼šã‚’é‹å–¶ã™ã‚‹<running-a-tournament>`ã‚’èª­ã‚“ã§ãã ã•ã„ã€‚"
 
 #: ../../use/starting-a-tournament.rst:9
-msgid "Tabbycat is developed for — and tested on — modern web browsers. If you are using **Internet Explorer versions 8, 7, or 6** the interface may look odd or not function properly. Switch to a newer browser if possible."
-msgstr "Tabbycatは近代的なWebブラウザ向けに開発・テストされています。 **Internet Explorerのバージョン8、7、または6**を使用している場合、インターフェイスがおかしくなったり、正しく機能しない可能性があります。 可能であれば別のブラウザに切り替えてください。"
+msgid "NekoTab is developed for â€” and tested on â€” modern web browsers. If you are using **Internet Explorer versions 8, 7, or 6** the interface may look odd or not function properly. Switch to a newer browser if possible."
+msgstr "NekoTabã¯è¿‘ä»£çš„ãªWebãƒ–ãƒ©ã‚¦ã‚¶å‘ã‘ã«é–‹ç™ºãƒ»ãƒ†ã‚¹ãƒˆã•ã‚Œã¦ã„ã¾ã™ã€‚ **Internet Explorerã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³8ã€7ã€ã¾ãŸã¯6**ã‚’ä½¿ç”¨ã—ã¦ã„ã‚‹å ´åˆã€ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ãŒãŠã‹ã—ããªã£ãŸã‚Šã€æ­£ã—ãæ©Ÿèƒ½ã—ãªã„å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚ å¯èƒ½ã§ã‚ã‚Œã°åˆ¥ã®ãƒ–ãƒ©ã‚¦ã‚¶ã«åˆ‡ã‚Šæ›¿ãˆã¦ãã ã•ã„ã€‚"
 
 #: ../../use/starting-a-tournament.rst:13
 msgid "Tournament configuration"
-msgstr "大会設定"
+msgstr "å¤§ä¼šè¨­å®š"
 
 #: ../../use/starting-a-tournament.rst:15
 msgid "After importing all your data you can log into the site as an administrator by loading up the homepage and then using the **Login** button in the lower-right. From there you should go to the administration section of your tournament, and then go to the tournament configuration page by clicking **Setup** then **Configuration** in the menu."
-msgstr "大会データを入力した後、右下の**ログイン**ボタンからサイトに管理者としてログインできます。そこから大会の管理者エリアにアクセスし、メニューの**セットアップ**の**設定**へ行きます。"
+msgstr "å¤§ä¼šãƒ‡ãƒ¼ã‚¿ã‚’å…¥åŠ›ã—ãŸå¾Œã€å³ä¸‹ã®**ãƒ­ã‚°ã‚¤ãƒ³**ãƒœã‚¿ãƒ³ã‹ã‚‰ã‚µã‚¤ãƒˆã«ç®¡ç†è€…ã¨ã—ã¦ãƒ­ã‚°ã‚¤ãƒ³ã§ãã¾ã™ã€‚ãã“ã‹ã‚‰å¤§ä¼šã®ç®¡ç†è€…ã‚¨ãƒªã‚¢ã«ã‚¢ã‚¯ã‚»ã‚¹ã—ã€ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®**ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—**ã®**è¨­å®š**ã¸è¡Œãã¾ã™ã€‚"
 
 #: ../../use/starting-a-tournament.rst:17
 msgid "Here you can adjust the debate rules and interface options to your liking then hit **Save** when finished. We also offer a number of presets that apply particular rule sets (such as the Australs rules) or feature sets (such as displaying information normally released during briefs on the website)."
-msgstr "ここでは、試合のルールとインターフェイスの設定を好みに合わせて設定し、**保存**をクリックします。 また、特定のルールセット（Australsルールなど）や設定群（通常リリースされる情報を公開ページ上に公開する）を適用する多くのプリセットも提供しています。"
+msgstr "ã“ã“ã§ã¯ã€è©¦åˆã®ãƒ«ãƒ¼ãƒ«ã¨ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã®è¨­å®šã‚’å¥½ã¿ã«åˆã‚ã›ã¦è¨­å®šã—ã€**ä¿å­˜**ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚ ã¾ãŸã€ç‰¹å®šã®ãƒ«ãƒ¼ãƒ«ã‚»ãƒƒãƒˆï¼ˆAustralsãƒ«ãƒ¼ãƒ«ãªã©ï¼‰ã‚„è¨­å®šç¾¤ï¼ˆé€šå¸¸ãƒªãƒªãƒ¼ã‚¹ã•ã‚Œã‚‹æƒ…å ±ã‚’å…¬é–‹ãƒšãƒ¼ã‚¸ä¸Šã«å…¬é–‹ã™ã‚‹ï¼‰ã‚’é©ç”¨ã™ã‚‹å¤šãã®ãƒ—ãƒªã‚»ãƒƒãƒˆã‚‚æä¾›ã—ã¦ã„ã¾ã™ã€‚"
 
 #: ../../use/starting-a-tournament.rst:20
 msgid "Special data types and options"
-msgstr "特殊なデータ型と設定"
+msgstr "ç‰¹æ®Šãªãƒ‡ãƒ¼ã‚¿åž‹ã¨è¨­å®š"
 
 #: ../../use/starting-a-tournament.rst:22
 msgid "There are a few optional fields that are not covered in the initial data templates, in the visual importer, or that may only be relevant in particular scenarios. It's worth going over these quickly to see if they are needed for your tournament. You can view and edit these fields in the **Edit Database** area (link is in the menu under **Setup**)."
-msgstr "初期データのプリセット、やGUIではカバーしきれなかったり特殊な状況でしか使用しない設定がいくつか存在します。自分の大会にこれらの設定が必要かどうか軽く確認しておく価値があります。これらの設定は**データベース編集エリア**（リンクは**セットアップ**の下のメニューにあります）から閲覧・編集できます。"
+msgstr "åˆæœŸãƒ‡ãƒ¼ã‚¿ã®ãƒ—ãƒªã‚»ãƒƒãƒˆã€ã‚„GUIã§ã¯ã‚«ãƒãƒ¼ã—ãã‚Œãªã‹ã£ãŸã‚Šç‰¹æ®ŠãªçŠ¶æ³ã§ã—ã‹ä½¿ç”¨ã—ãªã„è¨­å®šãŒã„ãã¤ã‹å­˜åœ¨ã—ã¾ã™ã€‚è‡ªåˆ†ã®å¤§ä¼šã«ã“ã‚Œã‚‰ã®è¨­å®šãŒå¿…è¦ã‹ã©ã†ã‹è»½ãç¢ºèªã—ã¦ãŠãä¾¡å€¤ãŒã‚ã‚Šã¾ã™ã€‚ã“ã‚Œã‚‰ã®è¨­å®šã¯**ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ç·¨é›†ã‚¨ãƒªã‚¢**ï¼ˆãƒªãƒ³ã‚¯ã¯**ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—**ã®ä¸‹ã®ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«ã‚ã‚Šã¾ã™ï¼‰ã‹ã‚‰é–²è¦§ãƒ»ç·¨é›†ã§ãã¾ã™ã€‚"
 
 #: ../../use/starting-a-tournament.rst:25
 msgid "Adjudicator Feedback > Adj Feedback Questions"
-msgstr "ジャッジのフィードバック > ジャッジフィードバックの質問事項"
+msgstr "ã‚¸ãƒ£ãƒƒã‚¸ã®ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯ > ã‚¸ãƒ£ãƒƒã‚¸ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯ã®è³ªå•äº‹é …"
 
 #: ../../use/starting-a-tournament.rst:25
 msgid "As described in :ref:`adjudicator-feedback`, the types of questions that can be posed for adjudicator feedback are able to be heavily customised. If you are customising your feedback form it should be done here, and before the tournament starts."
-msgstr ":ref:`adjudicator-feedback`に記述されているように、ジャッジフィードバックで質問できる質問の種類はカスタマイズ可能です。 フィードバックフォームをカスタマイズする場合、この項目から、大会開始前に行ってください。"
+msgstr ":ref:`adjudicator-feedback`ã«è¨˜è¿°ã•ã‚Œã¦ã„ã‚‹ã‚ˆã†ã«ã€ã‚¸ãƒ£ãƒƒã‚¸ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯ã§è³ªå•ã§ãã‚‹è³ªå•ã®ç¨®é¡žã¯ã‚«ã‚¹ã‚¿ãƒžã‚¤ã‚ºå¯èƒ½ã§ã™ã€‚ ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯ãƒ•ã‚©ãƒ¼ãƒ ã‚’ã‚«ã‚¹ã‚¿ãƒžã‚¤ã‚ºã™ã‚‹å ´åˆã€ã“ã®é …ç›®ã‹ã‚‰ã€å¤§ä¼šé–‹å§‹å‰ã«è¡Œã£ã¦ãã ã•ã„ã€‚"
 
 #: ../../use/starting-a-tournament.rst:30
 msgid "Authentication and Authorisation > Users"
-msgstr "認証と認可 > ユーザー"
+msgstr "èªè¨¼ã¨èªå¯ > ãƒ¦ãƒ¼ã‚¶ãƒ¼"
 
 #: ../../use/starting-a-tournament.rst:28
 msgid "Here you can add new admin users (those with full access) as well as new assistant users those (who can only do common data-entry tasks but not edit or view the full tab interface). See :ref:`user-accounts` for information on how to do this."
-msgstr "ここでは、新しい管理者ユーザー（フルアクセス権を持つユーザー）と新しいアシスタントユーザー（一般的なデータ入力タスクは行えるがすべてのインターフェースの編集や表示はできないユーザー）を追加できます。これを行う方法については :ref:`user-accounts`を参照してください。"
+msgstr "ã“ã“ã§ã¯ã€æ–°ã—ã„ç®¡ç†è€…ãƒ¦ãƒ¼ã‚¶ãƒ¼ï¼ˆãƒ•ãƒ«ã‚¢ã‚¯ã‚»ã‚¹æ¨©ã‚’æŒã¤ãƒ¦ãƒ¼ã‚¶ãƒ¼ï¼‰ã¨æ–°ã—ã„ã‚¢ã‚·ã‚¹ã‚¿ãƒ³ãƒˆãƒ¦ãƒ¼ã‚¶ãƒ¼ï¼ˆä¸€èˆ¬çš„ãªãƒ‡ãƒ¼ã‚¿å…¥åŠ›ã‚¿ã‚¹ã‚¯ã¯è¡Œãˆã‚‹ãŒã™ã¹ã¦ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®ç·¨é›†ã‚„è¡¨ç¤ºã¯ã§ããªã„ãƒ¦ãƒ¼ã‚¶ãƒ¼ï¼‰ã‚’è¿½åŠ ã§ãã¾ã™ã€‚ã“ã‚Œã‚’è¡Œã†æ–¹æ³•ã«ã¤ã„ã¦ã¯ :ref:`user-accounts`ã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚"
 
 #: ../../use/starting-a-tournament.rst:30
 msgid "The people you're adding accounts for should be physically present when you do this, so that they can enter their password."
-msgstr "アカウントを作成する対象の人は、アカウントを作成するときにパスワードを要求されるので物理的に傍にいるべきです。"
+msgstr "ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã‚’ä½œæˆã™ã‚‹å¯¾è±¡ã®äººã¯ã€ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã‚’ä½œæˆã™ã‚‹ã¨ãã«ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’è¦æ±‚ã•ã‚Œã‚‹ã®ã§ç‰©ç†çš„ã«å‚ã«ã„ã‚‹ã¹ãã§ã™ã€‚"
 
 #: ../../use/starting-a-tournament.rst:33
 msgid "Participants > Regions"
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:33
-msgid "Optionally, each institution may belong to a *Region*. An institution's region is used within the adjudicator allocation process to visually identify teams and adjudicators for the purposes of highlighting diversity issues.  These have traditionally been used for geographic regions (such as Oceania), although could be repurposed as arbitrary markers of information — for example they could be used to denote teams from a particular State, institutional size, or circuit."
-msgstr "各インステは任意で**地域**に所属できます。ダイバーシティーを確保するために、チーム・ジャッジの所属するインステの地域はジャッジの配置の際に視覚的に表示されます。通常、地理的な地域（オセアニア地域など）の表示に使用されますが、任意の情報のマーカーとしてもしようできますー例えば、特定の国、インステサイズやサーキット出身のチームを表示するために使用できます。"
+msgid "Optionally, each institution may belong to a *Region*. An institution's region is used within the adjudicator allocation process to visually identify teams and adjudicators for the purposes of highlighting diversity issues.  These have traditionally been used for geographic regions (such as Oceania), although could be repurposed as arbitrary markers of information â€” for example they could be used to denote teams from a particular State, institutional size, or circuit."
+msgstr "å„ã‚¤ãƒ³ã‚¹ãƒ†ã¯ä»»æ„ã§**åœ°åŸŸ**ã«æ‰€å±žã§ãã¾ã™ã€‚ãƒ€ã‚¤ãƒãƒ¼ã‚·ãƒ†ã‚£ãƒ¼ã‚’ç¢ºä¿ã™ã‚‹ãŸã‚ã«ã€ãƒãƒ¼ãƒ ãƒ»ã‚¸ãƒ£ãƒƒã‚¸ã®æ‰€å±žã™ã‚‹ã‚¤ãƒ³ã‚¹ãƒ†ã®åœ°åŸŸã¯ã‚¸ãƒ£ãƒƒã‚¸ã®é…ç½®ã®éš›ã«è¦–è¦šçš„ã«è¡¨ç¤ºã•ã‚Œã¾ã™ã€‚é€šå¸¸ã€åœ°ç†çš„ãªåœ°åŸŸï¼ˆã‚ªã‚»ã‚¢ãƒ‹ã‚¢åœ°åŸŸãªã©ï¼‰ã®è¡¨ç¤ºã«ä½¿ç”¨ã•ã‚Œã¾ã™ãŒã€ä»»æ„ã®æƒ…å ±ã®ãƒžãƒ¼ã‚«ãƒ¼ã¨ã—ã¦ã‚‚ã—ã‚ˆã†ã§ãã¾ã™ãƒ¼ä¾‹ãˆã°ã€ç‰¹å®šã®å›½ã€ã‚¤ãƒ³ã‚¹ãƒ†ã‚µã‚¤ã‚ºã‚„ã‚µãƒ¼ã‚­ãƒƒãƒˆå‡ºèº«ã®ãƒãƒ¼ãƒ ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã«ä½¿ç”¨ã§ãã¾ã™ã€‚"
 
 #: ../../use/starting-a-tournament.rst:41
 msgid "Participants > Adjudicators"
-msgstr "参加者 > ジャッジ"
+msgstr "å‚åŠ è€… > ã‚¸ãƒ£ãƒƒã‚¸"
 
 #: ../../use/starting-a-tournament.rst:36
 msgid "An adjudicators *Base Score* represents their relative ability to judge important rooms, where adjudicators with higher numbers will, relative to the other adjudicators, be placed in better roles (ie as Chairs) and in the rooms you deem most important in each round. If you are running a small tournament, and plan to do your allocations manually, you can set everyone's number to the same amount."
-msgstr "ジャッジの**ベーススコア**は重要なラウンドを審査できる相対的な能力を示します。点数の高いジャッジは他のジャッジに比べ、より良い役職（すなわち、チェア）やより重要とみなされる試合にアロケされます。小さな大会を運営しておりアロケを手動で行う場合、全員の点数を同じ値にしても問題ありません。"
+msgstr "ã‚¸ãƒ£ãƒƒã‚¸ã®**ãƒ™ãƒ¼ã‚¹ã‚¹ã‚³ã‚¢**ã¯é‡è¦ãªãƒ©ã‚¦ãƒ³ãƒ‰ã‚’å¯©æŸ»ã§ãã‚‹ç›¸å¯¾çš„ãªèƒ½åŠ›ã‚’ç¤ºã—ã¾ã™ã€‚ç‚¹æ•°ã®é«˜ã„ã‚¸ãƒ£ãƒƒã‚¸ã¯ä»–ã®ã‚¸ãƒ£ãƒƒã‚¸ã«æ¯”ã¹ã€ã‚ˆã‚Šè‰¯ã„å½¹è·ï¼ˆã™ãªã‚ã¡ã€ãƒã‚§ã‚¢ï¼‰ã‚„ã‚ˆã‚Šé‡è¦ã¨ã¿ãªã•ã‚Œã‚‹è©¦åˆã«ã‚¢ãƒ­ã‚±ã•ã‚Œã¾ã™ã€‚å°ã•ãªå¤§ä¼šã‚’é‹å–¶ã—ã¦ãŠã‚Šã‚¢ãƒ­ã‚±ã‚’æ‰‹å‹•ã§è¡Œã†å ´åˆã€å…¨å“¡ã®ç‚¹æ•°ã‚’åŒã˜å€¤ã«ã—ã¦ã‚‚å•é¡Œã‚ã‚Šã¾ã›ã‚“ã€‚"
 
 #: ../../use/starting-a-tournament.rst:37
 msgid "For larger tournaments, particularly those that collect feedback, see the :ref:`adjudicator-feedback` section for more information on how base scores and other variables influence the automated allocation process."
@@ -103,7 +103,7 @@ msgid "Each adjudicator's gender is optional and is not displayed publicly; it i
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:41
-msgid "Each adjudicator's pronoun is optional, and is only displayed if you use tabbycat to print the ballots and feedback sheets for each round."
+msgid "Each adjudicator's pronoun is optional, and is only displayed if you use NekoTab to print the ballots and feedback sheets for each round."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:48
@@ -139,7 +139,7 @@ msgid "Each speaker's gender is optional and is not displayed publicly; it is on
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:52
-msgid "Each speaker's pronoun is optional, and is only displayed if you use tabbycat to print the ballots and feedback sheets for each round."
+msgid "Each speaker's pronoun is optional, and is only displayed if you use NekoTab to print the ballots and feedback sheets for each round."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:55
@@ -171,7 +171,7 @@ msgid "Venues > Venue Categories"
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:64
-msgid "Venue categories are not needed for most kinds of tournaments. Their purpose is to classify particular venues, such as venues all within one building or venues that are accessible. Once assigned these categories can display in the venue's name — ie \"Red 01.01\" or be used to assign Venue Constraints that match particular teams, institutions, or adjudicators to particular types of venues."
+msgid "Venue categories are not needed for most kinds of tournaments. Their purpose is to classify particular venues, such as venues all within one building or venues that are accessible. Once assigned these categories can display in the venue's name â€” ie \"Red 01.01\" or be used to assign Venue Constraints that match particular teams, institutions, or adjudicators to particular types of venues."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:67
@@ -183,7 +183,7 @@ msgid "If you're using the online submissions feature, some things you should pr
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:71
-msgid "Adjudicators must fill out ballots completely, including motions and venues—they are entered into the system."
+msgid "Adjudicators must fill out ballots completely, including motions and venuesâ€”they are entered into the system."
 msgstr ""
 
 #: ../../use/starting-a-tournament.rst:72
@@ -193,4 +193,5 @@ msgstr ""
 #: ../../use/starting-a-tournament.rst:73
 msgid "If people submit a result or feedback online, they should indicate that they have done so on the paper copy of their ballot."
 msgstr ""
+
 

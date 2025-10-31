@@ -1,4 +1,4 @@
-# Docker-compose is a way to run multiple containers at once and connect them
+﻿# Docker-compose is a way to run multiple containers at once and connect them
 # This sets up and runs postgres and the django dev server as services
 # Reference: https://docs.docker.com/compose/compose-file/
 
@@ -14,9 +14,9 @@ services:
   db:
     image: postgres:12
     environment:
-      - POSTGRES_PASSWORD=tabbycat
-      - POSTGRES_USER=tabbycat
-      - POSTGRES_DB=tabbycat
+      - POSTGRES_PASSWORD=NekoTab
+      - POSTGRES_USER=NekoTab
+      - POSTGRES_DB=NekoTab
     volumes:
       - pgdata:/var/lib/postgresql/data
 
@@ -63,3 +63,4 @@ volumes:
   pgdata:
   node_modules:
   redis_data:
+

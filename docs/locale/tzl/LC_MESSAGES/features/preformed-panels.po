@@ -1,6 +1,6 @@
-msgid ""
+﻿msgid ""
 msgstr ""
-"Project-Id-Version: tabbycat\n"
+"Project-Id-Version: NekoTab\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-31 10:38-0400\n"
 "PO-Revision-Date: 2020-11-18 21:01\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: tabbycat\n"
+"X-Crowdin-Project: NekoTab\n"
 "X-Crowdin-Project-ID: 364715\n"
 "X-Crowdin-Language: tzl\n"
 "X-Crowdin-File: /develop/docs/locale/en/LC_MESSAGES/features/preformed-panels.po\n"
@@ -27,11 +27,11 @@ msgid "Preformed panels, also known as a 'shadow draw', allow adjudicator panels
 msgstr "crwdns48429:0crwdne48429:0"
 
 #: ../../features/preformed-panels.rst:9
-msgid "Tabbycat's implementation of preformed panels is more powerful, but less simple, than many others. The chief difference is that our workflow does not simply transpose a linear set of preformed panels atop a draw. Instead we employ Tabbycat's existing allocation tools, primarily the notion of a debate's *priority*, to allow for a non-linear matching of preformed panels that avoids adjudicator conflicts and better adapts to a given draw — particularly when the most important debates do not strictly follow the highest debate brackets."
+msgid "NekoTab's implementation of preformed panels is more powerful, but less simple, than many others. The chief difference is that our workflow does not simply transpose a linear set of preformed panels atop a draw. Instead we employ NekoTab's existing allocation tools, primarily the notion of a debate's *priority*, to allow for a non-linear matching of preformed panels that avoids adjudicator conflicts and better adapts to a given draw â€” particularly when the most important debates do not strictly follow the highest debate brackets."
 msgstr "crwdns48431:0crwdne48431:0"
 
 #: ../../features/preformed-panels.rst:11
-msgid "The central concept is that each preformed panel has a priority value. When applying preformed panels to a draw, the allocator ties to best match the priority value of each preformed panel to the priority of each actual debate. This is similar to how Tabbycat's normal auto-allocator matches the strength of each panel (as measured by adjudicators' ratings) to the priority of each debate."
+msgid "The central concept is that each preformed panel has a priority value. When applying preformed panels to a draw, the allocator ties to best match the priority value of each preformed panel to the priority of each actual debate. This is similar to how NekoTab's normal auto-allocator matches the strength of each panel (as measured by adjudicators' ratings) to the priority of each debate."
 msgstr "crwdns48433:0crwdne48433:0"
 
 #: ../../features/preformed-panels.rst:14
@@ -67,11 +67,11 @@ msgid "Step 2: Assign priorities to preformed panels"
 msgstr "crwdns48449:0crwdne48449:0"
 
 #: ../../features/preformed-panels.rst:32
-msgid "By default the priority slider for all preformed panels is in the neutral position. You can use the \"Prioritise\" button in the top left to assign priority values automatically, based upon their brackets or liveness. Before or after this step you can alter the priorities as usual — even after you have allocated adjudicators."
+msgid "By default the priority slider for all preformed panels is in the neutral position. You can use the \"Prioritise\" button in the top left to assign priority values automatically, based upon their brackets or liveness. Before or after this step you can alter the priorities as usual â€” even after you have allocated adjudicators."
 msgstr "crwdns48451:0crwdne48451:0"
 
 #: ../../features/preformed-panels.rst:34
-msgid "It's important to remember to assign a range of priorities to the panels. Without distinct priority values, the application of your preformed panels to the actual draw will be essentially random. If allocating priorities manually, it is a good idea to keep a relatively even distribution of priorities — use the range!"
+msgid "It's important to remember to assign a range of priorities to the panels. Without distinct priority values, the application of your preformed panels to the actual draw will be essentially random. If allocating priorities manually, it is a good idea to keep a relatively even distribution of priorities â€” use the range!"
 msgstr "crwdns48453:0crwdne48453:0"
 
 #: ../../features/preformed-panels.rst:36
@@ -173,4 +173,5 @@ msgstr "crwdns48501:0:math:crwdnd48501:0{history}crwdnd48501:0:math:crwdnd48501:
 #: ../../features/preformed-panels.rst:91
 msgid "It then uses the `Hungarian algorithm <https://en.wikipedia.org/wiki/Hungarian_algorithm>`_ to find the assignment of panels to debates that minimizes the total cost of the pairings."
 msgstr "crwdns48503:0crwdne48503:0"
+
 
