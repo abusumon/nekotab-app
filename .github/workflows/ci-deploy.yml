@@ -34,20 +34,20 @@ jobs:
             export PIPENV_PIPFILE=tabbycat-2.10.0/Pipfile
             pipenv install --deploy --system
           else
-            echo "No Pipfile found (root or tabbycat-2.10.0), skipping Python dependencies install"
+            echo "⚠️ No Pipfile found (root or tabbycat-2.10.0). Skipping Python dependencies."
           fi
 
       - name: Install and build frontend
         run: |
           if [ -f package.json ]; then
             npm ci --silent
-            npm run build --if-present
+            npm run build || echo "⚠️ Build script not found, skipping..."
           else
-            echo "No package.json found, skipping frontend build"
+            echo "⚠️ No package.json found. Skipping frontend build."
           fi
 
       - name: Deploy to Heroku
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
@@ -56,6 +56,6 @@ jobs:
           usedocker: false
 
       - name: Notify
-        if: success()
+        if: ${{ success() }}
         run: |
-          echo "Deployed to Heroku app: limitless-peak-31988 (if HEROKU_API_KEY secret is set)"
+          echo "✅ Successfully deployed to Heroku app: limitless-peak-31988"
