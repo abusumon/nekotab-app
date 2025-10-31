@@ -1,5 +1,5 @@
 ﻿{
-  "name": "NekoTab",
+  "name": "nekotab",
   "description": "Debating tabulation software for two-team parliamentary formats",
   "scripts": {
     "serve": "npm-run-all -p serve-*",
@@ -58,17 +58,5 @@
     "vue-template-compiler": "^2.6.14",
     "vue-touch": "^2.0.0-beta.4",
     "vuex": "^3.6.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 1 version",
-    "not dead"
-  ],
-  "license": "AGPL-3.0-only",
-  "repository": "https://github.com/NekoTabDebate/NekoTab",
-  "version": "3.18.1",
-  "devDependencies": {
-    "eslint-plugin-html": "^6.2.0"
   }
 }
-
