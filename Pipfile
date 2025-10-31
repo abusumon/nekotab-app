@@ -1,4 +1,4 @@
-[[source]]
+﻿[[source]]
 url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
@@ -52,3 +52,4 @@ sphinx-intl = "*"
 
 [requires]
 python_version = "3.11"
+
