@@ -3,16 +3,15 @@
 on:
   push:
     branches:
-    - 'develop'
-    - 'master'
+      - 'develop'
+      - 'master'
   pull_request:
     branches:
-    - '**'
-    - '!l10n_develop'
+      - '**'
+      - '!l10n_develop'
 
 jobs:
   build-ubuntu:
-
     runs-on: ubuntu-latest
 
     services:
@@ -26,7 +25,6 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     env:
-      ## Environment variable
       GITHUB_CI: true # Just 'CI' clashes with Render
 
     steps:
@@ -76,9 +74,7 @@ jobs:
       run: python manage.py test -v 2 --exclude-tag=selenium
 
   build-docker-dev:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
         with:
@@ -87,9 +83,7 @@ jobs:
         run: docker compose -f docker-compose.yml build
 
   build-docker-prod:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
         with:
