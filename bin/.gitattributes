@@ -5,3 +5,4 @@
 # See: https://github.com/deviantony/docker-elk/issues/36
 
 docker-*.sh text eol=lf
+post_compile text eol=lf

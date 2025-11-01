@@ -1,0 +1,2 @@
+# Nginx config files must have LF line endings
+nginx.conf* text eol=lf
