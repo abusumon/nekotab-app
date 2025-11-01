@@ -8,6 +8,9 @@ set -eo pipefail
 echo "-----> I'm post-compile hook"
 cd ./tabbycat/
 
+# Temporarily disable strict Redis SSL verification during build
+export INSECURE_REDIS=1
+
 echo "-----> Running database migration"
 python manage.py migrate --noinput
 
