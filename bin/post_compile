@@ -7,6 +7,9 @@ set -eo pipefail
 
 echo "-----> I'm post-compile hook"
 
+# Ensure the current directory is in PYTHONPATH so tabbycat package can be imported
+export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+
 echo "-----> Running database migration"
 python manage.py migrate --noinput
 
