@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # Note that Heroku's node.js runtime instantiate before the python one
 # The node.js buildpack will automatically run `npm run build`
