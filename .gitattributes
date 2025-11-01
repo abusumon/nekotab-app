@@ -1,2 +1,3 @@
+# Ensure scripts and configs use LF endings (no CRLF)
 bin/post_compile text eol=lf
-bin/post_compile text eol=lf
+config/nginx.conf.erb text eol=lf
