@@ -1,0 +1,5 @@
+- Diagnose current deployment failure (Heroku logs show nginx config error and ReactorNotRunning)
+- Ensure nginx configuration template (`config/nginx.conf.erb`) has no BOM/encoding issues; regenerate file if necessary
+- Verify `bin/post_compile` runs without BOM and correctly migrates DB without Redis TLS failure
+- Run deployment workflow or manually trigger Heroku build; confirm successful build and dyno running
+- Validate live site loads correctly and migrations applied
