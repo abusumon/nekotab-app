@@ -10,7 +10,7 @@ import sys
 from os.path import abspath, dirname, join, relpath
 
 DEFAULT_DIR = relpath(join(dirname(__file__), "fixtures/"))
-MANAGE_PY = relpath(join(dirname(dirname((abspath(join(__file__))))), join("NekoTab", "manage.py")))
+MANAGE_PY = relpath(join(dirname(dirname((abspath(join(__file__))))), "manage.py"))
 
 # Arguments
 parser = argparse.ArgumentParser(description="Migrates all fixtures in a directory. "

@@ -230,7 +230,7 @@ run_heroku_command(["ps:scale", "worker=1", "web=%s" % args.web_dynos])
 
 # Import tournament, if provided
 if args.import_tournament:
-    command = ["run", "python", "NekoTab/manage.py", "importtournament", args.import_tournament]
+    command = ["run", "python", "manage.py", "importtournament", args.import_tournament]
     if args.tournament_slug:
         command += ["--slug", args.tournament_slug]
     if args.tournament_name:

@@ -69,11 +69,11 @@ jobs:
     - name: Run build and collect
       run: |
         npm run build
-        python ./NekoTab/manage.py collectstatic --noinput -v 0
+        python ./manage.py collectstatic --noinput -v 0
     - name: Run migrations
-      run: python ./NekoTab/manage.py migrate
+      run: python ./manage.py migrate
     - name: Run tests
-      run: python NekoTab/manage.py test -v 2 --exclude-tag=selenium
+      run: python manage.py test -v 2 --exclude-tag=selenium
 
   build-docker-dev:
 

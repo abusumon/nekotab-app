@@ -9,5 +9,5 @@ nginx: bin/start-nginx
 wsgi: gunicorn wsgi:application --config './config/gunicorn.conf'
 
 # ASGI server handles the asychronous routes (websockets)
-asgi: python ./NekoTab/run-asgi.py
+asgi: python ./tabbycat/run-asgi.py
 

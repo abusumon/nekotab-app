@@ -31,5 +31,5 @@ RUN npm ci --only=production
 
 # Compile all the static files
 RUN npm run build
-RUN python ./NekoTab/manage.py collectstatic --noinput -v 0
+RUN python ./manage.py collectstatic --noinput -v 0
 
