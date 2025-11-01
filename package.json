@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "NekoTab",
   "description": "Debating tabulation software for two-team parliamentary formats",
   "scripts": {
@@ -71,4 +71,3 @@
     "eslint-plugin-html": "^6.2.0"
   }
 }
-
