@@ -7,7 +7,11 @@ pwd
 ls -la
 
 # Relax Redis SSL during build only
-export INSECURE_REDIS=1
+# Temporary flag previously used to bypass Redis TLS verification during setup
+# No longer exported by default; prefer using a proper TLS URL (REDIS_TLS_URL)
+# Uncomment the next line only for emergency troubleshooting and re-deploy,
+# then revert immediately after.
+# export INSECURE_REDIS=1
 
 echo "-----> Using tabbycat/manage.py"
 python - <<'PY'
