@@ -1,23 +1,20 @@
+# filepath: d:\Sumon\Coding\nekotab-app\bin\post_compile
 #!/usr/bin/env bash
-
-# Note that Heroku's node.js runtime instantiates before the Python one
-# The node.js buildpack will automatically run `npm run build`
 
 set -eo pipefail
 
 echo "-----> I'm post-compile hook"
-cd ./tabbycat/ || exit 1
 
 # Temporarily disable strict Redis SSL verification during build
 export INSECURE_REDIS=1
 
 echo "-----> Running database migration"
-python manage.py migrate --noinput
+python ./tabbycat/manage.py migrate --noinput
 
 echo "-----> Running dynamic preferences checks"
-python manage.py checkpreferences
+python ./tabbycat/manage.py checkpreferences
 
 echo "-----> Running static files compilation"
-python manage.py collectstatic --noinput -v 0
+python ./tabbycat/manage.py collectstatic --noinput -v 0
 
 echo "-----> Post-compile done"
