@@ -1,12 +1,22 @@
-# filepath: d:\Sumon\Coding\nekotab-app\bin\post_compile
 #!/usr/bin/env bash
-
-set -eo pipefail
+set -euxo pipefail
 
 echo "-----> I'm post-compile hook"
+python --version
+pwd
+ls -la
 
-# Temporarily disable strict Redis SSL verification during build
+# Relax Redis SSL during build only
 export INSECURE_REDIS=1
+
+echo "-----> Using tabbycat/manage.py"
+python - <<'PY'
+import os, sys, pathlib
+print("CWD:", os.getcwd())
+print("sys.path[0:3]:", sys.path[:3])
+mp = pathlib.Path("tabbycat/manage.py").resolve()
+print("MANAGE.PY:", mp)
+PY
 
 echo "-----> Running database migration"
 python ./tabbycat/manage.py migrate --noinput

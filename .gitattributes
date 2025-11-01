@@ -1,1 +1,2 @@
 bin/post_compile text eol=lf
+bin/post_compile text eol=lf
