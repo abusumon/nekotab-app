@@ -54,7 +54,6 @@ jobs:
           heroku_app_name: "limitless-peak-31988"
           heroku_email: "abusumon1701@gmail.com"
           usedocker: false
-          justlogin: true
 
       - name: Notify
         if: ${{ success() }}
