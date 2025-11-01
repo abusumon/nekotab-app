@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-# Note that Heroku's node.js runtime instantiate before the python one
+# Note that Heroku's node.js runtime instantiates before the Python one
 # The node.js buildpack will automatically run `npm run build`
 
 set -eo pipefail
 
 echo "-----> I'm post-compile hook"
-cd ./tabbycat/
+cd ./tabbycat/ || exit 1
 
 # Temporarily disable strict Redis SSL verification during build
 export INSECURE_REDIS=1
@@ -21,4 +21,3 @@ echo "-----> Running static files compilation"
 python manage.py collectstatic --noinput -v 0
 
 echo "-----> Post-compile done"
-
