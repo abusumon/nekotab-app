@@ -1,1 +1,0 @@
-BADGE_DATETIME_FORMAT = 'd/m H:i'  # '08/02 16:33'
