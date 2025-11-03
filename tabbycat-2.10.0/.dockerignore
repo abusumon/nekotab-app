@@ -1,0 +1,14 @@
+# Copying this over will mess up database settings
+*/*/settings_local.py
+
+# Dependencies
+node_modules/
+venv/
+
+# Compilations
+tabbycat/staticfiles/
+docs/
+
+# Symlinks (they don't work on Windows)
+manage.py
+data/test/standard

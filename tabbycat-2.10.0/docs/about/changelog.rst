@@ -1,0 +1,1 @@
+.. include:: ../../.github/CHANGELOG.rst

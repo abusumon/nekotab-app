@@ -1,0 +1,38 @@
+---
+version: "2"
+checks:
+  file-lines:
+    config:
+      threshold: 600
+  method-complexity:
+    config:
+      threshold: 8
+plugins:
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+      - python:
+          mass_threshold: 50
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  radon:
+    enabled: true
+    exclude_patterns:
+      - "tabbycat/draw/generator/*.py"
+    config:
+      threshold: "C"
+exclude_patterns:
+  - "tabbycat/*/migrations/*.py"
+  - "tabbycat/*/urls*.py"
+  - "tabbycat/options/preferences.py"
+  - "tabbycat/locale/jsi18n/"
+  - "tabbycat/utils/formats/"
+  - "config/"
+  - "**/node_modules/"
+  - "**/tests/"
