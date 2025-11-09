@@ -2,6 +2,9 @@
 NekoTab/local_settings.py # Legacy location
 NekoTab/settings/local.py
 NekoTab/settings/development.py
+# Project current path
+tabbycat/settings/local.py
+tabbycat/settings/development.py
 .gitmodules/
 __pycache__/
 
