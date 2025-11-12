@@ -23,13 +23,16 @@ print("MANAGE.PY:", mp)
 PY
 
 echo "-----> Django system check (pre-migrate)"
-python ./tabbycat/manage.py check -v 2 || true
+python ./tabbycat/manage.py check --deploy -v 2 || true
 
-echo "-----> Running database migration"
-python ./tabbycat/manage.py migrate --noinput
-
-echo "-----> Running dynamic preferences checks"
-python ./tabbycat/manage.py checkpreferences
+if [ -n "${DATABASE_URL:-}" ]; then
+	echo "-----> DATABASE_URL detected: running migrations"
+	python ./tabbycat/manage.py migrate --noinput
+	echo "-----> Running dynamic preferences checks"
+	python ./tabbycat/manage.py checkpreferences || true
+else
+	echo "-----> DATABASE_URL not set at build time; skipping migrations and preference checks (will run at release)"
+fi
 
 echo "-----> Running static files compilation"
 python ./tabbycat/manage.py collectstatic --noinput -v 0

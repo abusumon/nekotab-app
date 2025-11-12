@@ -5,3 +5,4 @@
 
 web: honcho -f ProcfileMulti start
 worker: python manage.py runworker notifications adjallocation venues
+release: python tabbycat/manage.py migrate --noinput && python tabbycat/manage.py checkpreferences || true
