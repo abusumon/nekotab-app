@@ -22,6 +22,9 @@ mp = pathlib.Path("tabbycat/manage.py").resolve()
 print("MANAGE.PY:", mp)
 PY
 
+echo "-----> Django system check (pre-migrate)"
+python ./tabbycat/manage.py check -v 2 || true
+
 echo "-----> Running database migration"
 python ./tabbycat/manage.py migrate --noinput
 
