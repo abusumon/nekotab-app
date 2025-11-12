@@ -1,8 +1,15 @@
 #!/usr/bin/env python
 import os
 import sys
+from pathlib import Path
 
 if __name__ == '__main__':
+	# Ensure 'tabbycat' package apps (e.g., 'actionlog') are importable by short name
+	project_root = Path(__file__).resolve().parent
+	tabbycat_dir = project_root / 'tabbycat'
+	if str(tabbycat_dir) not in sys.path:
+		sys.path.insert(0, str(tabbycat_dir))
+
 	# Use the package-qualified settings module when running from repo root
 	os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tabbycat.settings')
 
