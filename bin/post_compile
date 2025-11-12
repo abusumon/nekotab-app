@@ -13,28 +13,28 @@ ls -la
 # then revert immediately after.
 # export INSECURE_REDIS=1
 
-echo "-----> Using tabbycat/manage.py"
+echo "-----> Using root manage.py"
 python - <<'PY'
 import os, sys, pathlib
 print("CWD:", os.getcwd())
 print("sys.path[0:3]:", sys.path[:3])
-mp = pathlib.Path("tabbycat/manage.py").resolve()
+mp = pathlib.Path("manage.py").resolve()
 print("MANAGE.PY:", mp)
 PY
 
 echo "-----> Django system check (pre-migrate)"
-python ./tabbycat/manage.py check --deploy -v 2 || true
+python manage.py check --deploy -v 2 || true
 
 if [ -n "${DATABASE_URL:-}" ]; then
 	echo "-----> DATABASE_URL detected: running migrations"
-	python ./tabbycat/manage.py migrate --noinput
+		python manage.py migrate --noinput
 	echo "-----> Running dynamic preferences checks"
-	python ./tabbycat/manage.py checkpreferences || true
+		python manage.py checkpreferences || true
 else
 	echo "-----> DATABASE_URL not set at build time; skipping migrations and preference checks (will run at release)"
 fi
 
 echo "-----> Running static files compilation"
-python ./tabbycat/manage.py collectstatic --noinput -v 0
+python manage.py collectstatic --noinput -v 0
 
 echo "-----> Post-compile done"
