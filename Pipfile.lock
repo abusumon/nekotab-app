@@ -561,12 +561,12 @@
         },
         "networkx": {
             "hashes": [
-                "sha256:0c127d8b2f4865f59ae9cb8aafcd60b5c70f3241ebd66f7defad7c4ab90126c9",
-                "sha256:28575580c6ebdaf4505b22c6256a2b9de86b316dc63ba9e93abde3d78dfdbcf2"
+                "sha256:0030d386a9a06dee3565298b4a734b68589749a544acbb6c412dc9e2489ec6ec",
+                "sha256:d4c6f9cf81f52d69230866796b82afbccdec3db7ae4fbd1b65ea750feed50037"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.10'",
-            "version": "==3.3"
+            "markers": "python_version >= '3.11'",
+            "version": "==3.5"
         },
         "packaging": {
             "hashes": [
