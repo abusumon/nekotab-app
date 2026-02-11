@@ -88,3 +88,5 @@ dump.rdb
 
 # Images folder (for design assets, not for deployment)
 images/
+
+.history/
