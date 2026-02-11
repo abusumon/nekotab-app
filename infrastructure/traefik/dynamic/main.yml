@@ -1,0 +1,47 @@
+# Traefik Dynamic Configuration - Main Domain
+# Routes for the main nekotab.app domain
+
+http:
+  routers:
+    # Main landing page
+    main-site:
+      rule: "Host(`nekotab.app`) || Host(`www.nekotab.app`)"
+      entryPoints:
+        - websecure
+      service: main-site
+      tls:
+        certResolver: letsencrypt
+      middlewares:
+        - redirect-www
+        - security-headers
+    
+    # API (Control Plane)
+    api:
+      rule: "Host(`api.nekotab.app`)"
+      entryPoints:
+        - websecure
+      service: control-plane
+      tls:
+        certResolver: letsencrypt
+      middlewares:
+        - security-headers
+        - rate-limit
+  
+  middlewares:
+    # Redirect www to apex
+    redirect-www:
+      redirectRegex:
+        regex: "^https://www\\.nekotab\\.app/(.*)"
+        replacement: "https://nekotab.app/${1}"
+        permanent: true
+
+  services:
+    main-site:
+      loadBalancer:
+        servers:
+          - url: "http://main-web:8000"
+    
+    control-plane:
+      loadBalancer:
+        servers:
+          - url: "http://control-plane:8000"

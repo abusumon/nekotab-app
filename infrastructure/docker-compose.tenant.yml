@@ -1,0 +1,139 @@
+# NekoTab Tenant Stack Template
+# This file is used as a template - {{TENANT_ID}} placeholders are replaced
+# Run with: docker stack deploy -c docker-compose.tenant.yml tenant-{{TENANT_ID}}
+
+version: '3.8'
+
+networks:
+  traefik-public:
+    external: true
+  tenant-{{TENANT_ID}}-internal:
+    driver: overlay
+    internal: true
+
+volumes:
+  tenant-{{TENANT_ID}}-media:
+
+services:
+  # ===========================================================================
+  # Tenant Web Application
+  # ===========================================================================
+  web:
+    image: ${REGISTRY_URL:-ghcr.io/abusumon}/nekotab:${IMAGE_TAG:-latest}
+    command: ["./bin/docker-wait.sh", "--timeout=30", "${POSTGRES_HOST}:5432", "--", "./bin/docker-run-honcho.sh"]
+    environment:
+      # Django settings
+      - DEBUG=0
+      - IN_DOCKER=1
+      - USING_NGINX=1
+      - SECRET_KEY={{TENANT_SECRET_KEY}}
+      
+      # Database (isolated per tenant)
+      - DATABASE_URL=postgresql://{{TENANT_DB_USER}}:{{TENANT_DB_PASSWORD}}@${POSTGRES_HOST}:5432/{{TENANT_DB_NAME}}
+      
+      # Redis (shared, but uses tenant-specific prefix)
+      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379/0
+      - REDIS_PREFIX=tenant_{{TENANT_ID}}_
+      
+      # Tenant identification
+      - TENANT_ID={{TENANT_ID}}
+      - TENANT_SUBDOMAIN={{TENANT_SUBDOMAIN}}
+      - ALLOWED_HOSTS={{TENANT_SUBDOMAIN}}.${DOMAIN},{{TENANT_SUBDOMAIN}}.localhost
+      
+      # Email (per-tenant or shared)
+      - EMAIL_HOST=${EMAIL_HOST:-}
+      - EMAIL_PORT=${EMAIL_PORT:-587}
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER:-}
+      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD:-}
+      - DEFAULT_FROM_EMAIL=noreply@{{TENANT_SUBDOMAIN}}.${DOMAIN}
+      
+      # Sentry (optional)
+      - SENTRY_DSN=${SENTRY_DSN:-}
+      - SENTRY_ENVIRONMENT=production
+      - SENTRY_RELEASE={{IMAGE_TAG}}
+      
+    volumes:
+      - tenant-{{TENANT_ID}}-media:/tcd/media
+    networks:
+      - traefik-public
+      - tenant-{{TENANT_ID}}-internal
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '${TENANT_CPU_LIMIT:-1.0}'
+          memory: ${TENANT_MEMORY_LIMIT:-512M}
+        reservations:
+          cpus: '${TENANT_CPU_RESERVATION:-0.25}'
+          memory: ${TENANT_MEMORY_RESERVATION:-256M}
+      labels:
+        # Traefik routing
+        - "traefik.enable=true"
+        - "traefik.http.routers.tenant-{{TENANT_ID}}.rule=Host(`{{TENANT_SUBDOMAIN}}.${DOMAIN}`)"
+        - "traefik.http.routers.tenant-{{TENANT_ID}}.entrypoints=websecure"
+        - "traefik.http.routers.tenant-{{TENANT_ID}}.tls.certresolver=letsencrypt"
+        - "traefik.http.services.tenant-{{TENANT_ID}}.loadbalancer.server.port=8000"
+        
+        # Security headers
+        - "traefik.http.middlewares.tenant-{{TENANT_ID}}-headers.headers.stsSeconds=31536000"
+        - "traefik.http.middlewares.tenant-{{TENANT_ID}}-headers.headers.stsIncludeSubdomains=true"
+        - "traefik.http.middlewares.tenant-{{TENANT_ID}}-headers.headers.contentTypeNosniff=true"
+        - "traefik.http.middlewares.tenant-{{TENANT_ID}}-headers.headers.frameDeny=true"
+        - "traefik.http.routers.tenant-{{TENANT_ID}}.middlewares=tenant-{{TENANT_ID}}-headers"
+        
+        # Rate limiting
+        - "traefik.http.middlewares.tenant-{{TENANT_ID}}-ratelimit.ratelimit.average=100"
+        - "traefik.http.middlewares.tenant-{{TENANT_ID}}-ratelimit.ratelimit.burst=50"
+      update_config:
+        parallelism: 1
+        delay: 10s
+        failure_action: rollback
+        order: start-first
+      rollback_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # ===========================================================================
+  # Tenant Celery Worker (for async tasks)
+  # ===========================================================================
+  worker:
+    image: ${REGISTRY_URL:-ghcr.io/abusumon}/nekotab:${IMAGE_TAG:-latest}
+    command: ["./bin/docker-wait.sh", "--timeout=30", "web:8000", "--", "./bin/docker-run-worker.sh"]
+    environment:
+      - DEBUG=0
+      - IN_DOCKER=1
+      - SECRET_KEY={{TENANT_SECRET_KEY}}
+      - DATABASE_URL=postgresql://{{TENANT_DB_USER}}:{{TENANT_DB_PASSWORD}}@${POSTGRES_HOST}:5432/{{TENANT_DB_NAME}}
+      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379/0
+      - REDIS_PREFIX=tenant_{{TENANT_ID}}_
+      - TENANT_ID={{TENANT_ID}}
+    volumes:
+      - tenant-{{TENANT_ID}}-media:/tcd/media
+    networks:
+      - tenant-{{TENANT_ID}}-internal
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '${TENANT_CPU_LIMIT:-0.5}'
+          memory: ${TENANT_MEMORY_LIMIT:-256M}
+        reservations:
+          cpus: '${TENANT_CPU_RESERVATION:-0.1}'
+          memory: ${TENANT_MEMORY_RESERVATION:-128M}
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3

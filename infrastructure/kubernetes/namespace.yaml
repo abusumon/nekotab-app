@@ -1,0 +1,12 @@
+# NekoTab Platform Namespace
+# All platform components run in this namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nekotab
+  labels:
+    app.kubernetes.io/name: nekotab
+    app.kubernetes.io/component: platform
+---
+# Tenant namespaces are created dynamically with this template
+# Each tenant gets: nekotab-tenant-{tenant-id}

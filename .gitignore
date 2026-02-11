@@ -25,6 +25,14 @@ node_modules
 # Docker
 dbdata
 
+# Infrastructure secrets and runtime
+infrastructure/.env
+infrastructure/tenants/
+infrastructure/backups/
+infrastructure/logs/
+infrastructure/traefik/dynamic/*.generated.yml
+infrastructure/control-plane-data/
+
 # Docs
 docs/site/
 docs/.doctrees/

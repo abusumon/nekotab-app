@@ -1,0 +1,280 @@
+# NekoTab Tenant Template for Kubernetes
+# Replace {{TENANT_*}} placeholders when provisioning
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nekotab-tenant-{{TENANT_ID}}
+  labels:
+    app.kubernetes.io/name: nekotab
+    app.kubernetes.io/component: tenant
+    nekotab.app/tenant-id: "{{TENANT_ID}}"
+    nekotab.app/subdomain: "{{TENANT_SUBDOMAIN}}"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: tenant-secrets
+  namespace: nekotab-tenant-{{TENANT_ID}}
+type: Opaque
+stringData:
+  SECRET_KEY: "{{TENANT_SECRET_KEY}}"
+  DATABASE_URL: "postgresql://{{TENANT_DB_USER}}:{{TENANT_DB_PASSWORD}}@postgres-master.nekotab.svc.cluster.local:5432/{{TENANT_DB_NAME}}"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tenant-config
+  namespace: nekotab-tenant-{{TENANT_ID}}
+data:
+  TENANT_ID: "{{TENANT_ID}}"
+  TENANT_SUBDOMAIN: "{{TENANT_SUBDOMAIN}}"
+  ALLOWED_HOSTS: "{{TENANT_SUBDOMAIN}}.nekotab.app"
+  DEBUG: "0"
+  IN_DOCKER: "1"
+  USING_NGINX: "1"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: nekotab-tenant-{{TENANT_ID}}
+  labels:
+    app: nekotab-web
+    tenant: "{{TENANT_ID}}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nekotab-web
+      tenant: "{{TENANT_ID}}"
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: nekotab-web
+        tenant: "{{TENANT_ID}}"
+    spec:
+      containers:
+        - name: web
+          image: ghcr.io/abusumon/nekotab:{{IMAGE_TAG}}
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: tenant-config
+            - secretRef:
+                name: tenant-secrets
+          env:
+            - name: REDIS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: url
+                  optional: true
+          resources:
+            limits:
+              cpu: "{{TENANT_CPU_LIMIT}}"
+              memory: "{{TENANT_MEMORY_LIMIT}}"
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+          livenessProbe:
+            httpGet:
+              path: /health/
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health/
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+          volumeMounts:
+            - name: media
+              mountPath: /tcd/media
+      volumes:
+        - name: media
+          persistentVolumeClaim:
+            claimName: tenant-media
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  namespace: nekotab-tenant-{{TENANT_ID}}
+  labels:
+    app: nekotab-worker
+    tenant: "{{TENANT_ID}}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nekotab-worker
+      tenant: "{{TENANT_ID}}"
+  template:
+    metadata:
+      labels:
+        app: nekotab-worker
+        tenant: "{{TENANT_ID}}"
+    spec:
+      containers:
+        - name: worker
+          image: ghcr.io/abusumon/nekotab:{{IMAGE_TAG}}
+          command: ["./bin/docker-run-worker.sh"]
+          envFrom:
+            - configMapRef:
+                name: tenant-config
+            - secretRef:
+                name: tenant-secrets
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+          volumeMounts:
+            - name: media
+              mountPath: /tcd/media
+      volumes:
+        - name: media
+          persistentVolumeClaim:
+            claimName: tenant-media
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  namespace: nekotab-tenant-{{TENANT_ID}}
+spec:
+  selector:
+    app: nekotab-web
+    tenant: "{{TENANT_ID}}"
+  ports:
+    - port: 8000
+      targetPort: 8000
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tenant-media
+  namespace: nekotab-tenant-{{TENANT_ID}}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: standard
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tenant-ingress
+  namespace: nekotab-tenant-{{TENANT_ID}}
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+    - hosts:
+        - {{TENANT_SUBDOMAIN}}.nekotab.app
+      secretName: tenant-tls
+  rules:
+    - host: {{TENANT_SUBDOMAIN}}.nekotab.app
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web
+                port:
+                  number: 8000
+---
+# Network Policy - Isolate tenant from other tenants
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: tenant-isolation
+  namespace: nekotab-tenant-{{TENANT_ID}}
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    # Allow from Traefik ingress controller
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              name: traefik
+    # Allow internal communication within namespace
+    - from:
+        - podSelector: {}
+  egress:
+    # Allow to shared services (postgres, redis)
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              name: nekotab
+    # Allow DNS
+    - to:
+        - namespaceSelector: {}
+          podSelector:
+            matchLabels:
+              k8s-app: kube-dns
+      ports:
+        - protocol: UDP
+          port: 53
+    # Allow HTTPS (for external APIs)
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+      ports:
+        - protocol: TCP
+          port: 443
+---
+# Resource Quota - Enforce limits per tenant
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: tenant-quota
+  namespace: nekotab-tenant-{{TENANT_ID}}
+spec:
+  hard:
+    requests.cpu: "2"
+    requests.memory: 2Gi
+    limits.cpu: "4"
+    limits.memory: 4Gi
+    persistentvolumeclaims: "2"
+    requests.storage: 20Gi
+    pods: "10"
+---
+# Limit Range - Default limits for pods
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: tenant-limits
+  namespace: nekotab-tenant-{{TENANT_ID}}
+spec:
+  limits:
+    - default:
+        cpu: "500m"
+        memory: "512Mi"
+      defaultRequest:
+        cpu: "100m"
+        memory: "128Mi"
+      type: Container
