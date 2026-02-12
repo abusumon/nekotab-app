@@ -18,6 +18,7 @@ volumes:
   control-plane-data:
   prometheus-data:
   grafana-data:
+  postgres-master-data:
 
 services:
   # ===========================================================================
@@ -199,5 +200,3 @@ services:
         - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
         - "traefik.http.services.grafana.loadbalancer.server.port=3000"
 
-volumes:
-  postgres-master-data:
