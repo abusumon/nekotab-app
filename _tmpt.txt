@@ -1,0 +1,4 @@
+d:\Sumon\Coding\nekotab-app\tabbycat\templates\analytics\base.html
+d:\Sumon\Coding\nekotab-app\tabbycat\templates\analytics\dashboard.html
+d:\Sumon\Coding\nekotab-app\tabbycat\templates\analytics\tournaments_list.html
+d:\Sumon\Coding\nekotab-app\tabbycat\templates\analytics\users_list.html
