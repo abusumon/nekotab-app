@@ -41,6 +41,12 @@ services:
         value: true
       - key: USING_NGINX
         value: 0 # Not 'false'; is cast
+      - key: SUBDOMAIN_TOURNAMENTS_ENABLED
+        value: true
+      - key: SUBDOMAIN_BASE_DOMAIN
+        value: nekotab.app
+      - key: ORGANIZATION_WORKSPACES_ENABLED
+        value: true
   - type: redis
     name: NekoTab_redis
     ipAllowList: # required
