@@ -35,6 +35,16 @@
     "USING_NGINX": {
       "description": "Leave this as-is.",
       "value": "1"
+    },
+    "NEKOSPEECH_URL": {
+      "description": "Full URL of the nekospeech API including /api/ie path (e.g. https://nekotab-speech.herokuapp.com/api/ie). Leave empty for local/same-origin deployments.",
+      "required": false,
+      "value": ""
+    },
+    "NEKOSPEECH_CORS_ORIGINS": {
+      "description": "Comma-separated list of allowed origins for nekospeech CORS (e.g. https://nekotab.herokuapp.com). Only needed on the nekospeech app.",
+      "required": false,
+      "value": ""
     }
   },
   "formation": {

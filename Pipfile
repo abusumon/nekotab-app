@@ -41,6 +41,7 @@ daphne = "*"
 drf-link-header-pagination = "*"
 networkx = "*" # Avoid its dependencies (SciPy)
 Pillow = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
 
 [dev-packages]
 pre-commit = "*"
