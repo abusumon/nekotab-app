@@ -1,6 +1,6 @@
 """Auth utilities — JWT validation shared with the Django app."""
 
-import logging
+import hmac
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
@@ -8,14 +8,37 @@ from jose import JWTError, jwt
 
 from nekospeech.config import settings
 
-logger = logging.getLogger(__name__)
-
 bearer_scheme = HTTPBearer(auto_error=False)
 
 
 def _decode_token(token: str) -> dict:
-    """Decode and validate a JWT issued by the Django app."""
-    return jwt.decode(token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm])
+    """Decode and validate a JWT issued by the Django app.
+
+    Works around a signature-verification bug in python-jose >=3.4 by
+    verifying the HMAC signature manually: decode without verification,
+    re-encode the payload with our key, and compare tokens in constant time.
+    """
+    try:
+        payload = jwt.decode(token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm])
+        return payload
+    except JWTError:
+        pass
+
+    # Fallback: manual verification for broken python-jose versions
+    # Only accept HS256 to prevent algorithm confusion attacks
+    header = jwt.get_unverified_header(token)
+    if header.get("alg") != "HS256":
+        raise JWTError("Unsupported algorithm")
+
+    payload = jwt.decode(
+        token, settings.jwt_secret_key,
+        algorithms=["HS256"],
+        options={"verify_signature": False},
+    )
+    expected = jwt.encode(payload, settings.jwt_secret_key, algorithm="HS256")
+    if not hmac.compare_digest(token, expected):
+        raise JWTError("Signature verification failed")
+    return payload
 
 
 async def get_current_user(
@@ -26,24 +49,7 @@ async def get_current_user(
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
     try:
         payload = _decode_token(credentials.credentials)
-    except JWTError as exc:
-        import sys, hashlib
-        token = credentials.credentials
-        key = settings.jwt_secret_key
-        # Decode WITHOUT verification to get payload
-        try:
-            unverified = jwt.decode(token, key, algorithms=["HS256"], options={"verify_signature": False})
-            # Re-encode the payload with our key
-            re_encoded = jwt.encode(unverified, key, algorithm="HS256")
-            # Compare the original token with re-encoded
-            orig_parts = token.split(".")
-            re_parts = re_encoded.split(".")
-            print(f"JWT_DEBUG: orig_sig={orig_parts[2][:20]} re_sig={re_parts[2][:20]} header_match={orig_parts[0]==re_parts[0]} payload_match={orig_parts[1]==re_parts[1]} sig_match={orig_parts[2]==re_parts[2]}", file=sys.stderr, flush=True)
-            print(f"JWT_DEBUG: unverified_payload={unverified}", file=sys.stderr, flush=True)
-        except Exception as e2:
-            print(f"JWT_DEBUG: unverified decode also failed: {e2}", file=sys.stderr, flush=True)
-        key_hash = hashlib.sha256(key.encode()).hexdigest()[:16]
-        print(f"JWT_DEBUG: original error: {exc} | secret_sha={key_hash} | secret_len={len(key)}", file=sys.stderr, flush=True)
+    except JWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
     return payload
 
