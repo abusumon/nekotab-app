@@ -11,3 +11,7 @@ wsgi: gunicorn wsgi:application --config './config/gunicorn.conf'
 # ASGI server handles the asychronous routes (websockets)
 asgi: python ./tabbycat/run-asgi.py
 
+# nekospeech FastAPI service for Individual Events (speech events)
+# Runs on port 8001; nginx proxies /api/ie/ to this process
+nekospeech: cd nekospeech && uvicorn nekospeech.main:app --host 127.0.0.1 --port 8001
+
