@@ -1,5 +1,7 @@
 """IE Entry endpoints — /api/ie/entries/*"""
 
+from typing import Optional
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select, update
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -259,3 +261,109 @@ async def bulk_create_entries(
         )
         for r in rows
     ]
+
+
+@router.get("/search/")
+async def search_speakers(
+    event_id: int = Query(...),
+    q: str = Query(default=""),
+    institution_id: Optional[int] = Query(default=None),
+    db: AsyncSession = Depends(get_db),
+):
+    """Search speakers not yet entered in this event, optionally filtered by institution."""
+    # Get tournament_id from event
+    evt_tid = (await db.execute(
+        select(speech_event.c.tournament_id).where(speech_event.c.id == event_id)
+    )).scalar()
+    if evt_tid is None:
+        raise HTTPException(status_code=404, detail="Event not found")
+
+    # Get already-registered speaker IDs for this event
+    registered = (await db.execute(
+        select(ie_entry.c.speaker_id)
+        .where(ie_entry.c.event_id == event_id)
+        .where(ie_entry.c.scratch_status == "ACTIVE")
+    )).scalars().all()
+
+    stmt = (
+        select(
+            participants_speaker.c.person_ptr_id.label("id"),
+            participants_person.c.name,
+            participants_institution.c.id.label("institution_id"),
+            participants_institution.c.name.label("institution"),
+            participants_institution.c.code.label("institution_code"),
+        )
+        .join(participants_person,
+              participants_person.c.id == participants_speaker.c.person_ptr_id)
+        .join(participants_team,
+              participants_team.c.id == participants_speaker.c.team_id)
+        .outerjoin(participants_institution,
+                   participants_institution.c.id == participants_team.c.institution_id)
+        .where(participants_team.c.tournament_id == evt_tid)
+    )
+
+    if q:
+        # Escape LIKE wildcards in user input
+        safe_q = q.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+        stmt = stmt.where(participants_person.c.name.ilike(f"%{safe_q}%"))
+
+    if institution_id is not None:
+        stmt = stmt.where(participants_team.c.institution_id == institution_id)
+
+    if registered:
+        stmt = stmt.where(participants_speaker.c.person_ptr_id.notin_(registered))
+
+    stmt = stmt.order_by(participants_person.c.name).limit(50)
+    rows = (await db.execute(stmt)).fetchall()
+
+    return [
+        {
+            "id": r.id,
+            "name": r.name,
+            "institution_id": r.institution_id,
+            "institution": r.institution or "",
+            "institution_code": r.institution_code or "",
+        }
+        for r in rows
+    ]
+
+
+@router.get("/institutions/")
+async def list_institutions(
+    tournament_id: int = Query(...),
+    db: AsyncSession = Depends(get_db),
+):
+    """List all institutions with speakers in this tournament."""
+    stmt = (
+        select(
+            participants_institution.c.id,
+            participants_institution.c.name,
+            participants_institution.c.code,
+        )
+        .join(participants_team,
+              participants_team.c.institution_id == participants_institution.c.id)
+        .where(participants_team.c.tournament_id == tournament_id)
+        .distinct()
+        .order_by(participants_institution.c.name)
+    )
+    rows = (await db.execute(stmt)).fetchall()
+    return [{"id": r.id, "name": r.name, "code": r.code} for r in rows]
+
+
+@router.patch("/{entry_id}/restore/", status_code=200)
+async def restore_entry(
+    entry_id: int,
+    db: AsyncSession = Depends(get_db),
+    _auth: None = Depends(require_ie_api_key),
+):
+    """Restore a scratched entry back to ACTIVE status."""
+    result = await db.execute(
+        update(ie_entry)
+        .where(ie_entry.c.id == entry_id)
+        .where(ie_entry.c.scratch_status == "SCRATCHED")
+        .values(scratch_status="ACTIVE")
+    )
+    if result.rowcount == 0:
+        raise HTTPException(status_code=404, detail="Entry not found or not scratched")
+    await db.commit()
+    return {"detail": "Entry restored"}

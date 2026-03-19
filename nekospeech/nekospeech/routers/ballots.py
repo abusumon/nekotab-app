@@ -220,6 +220,83 @@ async def confirm_room(
     return {"detail": "Confirmed", "round_complete": round_complete}
 
 
+@router.post("/{room_id}/unconfirm/", status_code=200)
+async def unconfirm_room(
+    room_id: int,
+    db: AsyncSession = Depends(get_db),
+    _auth: None = Depends(require_ie_api_key),
+):
+    """Unconfirm a room so its ballot can be re-submitted."""
+    room = (await db.execute(
+        select(ie_room).where(ie_room.c.id == room_id).with_for_update()
+    )).fetchone()
+    if not room:
+        raise HTTPException(status_code=404, detail="Room not found")
+    if not room.confirmed:
+        return {"detail": "Room is not confirmed"}
+
+    await db.execute(
+        update(ie_room).where(ie_room.c.id == room_id).values(confirmed=False, ballot_status="submitted")
+    )
+    await db.execute(
+        update(ie_result).where(ie_result.c.room_id == room_id).values(confirmed=False)
+    )
+    await db.commit()
+
+    # Invalidate standings cache
+    from nekospeech.services.cache import cache_delete, standings_key
+    await cache_delete(standings_key(room.event_id))
+    await cache_delete(standings_key(room.event_id, room.round_number))
+
+    return {"detail": "Room unconfirmed"}
+
+
+@router.patch("/{result_id}/edit/", response_model=IEResultResponse)
+async def edit_result(
+    result_id: int,
+    body: IEResultUpdate,
+    db: AsyncSession = Depends(get_db),
+    _auth: None = Depends(require_ie_api_key),
+):
+    """Edit an individual result's rank or speaker_points."""
+    result_row = (await db.execute(
+        select(ie_result).where(ie_result.c.id == result_id)
+    )).fetchone()
+    if not result_row:
+        raise HTTPException(status_code=404, detail="Result not found")
+
+    update_data = body.model_dump(exclude_unset=True)
+    if not update_data:
+        raise HTTPException(status_code=400, detail="No fields to update")
+
+    await db.execute(
+        update(ie_result).where(ie_result.c.id == result_id).values(**update_data)
+    )
+    await db.commit()
+
+    # Re-fetch with enriched data
+    stmt = (
+        select(
+            ie_result,
+            participants_person.c.name.label("speaker_name"),
+            participants_institution.c.code.label("institution_code"),
+        )
+        .join(ie_entry, ie_entry.c.id == ie_result.c.entry_id)
+        .outerjoin(participants_person, participants_person.c.id == ie_entry.c.speaker_id)
+        .outerjoin(participants_institution, participants_institution.c.id == ie_entry.c.institution_id)
+        .where(ie_result.c.id == result_id)
+    )
+    r = (await db.execute(stmt)).fetchone()
+    return IEResultResponse(
+        id=r.id, room_id=r.room_id, entry_id=r.entry_id,
+        rank=r.rank, speaker_points=float(r.speaker_points),
+        submitted_by_judge_id=r.submitted_by_judge_id,
+        confirmed=r.confirmed, submitted_at=r.submitted_at,
+        speaker_name=r.speaker_name or "",
+        institution_code=r.institution_code or "",
+    )
+
+
 @router.patch("/{result_id}/", response_model=IEResultResponse)
 async def edit_result(
     result_id: int,

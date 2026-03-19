@@ -157,6 +157,12 @@ async def generate_draw(
             .where(ie_entry.c.scratch_status == "ACTIVE")
         )
     ).fetchall()
+
+    # If finalist_entry_ids provided, filter to only those entries
+    if body.finalist_entry_ids:
+        finalist_set = set(body.finalist_entry_ids)
+        entry_rows = [r for r in entry_rows if r.id in finalist_set]
+
     if not entry_rows:
         raise HTTPException(status_code=400, detail="No active entries for this event")
 

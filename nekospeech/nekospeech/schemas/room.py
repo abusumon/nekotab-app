@@ -31,6 +31,7 @@ class DrawGenerateRequest(BaseModel):
     event_id: int
     round_number: int
     force: bool = False
+    finalist_entry_ids: list[int] | None = None
 
 
 class AssignJudgeRequest(BaseModel):

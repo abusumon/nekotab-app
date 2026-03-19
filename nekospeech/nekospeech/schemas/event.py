@@ -38,5 +38,6 @@ class SpeechEventResponse(BaseModel):
     created_at: datetime
     entry_count: int = 0
     rounds_with_draw: list[int] = []
+    confirmed_rounds: list[int] = []
 
     model_config = {"from_attributes": True}

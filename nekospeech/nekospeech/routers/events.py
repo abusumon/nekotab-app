@@ -51,6 +51,7 @@ async def list_events(
 
     # Bulk-fetch all rounds that have draws in one query to avoid N+1
     rounds_map: dict[int, list[int]] = {}
+    confirmed_rounds_map: dict[int, list[int]] = {}
     if rows:
         all_event_ids = [row.id for row in rows]
         all_rounds_rows = (await db.execute(
@@ -62,6 +63,19 @@ async def list_events(
         for rr in all_rounds_rows:
             rounds_map.setdefault(rr.event_id, []).append(rr.round_number)
 
+        # Find rounds with at least one unconfirmed room
+        unconfirmed_rows = (await db.execute(
+            select(ie_room.c.event_id, ie_room.c.round_number)
+            .where(ie_room.c.event_id.in_(all_event_ids))
+            .where(ie_room.c.confirmed == False)  # noqa: E712
+            .distinct()
+        )).fetchall()
+        unconfirmed_set = {(uc.event_id, uc.round_number) for uc in unconfirmed_rows}
+        for eid, rd_list in rounds_map.items():
+            confirmed = [r for r in rd_list if (eid, r) not in unconfirmed_set]
+            if confirmed:
+                confirmed_rounds_map[eid] = confirmed
+
     results = []
     for row in rows:
         results.append(
@@ -69,6 +83,7 @@ async def list_events(
                 **{k: v for k, v in row._mapping.items() if k != "entry_count"},
                 entry_count=row.entry_count,
                 rounds_with_draw=rounds_map.get(row.id, []),
+                confirmed_rounds=confirmed_rounds_map.get(row.id, []),
             )
         )
     return results
@@ -96,10 +111,23 @@ async def get_event(event_id: int, db: AsyncSession = Depends(get_db)):
         .order_by(ie_room.c.round_number)
     )
     round_rows = (await db.execute(rounds_stmt)).fetchall()
+    rounds_with_draw = [r.round_number for r in round_rows]
+
+    # Confirmed rounds
+    unconfirmed_stmt = (
+        select(ie_room.c.round_number)
+        .where(ie_room.c.event_id == event_id)
+        .where(ie_room.c.confirmed == False)  # noqa: E712
+        .distinct()
+    )
+    unconfirmed_rounds = {uc.round_number for uc in (await db.execute(unconfirmed_stmt)).fetchall()}
+    confirmed_rounds = [r for r in rounds_with_draw if r not in unconfirmed_rounds]
+
     return SpeechEventResponse(
         **{k: v for k, v in row._mapping.items() if k != "entry_count"},
         entry_count=row.entry_count,
-        rounds_with_draw=[r.round_number for r in round_rows],
+        rounds_with_draw=rounds_with_draw,
+        confirmed_rounds=confirmed_rounds,
     )
 
 
