@@ -27,7 +27,8 @@ async def get_current_user(
     try:
         payload = _decode_token(credentials.credentials)
     except JWTError as exc:
-        logger.error("JWT decode failed: %s | token_prefix=%s", exc, credentials.credentials[:20] if credentials.credentials else "EMPTY")
+        import sys
+        print(f"JWT_DEBUG: decode failed: {exc} | token_len={len(credentials.credentials)} | token_start={credentials.credentials[:30]} | secret_len={len(settings.jwt_secret_key)}", file=sys.stderr, flush=True)
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
     return payload
 
