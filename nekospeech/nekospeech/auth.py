@@ -1,10 +1,14 @@
 """Auth utilities — JWT validation shared with the Django app."""
 
+import logging
+
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError, jwt
 
 from nekospeech.config import settings
+
+logger = logging.getLogger(__name__)
 
 bearer_scheme = HTTPBearer(auto_error=False)
 
@@ -22,7 +26,8 @@ async def get_current_user(
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
     try:
         payload = _decode_token(credentials.credentials)
-    except JWTError:
+    except JWTError as exc:
+        logger.error("JWT decode failed: %s | token_prefix=%s", exc, credentials.credentials[:20] if credentials.credentials else "EMPTY")
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
     return payload
 
