@@ -28,8 +28,22 @@ async def get_current_user(
         payload = _decode_token(credentials.credentials)
     except JWTError as exc:
         import sys, hashlib
-        key_hash = hashlib.sha256(settings.jwt_secret_key.encode()).hexdigest()[:16]
-        print(f"JWT_DEBUG: decode failed: {exc} | token_len={len(credentials.credentials)} | token_start={credentials.credentials[:30]} | secret_len={len(settings.jwt_secret_key)} | secret_sha256_prefix={key_hash} | secret_first5={repr(settings.jwt_secret_key[:5])}", file=sys.stderr, flush=True)
+        token = credentials.credentials
+        key = settings.jwt_secret_key
+        # Decode WITHOUT verification to get payload
+        try:
+            unverified = jwt.decode(token, key, algorithms=["HS256"], options={"verify_signature": False})
+            # Re-encode the payload with our key
+            re_encoded = jwt.encode(unverified, key, algorithm="HS256")
+            # Compare the original token with re-encoded
+            orig_parts = token.split(".")
+            re_parts = re_encoded.split(".")
+            print(f"JWT_DEBUG: orig_sig={orig_parts[2][:20]} re_sig={re_parts[2][:20]} header_match={orig_parts[0]==re_parts[0]} payload_match={orig_parts[1]==re_parts[1]} sig_match={orig_parts[2]==re_parts[2]}", file=sys.stderr, flush=True)
+            print(f"JWT_DEBUG: unverified_payload={unverified}", file=sys.stderr, flush=True)
+        except Exception as e2:
+            print(f"JWT_DEBUG: unverified decode also failed: {e2}", file=sys.stderr, flush=True)
+        key_hash = hashlib.sha256(key.encode()).hexdigest()[:16]
+        print(f"JWT_DEBUG: original error: {exc} | secret_sha={key_hash} | secret_len={len(key)}", file=sys.stderr, flush=True)
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
     return payload
 
