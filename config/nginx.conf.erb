@@ -48,6 +48,10 @@ http {
         server unix:/tmp/asgi.socket;
     }
 
+    upstream nekospeech {
+        server <%= ENV['NEKOSPEECH_HOST'] || 'nekospeech' %>:<%= ENV['NEKOSPEECH_PORT'] || '8001' %>;
+    }
+
     # As per https://www.nginx.com/blog/websocket-nginx/
     map $http_upgrade $connection_upgrade {
         default upgrade;
@@ -109,6 +113,22 @@ http {
             etag on;
         }
 
+        # nekospeech Individual Events API
+        location /api/ie/ {
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_redirect off;
+
+            # WebSocket support for /api/ie/ws/
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection $connection_upgrade;
+            proxy_read_timeout 1800s;
+
+            proxy_pass http://nekospeech;
+        }
+
         # Pass to wsgi server
         location / {
             proxy_set_header Host $http_host;
@@ -118,4 +138,3 @@ http {
         }
     }
 }
-
