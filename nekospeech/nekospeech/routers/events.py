@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from nekospeech.auth import require_director, verify_tournament_access
+from nekospeech.auth import require_ie_api_key
 from nekospeech.database import get_db
 from nekospeech.models.speech_event import ie_entry, ie_room, speech_event
 from nekospeech.schemas.event import SpeechEventCreate, SpeechEventResponse, SpeechEventUpdate
@@ -16,9 +16,8 @@ router = APIRouter(prefix="/api/ie/events", tags=["events"])
 async def create_event(
     body: SpeechEventCreate,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
-    verify_tournament_access(_user, body.tournament_id)
     result = await db.execute(
         speech_event.insert()
         .values(**body.model_dump())
@@ -109,13 +108,12 @@ async def update_event(
     event_id: int,
     body: SpeechEventUpdate,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
-    # Verify tournament access via event
+    # Verify event exists
     evt_tid = (await db.execute(select(speech_event.c.tournament_id).where(speech_event.c.id == event_id))).scalar()
     if evt_tid is None:
         raise HTTPException(status_code=404, detail="Event not found")
-    verify_tournament_access(_user, evt_tid)
     update_data = body.model_dump(exclude_unset=True)
     if not update_data:
         raise HTTPException(status_code=400, detail="No fields to update")
@@ -130,12 +128,11 @@ async def update_event(
 async def delete_event(
     event_id: int,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
     evt_tid = (await db.execute(select(speech_event.c.tournament_id).where(speech_event.c.id == event_id))).scalar()
     if evt_tid is None:
         raise HTTPException(status_code=404, detail="Event not found")
-    verify_tournament_access(_user, evt_tid)
     result = await db.execute(
         update(speech_event)
         .where(speech_event.c.id == event_id)

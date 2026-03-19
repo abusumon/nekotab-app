@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from nekospeech.auth import require_director, verify_tournament_access
+from nekospeech.auth import require_ie_api_key
 from nekospeech.database import get_db
 from nekospeech.models.shared import participants_institution, participants_person, participants_speaker, participants_team
 from nekospeech.models.speech_event import ie_entry, speech_event
@@ -53,13 +53,12 @@ async def _enrich_entry(row, db: AsyncSession) -> IEEntryResponse:
 async def create_entry(
     body: IEEntryCreate,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
-    # Validate event exists and get tournament_id
+    # Validate event exists
     evt = (await db.execute(select(speech_event.c.id, speech_event.c.tournament_id).where(speech_event.c.id == body.event_id))).fetchone()
     if not evt:
         raise HTTPException(status_code=404, detail="Event not found")
-    verify_tournament_access(_user, evt.tournament_id)
 
     # Check for duplicate
     existing = (
@@ -137,9 +136,9 @@ async def list_entries(event_id: int = Query(...), db: AsyncSession = Depends(ge
 async def scratch_entry(
     entry_id: int,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
-    # Verify tournament access via entry → event
+    # Verify entry exists
     entry_evt = (await db.execute(
         select(speech_event.c.tournament_id)
         .join(ie_entry, ie_entry.c.event_id == speech_event.c.id)
@@ -147,7 +146,6 @@ async def scratch_entry(
     )).scalar()
     if entry_evt is None:
         raise HTTPException(status_code=404, detail="Entry not found or already scratched")
-    verify_tournament_access(_user, entry_evt)
     result = await db.execute(
         update(ie_entry)
         .where(ie_entry.c.id == entry_id)
@@ -163,13 +161,12 @@ async def scratch_entry(
 async def bulk_create_entries(
     body: IEEntryBulkCreate,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
-    # Validate event exists and get tournament_id
+    # Validate event exists
     evt = (await db.execute(select(speech_event.c.id, speech_event.c.tournament_id).where(speech_event.c.id == body.event_id))).fetchone()
     if not evt:
         raise HTTPException(status_code=404, detail="Event not found")
-    verify_tournament_access(_user, evt.tournament_id)
 
     # Get all speaker_ids from the request
     speaker_ids = [e.speaker_id for e in body.entries]

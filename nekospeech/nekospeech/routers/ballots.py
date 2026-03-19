@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from nekospeech.auth import require_director, require_judge, verify_tournament_access
+from nekospeech.auth import require_ie_api_key
 from nekospeech.database import get_db
 from nekospeech.models.shared import participants_institution, participants_person
 from nekospeech.models.speech_event import ie_entry, ie_result, ie_room, ie_room_entry, speech_event
@@ -44,7 +44,7 @@ async def _check_round_complete(db: AsyncSession, event_id: int, round_number: i
 async def submit_ballot(
     body: BallotSubmit,
     db: AsyncSession = Depends(get_db),
-    user: dict = Depends(require_judge),
+    _auth: None = Depends(require_ie_api_key),
 ):
     # Lock the room row to prevent concurrent submit/confirm races
     room = (await db.execute(
@@ -53,23 +53,11 @@ async def submit_ballot(
     if not room:
         raise HTTPException(status_code=404, detail="Room not found")
 
-    # Verify tournament access — raise 500 rather than silently skipping the check
-    tournament_id = await _get_tournament_id(db, room.event_id)
-    if tournament_id is None:
-        raise HTTPException(status_code=500, detail="Could not resolve tournament")
-    verify_tournament_access(user, tournament_id)
-
     if room.confirmed:
         raise HTTPException(status_code=400, detail="Room is already confirmed")
 
-    # Validate judge assignment (judge can only submit for their assigned room)
-    judge_id = user.get("judge_id") or user.get("user_id")
-    if user.get("role") == "judge":
-        # Room-scoped token: verify room_id matches
-        if user.get("room_id") and user["room_id"] != body.room_id:
-            raise HTTPException(status_code=403, detail="Token is scoped to a different room")
-        if room.judge_id and room.judge_id != judge_id:
-            raise HTTPException(status_code=403, detail="Not assigned to this room")
+    # Use the room's assigned judge as the submitter
+    judge_id = room.judge_id
 
     # Validate all entry_ids belong to this room
     room_entry_ids = (
@@ -135,7 +123,7 @@ async def submit_ballot(
 async def get_room_results(
     room_id: int,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_judge),
+    _auth: None = Depends(require_ie_api_key),
 ):
     stmt = (
         select(
@@ -167,7 +155,7 @@ async def get_room_results(
 async def confirm_room(
     room_id: int,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
     # Lock the room row to prevent concurrent submit/confirm races
     room = (await db.execute(
@@ -175,12 +163,6 @@ async def confirm_room(
     )).fetchone()
     if not room:
         raise HTTPException(status_code=404, detail="Room not found")
-
-    # Verify tournament access — raise 500 rather than silently skipping the check
-    tid = await _get_tournament_id(db, room.event_id)
-    if tid is None:
-        raise HTTPException(status_code=500, detail="Could not resolve tournament")
-    verify_tournament_access(_user, tid)
 
     if room.confirmed:
         return {"detail": "Already confirmed"}
@@ -243,7 +225,7 @@ async def edit_result(
     result_id: int,
     body: IEResultUpdate,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
     # Get the result and its room
     res = (await db.execute(select(ie_result).where(ie_result.c.id == result_id))).fetchone()
@@ -257,12 +239,6 @@ async def edit_result(
     )).fetchone()
     if not room:
         raise HTTPException(status_code=404, detail="Room not found")
-
-    # Verify tournament access — raise 500 rather than silently skipping the check
-    tid = await _get_tournament_id(db, room.event_id)
-    if tid is None:
-        raise HTTPException(status_code=500, detail="Could not resolve tournament")
-    verify_tournament_access(_user, tid)
 
     if room.confirmed:
         raise HTTPException(status_code=400, detail="Cannot edit results for a confirmed room")

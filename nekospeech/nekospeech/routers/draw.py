@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from nekospeech.auth import require_director, verify_tournament_access
+from nekospeech.auth import require_ie_api_key
 from nekospeech.database import get_db
 from nekospeech.models.shared import participants_institution, participants_person
 from nekospeech.models.speech_event import ie_entry, ie_result, ie_room, ie_room_entry, speech_event
@@ -86,7 +86,7 @@ async def _build_draw_response(
 async def generate_draw(
     body: DrawGenerateRequest,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
     # Validate event
     evt = (
@@ -96,7 +96,6 @@ async def generate_draw(
     ).fetchone()
     if not evt:
         raise HTTPException(status_code=404, detail="Event not found")
-    verify_tournament_access(_user, evt.tournament_id)
 
     # Acquire advisory lock to prevent concurrent draw generation for same event+round.
     # pg_advisory_xact_lock is released automatically when the transaction commits/rolls back.
@@ -231,19 +230,11 @@ async def get_draw(event_id: int, round_number: int, db: AsyncSession = Depends(
 async def assign_judge(
     body: AssignJudgeRequest,
     db: AsyncSession = Depends(get_db),
-    _user: dict = Depends(require_director),
+    _auth: None = Depends(require_ie_api_key),
 ):
     room = (await db.execute(select(ie_room).where(ie_room.c.id == body.room_id))).fetchone()
     if not room:
         raise HTTPException(status_code=404, detail="Room not found")
-
-    # Verify tournament access via room → event
-    evt_tid = (await db.execute(
-        select(speech_event.c.tournament_id).where(speech_event.c.id == room.event_id)
-    )).scalar()
-    if evt_tid is None:
-        raise HTTPException(status_code=500, detail="Could not resolve tournament")
-    verify_tournament_access(_user, evt_tid)
 
     await db.execute(
         ie_room.update().where(ie_room.c.id == body.room_id).values(judge_id=body.judge_id)

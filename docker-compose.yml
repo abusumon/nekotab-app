@@ -59,8 +59,48 @@ services:
       - USING_NGINX=1
     working_dir: /tcd
 
+  # --- nekospeech: Individual Speech Events FastAPI service ---
+  nekospeech:
+    build:
+      context: ./nekospeech
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+      - redis
+    environment:
+      - NEKOSPEECH_DATABASE_URL=postgresql+asyncpg://NekoTab:NekoTab@db:5432/NekoTab
+      - NEKOSPEECH_REDIS_URL=redis://redis:6379/2
+      - NEKOSPEECH_CELERY_BROKER_URL=redis://redis:6379/3
+      - NEKOSPEECH_DEBUG=1
+      - DJANGO_SECRET_KEY=insecure-dev-key-for-docker-compose-only
+    ports:
+      - "8001:8001"
+
+  nekospeech-worker:
+    build:
+      context: ./nekospeech
+      dockerfile: Dockerfile
+    command: ["celery", "-A", "nekospeech.workers.tasks", "worker", "--loglevel=info"]
+    depends_on:
+      - db
+      - redis
+    environment:
+      - NEKOSPEECH_DATABASE_URL=postgresql+asyncpg://NekoTab:NekoTab@db:5432/NekoTab
+      - NEKOSPEECH_REDIS_URL=redis://redis:6379/2
+      - NEKOSPEECH_CELERY_BROKER_URL=redis://redis:6379/3
+      - DJANGO_SECRET_KEY=insecure-dev-key-for-docker-compose-only
+
+  nginx:
+    image: nginx:1.25
+    depends_on:
+      - web
+      - nekospeech
+    ports:
+      - "80:80"
+    volumes:
+      - ./config/nginx-docker.conf:/etc/nginx/conf.d/default.conf:ro
+
 volumes:
   pgdata:
   node_modules:
   redis_data:
-

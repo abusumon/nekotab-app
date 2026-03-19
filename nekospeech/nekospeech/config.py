@@ -37,6 +37,9 @@ class Settings(BaseSettings):
     jwt_secret_key: str = ""
     jwt_algorithm: str = "HS256"
 
+    # --- IE API key (shared with the Django app) ---
+    ie_api_key: str = ""
+
     # --- Service ---
     debug: bool = False
     cors_origins: list[str] = ["http://localhost:8000", "http://localhost:8080"]

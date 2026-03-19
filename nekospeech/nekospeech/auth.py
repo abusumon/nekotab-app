@@ -2,7 +2,7 @@
 
 import hmac
 
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError, jwt
 
@@ -84,4 +84,20 @@ def verify_tournament_access(user: dict, tournament_id: int) -> None:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Token is not authorized for this tournament",
+        )
+
+
+async def require_ie_api_key(request: Request) -> None:
+    """Validate the X-IE-Api-Key header against the configured API key.
+
+    If no API key is configured (empty string), all requests are allowed.
+    This allows local development without setting the key.
+    """
+    if not settings.ie_api_key:
+        return
+    api_key = request.headers.get("X-IE-Api-Key", "")
+    if not api_key or api_key != settings.ie_api_key:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Invalid or missing IE API key",
         )
