@@ -1,15 +1,13 @@
 ﻿# This is the 'actual' Procfile run by heroku (via Honcho)
 
 # Nginx is the reverse proxy
-# This allows static files to be served directly and to split traffic between
-# the WSGI and ASGI servers
+# This allows static files to be served directly and to route traffic
 nginx: bin/start-nginx
 
-# WSGI server handles the standard django routes; optimised for high performance
-wsgi: gunicorn wsgi:application --config './config/gunicorn.conf'
-
-# ASGI server handles the asychronous routes (websockets)
-asgi: python ./tabbycat/run-asgi.py
+# Unified ASGI server handles both HTTP and WebSocket via uvicorn workers
+# This replaces the previous separate gunicorn (WSGI) + daphne (ASGI) setup,
+# saving ~120MB RAM by loading Django only once instead of twice.
+wsgi: gunicorn asgi:application --config './config/gunicorn.conf'
 
 # nekospeech FastAPI service for Individual Events (speech events)
 # Runs on port 8001; nginx proxies /api/ie/ to this process
