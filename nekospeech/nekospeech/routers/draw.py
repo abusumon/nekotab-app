@@ -9,7 +9,7 @@ from nekospeech.database import get_db
 from nekospeech.models.shared import participants_institution, participants_person
 from nekospeech.models.speech_event import ie_entry, ie_result, ie_room, ie_room_entry, speech_event
 from nekospeech.schemas.entry import IEEntryResponse
-from nekospeech.schemas.room import AssignJudgeRequest, DrawGenerateRequest, DrawResponse, IERoomResponse
+from nekospeech.schemas.room import AssignJudgeRequest, DrawGenerateRequest, DrawResponse, IERoomResponse, RenameRoomRequest
 from nekospeech.services.cache import cache_delete, cache_get, cache_set, draw_key
 from nekospeech.services.draw_engine import EntryForDraw, assign_rooms
 
@@ -72,7 +72,8 @@ async def _build_draw_response(
 
         rooms.append(IERoomResponse(
             id=rm.id, event_id=rm.event_id, round_number=rm.round_number,
-            room_number=rm.room_number, judge_id=rm.judge_id,
+            room_number=rm.room_number, nickname=rm.nickname if hasattr(rm, 'nickname') else None,
+            judge_id=rm.judge_id,
             judge_name=judge_name, confirmed=rm.confirmed,
             ballot_status=rm.ballot_status if hasattr(rm, 'ballot_status') else ("confirmed" if rm.confirmed else "no_ballot"),
             created_at=rm.created_at,
@@ -279,3 +280,28 @@ async def get_judge_room(
         if r.id == room.id:
             return r
     raise HTTPException(status_code=404, detail="Room not found")
+
+
+@router.post("/rename-room/", response_model=IERoomResponse)
+async def rename_room(
+    body: RenameRoomRequest,
+    db: AsyncSession = Depends(get_db),
+    _auth: None = Depends(require_ie_api_key),
+):
+    room = (await db.execute(select(ie_room).where(ie_room.c.id == body.room_id))).fetchone()
+    if not room:
+        raise HTTPException(status_code=404, detail="Room not found")
+
+    nickname = body.nickname.strip() if body.nickname else None
+    await db.execute(
+        ie_room.update().where(ie_room.c.id == body.room_id).values(nickname=nickname)
+    )
+    await db.commit()
+
+    await cache_delete(draw_key(room.event_id, room.round_number))
+
+    draw_resp = await _build_draw_response(db, room.event_id, room.round_number)
+    for r in draw_resp.rooms:
+        if r.id == body.room_id:
+            return r
+    raise HTTPException(status_code=500, detail="Room not found after update")

@@ -105,6 +105,7 @@ ie_room = Table(
     Column("round_number", Integer, nullable=False),
     Column("room_number", Integer, nullable=False),
     Column("judge_id", Integer, nullable=True),
+    Column("nickname", String(100), nullable=True),
     Column("confirmed", Boolean, nullable=False, server_default="false"),
     Column(
         "ballot_status",

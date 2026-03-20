@@ -12,11 +12,17 @@ class IERoomEntryResponse(BaseModel):
     entry: IEEntryResponse
 
 
+class RenameRoomRequest(BaseModel):
+    room_id: int
+    nickname: str | None = None
+
+
 class IERoomResponse(BaseModel):
     id: int
     event_id: int
     round_number: int
     room_number: int
+    nickname: str | None = None
     judge_id: int | None
     judge_name: str = ""
     confirmed: bool
