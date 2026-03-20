@@ -133,10 +133,10 @@ http {
         }
 
         # nekocongress Congressional Debate API (separate Heroku app)
-        <% if ENV['NEKOCONGRESS_URL'] %>
+        <% if ENV['NEKOCONGRESS_BACKEND_URL'] %>
         location /api/congress/ {
             resolver 8.8.8.8 valid=30s;
-            set $nekocongress_backend "<%= ENV['NEKOCONGRESS_URL'] %>";
+            set $nekocongress_backend "<%= ENV['NEKOCONGRESS_BACKEND_URL'] %>";
 
             proxy_set_header Host $proxy_host;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
