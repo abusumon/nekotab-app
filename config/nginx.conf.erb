@@ -51,8 +51,9 @@ http {
         server <%= ENV['NEKOSPEECH_HOST'] || 'nekospeech' %>:<%= ENV['NEKOSPEECH_PORT'] || '8001' %>;
     }
 
-    # nekocongress is a separate Heroku app — no local upstream.
-    # Proxied via variable + resolver in the location block below.
+    upstream nekocongress {
+        server 127.0.0.1:<%= ENV['NEKOCONGRESS_PORT'] || '8002' %>;
+    }
 
     # As per https://www.nginx.com/blog/websocket-nginx/
     map $http_upgrade $connection_upgrade {
@@ -131,13 +132,9 @@ http {
             proxy_pass http://nekospeech;
         }
 
-        # nekocongress Congressional Debate API (separate Heroku app)
-        <% if ENV['NEKOCONGRESS_BACKEND_URL'] %>
+        # nekocongress Congressional Debate API (local process on port 8002)
         location /api/congress/ {
-            resolver 8.8.8.8 valid=30s;
-            set $nekocongress_backend "<%= ENV['NEKOCONGRESS_BACKEND_URL'] %>";
-
-            proxy_set_header Host $proxy_host;
+            proxy_set_header Host $http_host;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
             proxy_redirect off;
@@ -148,9 +145,8 @@ http {
             proxy_set_header Connection $connection_upgrade;
             proxy_read_timeout 1800s;
 
-            proxy_pass $nekocongress_backend;
+            proxy_pass http://nekocongress;
         }
-        <% end %>
 
         # Pass to wsgi server
         location / {
