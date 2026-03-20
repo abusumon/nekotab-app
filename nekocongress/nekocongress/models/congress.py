@@ -10,12 +10,29 @@ from sqlalchemy import (
     Boolean,
     Column,
     DateTime,
+    Enum,
     Integer,
     MetaData,
     String,
     Table,
     Text,
 )
+
+# PostgreSQL ENUMs living in the congress_events schema.
+# create_type=False because the migration already created them.
+_enum_kw = dict(schema="congress_events", create_type=False)
+
+AdvancementMethod = Enum("POINTS", "RANKINGS", "COMBINED", name="advancement_method", **_enum_kw)
+NormalizationMethod = Enum("ZSCORE", "PERCENTILE", name="normalization_method", **_enum_kw)
+ChamberType = Enum("HOUSE", "SENATE", name="chamber_type", **_enum_kw)
+SessionStatus = Enum("PENDING", "ACTIVE", "CLOSED", name="session_status", **_enum_kw)
+LegislationType = Enum("BILL", "RESOLUTION", name="legislation_type", **_enum_kw)
+DocketStatus = Enum("PENDING", "DEBATING", "VOTED", "TABLED", "CARRIED_OVER", name="docket_status", **_enum_kw)
+VoteResult = Enum("PASS", "FAIL", "TABLED", name="vote_result", **_enum_kw)
+SpeechSide = Enum("AFF", "NEG", "AUTHORSHIP", "SPONSORSHIP", name="speech_side", **_enum_kw)
+SpeechType = Enum("AUTHORSHIP", "SPONSORSHIP", "STANDARD", name="speech_type", **_enum_kw)
+AmendmentStatus = Enum("SUBMITTED", "ACCEPTED", "REJECTED", "DEBATED", "WITHDRAWN", name="amendment_status", **_enum_kw)
+ElectionStatus = Enum("OPEN", "ELIMINATED", "DECIDED", name="election_status", **_enum_kw)
 
 congress_metadata = MetaData(schema="congress_events")
 
@@ -41,8 +58,8 @@ congress_tournament = Table(
     Column("questioner_segment_seconds", Integer, nullable=False, server_default="30"),
     Column("direct_questioning_enabled", Boolean, nullable=False, server_default="true"),
     Column("geography_tiebreak_enabled", Boolean, nullable=False, server_default="false"),
-    Column("advancement_method", String(20), nullable=False, server_default="COMBINED"),
-    Column("normalization_method", String(20), nullable=False, server_default="ZSCORE"),
+    Column("advancement_method", AdvancementMethod, nullable=False, server_default="COMBINED"),
+    Column("normalization_method", NormalizationMethod, nullable=False, server_default="ZSCORE"),
     Column("num_preliminary_sessions", Integer, nullable=False, server_default="3"),
     Column("num_elimination_sessions", Integer, nullable=False, server_default="2"),
     Column("chamber_size_target", Integer, nullable=False, server_default="18"),
@@ -58,7 +75,7 @@ congress_chamber = Table(
     Column("id", BigInteger, primary_key=True),
     Column("congress_tournament_id", BigInteger, nullable=False),
     Column("label", String(100), nullable=False),
-    Column("chamber_type", String(10), nullable=False, server_default="HOUSE"),
+    Column("chamber_type", ChamberType, nullable=False, server_default="HOUSE"),
     Column("chamber_number", Integer, nullable=False),
     Column("is_elimination", Boolean, nullable=False, server_default="false"),
     Column("created_at", DateTime(timezone=True), nullable=False),
@@ -99,7 +116,7 @@ congress_legislation = Table(
     Column("id", BigInteger, primary_key=True),
     Column("congress_tournament_id", BigInteger, nullable=False),
     Column("title", String(500), nullable=False),
-    Column("legislation_type", String(15), nullable=False),
+    Column("legislation_type", LegislationType, nullable=False),
     Column("category", String(50), nullable=True),
     Column("author_institution_id", Integer, nullable=True),
     Column("full_text", Text, nullable=True),
@@ -115,7 +132,7 @@ congress_session = Table(
     Column("id", BigInteger, primary_key=True),
     Column("chamber_id", BigInteger, nullable=False),
     Column("session_number", Integer, nullable=False),
-    Column("status", String(20), nullable=False, server_default="PENDING"),
+    Column("status", SessionStatus, nullable=False, server_default="PENDING"),
     Column("po_legislator_id", BigInteger, nullable=True),
     Column("session_duration_minutes", Integer, nullable=False, server_default="150"),
     Column("started_at", DateTime(timezone=True), nullable=True),
@@ -135,8 +152,8 @@ congress_docket_item = Table(
     Column("session_id", BigInteger, nullable=False),
     Column("legislation_id", BigInteger, nullable=False),
     Column("agenda_order", Integer, nullable=False),
-    Column("status", String(20), nullable=False, server_default="PENDING"),
-    Column("vote_result", String(10), nullable=True),
+    Column("status", DocketStatus, nullable=False, server_default="PENDING"),
+    Column("vote_result", VoteResult, nullable=True),
     Column("aff_votes", Integer, nullable=True),
     Column("neg_votes", Integer, nullable=True),
     Column("abstain_votes", Integer, nullable=True),
@@ -154,8 +171,8 @@ congress_speech = Table(
     Column("legislator_id", BigInteger, nullable=False),
     Column("speech_number", Integer, nullable=False),
     Column("session_speech_number", Integer, nullable=False),
-    Column("side", String(15), nullable=False),
-    Column("speech_type", String(15), nullable=False, server_default="STANDARD"),
+    Column("side", SpeechSide, nullable=False),
+    Column("speech_type", SpeechType, nullable=False, server_default="STANDARD"),
     Column("started_at", DateTime(timezone=True), nullable=True),
     Column("ended_at", DateTime(timezone=True), nullable=True),
     Column("duration_seconds", Integer, nullable=True),
@@ -230,7 +247,7 @@ congress_po_election = Table(
     Column("id", BigInteger, primary_key=True),
     Column("session_id", BigInteger, nullable=False),
     Column("round_number", Integer, nullable=False, server_default="1"),
-    Column("status", String(20), nullable=False, server_default="OPEN"),
+    Column("status", ElectionStatus, nullable=False, server_default="OPEN"),
     Column("winner_legislator_id", BigInteger, nullable=True),
     Column("created_at", DateTime(timezone=True), nullable=False),
     Column("updated_at", DateTime(timezone=True), nullable=False),
@@ -270,7 +287,7 @@ congress_amendment = Table(
     Column("docket_item_id", BigInteger, nullable=False),
     Column("submitted_by_legislator_id", BigInteger, nullable=False),
     Column("amendment_text", Text, nullable=False),
-    Column("status", String(20), nullable=False, server_default="SUBMITTED"),
+    Column("status", AmendmentStatus, nullable=False, server_default="SUBMITTED"),
     Column("reviewed_at", DateTime(timezone=True), nullable=True),
     Column("is_germane", Boolean, nullable=True),
     Column("created_at", DateTime(timezone=True), nullable=False),
