@@ -161,7 +161,7 @@ class RedisChannelManager:
         """Background task that listens for Redis pub/sub messages."""
         while self._running:
             try:
-                if self._pubsub is None:
+                if self._pubsub is None or not self._connections:
                     await asyncio.sleep(1)
                     continue
                 message = await self._pubsub.get_message(
