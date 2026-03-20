@@ -90,11 +90,29 @@ services:
       - NEKOSPEECH_CELERY_BROKER_URL=redis://redis:6379/3
       - DJANGO_SECRET_KEY=insecure-dev-key-for-docker-compose-only
 
+  # --- nekocongress: Congressional Debate FastAPI service ---
+  nekocongress:
+    build:
+      context: ./nekocongress
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+      - redis
+    environment:
+      - NEKOCONGRESS_DATABASE_URL=postgresql+asyncpg://NekoTab:NekoTab@db:5432/NekoTab
+      - NEKOCONGRESS_REDIS_URL=redis://redis:6379/4
+      - NEKOCONGRESS_CELERY_BROKER_URL=redis://redis:6379/5
+      - NEKOCONGRESS_DEBUG=1
+      - DJANGO_SECRET_KEY=insecure-dev-key-for-docker-compose-only
+    ports:
+      - "8002:8002"
+
   nginx:
     image: nginx:1.25
     depends_on:
       - web
       - nekospeech
+      - nekocongress
     ports:
       - "80:80"
     volumes:
