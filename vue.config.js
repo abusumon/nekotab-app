@@ -1,9 +1,11 @@
-﻿module.exports = {
+﻿const isProduction = (process.env.NODE_ENV || '').trim() === 'production';
+
+module.exports = {
   // Output to standard directory; this is then compiled by django collectstatic
   outputDir: './tabbycat/static/vue/',
   // Need to set baseUrl for hot module reloading (proxies to the local server)
   // But want to disable this when building for production
-  publicPath: process.env.NODE_ENV === 'production' ?
+  publicPath: isProduction ?
     '/static/vue/'
     : 'http://localhost:8888',
   // Don't add a hash to the filename
@@ -16,7 +18,7 @@
       chunkFilename: '[name].js'
     }
   },
-  lintOnSave: process.env.NODE_ENV !== 'production', // Lint if not in production
+  lintOnSave: !isProduction, // Lint if not in production
   // Allow code splitting for lazy-loaded components
   chainWebpack: config => {
     config.optimization.splitChunks({

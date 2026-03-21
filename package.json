@@ -12,7 +12,7 @@
     "build-sass": "npx sass --style=compressed --load-path=node_modules/ tabbycat/templates/scss/style.scss tabbycat/static/css/style.css",
     "build-sass-print": "npx sass --style=compressed tabbycat/templates/scss/printables.scss tabbycat/static/css/printables.css",
     "build-vue": "npx vue-cli-service build",
-    "windows-build": "SET NODE_ENV=production & npm-run-all -p build-* cp-* && cpx \"tabbycat/static/vue/app.js\" \"tabbycat/static/vue/js/\"",
+    "windows-build": "SET \"NODE_ENV=production\"&& npm-run-all -p build-* cp-* && cpx \"tabbycat/static/vue/app.js\" \"tabbycat/static/vue/js/\"",
     "cp-barcode": "cpx node_modules/jsbarcode/dist/JsBarcode.all.min.js tabbycat/static/js/vendor",
     "cp-fonts": "cpx \"node_modules/inter-ui/Inter (web)/*\" tabbycat/static/fonts",
     "cp-i18n": "cpx \"tabbycat/locale/jsi18n/**/*.js\" tabbycat/static/jsi18n",
