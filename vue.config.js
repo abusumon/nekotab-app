@@ -17,9 +17,11 @@
     }
   },
   lintOnSave: process.env.NODE_ENV !== 'production', // Lint if not in production
-  // Don't split out vendors file
+  // Allow code splitting for lazy-loaded components
   chainWebpack: config => {
-    config.optimization.splitChunks(false)
+    config.optimization.splitChunks({
+      chunks: 'async',
+    })
   },
   devServer: {
     port: 8888,
@@ -40,4 +42,3 @@
     }
   }
 }
-

@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django-appconf = "*"
+django-axes = "*"
 django-better-admin-arrayfield = "*"
 django-dynamic-preferences = "*"
 django-extensions = "*"
