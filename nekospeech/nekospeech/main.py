@@ -29,6 +29,7 @@ app = FastAPI(
     description="Individual Speech Events API for NekoTab",
     version="0.1.0",
     lifespan=lifespan,
+    root_path="/api/ie",
 )
 
 # --- CORS ---
