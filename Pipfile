@@ -43,7 +43,6 @@ drf-link-header-pagination = "*"
 networkx = "*" # Avoid its dependencies (SciPy)
 Pillow = "*"
 python-jose = {extras = ["cryptography"], version = "*"}
-# nekospeech dependencies (runs inside the same web dyno via honcho)
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 sqlalchemy = {extras = ["asyncio"], version = "*"}
@@ -51,6 +50,10 @@ asyncpg = "*"
 pydantic-settings = "*"
 httpx = "*"
 celery = "*"
+django-allauth = "*"
+requests = "*"
+pyjwt = "*"
+cryptography = "*"
 
 [dev-packages]
 pre-commit = "*"
