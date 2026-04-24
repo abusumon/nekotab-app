@@ -10,6 +10,8 @@
 set -eo pipefail
 
 cd /tcd
+# Ensure tabbycat package is importable (DJANGO_SETTINGS_MODULE=tabbycat.settings)
+export PYTHONPATH=/tcd
 
 # ---------------------------------------------------------------------------
 # 1. Wait for the managed database to be reachable
