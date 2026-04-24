@@ -150,6 +150,15 @@ jobs:
           key_file.write_text(normalized, encoding="utf-8")
           os.chmod(key_file, 0o600)
           print(f"Wrote key to {key_file}")
+
+          # Export normalized key content for use in action containers
+          # (action containers cannot access runner ~/.ssh via key_path)
+          gh_env = os.environ.get("GITHUB_ENV", "")
+          if gh_env:
+            with open(gh_env, "a", encoding="utf-8") as f:
+              f.write("DEPLOY_KEY<<EOF_DEPLOY_KEY\n")
+              f.write(normalized)
+              f.write("EOF_DEPLOY_KEY\n")
           PY
 
           # Fail fast with a clear error if the key content is still invalid.
@@ -161,7 +170,7 @@ jobs:
         with:
           host: ${{ secrets.DO_DROPLET_IP }}
           username: nekotab
-          key_path: ~/.ssh/do_deploy_key
+          key: ${{ env.DEPLOY_KEY }}
           source: "docker-compose.do.yml,config/nginx-do.conf,config/gunicorn-do.conf,bin/do-web-start.sh"
           target: "/opt/nekotab"
           strip_components: 0
@@ -175,7 +184,7 @@ jobs:
         with:
           host: ${{ secrets.DO_DROPLET_IP }}
           username: nekotab
-          key_path: ~/.ssh/do_deploy_key
+          key: ${{ env.DEPLOY_KEY }}
           envs: DO_REGISTRY,DO_API_TOKEN,IMAGE_TAG
           script: |
             set -e
