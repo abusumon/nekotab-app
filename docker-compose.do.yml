@@ -1,0 +1,197 @@
+# docker-compose.do.yml — DigitalOcean single-Droplet production stack
+#
+# PostgreSQL and Redis run as local containers on the Droplet (no managed services).
+# All secrets are loaded from a .env file on the Droplet (see .env.do.example).
+#
+# Usage on the Droplet:
+#   docker compose -f docker-compose.do.yml pull
+#   docker compose -f docker-compose.do.yml up -d
+#
+# One-off commands:
+#   docker compose -f docker-compose.do.yml exec web python tabbycat/manage.py shell
+#   docker compose -f docker-compose.do.yml logs -f web
+
+version: '3.9'
+
+# ---------------------------------------------------------------------------
+# Shared environment block re-used by the web and worker services
+# ---------------------------------------------------------------------------
+x-django-env: &django-env
+  ON_DIGITALOCEAN: "1"
+  DEBUG: "0"
+  # DATABASE_URL and REDIS_URL must be set explicitly in /opt/nekotab/.env
+  DATABASE_URL: "${DATABASE_URL}"
+  REDIS_URL: "${REDIS_URL}"
+  DJANGO_SECRET_KEY: "${DJANGO_SECRET_KEY}"
+  ALLOWED_HOSTS: "${ALLOWED_HOSTS:-.nekotab.app,localhost}"
+  WEB_CONCURRENCY: "${WEB_CONCURRENCY:-2}"
+  TAB_DIRECTOR_EMAIL: "${TAB_DIRECTOR_EMAIL:-}"
+  TIME_ZONE: "${TIME_ZONE:-UTC}"
+  SUBDOMAIN_TOURNAMENTS_ENABLED: "${SUBDOMAIN_TOURNAMENTS_ENABLED:-true}"
+  SUBDOMAIN_BASE_DOMAIN: "${SUBDOMAIN_BASE_DOMAIN:-nekotab.app}"
+  ORGANIZATION_WORKSPACES_ENABLED: "${ORGANIZATION_WORKSPACES_ENABLED:-true}"
+  # Email — must use a third-party provider (DO blocks SMTP ports on Droplets)
+  EMAIL_HOST: "${EMAIL_HOST:-}"
+  EMAIL_PORT: "${EMAIL_PORT:-587}"
+  EMAIL_HOST_USER: "${EMAIL_HOST_USER:-}"
+  EMAIL_HOST_PASSWORD: "${EMAIL_HOST_PASSWORD:-}"
+  DEFAULT_FROM_EMAIL: "${DEFAULT_FROM_EMAIL:-NekoTab Team <support@nekotab.app>}"
+  REPLY_TO_EMAIL: "${REPLY_TO_EMAIL:-}"
+  SENDGRID_API_KEY: "${SENDGRID_API_KEY:-}"
+  # Monitoring
+  SENTRY_DSN: "${SENTRY_DSN:-}"
+  DISABLE_SENTRY: "${DISABLE_SENTRY:-}"
+  # Staging override: set to 'disable' to skip HTTPS redirect during smoke tests
+  DISABLE_HTTPS_REDIRECTS: "${DISABLE_HTTPS_REDIRECTS:-}"
+
+services:
+
+  # ---------------------------------------------------------------------------
+  # db — PostgreSQL (self-hosted on the Droplet, data persisted in a volume)
+  # ---------------------------------------------------------------------------
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: nekotab
+      POSTGRES_USER: nekotab
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nekotab"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ---------------------------------------------------------------------------
+  # redis — Redis cache + channel layer (self-hosted on the Droplet)
+  # ---------------------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ---------------------------------------------------------------------------
+  # web — Django ASGI application via gunicorn + UvicornWorker
+  # Runs migrations and collectstatic on every startup (idempotent).
+  # ---------------------------------------------------------------------------
+  web:
+    image: ${DO_REGISTRY_URL}/nekotab:${IMAGE_TAG:-latest}
+    command: ["/tcd/bin/do-web-start.sh"]
+    environment:
+      <<: *django-env
+    expose:
+      - "8000"
+    volumes:
+      # Share static files with nginx for direct serving
+      - static-files:/tcd/tabbycat/staticfiles
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8000/health/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s   # Allow time for migrations + collectstatic on cold start
+
+  # ---------------------------------------------------------------------------
+  # worker — Django Channels background worker
+  # Processes: notifications, adjallocation, venues
+  # ---------------------------------------------------------------------------
+  worker:
+    image: ${DO_REGISTRY_URL}/nekotab:${IMAGE_TAG:-latest}
+    command: ["python", "tabbycat/manage.py", "runworker", "notifications", "adjallocation", "venues"]
+    environment:
+      <<: *django-env
+    restart: unless-stopped
+    depends_on:
+      web:
+        condition: service_healthy
+
+  # ---------------------------------------------------------------------------
+  # nekospeech — Individual Events (IE) FastAPI service on port 8001
+  # nginx proxies /api/ie/ here
+  # ---------------------------------------------------------------------------
+  nekospeech:
+    image: ${DO_REGISTRY_URL}/nekotab-nekospeech:${IMAGE_TAG:-latest}
+    environment:
+      NEKOSPEECH_DATABASE_URL: "${NEKOSPEECH_DATABASE_URL:-${DATABASE_URL}}"
+      NEKOSPEECH_REDIS_URL: "${NEKOSPEECH_REDIS_URL:-${REDIS_URL}}"
+      NEKOSPEECH_CELERY_BROKER_URL: "${NEKOSPEECH_CELERY_BROKER_URL:-${REDIS_URL}}"
+      NEKOSPEECH_DEBUG: "0"
+    expose:
+      - "8001"
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # nekospeech-worker — Celery worker for async IE tasks
+  # ---------------------------------------------------------------------------
+  nekospeech-worker:
+    image: ${DO_REGISTRY_URL}/nekotab-nekospeech:${IMAGE_TAG:-latest}
+    command: ["celery", "-A", "nekospeech.workers.tasks", "worker", "--loglevel=info", "--concurrency=2"]
+    environment:
+      NEKOSPEECH_DATABASE_URL: "${NEKOSPEECH_DATABASE_URL:-${DATABASE_URL}}"
+      NEKOSPEECH_REDIS_URL: "${NEKOSPEECH_REDIS_URL:-${REDIS_URL}}"
+      NEKOSPEECH_CELERY_BROKER_URL: "${NEKOSPEECH_CELERY_BROKER_URL:-${REDIS_URL}}"
+    restart: unless-stopped
+    depends_on:
+      - nekospeech
+
+  # ---------------------------------------------------------------------------
+  # nekocongress — Congressional Debate FastAPI service on port 8002
+  # nginx proxies /api/congress/ here
+  # ---------------------------------------------------------------------------
+  nekocongress:
+    image: ${DO_REGISTRY_URL}/nekotab-nekocongress:${IMAGE_TAG:-latest}
+    environment:
+      NEKOCONGRESS_DATABASE_URL: "${NEKOCONGRESS_DATABASE_URL:-${DATABASE_URL}}"
+      NEKOCONGRESS_REDIS_URL: "${NEKOCONGRESS_REDIS_URL:-${REDIS_URL}}"
+      NEKOCONGRESS_DEBUG: "0"
+    expose:
+      - "8002"
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # nginx — reverse proxy, health probe, static file serving
+  # Exposes port 80 to the Droplet; the DO Load Balancer fronts this with HTTPS.
+  # ---------------------------------------------------------------------------
+  nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./config/nginx-do.conf:/etc/nginx/conf.d/default.conf:ro
+      - static-files:/tcd/tabbycat/staticfiles:ro
+    depends_on:
+      - web
+      - nekospeech
+      - nekocongress
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/health/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+# ---------------------------------------------------------------------------
+# Volumes
+# ---------------------------------------------------------------------------
+volumes:
+  static-files:
+    # Populated by web on startup via collectstatic; read by nginx for /static/
+  postgres-data:
+    # PostgreSQL data — persisted across container restarts and deploys
+  redis-data:
+    # Redis RDB snapshots — persisted across restarts (optional, lightweight)

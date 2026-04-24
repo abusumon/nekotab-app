@@ -1,0 +1,157 @@
+name: Deploy to DigitalOcean
+
+# Builds three Docker images (main app, nekospeech, nekocongress), pushes them
+# to the DO Container Registry, then SSHes into the production Droplet and
+# performs a rolling restart with zero-downtime start-first ordering.
+#
+# Required GitHub Secrets (Settings → Secrets → Actions):
+#   DO_API_TOKEN        — DO personal access token with registry:read+write
+#   DO_REGISTRY_NAME    — Registry name only, e.g.  nekotab-registry
+#   DO_DROPLET_IP       — Public IP of the production Droplet
+#   DO_SSH_PRIVATE_KEY  — Private key matching the deploy SSH key on the Droplet
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}    # Allow manual deploys from the Actions tab
+
+env:
+  DO_REGISTRY: registry.digitalocean.com/${{ secrets.DO_REGISTRY_NAME }}
+  IMAGE_TAG: ${{ github.sha }}
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Job 1 — Build and push all three Docker images to DO Container Registry
+  # ---------------------------------------------------------------------------
+  build-and-push:
+    name: Build & Push Images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_API_TOKEN }}
+
+      - name: Authenticate with DO Container Registry
+        run: doctl registry login --expiry-seconds 1200
+
+      # Build main app image (Python + Node + collectstatic — heavy, cached by
+      # Docker layer caching across runs via the cache-from/to flags)
+      - name: Build main app image
+        run: |
+          docker build \
+            --cache-from $DO_REGISTRY/nekotab:latest \
+            -t $DO_REGISTRY/nekotab:$IMAGE_TAG \
+            -t $DO_REGISTRY/nekotab:latest \
+            .
+
+      - name: Build nekospeech image
+        run: |
+          docker build \
+            --cache-from $DO_REGISTRY/nekotab-nekospeech:latest \
+            -t $DO_REGISTRY/nekotab-nekospeech:$IMAGE_TAG \
+            -t $DO_REGISTRY/nekotab-nekospeech:latest \
+            ./nekospeech
+
+      - name: Build nekocongress image
+        run: |
+          docker build \
+            --cache-from $DO_REGISTRY/nekotab-nekocongress:latest \
+            -t $DO_REGISTRY/nekotab-nekocongress:$IMAGE_TAG \
+            -t $DO_REGISTRY/nekotab-nekocongress:latest \
+            ./nekocongress
+
+      - name: Push all images
+        run: |
+          docker push $DO_REGISTRY/nekotab:$IMAGE_TAG
+          docker push $DO_REGISTRY/nekotab:latest
+          docker push $DO_REGISTRY/nekotab-nekospeech:$IMAGE_TAG
+          docker push $DO_REGISTRY/nekotab-nekospeech:latest
+          docker push $DO_REGISTRY/nekotab-nekocongress:$IMAGE_TAG
+          docker push $DO_REGISTRY/nekotab-nekocongress:latest
+
+  # ---------------------------------------------------------------------------
+  # Job 2 — Deploy to the production Droplet
+  # ---------------------------------------------------------------------------
+  deploy:
+    name: Deploy to Droplet
+    runs-on: ubuntu-latest
+    needs: build-and-push
+
+    steps:
+      - name: Checkout (needed to scp config files)
+        uses: actions/checkout@v4
+
+      - name: Copy updated config files to Droplet
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DO_DROPLET_IP }}
+          username: nekotab
+          key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+          source: "docker-compose.do.yml,config/nginx-do.conf,config/gunicorn-do.conf,bin/do-web-start.sh"
+          target: "/opt/nekotab"
+          strip_components: 0
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          DO_REGISTRY: ${{ env.DO_REGISTRY }}
+          DO_API_TOKEN: ${{ secrets.DO_API_TOKEN }}
+          IMAGE_TAG: ${{ env.IMAGE_TAG }}
+        with:
+          host: ${{ secrets.DO_DROPLET_IP }}
+          username: nekotab
+          key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+          envs: DO_REGISTRY,DO_API_TOKEN,IMAGE_TAG
+          script: |
+            set -e
+            cd /opt/nekotab
+
+            echo "==> Authenticating with DO Container Registry..."
+            echo "$DO_API_TOKEN" | docker login registry.digitalocean.com \
+              --username unused --password-stdin
+
+            echo "==> Pulling new images (tag: $IMAGE_TAG)..."
+            export IMAGE_TAG="$IMAGE_TAG"
+            export DO_REGISTRY_URL="$DO_REGISTRY"
+            docker compose -f docker-compose.do.yml pull
+
+            echo "==> Ensuring db and redis are running (no-op if already healthy)..."
+            docker compose -f docker-compose.do.yml up -d db redis
+
+            echo "==> Waiting for db to be healthy..."
+            for i in $(seq 1 12); do
+              if docker compose -f docker-compose.do.yml exec -T db pg_isready -U nekotab >/dev/null 2>&1; then
+                echo "    db is ready"
+                break
+              fi
+              echo "    waiting for db... $i/12"
+              sleep 5
+            done
+
+            echo "==> Restarting app services with new images..."
+            docker compose -f docker-compose.do.yml up -d \
+              --remove-orphans \
+              --no-deps \
+              web worker nekospeech nekospeech-worker nekocongress nginx
+
+            echo "==> Waiting for web service to become healthy..."
+            for i in $(seq 1 24); do
+              STATUS=$(docker compose -f docker-compose.do.yml ps --format json web 2>/dev/null \
+                | python3 -c "import sys,json; d=json.load(sys.stdin); print(d[0].get('Health','unknown'))" 2>/dev/null || echo "unknown")
+              if [ "$STATUS" = "healthy" ]; then
+                echo "    web is healthy after $((i * 5))s"
+                break
+              fi
+              echo "    waiting... ($STATUS) ${i}/24"
+              sleep 5
+            done
+
+            echo "==> Pruning old images (>24h)..."
+            docker image prune -f --filter "until=24h"
+
+            echo "==> Deploy complete (commit: $IMAGE_TAG)"

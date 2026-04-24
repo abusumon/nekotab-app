@@ -33,3 +33,7 @@ RUN npm ci --only=production
 RUN npm run build
 RUN python ./manage.py collectstatic --noinput -v 0
 
+# Fix line endings and set executable bit on the DO entrypoint script
+# (file is committed from Windows so may have CRLF)
+RUN sed -i 's/\r//' /tcd/bin/do-web-start.sh && chmod +x /tcd/bin/do-web-start.sh
+
