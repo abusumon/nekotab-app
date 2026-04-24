@@ -10,20 +10,16 @@ ENV PYTHONUNBUFFERED 1
 # Needed for correct settings input
 ENV IN_DOCKER 1
 
-# Setup Node/NPM
-RUN apt-get update && apt-get install -y --no-install-recommends curl nginx && rm -rf /var/lib/apt/lists/*
-
-# Install nvm — NVM_DIR must be set as ENV so all subsequent RUN layers can source it
-ENV NVM_DIR=/root/.nvm
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Install Node.js 18 LTS via NodeSource — no nvm, no shell-sourcing hacks
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends curl nginx && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copy all our files into the baseimage and cd to that directory
 WORKDIR /tcd
 COPY . /tcd/
-
-# Install Node 18 LTS and set as default.
-# Version is hardcoded here (not read from .nvmrc) to avoid CRLF issues on Windows.
-RUN . $NVM_DIR/nvm.sh && nvm install 18 && nvm use 18 && nvm alias default 18
 
 # Set git to use HTTPS (SSH is often blocked by firewalls)
 RUN git config --global url."https://".insteadOf git://
@@ -33,8 +29,8 @@ RUN pip install pipenv
 RUN pipenv install --system --deploy
 
 # Install Node dependencies and build frontend assets
-RUN . $NVM_DIR/nvm.sh && npm ci
-RUN . $NVM_DIR/nvm.sh && npm run build
+RUN npm ci
+RUN npm run build
 
 # Collect static files (manage.py is no longer excluded in .dockerignore)
 RUN python ./manage.py collectstatic --noinput -v 0
