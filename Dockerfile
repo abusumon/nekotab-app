@@ -21,9 +21,9 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | b
 WORKDIR /tcd
 COPY . /tcd/
 
-# Install Node (reads version from .nvmrc) and set as default
-# Explicit `. $NVM_DIR/nvm.sh` is more reliable than relying on bash login-shell profile
-RUN . $NVM_DIR/nvm.sh && nvm install && nvm use && nvm alias default $(nvm current)
+# Install Node 18 LTS and set as default.
+# Version is hardcoded here (not read from .nvmrc) to avoid CRLF issues on Windows.
+RUN . $NVM_DIR/nvm.sh && nvm install 18 && nvm use 18 && nvm alias default 18
 
 # Set git to use HTTPS (SSH is often blocked by firewalls)
 RUN git config --global url."https://".insteadOf git://
