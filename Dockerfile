@@ -6,9 +6,9 @@ FROM python:3.11
 SHELL ["/bin/bash", "--login", "-c"]
 
 # Just needed for all things python (note this is setting an env variable)
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 # Needed for correct settings input
-ENV IN_DOCKER 1
+ENV IN_DOCKER=1
 
 # Install Node.js 18 LTS via NodeSource — no nvm, no shell-sourcing hacks
 RUN apt-get update && \
@@ -32,10 +32,10 @@ RUN pipenv install --system --deploy
 RUN npm ci
 RUN npm run build
 
-# Collect static files (manage.py is no longer excluded in .dockerignore)
-RUN python ./manage.py collectstatic --noinput -v 0
+# Collect static files during image build. Use a non-sensitive temporary key
+# for this step only; runtime DJANGO_SECRET_KEY still comes from deployment env.
+RUN DJANGO_SECRET_KEY=build-time-placeholder-key python ./manage.py collectstatic --noinput -v 0
 
 # Fix line endings and set executable bit on the DO entrypoint script
 # (file is committed from Windows so may have CRLF)
 RUN sed -i 's/\r//' /tcd/bin/do-web-start.sh && chmod +x /tcd/bin/do-web-start.sh
-
