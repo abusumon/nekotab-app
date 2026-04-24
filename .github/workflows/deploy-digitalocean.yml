@@ -44,6 +44,7 @@ jobs:
       - name: Build main app image
         run: |
           docker build \
+            --progress=plain \
             --cache-from $DO_REGISTRY/nekotab:latest \
             -t $DO_REGISTRY/nekotab:$IMAGE_TAG \
             -t $DO_REGISTRY/nekotab:latest \
@@ -52,6 +53,7 @@ jobs:
       - name: Build nekospeech image
         run: |
           docker build \
+            --progress=plain \
             --cache-from $DO_REGISTRY/nekotab-nekospeech:latest \
             -t $DO_REGISTRY/nekotab-nekospeech:$IMAGE_TAG \
             -t $DO_REGISTRY/nekotab-nekospeech:latest \
@@ -60,6 +62,7 @@ jobs:
       - name: Build nekocongress image
         run: |
           docker build \
+            --progress=plain \
             --cache-from $DO_REGISTRY/nekotab-nekocongress:latest \
             -t $DO_REGISTRY/nekotab-nekocongress:$IMAGE_TAG \
             -t $DO_REGISTRY/nekotab-nekocongress:latest \

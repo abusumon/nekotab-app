@@ -10,6 +10,5 @@ NekoTab/staticfiles/
 docs/
 
 # Symlinks (they don't work on Windows)
-manage.py
 data/test/standard
 
