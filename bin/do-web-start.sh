@@ -21,7 +21,7 @@ export PYTHONPATH=/tcd
 echo "==> Waiting for database..."
 MAX_RETRIES=30
 for i in $(seq 1 $MAX_RETRIES); do
-    if python tabbycat/manage.py inspectdb --noinput > /dev/null 2>&1; then
+    if python -c "import socket; s=socket.socket(); s.settimeout(2); s.connect(('db',5432)); s.close()" 2>/dev/null; then
         echo "    Database is reachable."
         break
     fi
