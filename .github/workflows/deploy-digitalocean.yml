@@ -89,12 +89,36 @@ jobs:
       - name: Checkout (needed to scp config files)
         uses: actions/checkout@v4
 
+      - name: Prepare deploy SSH key
+        env:
+          DO_SSH_PRIVATE_KEY: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+        run: |
+          set -eu
+          python3 - <<'PY'
+          import os
+          import pathlib
+
+          raw = os.environ["DO_SSH_PRIVATE_KEY"]
+          normalized = raw.replace("\\n", "\n").replace("\r", "").strip() + "\n"
+
+          ssh_dir = pathlib.Path.home() / ".ssh"
+          ssh_dir.mkdir(mode=0o700, exist_ok=True)
+
+          key_file = ssh_dir / "do_deploy_key"
+          key_file.write_text(normalized, encoding="utf-8")
+          os.chmod(key_file, 0o600)
+          print(f"Wrote key to {key_file}")
+          PY
+
+          # Fail fast with a clear error if the key content is still invalid.
+          ssh-keygen -y -f ~/.ssh/do_deploy_key >/dev/null
+
       - name: Copy updated config files to Droplet
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.DO_DROPLET_IP }}
           username: nekotab
-          key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+          key_path: ~/.ssh/do_deploy_key
           source: "docker-compose.do.yml,config/nginx-do.conf,config/gunicorn-do.conf,bin/do-web-start.sh"
           target: "/opt/nekotab"
           strip_components: 0
@@ -108,7 +132,7 @@ jobs:
         with:
           host: ${{ secrets.DO_DROPLET_IP }}
           username: nekotab
-          key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+          key_path: ~/.ssh/do_deploy_key
           envs: DO_REGISTRY,DO_API_TOKEN,IMAGE_TAG
           script: |
             set -e
