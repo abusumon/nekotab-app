@@ -219,11 +219,19 @@ jobs:
               sleep 5
             done
 
+            echo "==> Running database migrations (pre-start, so gunicorn starts fast)..."
+            docker compose -f docker-compose.do.yml run --rm --no-deps \
+              web python tabbycat/manage.py migrate --noinput
+
             echo "==> Restarting app services with new images..."
             docker compose -f docker-compose.do.yml up -d \
               --remove-orphans \
               --no-deps \
-              web worker nekospeech nekospeech-worker nekocongress nginx
+              web worker nekospeech nekospeech-worker nekocongress nginx || {
+              echo "ERROR: docker compose up failed. Web container logs:"
+              docker compose -f docker-compose.do.yml logs --tail=100 web || true
+              exit 1
+            }
 
             echo "==> Waiting for web service to become healthy..."
             WEB_HEALTHY=0

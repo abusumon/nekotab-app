@@ -118,7 +118,7 @@ services:
     restart: unless-stopped
     depends_on:
       web:
-        condition: service_healthy
+        condition: service_started   # worker only needs Redis; don't block on web health
 
   # ---------------------------------------------------------------------------
   # nekospeech — Individual Events (IE) FastAPI service on port 8001
