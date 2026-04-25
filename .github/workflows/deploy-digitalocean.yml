@@ -221,6 +221,7 @@ jobs:
 
             echo "==> Running database migrations (pre-start, so gunicorn starts fast)..."
             docker compose -f docker-compose.do.yml run --rm --no-deps \
+              -e PYTHONPATH=/tcd \
               web python tabbycat/manage.py migrate --noinput
 
             echo "==> Restarting app services with new images..."
