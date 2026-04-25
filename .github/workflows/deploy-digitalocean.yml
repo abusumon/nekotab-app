@@ -230,9 +230,13 @@ jobs:
               --no-deps \
               web worker nekospeech nekospeech-worker nekocongress nginx || {
               echo "ERROR: docker compose up failed. Web container logs:"
-              docker compose -f docker-compose.do.yml logs --tail=100 web || true
+              docker compose -f docker-compose.do.yml logs --tail=200 web || true
               exit 1
             }
+
+            echo "==> Initial web container logs (startup output):"
+            sleep 5
+            docker compose -f docker-compose.do.yml logs --tail=50 web || true
 
             echo "==> Waiting for web service to become healthy..."
             WEB_HEALTHY=0
@@ -249,8 +253,8 @@ jobs:
 
             if [ "$WEB_HEALTHY" -ne 1 ]; then
               echo "ERROR: web container did not become healthy in time. Last status: $STATUS"
-              echo "==> web container logs (last 60 lines):"
-              docker compose -f docker-compose.do.yml logs --tail=60 web || true
+              echo "==> web container logs (last 200 lines):"
+              docker compose -f docker-compose.do.yml logs --tail=200 web || true
               exit 1
             fi
 
