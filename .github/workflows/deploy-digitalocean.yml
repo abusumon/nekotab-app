@@ -228,22 +228,7 @@ jobs:
             echo "==> Waiting for web service to become healthy..."
             WEB_HEALTHY=0
             for i in $(seq 1 24); do
-              # docker compose ps --format json emits NDJSON (one object per line),
-              # NOT a JSON array — read only the first line and parse it.
-              STATUS=$(docker compose -f docker-compose.do.yml ps --format json web 2>/dev/null \
-                | python3 -c "
-import sys, json
-for line in sys.stdin:
-    line = line.strip()
-    if line:
-        try:
-            print(json.loads(line).get('Health', 'unknown'))
-        except Exception:
-            print('unknown')
-        break
-else:
-    print('unknown')
-" 2>/dev/null || echo "unknown")
+              STATUS=$(docker compose -f docker-compose.do.yml ps --format json web 2>/dev/null | python3 -c "import sys,json; line=sys.stdin.readline().strip(); print(json.loads(line).get('Health','unknown') if line else 'unknown')" 2>/dev/null || echo "unknown")
               if [ "$STATUS" = "healthy" ]; then
                 echo "    web is healthy after $((i * 5))s"
                 WEB_HEALTHY=1
@@ -254,7 +239,7 @@ else:
             done
 
             if [ "$WEB_HEALTHY" -ne 1 ]; then
-              echo "ERROR: web container did not become healthy in time. Last known status: $STATUS"
+              echo "ERROR: web container did not become healthy in time. Last status: $STATUS"
               echo "==> web container logs (last 60 lines):"
               docker compose -f docker-compose.do.yml logs --tail=60 web || true
               exit 1
