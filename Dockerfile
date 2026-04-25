@@ -36,6 +36,10 @@ RUN npm run build
 # for this step only; runtime DJANGO_SECRET_KEY still comes from deployment env.
 RUN DJANGO_SECRET_KEY=build-time-placeholder-key python ./manage.py collectstatic --noinput -v 0
 
-# Fix line endings and set executable bit on the DO entrypoint script
-# (file is committed from Windows so may have CRLF)
-RUN sed -i 's/\r//' /tcd/bin/do-web-start.sh && chmod +x /tcd/bin/do-web-start.sh
+# Strip CRLF from ALL shell scripts and config files baked into the image.
+# Files are committed from Windows and may have \r\n line endings which break
+# bash on Linux.  gunicorn config is Python so Python handles CRLF, but we
+# normalise it here too for safety.
+RUN find /tcd/bin -name "*.sh" -exec sed -i 's/\r//' {} \; && \
+    find /tcd/bin -name "*.sh" -exec chmod +x {} \; && \
+    sed -i 's/\r//' /tcd/config/gunicorn-do.conf

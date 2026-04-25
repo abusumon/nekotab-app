@@ -165,6 +165,13 @@ jobs:
           ssh-keygen -y -f ~/.ssh/do_deploy_key >/dev/null
           ssh-keygen -lf ~/.ssh/do_deploy_key
 
+      - name: Normalise line endings in config files (strip CRLF)
+        run: |
+          sed -i 's/\r//' docker-compose.do.yml
+          sed -i 's/\r//' config/nginx-do.conf
+          sed -i 's/\r//' config/gunicorn-do.conf
+          sed -i 's/\r//' bin/do-web-start.sh
+
       - name: Copy updated config files to Droplet
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -219,16 +226,39 @@ jobs:
               web worker nekospeech nekospeech-worker nekocongress nginx
 
             echo "==> Waiting for web service to become healthy..."
+            WEB_HEALTHY=0
             for i in $(seq 1 24); do
+              # docker compose ps --format json emits NDJSON (one object per line),
+              # NOT a JSON array — read only the first line and parse it.
               STATUS=$(docker compose -f docker-compose.do.yml ps --format json web 2>/dev/null \
-                | python3 -c "import sys,json; d=json.load(sys.stdin); print(d[0].get('Health','unknown'))" 2>/dev/null || echo "unknown")
+                | python3 -c "
+import sys, json
+for line in sys.stdin:
+    line = line.strip()
+    if line:
+        try:
+            print(json.loads(line).get('Health', 'unknown'))
+        except Exception:
+            print('unknown')
+        break
+else:
+    print('unknown')
+" 2>/dev/null || echo "unknown")
               if [ "$STATUS" = "healthy" ]; then
                 echo "    web is healthy after $((i * 5))s"
+                WEB_HEALTHY=1
                 break
               fi
               echo "    waiting... ($STATUS) ${i}/24"
               sleep 5
             done
+
+            if [ "$WEB_HEALTHY" -ne 1 ]; then
+              echo "ERROR: web container did not become healthy in time. Last known status: $STATUS"
+              echo "==> web container logs (last 60 lines):"
+              docker compose -f docker-compose.do.yml logs --tail=60 web || true
+              exit 1
+            fi
 
             echo "==> Pruning old images (>24h)..."
             docker image prune -f --filter "until=24h"

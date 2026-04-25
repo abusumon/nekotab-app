@@ -1,10 +1,7 @@
 ﻿name: CI & Deploy
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch: {}    # Manual trigger only — Heroku is no longer the active deploy target
 
 jobs:
   build-and-deploy:
