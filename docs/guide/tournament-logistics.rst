@@ -35,7 +35,7 @@ It might sound obvious but it will pay to have a very thorough conversation abou
 - Ensure that plans are made for food to be brought to the tab room. Otherwise you will starve and the adjudication core will swan off to lunch. Having regular access to caffeine can also be similarly essential to some adjudication and tab teams.
 - What kind of printers will be available? Can the tournament buy/borrow one? This is obviously a key consideration for pre-printed ballots. Also try and ensure there are back-up printing options if possible. Clearly stipulate your need for ink and paper; and try and opt for a black/white laserjet, over an inkjet, if possible.
 - What kind of volunteers will be available? How many, and what is their experience level? As a very broad recommendation, you probably want around 1 volunteer for every 10 rooms, assuming volunteers are performing a dual role as data-enterers and ballot-collectors.
-- Will the tournament make a donation to whoever maintains the tabbing software you are using? Also, if your tab is self-hosted or independently hosted (such as how NekoTab is generally deployed on Heroku) accounting officers should also be aware that there will be some costs associated with hosting the tab.
+- Will the tournament make a donation to whoever maintains the tabbing software you are using? Also, if your tab is self-hosted or independently hosted, accounting officers should be aware that there will be some costs associated with hosting the tab.
 - You should also ensure that people helping with the tab are fairly compensated for their flights, registration, etc and that any volunteers are invited along to socials and/or given some other recompense.
 - Will Swing teams be available? You should plan to have at least one more than you need. For example, with 39 teams, you should have both an 40th swing team to fill in the draw, and the option to easily assemble an 41st swing team in case a team goes missing. At very large tournaments (say over 150 teams) you should plan for even more swing team capacity â€” it's not unheard of for say three teams to vanish all in a single round. In these cases, you should try and ensure that the swing teams are always ready to go â€” i.e. that that they are pre-formed, you have a clear communication channel with them, and that they distributed/waiting near the debating rooms so they can fill in at a moment's notice (often you will only find out that teams are missing right as debates are scheduled to start).
 - How will critical information be communicated to participants? Consider that in general, Facebook announcements do not reach many people, although paying to boost the posts is often a very cheap way of dramatically raising their effectiveness. In particular, also ensure or check how you manage to get in touch with teams or adjudicators who go missing: will they have reliable phone numbers? Can you get a list of institutional reps who can be reliably called? You want to have processes in place for chasing up adjudicators who do things such as make scoring mistakes as soon as possible in order to minimise delays.
@@ -189,7 +189,7 @@ Importing data: workflow
 
 - If the tournament (or the host society) has their own domain name and your tab software is self-hosted consider whether you want to set up the tab site on their domain so that the URL is nicer and/or easier to type.
 
-.. note:: If you are using NekoTab, and deploying to Heroku, be sure to read our documentation about the size of Postgres database your tournament will require. Setting up the correct size of database from the start is the best way to go, as transferring information at a later stage is a hassle and could delay the tab at inopportune times.
+.. note:: If you are using NekoTab in production, be sure to plan the size of your PostgreSQL database and compute resources early. Setting these appropriately from the start is the best way to avoid disruptive migrations during the tournament.
 
 Importing data: regions/societies
 ---------------------------------
@@ -386,7 +386,7 @@ Once everything has been set up and everyone knows what they should do, the actu
 Disaster scenarios
 ------------------
 
-There are two broad classes of disaster scenarios here. The first, and more rare case is when either internet access at the venue goes out or if a web service that your tab software depends on has an outage (for example, both Tabbie 2 and Heroku-deployed NekoTab instances depend on Amazon Web Services). The first can at least be solved temporarily if tethering is available, but if that is not possible (or the latter case occurs) you may need to switch to using an offline copy of that tab by restoring from a backup if the outage is non-transient.
+There are two broad classes of disaster scenarios here. The first, and more rare case is when either internet access at the venue goes out or if a web service that your tab software depends on has an outage. The first can at least be solved temporarily if tethering is available, but if that is not possible (or the latter case occurs) you may need to switch to using an offline copy of that tab by restoring from a backup if the outage is non-transient.
 
 Obviously, for this to work, you should be taking regular backups using whatever mechanism your tab software allows. Key times to do so are critical events such as finishing entering a round's data or finalising an adjudication allocation as these are especially difficult to recreate. Importantly, these backups are only useful to you if you have a downloaded copy of them; ideally download to a Dropbox or some other cloud service that will spread them across multiple computers and an online service.
 
@@ -434,7 +434,7 @@ You will have a decent amount of downtime during rounds when debates are happeni
 - Chasing up the language committee (if one exists for this tournament) to confirm which teams are in which category and what their break preferences are (if multiple breaks are not allowed). You want to have this information confirmed as soon as possible as it becomes of critical value to allocations once the draw starts segmenting into live/dead rooms.
 - Reviewing how efficiently things are running and whether there are any bottlenecks that can be better addressed in the next round. It's generally a good idea to (on a whiteboard or a spreadsheet) keep track of how long each stage of a round is taking (running, data-entry, allocation) and what (if anything) is causing delays.
 
-.. note:: If hosting NekoTab on Heroku, keep an eye on the metrics section of the dashboard area, noting if there are 'timeout errors' and what the average response times are. Adding more dynos should help with both.
+.. note:: If hosting NekoTab in production, keep an eye on your provider's metrics dashboard, noting timeout/error rates and average response times. Increasing web capacity should usually help with both.
 
 Breaks and Break Rounds
 =======================
@@ -490,9 +490,9 @@ Managing the tab release
 
 Almost there!
 
-If hosting NekoTab on Heroku it's worth increasing the resources available to the server for the ~12 hour period following tab release; it's by far the most concentrated burst of traffic the site will receive. Because Heroku bills by the hour, even going to a relatively expensive option, such as performance dynos with auto-scaling, will be very cheap if run just for this period. That said the site should be relatively resilient even in the face of large amounts of traffic; even running with the most basic resources allocated, at worst pages will be temporarily slow or not load.
+If hosting NekoTab in production it's worth increasing the resources available to the server for the ~12 hour period following tab release; it's by far the most concentrated burst of traffic the site will receive. Most providers support short-term scaling for these spikes. That said the site should be relatively resilient even in the face of large amounts of traffic; even running with basic resources allocated, at worst pages will be temporarily slow or not load.
 
-To get an idea of how the site is performing in the Heroku dashboard, keep an eye on the average request time number and adjust the number of dynos to try and keep it under say two seconds; ideally just one. When you first turn on the tab release settings, make sure you go through and load every page before announcing it to the public, doing so will trigger the caching mechanism that means potentially complex pages (say the speaker tab) don't need to be calculated from scratch each time someone loads the page.
+To get an idea of how the site is performing, keep an eye on average request time and adjust web capacity to try and keep it under around two seconds; ideally closer to one. When you first turn on the tab release settings, make sure you go through and load every page before announcing it to the public, doing so will trigger the caching mechanism that means potentially complex pages (say the speaker tab) don't need to be calculated from scratch each time someone loads the page.
 
 Post-tournament
 ---------------

@@ -9,7 +9,7 @@ NekoTab offers integrations with email delivery services to send notifications t
 Configuring an email provider
 =============================
 
-  *Changed in version 2.6:* NekoTab no longer automatically provisions SendGrid via Heroku.
+  *Changed in version 2.6:* NekoTab no longer automatically provisions SendGrid.
 
 NekoTab does not come with an email provider. You will need to configure your app to use a third-party email provider. Your NekoTab site will not be able to send emails until you have done this. There are a number of options for this. The right one for you will depend on your tournament size and budget.
 
@@ -26,7 +26,7 @@ Once you have a SendGrid account:
 
   There are `instructions for how to do this in the SendGrid documentation <https://sendgrid.com/docs/User_Guide/Settings/api_keys.html>`_. The only permission that is needed is the "Mail Send" permission, so you can turn off all others if you want to be safe.
 
-2. Set the following config vars in Heroku Dashboard (or using the Heroku CLI, if you have it):
+2. Set the following environment variables in your deployment platform (or local environment):
 
   - Set ``SENDGRID_API_KEY`` to your API key, which will start with ``SG.*******``.
   - Set ``DEFAULT_FROM_EMAIL`` to the email address you want your emails to appears as coming from. This will probably need to be an email address that you can verify ownership of to SendGrid (see next step).
@@ -158,5 +158,5 @@ With SendGrid, the status of sent emails can be sent to NekoTab to be displayed,
 4. Enable the feature and paste the NekoTab URL under "HTTP POST URL".
 5. Select the notifications to keep track (or all of them).
 
-.. caution:: Each email and change in status sent to NekoTab will add a row to the database. If the number of rows is limited, as is for free Heroku apps, enabling the webhook may use up a significant number of rows. Be selective in the events to keep track.
+.. caution:: Each email and change in status sent to NekoTab will add a row to the database. If your database has strict row or storage limits, enabling the webhook may use up a significant number of rows. Be selective in the events to keep track.
 

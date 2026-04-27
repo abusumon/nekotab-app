@@ -1,10 +1,8 @@
-# This is customised from https://github.com/heroku/heroku-buildpack-nginx.git
-# Done so in order to properly proxy to both and asgi and wsgi server
-# Super useful template:
-# https://github.com/CLClark/fcc-stock-trading-app/blob/9017f001255718c2e0fd24eb8267df02267d6cd8/config/nginx.conf.erb
+# Nginx template for proxying to the app's WSGI/ASGI endpoints.
+# Adapted from community examples and tailored for this deployment stack.
 
 daemon off;
-# Heroku dynos have at least 4 cores.
+# Default to 4 workers; override with NGINX_WORKERS if needed.
 worker_processes <%= ENV['NGINX_WORKERS'] || 4 %>;
 
 events {

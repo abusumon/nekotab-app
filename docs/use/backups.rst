@@ -1,97 +1,60 @@
-﻿.. _backups:
+.. _backups:
 
 ================
 Database Backups
 ================
 
-NekoTab doesn't provide an in-built database backup system; instead you should create
-copies of your database directly. Heroku provides a very good backup utility for
-all sites hosted on Heroku which makes this easy, and for Heroku-based NekoTab
-sites, we strongly recommend it.
+NekoTab does not include a one-click backup system inside the app itself. Backups
+should be created from PostgreSQL directly, or using your hosting provider's
+managed snapshot tooling.
 
-You should **always** back up the database before deleting *any* data while in
-the Edit Database area, because deleting data cannot be undone. It is also a
-good idea to back up the database before doing anything in the Edit Database
-area, unless you're very familiar and confident with editing the NekoTab
-database directly.
+You should always create a backup before deleting data in the Edit Database area.
+At larger tournaments, it is also good practice to back up at least:
 
-You may, as a matter of standard practice at large tournaments, wish to back up
-the database twice per round: Once just after you've generated the draw and
-allocated adjudicators, and once just after you've finished entering results.
+- after generating a draw/allocation
+- after entering and confirming round results
 
-If you're using an online version of NekoTab, it's a good idea to download the
-backups. While it's extremely rare to lose internet access or have an outage in
-a critical web service (*i.e.*, Heroku), having a local copy of your backups
-allows you to :ref:`restore your tab to a local installation <backup-restore-to-local>`
-if this ever happens.
+Hosted deployments
+==================
 
-Installations on Heroku
-=======================
+Most cloud platforms provide at least one of these options:
 
-Heroku provides a utility to easily back up and restore the entire site
-database.
+- scheduled database snapshots
+- manual point-in-time snapshots
+- direct PostgreSQL dump/restore access
 
-If you don't have the Heroku CLI
---------------------------------
-You can capture backups from the Heroku Dashboard:
+If your provider offers snapshots, use them. Also keep downloadable backups in a
+separate location so you can recover even during provider outages.
 
-1. Go to the `Heroku Dashboard <http://dashboard.heroku.com/>`_ and click
-   on your app.
-2. Under *Installed add-ons*, click on **Heroku Postgres**.
-3. Near the top left of the screen, click on the **Durability** tab.
-4. Click on **Create Manual Backup**.
-5. Once the capture has finished, a **Download** button will be available.
+A portable PostgreSQL backup command looks like this::
 
-You can't restore a backup without the Heroku Command Line Interface (CLI), so
-if you end up needing your backup, you'll need to install the
-`Heroku CLI <https://devcenter.heroku.com/articles/heroku-cli>`_, and then
-follow the instructions below.
-
-If you have the Heroku CLI
---------------------------
-
-The best guide to backing up databases is the
-`Heroku Dev Center's PGBackups guide <https://devcenter.heroku.com/articles/heroku-postgres-backups>`_.
-
-To capture a backup::
-
-    $ heroku pg:backups:capture
-
-To download the most recently captured backup::
-
-    $ heroku pg:backups:download
-
-To restore a backup::
-
-    $ heroku pg:backups:restore
-
-If you have multiple NekoTab sites, you'll need to specify which one by adding
-``--app mytournamentname`` to the end of the command.
+    pg_dump --format=custom --no-owner --no-acl -h your_db_host -U your_db_user your_db_name > latest.dump
 
 Local installations
 ===================
 
-There are lots of ways to back up local PostgreSQL databases, but we'd suggest
-using the
-`pg_dump <https://www.postgresql.org/docs/current/static/app-pgdump.html>`_
-and
-`pg_restore <https://www.postgresql.org/docs/current/static/app-pgrestore.html>`_
-commands.
+For local PostgreSQL installs, ``pg_dump`` and ``pg_restore`` are recommended.
+
+Create a backup::
+
+    pg_dump --format=custom --no-owner --no-acl -h localhost -U NekoTab yourlocaldb > latest.dump
+
+Restore a backup::
+
+    pg_restore --clean --if-exists --no-owner --no-acl -h localhost -U NekoTab -d yourlocaldb latest.dump
 
 .. _backup-restore-to-local:
 
-Restoring a Heroku backup to a local installation
+Restoring a hosted backup to a local installation
 =================================================
 
-As detailed in the `Heroku Dev Center <https://devcenter.heroku.com/articles/heroku-postgres-import-export#restore-to-local-database>`_,
-you can restore a downloaded Heroku backup to a local installation. This might
-be useful if, say, your internet connection breaks irrecoverably in the middle
-of a tournament and you need to run offline. Of course, for this to work, you
-need to have downloaded your backup before your internet connection broke---a
-good reason to download a copy of your backups as soon as you make them.
+A common fallback plan is to restore a hosted backup into a local PostgreSQL
+database so you can continue running the tournament offline.
 
-Assuming your download is called ``latest.dump`` (this is the default name), your PostgreSQL username is ``NekoTab``, and you wish to call your local database ``fromheroku`` (if not, replace arguments as appropriate)::
+Example workflow::
 
-    $ createdb fromheroku -h localhost -U NekoTab
-    $ pg_restore --no-acl --no-owner -h localhost -U NekoTab -d fromheroku latest.dump
+    createdb frombackup -h localhost -U NekoTab
+    pg_restore --no-acl --no-owner -h localhost -U NekoTab -d frombackup latest.dump
 
+Once restored, point your local NekoTab instance at the restored database and
+verify that key pages load correctly before going live.

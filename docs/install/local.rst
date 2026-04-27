@@ -16,13 +16,13 @@ Then, when you open your browser, you can use NekoTab like any other web site. T
 Should I use a local installation?
 ==================================
 
-In most cases, you should make an online NekoTab installation by :ref:`setting up an instance on Heroku <install-heroku>`. This has a number of major advantages:
+In most cases, you should use an online production deployment for NekoTab. This has a number of major advantages:
 
 - The installation process is easier.
 - You can enter ballots and manage your tournament from multiple computers.
 - Participants can access the draw, motions, results and more online.
-- Heroku's data centers are less likely to fail than your computer is.
-- Heroku e-mails NekoTab's developers error reports to help us fix bugs.
+- Production cloud environments are generally more reliable than a personal computer.
+- Production error monitoring is easier to configure and maintain on hosted deployments.
 
 In some cases, you might have a good reason to use a local installation. We can
 think of just one such reason: If you won't have access to the internet at your
@@ -59,7 +59,7 @@ Advanced uses
 Can others access my local install?
 -----------------------------------
 
-Local installations can also take advantage of multiple-computer site access, including data entry---it's just takes more work than a Heroku installation to set up.
+Local installations can also take advantage of multiple-computer site access, including data entry---it's just takes more work than a hosted deployment to set up.
 
 Since a local installation is just having your computer run a web server, it can serve other computers too. You can make this work even if you don't have internet access: all you need is a router that you can use to connect a few computers together. Then other computers on your local network can access the NekoTab site hosted on your computer. We did this at Victoria Australs 2012.
 
@@ -72,7 +72,7 @@ We don't provide detailed instructions for this; we leave it for advanced users 
 Can I run an internet-accessible website from a local installation?
 -------------------------------------------------------------------
 
-Probably not. Even if you disable your firewall, chances are your home router (or university router) will block any connections from the outside world to you. Even if you can though, **you really shouldn't**. The local installation uses the *Django development server*, which is a lightweight server designed for developers. Specifically, Django **does not test the security of its development server** in the way that proper web servers do. That is: It's a security risk to run a local installation as an internet-accessible site. Don't do it. `Install NekoTab on Heroku <install-heroku>`_ instead.
+Probably not. Even if you disable your firewall, chances are your home router (or university router) will block any connections from the outside world to you. Even if you can though, **you really shouldn't**. The local installation uses the *Django development server*, which is a lightweight server designed for developers. Specifically, Django **does not test the security of its development server** in the way that proper web servers do. That is: It's a security risk to run a local installation as an internet-accessible site. Don't do it. Use a proper production deployment instead.
 
 Alternatively, if you have a background in web development, you might choose to install NekoTab on your own production server. It's a Django project, so any means of supporting Django projects should work fine.
 

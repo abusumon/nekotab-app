@@ -13,7 +13,7 @@ from nekospeech.config import settings
 engine = create_async_engine(
     settings.database_url,
     echo=settings.debug,
-    # Heroku basic Postgres: 20 connections total, shared with Django.
+    # Keep low connection usage because this database is shared with Django.
     # Keep low: 2 base + 2 overflow = 4 max per process.
     pool_size=2,
     max_overflow=2,

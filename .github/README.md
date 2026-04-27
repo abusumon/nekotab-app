@@ -19,7 +19,7 @@ Tabbycat is a draw tabulation system for British Parliamentary and a variety of 
 
 ## 🔍 Features
 
-- A range of setup options. Tabbycat powers Calico, a paid service for hosting tournaments. Tabbycat can also run as a local installation (natively, or via Docker) and be deployed to the free-tiers of the Render or Heroku platforms.
+- A range of setup options. Tabbycat powers Calico, a paid service for hosting tournaments. Tabbycat can also run as a local installation (natively, or via Docker) and be deployed on managed cloud platforms.
 - Enter data from multiple computers simultaneously and (optionally) display results, draws, and other information online
 - Collect ballots and feedback online, or from printed forms customised for each round ( adjudicator feedback questions and rankings [are configurable](http://tabbycat.readthedocs.io/en/stable/features/adjudicator-feedback.html))
 - Automated adjudicator allocations based on adjudicator ranking, debate priority, and conflicts/clashes
@@ -41,7 +41,7 @@ Tabbycat can be used in a number of ways.
 
 If you do not want to use Calico, you will need to setup and manage your own copy of Tabbycat:
 
-1. For tournaments that require online access, you can [install and run Tabbycat from Heroku](https://tabbycat.readthedocs.io/en/stable/install/heroku.html). However, this will cost a small amount of money _unless_ you are a student and have registered for free Heroku hosting credits
+1. For tournaments that require online access, use one of the hosted deployment guides in the documentation: [DigitalOcean](https://github.com/abusumon/nekotab-app/blob/main/.github/workflows/deploy-digitalocean.yml) or [Render](https://tabbycat.readthedocs.io/en/stable/install/render.html).
 2. For tournaments where online access is unnecessary, you can [install and run Tabbycat from your own computer](https://tabbycat.readthedocs.io/en/stable/install/local.html)
 
 ## 💪 Support and Contributing

@@ -14,7 +14,7 @@ Installing Locally on Windows
 .. admonition:: Is this the best installation method for you?
   :class: attention
 
-  In most cases, we recommend doing an :ref:`internet-based installation on Heroku <install-heroku>` instead. If you decide to do a local installation, be sure to read our page on :ref:`local installations <install-local>` to help you understand what's going on, particularly this section: :ref:`install-decision`
+  In most cases, we recommend an internet-based production deployment instead of a local install. If you decide to do a local installation, be sure to read our page on :ref:`local installations <install-local>` to help you understand what's going on, particularly this section: :ref:`install-decision`
 
   If you just want to quickly set up a copy of NekoTab to run locally on Windows, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below.
 

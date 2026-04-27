@@ -3,11 +3,11 @@
 All settings are loaded from environment variables with sensible defaults
 for local Docker development.
 
-Heroku deployment notes:
-- DATABASE_URL is injected by Heroku Postgres (postgres:// scheme).
-  We auto-convert to postgresql+asyncpg://.
-- REDIS_URL / REDISCLOUD_URL is injected by Heroku Redis addons.
-- DJANGO_SECRET_KEY is used for JWT — same key Django uses.
+Deployment notes:
+- DATABASE_URL values using postgres:// or postgresql:// are auto-converted
+    to postgresql+asyncpg://.
+- Redis can be sourced from REDISCLOUD_URL, REDIS_TLS_URL, or REDIS_URL.
+- DJANGO_SECRET_KEY can be used for JWT so Django and nekospeech share auth.
 """
 
 import os
@@ -20,11 +20,11 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     # --- Database (shared Postgres with Django) ---
-    # On Heroku, falls back to DATABASE_URL and auto-converts the scheme.
+    # Falls back to DATABASE_URL and auto-converts the scheme.
     database_url: str = "postgresql+asyncpg://NekoTab:NekoTab@db:5432/NekoTab"
 
     # --- Redis ---
-    # On Heroku, falls back to REDISCLOUD_URL → REDIS_URL.
+    # Falls back to REDISCLOUD_URL / REDIS_TLS_URL / REDIS_URL.
     redis_url: str = "redis://redis:6379/2"
 
     # --- Celery ---
@@ -63,32 +63,32 @@ class Settings(BaseSettings):
     model_config = {"env_prefix": "NEKOSPEECH_", "env_file": ".env"}
 
     @model_validator(mode="after")
-    def _resolve_heroku_env(self) -> "Settings":
-        """Resolve Heroku-injected env vars with automatic scheme conversion."""
+    def _resolve_runtime_env(self) -> "Settings":
+        """Resolve runtime environment variables with scheme conversion."""
 
         # --- JWT secret: fall back to Django's SECRET_KEY ---
         if not self.jwt_secret_key:
             self.jwt_secret_key = os.environ.get("DJANGO_SECRET_KEY", "")
 
-        # --- Database URL: fall back to DATABASE_URL (Heroku Postgres) ---
-        heroku_db = os.environ.get("DATABASE_URL", "")
-        if heroku_db and self.database_url == "postgresql+asyncpg://NekoTab:NekoTab@db:5432/NekoTab":
-            self.database_url = _convert_db_scheme(heroku_db)
+        # --- Database URL: fall back to DATABASE_URL ---
+        runtime_db = os.environ.get("DATABASE_URL", "")
+        if runtime_db and self.database_url == "postgresql+asyncpg://NekoTab:NekoTab@db:5432/NekoTab":
+            self.database_url = _convert_db_scheme(runtime_db)
 
-        # --- Redis URL: fall back to REDISCLOUD_URL → REDIS_URL (Heroku Redis) ---
-        heroku_redis = (
+        # --- Redis URL fallbacks ---
+        runtime_redis = (
             os.environ.get("REDISCLOUD_URL")
             or os.environ.get("REDIS_TLS_URL")
             or os.environ.get("REDIS_URL")
             or ""
         )
-        if heroku_redis and self.redis_url == "redis://redis:6379/2":
-            self.redis_url = heroku_redis
+        if runtime_redis and self.redis_url == "redis://redis:6379/2":
+            self.redis_url = runtime_redis
         # Also use as Celery broker/backend if they still have Docker defaults
-        if heroku_redis and self.celery_broker_url == "redis://redis:6379/3":
-            self.celery_broker_url = heroku_redis
-        if heroku_redis and self.celery_result_backend == "redis://redis:6379/3":
-            self.celery_result_backend = heroku_redis
+        if runtime_redis and self.celery_broker_url == "redis://redis:6379/3":
+            self.celery_broker_url = runtime_redis
+        if runtime_redis and self.celery_result_backend == "redis://redis:6379/3":
+            self.celery_result_backend = runtime_redis
 
         # Fail fast if no JWT secret resolved — silent 401s are worse than a crash
         if not self.jwt_secret_key:
@@ -103,7 +103,7 @@ class Settings(BaseSettings):
 def _convert_db_scheme(url: str) -> str:
     """Convert postgres:// or postgresql:// to postgresql+asyncpg://.
 
-    Heroku injects ``postgres://…`` which asyncpg cannot use directly.
+    Some providers inject ``postgres://…`` which asyncpg cannot use directly.
     """
     return re.sub(r"^postgres(ql)?://", "postgresql+asyncpg://", url)
 

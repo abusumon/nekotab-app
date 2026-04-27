@@ -16,7 +16,7 @@ Bug reports
 
 Please report bugs by opening a new issue in our `GitHub repository <https://github.com/TabbycatDebate/tabbycat/issues>`_. It is most helpful if you can include:
 
-- How Tabbycat was installed (on Heroku, locally on macOS, `etc.`)
+- How Tabbycat was installed (cloud deployment, locally on macOS, `etc.`)
 - Any details about your tournament and setup that might be helpful in troubleshooting
 - Detailed steps for how to reproduce the bug
 
@@ -143,7 +143,7 @@ These can then be compiled using::
 
     $ dj compilemessages -l es
 
-As it stands Heroku needs the .mo files pre-compiled (see `issue in Heroku Python buildpack <https://github.com/heroku/heroku-buildpack-python/issues/198>`_, so these are committed to Git. Note that the English (``en``) language files need not be compiled; their sole purpose is to provide a source language for `Crowdin <https://crowdin.com/project/tabbycat>`_.
+Some deployment environments need the .mo files pre-compiled, so these are committed to Git. Note that the English (``en``) language files need not be compiled; their sole purpose is to provide a source language for `Crowdin <https://crowdin.com/project/tabbycat>`_.
 
 Strings defined in Vue files must similarily be marked with ``gettext`` but must be added manually to ``tabbycat/locale/LANGUAGE_CODE/djangojs.po``, for each language supported. These can then compiled to javascript bundles using::
 
@@ -161,11 +161,10 @@ Release checklist
 4. Bump version number, API version number and (if applicable) codename in ``tabbycat/settings/core.py``
 5. Update the main ``CHANGELOG.rst`` file (including release date)
 6. Check the major current deployment options, including:
-    1. The ``deploy_heroku.py`` script
-    2. The Tabbykitten version
-    3. Docker (macOS, Windows 10*) and Docker Toolbox (Windows 10 Home) methods
-    4. Using Bash and Powershell on Windows
-    5. Using Terminal on macOS (at least test out a fresh install of the npm/pip  dependencies)
+    1. The Tabbykitten version
+    2. Docker (macOS, Windows 10*) and Docker Toolbox (Windows 10 Home) methods
+    3. Using Bash and Powershell on Windows
+    4. Using Terminal on macOS (at least test out a fresh install of the npm/pip  dependencies)
 7. Check that the last Github Actions build passed and run the full local test suite (this will include the Selenium tests that are not on Travis)
 8. Shift remaining issues from the Github Milestone
 9. Create and finish the release branch as per git-flow

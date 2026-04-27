@@ -110,34 +110,24 @@ This script has a number of options. They're worth taking a look at before you r
 
 4. Assuming the command completes successfully without errors, you should double check the data in the Django interface, as described above in :ref:`import-edit-database`. In particular you should check that the *Rounds* have the correct draw types and that silent rounds have been marked correctly.
 
-``importtournament`` on Heroku installs
-========================================
+``importtournament`` on managed deployments
+===========================================
 
-If you want to use the ``importtournament`` command locally but then upload that data to Heroku, you can do so with these instructions.
+If you want to use the ``importtournament`` command locally and then move that data to a hosted deployment, use a PostgreSQL dump/restore workflow.
 
-.. danger:: This step wipes the Heroku database clean, and replaces it with the contents of your local database. If you have any data on the Heroku site that isn't also in your local database, **that data will be lost** and will not be recoverable.
+.. danger:: This process can wipe and replace your production database. If your hosted site has data not present in your local database, **that data will be lost**.
 
-.. tip:: If you have multiple Heroku sites, you may find that the ``heroku`` commands refuse to run, prompting you to specify an app. If so, add ``--app yourappname`` to each ``heroku`` command.
+a. Put your production site in maintenance mode (if your platform supports it) so no new writes happen during migration.
 
-a. Enable maintenance mode on Heroku. This takes the site offline, to ensure that no-one can possibly create or change any data on the site while you're pushing a new database up::
+b. Export your local database::
 
-    heroku maintenance:on
+  pg_dump --format=custom --no-owner --no-acl -h localhost -U your_local_user yourlocaldatabasename > local.dump
 
-b. Reset the database. (Caution: This permanently deletes all information on your Heroku database!)
+c. Restore into your managed PostgreSQL database::
 
-  ::
+  pg_restore --clean --if-exists --no-owner --no-acl -h your_db_host -U your_db_user -d your_db_name local.dump
 
-    heroku pg:reset
-
-c. Push your local database to Heroku::
-
-    heroku pg:push yourlocaldatabasename DATABASE
-
-  You might need to specify your local PostgreSQL credentials by adding ``PGUSER=yourusername PGPASSWORD=******** PGHOST=localhost`` to the *beginning* of that command. (This sets environment variables to those values for the duration of that one command.)
-
-d. Disable maintenance mode::
-
-    heroku maintenance:off
+d. Disable maintenance mode and verify application health.
 
 Developing your own importer
 ============================

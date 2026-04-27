@@ -7,14 +7,14 @@ Installing on Render
 .. admonition:: IMPORTANT
   :class: error
 
-  Setting up Heroku on Render is currrently in beta and is somewhat unreliable. Use Heroku for a more reliable option.
+  Render support is currently in beta and may require manual troubleshooting.
 
-Render is a web hosting platform, similar to Heroku. Like Heroku, it provides a similar '1 click' method of deployment that should be approachable to people without experience in deploying web applications. Support for deploying NekoTab to Render is currently **in beta**.
+Render is a web hosting platform that provides a '1 click' deployment flow that should be approachable to people without experience in deploying web applications. Support for deploying NekoTab to Render is currently **in beta**.
 
 .. admonition:: Warning
   :class: warning
 
-  The most important difference between Render and Heroku is that **after 90 days, Render's free-tier database will stop working and delete all your data**. If you want to keep your tab data around for the long term, you must backup your data and host it elsewhere after the tournament ends
+  **After 90 days, Render's free-tier database will stop working and delete all your data**. If you want to keep your tab data around for the long term, you must back up your data and host it elsewhere after the tournament ends.
 
 Please also note:
 
@@ -36,7 +36,7 @@ To deploy to Render, follow the instructions below.
 
 Click the button above. Enter whatever you want as the **Service Group Name** and leave "Branch" as it is.
 
-Then, enter your email and Time Zone in the fields. Time zones are formatted as per Heroku â€” copy of a "TZ database name" `from this list <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>`_, e.g. *Europe/Copenhagen*.
+Then, enter your email and Time Zone in the fields. Time zones use IANA/TZ database names `from this list <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>`_, e.g. *Europe/Copenhagen*.
 
 Then, click "Apply" at the bottom of the page. The button will disappear.
 

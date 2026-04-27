@@ -7,7 +7,7 @@ Installing Locally on Linux
 .. admonition:: Is this the best installation method for you?
   :class: attention
 
-  In most cases, we recommend doing an :ref:`internet-based installation on Heroku <install-heroku>` instead. If you decide to do a local installation, be sure to read our page on :ref:`local installations <install-local>` to help you understand what's going on, particularly this section: :ref:`install-decision`
+  In most cases, we recommend an internet-based production deployment instead of a local install. If you decide to do a local installation, be sure to read our page on :ref:`local installations <install-local>` to help you understand what's going on, particularly this section: :ref:`install-decision`
 
   If you just want to quickly set up a copy of NekoTab to run locally on Linux, consider :ref:`installing using Docker<install-docker>`, which is a shorter process than the one below.
 
@@ -85,7 +85,7 @@ Check the version::
 
 Install PostgreSQL using the  `PostgreSQL installation instructions here <http://www.postgresql.org/download/linux/ubuntu/>`_.
 
-Normally, installing the latest stable version should be best, but if you're having issues, install the same version as the current `default version on Heroku <https://devcenter.heroku.com/articles/heroku-postgresql#version-support>`_, as that will be what is currently most commonly used with NekoTab. If you're planning on pushing data between your local installation and a Heroku site, it's best to match the Heroku's current default version.
+Normally, installing the latest stable PostgreSQL version should be best. If you're planning on pushing data between environments, it's often easiest to match major PostgreSQL versions between your local and production databases.
 
 You'll also need the ``libpq-dev`` package in order to install Psycopg2 later::
 

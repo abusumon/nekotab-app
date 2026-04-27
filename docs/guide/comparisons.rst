@@ -17,7 +17,7 @@ In the first draft of this document, we had a table that listed every feature we
 
 Firstly, the largest feature disparities are for relatively niche features. All of the software discussed can do the basics necessary to run a tournament: generate draws, allocate adjudicators, enter results, etc. As a result, we will â€” like a good whip speech â€” be comparative and note key feature disparities when discussing each alternative software directly.
 
-Secondly, we felt that the 'checklist' approach to comparing tab software would do a disservice to the reasons you would actually choose one software over another. Except where a niche capability is essential, raw technical specifications rarely define the experience of using a product such as a phone, a car, or indeed, tabbing software. With NekoTab, we've spent eight years continuously refining the tabbing workflow and smoothing out rough edges, and we believe you'll find the result extremely user-friendly and robust. As always, the best way to check this out is by :ref:`setting up a demo site and taking it for a spin <install-heroku>`!
+Secondly, we felt that the 'checklist' approach to comparing tab software would do a disservice to the reasons you would actually choose one software over another. Except where a niche capability is essential, raw technical specifications rarely define the experience of using a product such as a phone, a car, or indeed, tabbing software. With NekoTab, we've spent eight years continuously refining the tabbing workflow and smoothing out rough edges, and we believe you'll find the result extremely user-friendly and robust. As always, the best way to check this out is by :ref:`setting up a demo site and taking it for a spin <install-render>`!
 
 Comparison with Tabbie2
 -----------------------
@@ -96,11 +96,11 @@ Other considerations
 
 **Offline availability**. If you like, you can also install NekoTab on your own computer, rather than host it as website on a server. This means that you can use it offline. However installing NekoTab in this manner will require the (at least brief) use of a command line interface.
 
-**Cost**. NekoTab and Tabbie2 are both free to use. Larger tournaments that run on NekoTab's recommended web host (Heroku) may need to purchase an upgraded database service (the free tier has storage limits) which will cost around ~US$3 to use for the duration of a week-long tournament.
+**Cost**. NekoTab and Tabbie2 are both free to use. Larger tournaments running on hosted NekoTab instances may need an upgraded database or compute plan, depending on provider limits and traffic.
 
 **Documentation**. NekoTab has `relatively extensive documentation <http://NekoTab.readthedocs.io/en/stable/>`_ that can be useful for learning how to use a particular feature or understanding what is happening at a technical level.
 
-**Hosting location**. NekoTab recommends using Heroku, an established cloud platform service for deploying web applications. Heroku is in turn hosted on Amazon Web Services (AWS). Both Heroku and AWS are highly reliable and widely used; downtime for both has historically been (at worst) less than 0.05% over an annual period. Tabbie2 is hosted on `Uberspace <https://uberspace.de/>`_; a pay-what-you-want web hosting service. To the best of our knowledge, uptime statistics are not available.
+**Hosting location**. NekoTab can be deployed on multiple cloud providers (for example, DigitalOcean, Render, or self-managed infrastructure). Reliability depends on your provider, region, and plan. Tabbie2 is hosted on `Uberspace <https://uberspace.de/>`_; a pay-what-you-want web hosting service. To the best of our knowledge, uptime statistics are not available.
 
 **Multi-format support**. If you are interested in tabbing both four- and two- team formats there may be some value in using and learning NekoTab as it will let you use the same software in both settings.
 
@@ -114,7 +114,7 @@ The crucial strength â€” and limitation â€” of Tournaman is that it is
 
 **Installation**. You'll need to run (or emulate) a Windows machine to run Tournaman. Assuming you're using Windows, Tournaman's installation process is easy and familiar.
 
-NekoTab has a simple one-click installation process if you're deploying online (:ref:`to Heroku <install-heroku>`). However, if you want to run NekoTab on your own computer rather than a website, this is substantially more complicated. Local installations of NekoTab work by having your computer emulate a web server, and while we've tried to make this as accessible as possible, a technical background is definitely helpful for this. Using our :ref:`Docker-based method <install-docker>` should be simple, but it's not 100% reliable, and if it fails it can be difficult to figure out why. If internet access is available, we recommend running NekoTab on Heroku.
+NekoTab has a relatively simple installation process if you're deploying online (:ref:`for example, on Render <install-render>`). However, if you want to run NekoTab on your own computer rather than a website, this is substantially more complicated. Local installations of NekoTab work by having your computer emulate a web server, and while we've tried to make this as accessible as possible, a technical background is definitely helpful for this. Using our :ref:`Docker-based method <install-docker>` should be simple, but it's not 100% reliable, and if it fails it can be difficult to figure out why. If internet access is available, we recommend running NekoTab on a managed online deployment.
 
 **Online features**. Because Tournaman runs fully offline, it naturally can't support many internet-based features: electronic ballots, online publication of draws and live team standings, and integrated tab release. Typically, if you wanted to publish anything online from Tournaman, you'd do so by publishing the files that Tournaman generates locally. In NekoTab, all of these are built in, so there's a single website for all tab information.
 
@@ -122,7 +122,7 @@ NekoTab has a simple one-click installation process if you're deploying online (
 
 Tournaman's multi-user access is designed primarily to allow tab assistants to enter data. Key administrative tasks, such as draw generation and adjudicator allocation, must still be done on the computer on which Tournaman is installed. In contrast, web-based systems like NekoTab and Tabbie2 allow users to login from any internet-connected device to access the functionality permitted by their account. This is often extremely useful if, say, you want to log in to a lectern computer, or have tab assistants work on mobile devices that they have with them.
 
-If you choose to install NekoTab offline (rather than on Heroku), it's also possible to have the computer on which the local installation resides serve the website to other computers on the same network. This then permits anyone on the same network to access the "local" installation as if it were hosted on the internet. However, like Tournaman, such a configuration requires at least basic networking experience, and for security reasons is only advisable on small isolated networks that you control.
+If you choose to install NekoTab offline (rather than online), it's also possible to have the computer on which the local installation resides serve the website to other computers on the same network. This then permits anyone on the same network to access the "local" installation as if it were hosted on the internet. However, like Tournaman, such a configuration requires at least basic networking experience, and for security reasons is only advisable on small isolated networks that you control.
 
 **Backups and portability**. Both Tournaman and NekoTab (unlike Tabbie2) store data in a way that is completely accessible to you. Tournaman does this by saving files on your computer's hard drive, while NekoTab stores data in a SQL database that belongs to you.
 
@@ -130,7 +130,7 @@ It should be emphasized that in both Tournaman and NekoTab, actually needing to 
 
 Tournaman's storage of data as XML files makes backups easy, although effort should be made to have backups stored on other computers or the cloud  (e.g. on Dropbox) in case the tab computer breaks or is lost. Restoring data from those backups (or transferring the tab to a different computer) is typically a simple process of copying the files back to the original location.
 
-As for NekoTab, in online installations, backups can be taken easily using Heroku's `database backup capability <http://NekoTab.readthedocs.io/en/stable/features/backups.html>`_. However, restoring backups requires you to have the Heroku command line interface installed. In offline installations, PostgreSQL's "dump" and "restore" commands are recommended, and may require some perseverance to get going reliability, particularly if you don't have prior SQL experience.
+As for NekoTab, in online installations, backups can be taken using your provider's database snapshot tools or PostgreSQL backup commands. In offline installations, PostgreSQL's "dump" and "restore" commands are recommended, and may require some perseverance to get going reliably, particularly if you don't have prior SQL experience.
 
 Generally there is no need for data portability when working with an online copy of NekoTab â€” the website can be accessed anywhere. However if working with an offline/local copy, a tab can be transferred between machines by creating a backup of the database and restoring it to the other machine's database (doing so requires technical knowledge).
 
@@ -150,7 +150,7 @@ Other considerations
 
 **Stability and development**. Tournaman has been in use for over a decade and is generally considered to be stable and reliable. However, new features are relatively rarely added, and its being a native app means that it doesn't boast as many features as NekoTab or Tabbie2.
 
-**Cost**. Tournaman and NekoTab are both free to use. Larger tournaments that run on NekoTab's recommended web host (Heroku) may need to purchase an upgraded database service (the free tier has storage limits) which will cost around ~US$3 to use for the duration of a week-long tournament.
+**Cost**. Tournaman and NekoTab are both free to use. Larger tournaments running on hosted NekoTab instances may need an upgraded database or compute plan, depending on provider limits and traffic.
 
 **Availability of source code**. Tournaman's code is closed-source, meaning it is not publicly available. If you do not have any coding experience this is probably not relevant to you, but if you do, having access to the source of NekoTab can help you understand how the program works and customise it as needed.
 

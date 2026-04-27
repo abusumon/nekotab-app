@@ -7,7 +7,7 @@ Installing Locally using Docker
 .. admonition:: Is this the best install method for you?
   :class: attention
 
-  In most cases, we recommend doing an :ref:`internet-based installation on Heroku <install-heroku>` instead. If you decide to do a local installation, be sure to read our page on :ref:`local installations <install-local>` to help you understand what's going on, particularly this section: :ref:`install-decision`
+  In most cases, we recommend an internet-based production deployment instead of a local install. If you decide to do a local installation, be sure to read our page on :ref:`local installations <install-local>` to help you understand what's going on, particularly this section: :ref:`install-decision`
 
 .. attention:: If you need an offline copy of NekoTab, installing using Docker should be simpler and quicker than using the "Install Locally onâ€¦" instructions for your operating system. However if a Docker installation doesn't work as outlined below, it's harder to address what isn't working. If you encounter any problems with Docker, we recommend using the "Install Locally onâ€¦" option as a fallback, but if you need to do so, `please also report the issue you're having on GitHub <https://github.com/NekoTabDebate/NekoTab/issues/new?labels=installation-docker&title=Docker%20installation%20problem&body=Please%20be%20sure%20to%20include%20your%20operating%20system%20and%20version,%20and%20please%20be%20as%20specific%20as%20you%20can%20about%20the%20problem%20you%20encountered%3A%0D%0D>`_ or :ref:`contact the developers <authors>`.
 

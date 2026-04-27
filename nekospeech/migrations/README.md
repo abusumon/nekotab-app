@@ -36,16 +36,13 @@ docker compose cp nekospeech/migrations/001_create_speech_events_schema.sql db:/
 docker compose exec db psql -U NekoTab -d NekoTab -f /tmp/001.sql
 ```
 
-### 2. Run in production (hosted Postgres — Render, Heroku, etc.)
+### 2. Run in production (hosted Postgres)
 
 ```bash
 # Option A: Use psql with your production DATABASE_URL
 psql "$DATABASE_URL" -f nekospeech/migrations/001_create_speech_events_schema.sql
 
-# Option B: Heroku
-heroku pg:psql -a your-app-name < nekospeech/migrations/001_create_speech_events_schema.sql
-
-# Option C: Render — use the External Connection String from the dashboard
+# Option B: Use your provider's external connection string
 psql "postgres://user:pass@host:port/dbname" \
   -f nekospeech/migrations/001_create_speech_events_schema.sql
 ```

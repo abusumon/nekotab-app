@@ -4,13 +4,13 @@
 
 ### Codebase patterns confirmed:
 - **FastAPI app structure** (nekospeech/main.py): Lifespan context manager for startup/shutdown, CORS middleware, router registration, health endpoint at `/api/{service}/health`
-- **Settings pattern** (config.py): pydantic-settings BaseSettings with env_prefix, Heroku fallbacks for DATABASE_URL, REDIS_URL, DJANGO_SECRET_KEY, auto-converts postgres:// to postgresql+asyncpg://
+- **Settings pattern** (config.py): pydantic-settings BaseSettings with env_prefix, environment fallbacks for DATABASE_URL, REDIS_URL, DJANGO_SECRET_KEY, auto-converts postgres:// to postgresql+asyncpg://
 - **Auth pattern** (auth.py): JWT shared with Django, role-based deps (require_director, require_judge), tournament-scoped via `verify_tournament_access`
-- **Database pattern** (database.py): async SQLAlchemy with asyncpg, pool_size=2/max_overflow=2 for Heroku, get_db dependency
+- **Database pattern** (database.py): async SQLAlchemy with asyncpg, pool_size=2/max_overflow=2 for small cloud instances, get_db dependency
 - **Shared models** (models/shared.py): Read-only SQLAlchemy Table objects mapped to Django's public schema tables
 - **Router pattern** (routers/draw.py): APIRouter with prefix/tags, advisory locks, idempotent operations, cache invalidation
 - **WebSocket** (websocket/manager.py): In-memory dict keyed by tournament_id — acknowledged as single-replica only. nekocongress MUST improve this with Redis pub/sub.
-- **Heroku deploy** (Procfile): `web: uvicorn` + `worker: celery`
+- **Process model**: separate web (uvicorn) and worker (celery) processes
 - **DB migrations** (001_create_speech_events_schema.sql): Raw SQL in migrations/ folder, CREATE SCHEMA IF NOT EXISTS, custom ENUMs, explicit indexes
 - **Vue components** (templates/ie/): Vue 2 SFCs with Bootstrap 4 classes, data passed via window.vueData, kebab-case registration in main.js
 - **Django views** (speech_events/views.py): TemplateView + AdministratorMixin + TournamentMixin, issue JWT tokens in context
@@ -79,14 +79,12 @@ nekocongress/
 │       └── test_standings.py       # Standings engine tests
 ├── migrations/
 │   └── 001_create_congress_events_schema.sql
-├── Procfile                        # Heroku subtree deploy
-├── runtime.txt
 ├── requirements.txt
 └── README.md
 ```
 
 **Justification:** Identical structure to nekospeech enables:
-- Same subtree deploy workflow to Heroku
+- Same deployment workflow patterns as nekospeech
 - Familiar patterns for any developer who knows nekospeech
 - Shared Postgres and Redis infrastructure
 - Same JWT auth mechanism

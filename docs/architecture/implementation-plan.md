@@ -369,7 +369,7 @@ Replace `SubdomainTournamentMiddleware` with `SubdomainTenantMiddleware` that re
 |------|--------|
 | `utils/middleware.py` | Add `SubdomainTenantMiddleware` class (new code, ~150 lines). **Do not delete** `SubdomainTournamentMiddleware` yet. |
 | `settings/core.py` | Add `ORGANIZATION_WORKSPACES_ENABLED` setting. Swap middleware class in `MIDDLEWARE` list. |
-| `settings/heroku.py` | Add `ORGANIZATION_WORKSPACES_ENABLED` env var parsing |
+| `settings/digitalocean.py` | Add `ORGANIZATION_WORKSPACES_ENABLED` env var parsing |
 | `utils/tests_subdomain.py` | Add tests for the new middleware |
 | `organizations/signals.py` | Add tenant cache invalidation for org save/delete |
 
@@ -398,7 +398,7 @@ With:
 'utils.middleware.SubdomainTenantMiddleware',
 ```
 
-**3. `settings/heroku.py` — add after existing subdomain settings:**
+**3. `settings/digitalocean.py` — add after existing subdomain settings:**
 
 ```python
 ORGANIZATION_WORKSPACES_ENABLED = environ.get('ORGANIZATION_WORKSPACES_ENABLED', 'false').lower() == 'true'
@@ -1563,7 +1563,7 @@ Enable `ORGANIZATION_WORKSPACES_ENABLED=True` in production. This is a deploymen
 
 | File | Change |
 |------|--------|
-| `settings/heroku.py` | Change default from `'false'` to `'true'` (or set via Heroku config var) |
+| `settings/digitalocean.py` | Change default from `'false'` to `'true'` (or set via environment variable) |
 
 ### Deployment Steps
 
@@ -1607,7 +1607,7 @@ print('Slug reservations OK')
 
 ### Rollback Strategy
 
-**Instant (< 1 min):** Set `ORGANIZATION_WORKSPACES_ENABLED=false` in Heroku config vars. The middleware immediately reverts to tournament-only mode. Existing org workspaces become unreachable (404) but no data is lost. Re-enable when the issue is fixed.
+**Instant (< 1 min):** Set `ORGANIZATION_WORKSPACES_ENABLED=false` in environment variables. The middleware immediately reverts to tournament-only mode. Existing org workspaces become unreachable (404) but no data is lost. Re-enable when the issue is fixed.
 
 **Data note:** Organizations created during the rollout retain their data. When re-enabled, they become accessible again.
 
@@ -1693,7 +1693,7 @@ Phase 10 ── Feature Flag Rollout
 | `utils/context_processors.py` | 4 |
 | `utils/tests_subdomain.py` | 3, 4 |
 | `settings/core.py` | 2, 3, 9 |
-| `settings/heroku.py` | 3, 10 |
+| `settings/digitalocean.py` | 3, 10 |
 | `urls.py` (root) | 7, 8 |
 
 ### Database Migrations (3 migrations)
