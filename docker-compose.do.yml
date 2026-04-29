@@ -165,22 +165,25 @@ services:
 
   # ---------------------------------------------------------------------------
   # nginx — reverse proxy, health probe, static file serving
-  # Exposes port 80 to the Droplet; the DO Load Balancer fronts this with HTTPS.
+  # Exposes ports 80/443 directly on the Droplet (direct TLS termination).
   # ---------------------------------------------------------------------------
   nginx:
     image: nginx:1.27-alpine
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./config/nginx-do.conf:/etc/nginx/conf.d/default.conf:ro
       - static-files:/tcd/tabbycat/staticfiles:ro
+      - ./certbot-www:/var/www/certbot:ro
+      - ./letsencrypt:/etc/letsencrypt:ro
     depends_on:
       - web
       - nekospeech
       - nekocongress
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost/health/"]
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/health/"]
       interval: 30s
       timeout: 5s
       retries: 3
