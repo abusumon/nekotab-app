@@ -151,4 +151,3 @@ Registration statuses can be checked under the Registration tab in the admin sid
 For intervarsity or slot-controlled tournaments, institutional registration with a coach can be required and optionally require them to request a certain number of teams and adjudicators. In the admin institutional registration list, users can set the number of approved participants. The coach will then be able to register their members.
 
 To ease registration by participants, coaches have "invitation links" generated for them to give out, allowing their members to register as a team or adjudicator. When a team does not have a complete set of speakers, an invitation link is also generated to allow the registered speaker to "invite" their teammates.
-

@@ -11,6 +11,9 @@ echo "-----> I'm post-compile hook"
 echo "-----> Running database migration"
 python manage.py migrate --noinput
 
+echo "-----> Ensuring Google OAuth SocialApp"
+python manage.py ensure_google_socialapp || true
+
 echo "-----> Running dynamic preferences checks"
 python manage.py checkpreferences
 
@@ -19,7 +22,7 @@ npm install
 npm run build
 
 echo "-----> Running static files compilation"
-python manage.py collectstatic --noinput
+python manage.py collectstatic --noinput --ignore='*.bak'
 
 echo "-----> Post-compile done"
 

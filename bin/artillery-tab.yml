@@ -62,4 +62,3 @@ scenarios:
     flow:
     - get:
         url: "/demo/results/round/3/"
-

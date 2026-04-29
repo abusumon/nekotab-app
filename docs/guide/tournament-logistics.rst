@@ -551,4 +551,3 @@ Misc
 Now is a good time to encourage people to consider getting involved with tabbing and tab-development. Emphasize that both do not necessarily require technical skills and that tabbers are (or should be) open to feedback and ideas from the wider community. Tell people to come find you and chat if they are interested and put up a link to the `Facebook tabbing group <https://www.facebook.com/groups/1681761898801915/?ref=bookmarks>`_.
 
 If you appreciated this guide we'd appreciate a slide promoting `Timekept <http://timekept.com>`_ and `Debatekeeper <https://play.google.com/store/apps/details?id=net.czlee.debatekeeper&hl=en>`_. This would also be a good point to remind people that their timekeeping apps shouldn't be making noise *unless* they have been explicitly assigned to keep time by the chair.
-

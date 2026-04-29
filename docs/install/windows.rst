@@ -225,4 +225,3 @@ To start your NekoTab instance up again next time you use your computer, open a 
     > .\venv\Scripts\activate
     > cd NekoTab
     > dj runserver
-

@@ -34,7 +34,7 @@ RUN npm run build
 
 # Collect static files during image build. Use a non-sensitive temporary key
 # for this step only; runtime DJANGO_SECRET_KEY still comes from deployment env.
-RUN DJANGO_SECRET_KEY=build-time-placeholder-key python ./manage.py collectstatic --noinput -v 0
+RUN DJANGO_SECRET_KEY=build-time-placeholder-key python ./manage.py collectstatic --noinput --ignore='*.bak' -v 0
 
 # Strip CRLF from ALL shell scripts and config files baked into the image.
 # Files are committed from Windows and may have \r\n line endings which break

@@ -58,4 +58,3 @@ Notes for specific operating systems:
 4. Open up http://localhost:8000/ (Windows) or http://0.0.0.0:8000/ (macOS/Linux) in a browser of your choice!
 
 .. note:: If you want to reopen NekoTab at a later time (say after restarting), just repeat the steps in this section.
-

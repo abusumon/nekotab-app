@@ -77,4 +77,3 @@ Probably not. Even if you disable your firewall, chances are your home router (o
 Alternatively, if you have a background in web development, you might choose to install NekoTab on your own production server. It's a Django project, so any means of supporting Django projects should work fine.
 
 It's safe to run on a small, isolated network (see above) with your firewall correctly configured because you presumably trust everyone you let on the network!
-

@@ -48,4 +48,3 @@ Wait it  a few minutes then go to your *Dashboard*. It may take up to 30 minutes
 When everything is successful/available, click through to the "Web Service" item on your Render Dashboard to see the URL of your site below the title. Open the URL to complete the normal NekoTab admin account setup.
 
 Note that this URL cannot be changed unless you `add a custom domain using a URL you already own <https://render.com/docs/custom-domains>`_.
-

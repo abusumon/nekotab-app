@@ -67,7 +67,7 @@ jobs:
     - name: Run build and collect
       run: |
         npm run build
-        python ./manage.py collectstatic --noinput -v 0
+        python ./manage.py collectstatic --noinput --ignore='*.bak' -v 0
     - name: Run migrations
       run: python ./manage.py migrate
     - name: Run tests

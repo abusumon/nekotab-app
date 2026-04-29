@@ -241,4 +241,3 @@ To start your NekoTab instance up again next time you use your computer::
     $ pipenv run npm run serve
 
 Or you can start a ``pipenv shell``, then run ``npm run serve`` from inside the Pipenv shell.
-

@@ -40,21 +40,27 @@ echo "==> Running database migrations..."
 python tabbycat/manage.py migrate --noinput
 
 # ---------------------------------------------------------------------------
-# 3. Validate dynamic preferences (non-fatal — don't block startup)
+# 3. Ensure Google OAuth SocialApp is present and linked to SITE_ID
+# ---------------------------------------------------------------------------
+echo "==> Ensuring Google OAuth SocialApp..."
+python tabbycat/manage.py ensure_google_socialapp || true
+
+# ---------------------------------------------------------------------------
+# 4. Validate dynamic preferences (non-fatal — don't block startup)
 # ---------------------------------------------------------------------------
 echo "==> Checking preferences..."
 python tabbycat/manage.py checkpreferences || true
 
 # ---------------------------------------------------------------------------
-# 4. Collect static files into the shared volume
+# 5. Collect static files into the shared volume
 #    The volume is mounted at STATIC_ROOT (/tcd/tabbycat/staticfiles).
 #    collectstatic is fast after the first run (only copies changed files).
 # ---------------------------------------------------------------------------
 echo "==> Collecting static files..."
-python tabbycat/manage.py collectstatic --noinput -v 0
+python tabbycat/manage.py collectstatic --noinput --ignore='*.bak' -v 0
 
 # ---------------------------------------------------------------------------
-# 5. Start gunicorn (TCP 0.0.0.0:8000, UvicornWorker)
+# 6. Start gunicorn (TCP 0.0.0.0:8000, UvicornWorker)
 # ---------------------------------------------------------------------------
 echo "==> Starting gunicorn (WEB_CONCURRENCY=${WEB_CONCURRENCY:-2})..."
 exec gunicorn asgi:application --config ./config/gunicorn-do.conf

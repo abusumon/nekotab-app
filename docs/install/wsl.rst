@@ -40,4 +40,3 @@ B. Install NekoTab
 ===================
 
 You now have a Linux subsystem running on your computer, so head over to the :ref:`instructions to install NekoTab locally on Linux <install-linux>` and follow those (in full).
-

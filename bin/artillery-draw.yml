@@ -47,4 +47,3 @@ scenarios:
     flow:
     - get:
         url: "/bp88team/"
-

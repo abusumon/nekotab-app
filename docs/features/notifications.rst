@@ -159,4 +159,3 @@ With SendGrid, the status of sent emails can be sent to NekoTab to be displayed,
 5. Select the notifications to keep track (or all of them).
 
 .. caution:: Each email and change in status sent to NekoTab will add a row to the database. If your database has strict row or storage limits, enabling the webhook may use up a significant number of rows. Be selective in the events to keep track.
-
