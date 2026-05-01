@@ -11,8 +11,6 @@
 #   docker compose -f docker-compose.do.yml exec web python tabbycat/manage.py shell
 #   docker compose -f docker-compose.do.yml logs -f web
 
-version: '3.9'
-
 # ---------------------------------------------------------------------------
 # Shared environment block re-used by the web and worker services
 # ---------------------------------------------------------------------------
@@ -115,7 +113,7 @@ services:
   # ---------------------------------------------------------------------------
   worker:
     image: ${DO_REGISTRY_URL}/nekotab:${IMAGE_TAG:-latest}
-    command: ["python", "tabbycat/manage.py", "runworker", "notifications", "adjallocation", "venues"]
+    command: ["/bin/bash", "-lc", "cd /tcd && export PYTHONPATH=/tcd && exec python tabbycat/manage.py runworker notifications adjallocation venues"]
     environment:
       <<: *django-env
     restart: unless-stopped
@@ -130,9 +128,11 @@ services:
   nekospeech:
     image: ${DO_REGISTRY_URL}/nekotab-nekospeech:${IMAGE_TAG:-latest}
     environment:
-      NEKOSPEECH_DATABASE_URL: "${NEKOSPEECH_DATABASE_URL:-${DATABASE_URL}}"
+      NEKOSPEECH_DATABASE_URL: "${NEKOSPEECH_DATABASE_URL:-postgresql+asyncpg://nekotab:${POSTGRES_PASSWORD}@db:5432/nekotab}"
       NEKOSPEECH_REDIS_URL: "${NEKOSPEECH_REDIS_URL:-${REDIS_URL}}"
       NEKOSPEECH_CELERY_BROKER_URL: "${NEKOSPEECH_CELERY_BROKER_URL:-${REDIS_URL}}"
+      DJANGO_SECRET_KEY: "${DJANGO_SECRET_KEY}"
+      NEKOSPEECH_JWT_SECRET_KEY: "${NEKOSPEECH_JWT_SECRET_KEY:-}"
       NEKOSPEECH_DEBUG: "0"
     expose:
       - "8001"
@@ -145,9 +145,11 @@ services:
     image: ${DO_REGISTRY_URL}/nekotab-nekospeech:${IMAGE_TAG:-latest}
     command: ["celery", "-A", "nekospeech.workers.tasks", "worker", "--loglevel=info", "--concurrency=2"]
     environment:
-      NEKOSPEECH_DATABASE_URL: "${NEKOSPEECH_DATABASE_URL:-${DATABASE_URL}}"
+      NEKOSPEECH_DATABASE_URL: "${NEKOSPEECH_DATABASE_URL:-postgresql+asyncpg://nekotab:${POSTGRES_PASSWORD}@db:5432/nekotab}"
       NEKOSPEECH_REDIS_URL: "${NEKOSPEECH_REDIS_URL:-${REDIS_URL}}"
       NEKOSPEECH_CELERY_BROKER_URL: "${NEKOSPEECH_CELERY_BROKER_URL:-${REDIS_URL}}"
+      DJANGO_SECRET_KEY: "${DJANGO_SECRET_KEY}"
+      NEKOSPEECH_JWT_SECRET_KEY: "${NEKOSPEECH_JWT_SECRET_KEY:-}"
     restart: unless-stopped
     depends_on:
       - nekospeech
@@ -159,8 +161,10 @@ services:
   nekocongress:
     image: ${DO_REGISTRY_URL}/nekotab-nekocongress:${IMAGE_TAG:-latest}
     environment:
-      NEKOCONGRESS_DATABASE_URL: "${NEKOCONGRESS_DATABASE_URL:-${DATABASE_URL}}"
+      NEKOCONGRESS_DATABASE_URL: "${NEKOCONGRESS_DATABASE_URL:-postgresql+asyncpg://nekotab:${POSTGRES_PASSWORD}@db:5432/nekotab}"
       NEKOCONGRESS_REDIS_URL: "${NEKOCONGRESS_REDIS_URL:-${REDIS_URL}}"
+      DJANGO_SECRET_KEY: "${DJANGO_SECRET_KEY}"
+      NEKOCONGRESS_JWT_SECRET_KEY: "${NEKOCONGRESS_JWT_SECRET_KEY:-}"
       NEKOCONGRESS_DEBUG: "0"
     expose:
       - "8002"
