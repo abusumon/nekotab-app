@@ -8,7 +8,7 @@ name: Deploy to DigitalOcean
 #   DO_API_TOKEN        — DO personal access token with registry:read+write
 #   DO_REGISTRY_NAME    — Registry name only, e.g.  nekotab-registry
 #   DO_DROPLET_IP       — Public IP of the production Droplet
-#   DO_SSH_PRIVATE_KEY  — Private key matching the deploy SSH key on the Droplet
+#   DO_SSH_PRIVATE_KEY_B64 — Base64-encoded private key matching the deploy SSH key on the Droplet
 
 on:
   push:
@@ -91,7 +91,6 @@ jobs:
 
       - name: Prepare deploy SSH key
         env:
-          DO_SSH_PRIVATE_KEY: ${{ secrets.DO_SSH_PRIVATE_KEY }}
           DO_SSH_PRIVATE_KEY_B64: ${{ secrets.DO_SSH_PRIVATE_KEY_B64 }}
         run: |
           set -eu
@@ -100,48 +99,18 @@ jobs:
           import binascii
           import os
           import pathlib
-          import textwrap
 
-          raw = os.environ.get("DO_SSH_PRIVATE_KEY", "").strip()
           raw_b64 = os.environ.get("DO_SSH_PRIVATE_KEY_B64", "").strip()
 
-          if raw_b64:
-            try:
-              normalized = base64.b64decode(raw_b64).decode("utf-8")
-            except (binascii.Error, UnicodeDecodeError) as exc:
-              raise SystemExit(f"Invalid DO_SSH_PRIVATE_KEY_B64 secret: {exc}")
-          else:
-            if not raw:
-              raise SystemExit("Missing DO_SSH_PRIVATE_KEY secret.")
+          if not raw_b64:
+            raise SystemExit("Missing DO_SSH_PRIVATE_KEY_B64 secret.")
 
-            cleaned = raw
-            # Support both literal escaped sequences and real newlines.
-            cleaned = cleaned.replace("\\r\\n", "\n").replace("\\n", "\n").replace("\\r", "\n")
-            cleaned = cleaned.replace("\r", "\n").strip()
+          try:
+            normalized = base64.b64decode(raw_b64).decode("utf-8")
+          except (binascii.Error, UnicodeDecodeError) as exc:
+            raise SystemExit(f"Invalid DO_SSH_PRIVATE_KEY_B64 secret: {exc}")
 
-            # Some secret UIs store values wrapped in quotes.
-            if (cleaned.startswith('"') and cleaned.endswith('"')) or (cleaned.startswith("'") and cleaned.endswith("'")):
-              cleaned = cleaned[1:-1].strip()
-
-            has_headers = (
-              "BEGIN " in cleaned and
-              " PRIVATE KEY" in cleaned and
-              "END " in cleaned
-            )
-
-            if has_headers:
-              lines = [line.strip() for line in cleaned.split("\n") if line.strip()]
-              normalized = "\n".join(lines) + "\n"
-            else:
-              # If only the body was pasted, reconstruct OpenSSH envelope.
-              body = "".join(cleaned.split())
-              if not body:
-                raise SystemExit("DO_SSH_PRIVATE_KEY secret is empty after normalization.")
-              normalized = (
-                "-----BEGIN OPENSSH PRIVATE KEY-----\n"
-                + "\n".join(textwrap.wrap(body, 70))
-                + "\n-----END OPENSSH PRIVATE KEY-----\n"
-              )
+          normalized = normalized.replace("\r\n", "\n").replace("\r", "\n").strip() + "\n"
 
           ssh_dir = pathlib.Path.home() / ".ssh"
           ssh_dir.mkdir(mode=0o700, exist_ok=True)
