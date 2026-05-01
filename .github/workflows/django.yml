@@ -92,4 +92,3 @@ jobs:
           fetch-depth: 1
       - name: Build Docker image (prod)
         run: docker compose -f docker-compose.yml -f docker-compose.prod.yml build
-

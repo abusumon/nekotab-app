@@ -25,4 +25,3 @@ echo "-----> Running static files compilation"
 python manage.py collectstatic --noinput --ignore='*.bak'
 
 echo "-----> Post-compile done"
-
