@@ -173,6 +173,19 @@ jobs:
             set -e
             cd /opt/nekotab
 
+            echo "==> Disk usage before cleanup..."
+            df -h / /var/lib/docker || true
+            docker system df || true
+
+            echo "==> Pruning unused Docker artifacts to free disk space..."
+            docker container prune -f || true
+            docker image prune -af || true
+            docker builder prune -af || true
+
+            echo "==> Disk usage after cleanup..."
+            df -h / /var/lib/docker || true
+            docker system df || true
+
             echo "==> Authenticating with DO Container Registry..."
             echo "$DO_API_TOKEN" | docker login registry.digitalocean.com \
               --username unused --password-stdin
@@ -180,7 +193,13 @@ jobs:
             echo "==> Pulling new images (tag: $IMAGE_TAG)..."
             export IMAGE_TAG="$IMAGE_TAG"
             export DO_REGISTRY_URL="$DO_REGISTRY"
-            docker compose -f docker-compose.do.yml pull
+            if ! docker compose -f docker-compose.do.yml pull; then
+              echo "WARN: image pull failed. Retrying once after additional cleanup..."
+              docker container prune -f || true
+              docker image prune -af || true
+              docker builder prune -af || true
+              docker compose -f docker-compose.do.yml pull
+            fi
 
             echo "==> Ensuring db and redis are running (no-op if already healthy)..."
             docker compose -f docker-compose.do.yml up -d db redis
@@ -234,7 +253,9 @@ jobs:
               exit 1
             fi
 
-            echo "==> Pruning old images (>24h)..."
-            docker image prune -f --filter "until=24h"
+            echo "==> Final Docker cleanup..."
+            docker container prune -f || true
+            docker image prune -af || true
+            docker builder prune -af || true
 
             echo "==> Deploy complete (commit: $IMAGE_TAG)"
