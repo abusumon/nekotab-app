@@ -150,6 +150,7 @@ jobs:
           source: "docker-compose.do.yml,config/nginx-do.conf,config/gunicorn-do.conf,bin/do-web-start.sh"
           target: "/opt/nekotab"
           strip_components: 0
+          overwrite: true
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
