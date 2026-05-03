@@ -31,13 +31,21 @@ x-django-env: &django-env
   ORGANIZATION_WORKSPACES_ENABLED: "${ORGANIZATION_WORKSPACES_ENABLED:-true}"
   GOOGLE_OAUTH_CLIENT_ID: "${GOOGLE_OAUTH_CLIENT_ID:-}"
   GOOGLE_OAUTH_CLIENT_SECRET: "${GOOGLE_OAUTH_CLIENT_SECRET:-}"
-  # Email — must use a third-party provider (DO blocks SMTP ports on Droplets)
+  # Email — DO blocks SMTP ports 25/465/587 on Droplets; prefer SES over 2587
+  AWS_SES_SMTP_HOST: "${AWS_SES_SMTP_HOST:-email-smtp.ap-southeast-2.amazonaws.com}"
+  AWS_SES_SMTP_PORT: "${AWS_SES_SMTP_PORT:-2587}"
+  AWS_SES_SMTP_USERNAME: "${AWS_SES_SMTP_USERNAME:-}"
+  AWS_SES_SMTP_PASSWORD: "${AWS_SES_SMTP_PASSWORD:-}"
   EMAIL_HOST: "${EMAIL_HOST:-}"
-  EMAIL_PORT: "${EMAIL_PORT:-587}"
+  EMAIL_PORT: "${EMAIL_PORT:-2587}"
   EMAIL_HOST_USER: "${EMAIL_HOST_USER:-}"
   EMAIL_HOST_PASSWORD: "${EMAIL_HOST_PASSWORD:-}"
+  EMAIL_USE_TLS: "${EMAIL_USE_TLS:-true}"
+  EMAIL_TIMEOUT: "${EMAIL_TIMEOUT:-10}"
   DEFAULT_FROM_EMAIL: "${DEFAULT_FROM_EMAIL:-NekoTab Team <support@nekotab.app>}"
+  SERVER_EMAIL: "${SERVER_EMAIL:-support@nekotab.app}"
   REPLY_TO_EMAIL: "${REPLY_TO_EMAIL:-}"
+  # Legacy fallback only (recommended to leave unset when using SES)
   SENDGRID_API_KEY: "${SENDGRID_API_KEY:-}"
   # Monitoring
   SENTRY_DSN: "${SENTRY_DSN:-}"

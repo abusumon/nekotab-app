@@ -140,9 +140,6 @@ jobs:
           sed -i 's/\r//' config/nginx-do.conf
           sed -i 's/\r//' config/gunicorn-do.conf
           sed -i 's/\r//' bin/do-web-start.sh
-          sed -i 's/\r//' bin/renew-letsencrypt-do.sh
-          sed -i 's/\r//' bin/certbot-namecom-auth.sh
-          sed -i 's/\r//' bin/certbot-namecom-cleanup.sh
 
       - name: Copy updated config files to Droplet
         uses: appleboy/scp-action@v0.1.7
@@ -150,7 +147,7 @@ jobs:
           host: ${{ secrets.DO_DROPLET_IP }}
           username: nekotab
           key: ${{ env.DEPLOY_KEY }}
-          source: "docker-compose.do.yml,config/nginx-do.conf,config/gunicorn-do.conf,bin/do-web-start.sh,bin/renew-letsencrypt-do.sh,bin/certbot-namecom-auth.sh,bin/certbot-namecom-cleanup.sh"
+          source: "docker-compose.do.yml,config/nginx-do.conf,config/gunicorn-do.conf,bin/do-web-start.sh"
           target: "/opt/nekotab"
           strip_components: 0
 
@@ -168,12 +165,6 @@ jobs:
           script: |
             set -e
             cd /opt/nekotab
-
-            chmod +x /opt/nekotab/bin/do-web-start.sh \
-              /opt/nekotab/bin/renew-letsencrypt-do.sh \
-              /opt/nekotab/bin/certbot-namecom-auth.sh \
-              /opt/nekotab/bin/certbot-namecom-cleanup.sh
-            ln -sf /opt/nekotab/bin/renew-letsencrypt-do.sh /opt/nekotab/renew-letsencrypt.sh
 
             echo "==> Authenticating with DO Container Registry..."
             echo "$DO_API_TOKEN" | docker login registry.digitalocean.com \

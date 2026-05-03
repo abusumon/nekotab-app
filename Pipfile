@@ -54,6 +54,8 @@ django-allauth = "*"
 requests = "*"
 pyjwt = "*"
 cryptography = "*"
+django-cloudinary-storage = "*"
+cloudinary = "*"
 
 [dev-packages]
 pre-commit = "*"
