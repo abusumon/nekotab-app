@@ -142,15 +142,21 @@ jobs:
           sed -i 's/\r//' bin/do-web-start.sh
 
       - name: Copy updated config files to Droplet
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.DO_DROPLET_IP }}
-          username: nekotab
-          key: ${{ env.DEPLOY_KEY }}
-          source: "docker-compose.do.yml,config/nginx-do.conf,config/gunicorn-do.conf,bin/do-web-start.sh"
-          target: "/opt/nekotab"
-          strip_components: 0
-          overwrite: true
+        env:
+          DO_DROPLET_IP: ${{ secrets.DO_DROPLET_IP }}
+        run: |
+          set -eu
+          SSH_OPTS="-i ~/.ssh/do_deploy_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+
+          # Ensure destination directories exist before copying files.
+          ssh $SSH_OPTS nekotab@"$DO_DROPLET_IP" "mkdir -p /opt/nekotab/config /opt/nekotab/bin"
+
+          scp $SSH_OPTS docker-compose.do.yml nekotab@"$DO_DROPLET_IP":/opt/nekotab/docker-compose.do.yml
+          scp $SSH_OPTS config/nginx-do.conf nekotab@"$DO_DROPLET_IP":/opt/nekotab/config/nginx-do.conf
+          scp $SSH_OPTS config/gunicorn-do.conf nekotab@"$DO_DROPLET_IP":/opt/nekotab/config/gunicorn-do.conf
+          scp $SSH_OPTS bin/do-web-start.sh nekotab@"$DO_DROPLET_IP":/opt/nekotab/bin/do-web-start.sh
+
+          ssh $SSH_OPTS nekotab@"$DO_DROPLET_IP" "chmod 0644 /opt/nekotab/docker-compose.do.yml /opt/nekotab/config/nginx-do.conf /opt/nekotab/config/gunicorn-do.conf; chmod 0755 /opt/nekotab/bin/do-web-start.sh"
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
