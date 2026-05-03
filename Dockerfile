@@ -10,6 +10,9 @@ ENV PYTHONUNBUFFERED=1
 # Needed for correct settings input
 ENV IN_DOCKER=1
 
+# Pin pipenv to avoid lock-hash drift between local and CI/deploy environments.
+ARG PIPENV_VERSION=2026.6.1
+
 # Install Node.js 18 LTS via NodeSource — no nvm, no shell-sourcing hacks
 RUN apt-get update && \
     apt-get install -y --no-install-recommends curl nginx && \
@@ -25,7 +28,7 @@ COPY . /tcd/
 RUN git config --global url."https://".insteadOf git://
 
 # Install Python dependencies
-RUN pip install pipenv
+RUN pip install "pipenv==${PIPENV_VERSION}"
 RUN pipenv install --system --deploy
 
 # Install Node dependencies and build frontend assets
