@@ -168,6 +168,7 @@ jobs:
           host: ${{ secrets.DO_DROPLET_IP }}
           username: nekotab
           key: ${{ env.DEPLOY_KEY }}
+          command_timeout: 45m
           envs: DO_REGISTRY,DO_API_TOKEN,IMAGE_TAG
           script: |
             set -e
