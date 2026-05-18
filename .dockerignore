@@ -1,13 +1,21 @@
 ﻿# Copying this over will mess up database settings
 */*/settings_local.py
+.env
+.env.*
+.git
+.gitignore
 
 # Dependencies
 node_modules/
 venv/
+__pycache__/
+.pytest_cache/
 
 # Compilations
 NekoTab/staticfiles/
+tabbycat/staticfiles/
 docs/
+media/
 
 # Symlinks (they don't work on Windows)
 data/test/standard
